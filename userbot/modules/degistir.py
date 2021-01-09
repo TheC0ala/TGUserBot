@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by @TheC0ala
 
 import re
 import userbot.modules.sql_helper.mesaj_sql as sql
@@ -21,7 +21,7 @@ LANG = get_value("degistir")
 # ████████████████████████████████ #
 
 @register(outgoing=True, pattern="^.change ?(.*)")
-@register(outgoing=True, pattern="^.de[gğ]i[sş]tir ?(.*)")
+@register(outgoing=True, pattern="^.deyisdir ?(.*)")
 async def degistir(event):
     plugin = event.pattern_match.group(1)
     mesaj = re.search(r"\"(.*)\"", plugin)
@@ -34,9 +34,9 @@ async def degistir(event):
         mesaj = []
 
     plugin = plugin.strip()
-    TURLER = ["afk", "alive", "pm", "kickme", "dızcı", "ban", "mute", "approve", "disapprove", "block"]
+    NOVLER = ["afk", "alive", "pm", "kickme", "dızcı", "ban", "mute", "approve", "disapprove", "block"]
     if type(mesaj) == list:
-        if plugin in TURLER:
+        if plugin in NOVLER:
             if event.is_reply:
                 reply = await event.get_reply_message()
                 if reply.media:
@@ -59,7 +59,7 @@ async def degistir(event):
     elif len(plugin) < 1:
         await event.edit(LANG['USAGE'])
     elif type(mesaj) == str:
-        if plugin in TURLER:
+        if plugin in NOVLER:
             if mesaj.isspace():
                 await event.edit(LANG['CANNOT_EMPTY'])
                 return
@@ -71,11 +71,11 @@ async def degistir(event):
             await event.edit(LANG['NOT_FOUND'] + ":`afk/alive/pm/kickme/dızcı/ban/mute/approve/disapprove/block`")
 
 CmdHelp('degistir').add_command(
-    'değiştir', '<modül> <mesaj/yanıt>', 'Değiştir, bottaki plugin-mesajlarını değiştirmenize yarar. Eğer mesaj yazmazsanız Plugin mesajını orijinal haline döndürür.', '.değiştir afk \"Şu an burda değilim... Belki hiç gelmem\"'
+    'değiştir', '<modul> <mesaj/cavab>', 'Deyisdir, botdakı pluginlerin mesajlarini deyisdirmeye yarar. Eger mesaj yazmasaniz Plugin mesajini orjinal halina salar.', '.deyisdir afk \"İndi burda deyilem... Belke hec gelmerem\"'
 ).add_info(
-    '**Desteklenen Pluginler:** `afk/alive/pm/kickme/dızcı/ban/mute/approve/disapprove/block`\n**Alive Değişkenleri:** `{plugin}, {telethon}, {asena}, {python}`\n\
-**Ban/Mute Değişkenleri:** `{id}, {username}, {first_name}, {last_name}, {mention}, {date}, {count}`\n\
-**AFK Değişkenleri:** `{username}, {mention}, {first_name}, {last_name}, {last_seen_seconds}, {last_seen}, {last_seen_long}`\n\
-**PMpermit Değişkenler(pm, block, approve, disapprove):** `{id}, {username}, {mention}, {first_name}, {last_name}`\
-**Kickme Değişkenleri:** `{title}`'
+    '**Desteklenen Pluginler:** `afk/alive/pm/kickme/dızcı/ban/mute/approve/disapprove/block`\n**Alive Deyisgenleri:** `{plugin}, {telethon}, {python}`\n\
+**Ban/Mute Deyisgenleri:** `{id}, {username}, {first_name}, {last_name}, {mention}, {date}, {count}`\n\
+**AFK Deyisgenleri:** `{username}, {mention}, {first_name}, {last_name}, {last_seen_seconds}, {last_seen}, {last_seen_long}`\n\
+**PMpermit Deyisgenleri(pm, block, approve, disapprove):** `{id}, {username}, {mention}, {first_name}, {last_name}`\
+**Kickme Deyisgenleri:** `{title}`'
 ).add()
