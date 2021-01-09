@@ -4,10 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-
-# @Qulec tarafından yazılmıştır.
-# Thanks @Spechide.
+# TGUSERBOT - by TheC0ala
 
 from userbot import BOT_USERNAME
 from userbot.events import register
@@ -19,13 +16,13 @@ LANG = get_value("__helpme")
 
 # ████████████████████████████████ #
 
-@register(outgoing=True, pattern="^.yard[iı]m|^.help")
+@register(outgoing=True, pattern="^.komek|^.help")
 async def yardim(event):
     tgbotusername = BOT_USERNAME
     if tgbotusername is not None:
         results = await event.client.inline_query(
             tgbotusername,
-            "@AsenaUserBot"
+            "@UserBotTG"
         )
         await results[0].click(
             event.chat_id,
