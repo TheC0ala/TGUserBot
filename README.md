@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.imgyukle.com/2021/01/06/a2KNDy.jpg" width="200" height="200">
+  <img src="https://i.imgyukle.com/2021/01/09/aF9ADo.md.jpg" width="200" height="200">
   <h1>TGUserBot</h1>
 </div>
 <p align="center">
