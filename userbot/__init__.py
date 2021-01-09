@@ -423,13 +423,13 @@ Hesabınızı bota çevirə bilərsiz və bunları işlədə bilərsiz. Unutmay�
         bot.loop.run_until_complete(check_botlog_chatid())
     except:
         LOGS.info(
-            "BOTLOG_CHATID ortam değişkeni geçerli bir varlık değildir. "
-            "Ortam değişkenlerinizi / config.env dosyanızı kontrol edin."
+            "BOTLOG_CHATID mühit dəyişən etibarlı bir varlıq deyil. "
+            "Ətraf mühit dəyişənlərinizi / config.env faylını yoxlayın."
         )
         quit(1)
 
 
-# Küresel Değişkenler
+# Kürəsəl Dəyişkənlər
 SON_GORULME = 0
 COUNT_MSG = 0
 USERS = {}
