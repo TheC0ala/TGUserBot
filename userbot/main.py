@@ -157,7 +157,7 @@ try:
 
     # PLUGIN MESAJLARI AYARLIYORUZ
     PLUGIN_MESAJLAR = {}
-    ORJ_PLUGIN_MESAJLAR = {"alive": "`DDQ UserBot işləyir✔️`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Sağolun Mən Getdim...", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, banlandı!`", "mute": "{mention}`, səssizləşdirildi!`", "approve": "{mention}`, mənə mesaj yazmağın üçün icazə verildi", "disapprove": "{mention}`, artıq mənə yaza bilməssən!`", "block": "{mention}`, bloklandın!`"}
+    ORJ_PLUGIN_MESAJLAR = {"alive": "`TGᑌSEᖇᗷOT Əla İşləyir⚡`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Sağolun Mən Getdim...", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, banlandı!`", "mute": "{mention}`, səssizləşdirildi!`", "approve": "{mention}`, mənə mesaj yazmağın üçün icazə verildi", "disapprove": "{mention}`, artıq mənə yaza bilməssən!`", "block": "{mention}`, bloklandın!`"}
 
     PLUGIN_MESAJLAR_TURLER = ["alive", "afk", "kickme", "pm", "dızcı", "ban", "mute", "approve", "disapprove", "block"]
     for mesaj in PLUGIN_MESAJLAR_TURLER:
@@ -233,9 +233,9 @@ async def FotoDegistir (foto):
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-LOGS.info("Botunuz çalışıyor! Herhangi bir sohbete .alive yazarak Test edin."
-          " Yardıma ihtiyacınız varsa, Destek grubumuza gelin t.me/AsenaSupport")
-LOGS.info(f"Bot sürümünüz: Asena {ASENA_VERSION}")
+LOGS.info("Botunuz işləyir! Hər hansı söhbətə .alive yazaraq Test edə bilərsiz.."
+          " Köməyə ehtiyacınız varsa, Dəstək qrupuna gəlin t.me/TGUserBotSup")
+LOGS.info(f"Bot versiyası: TGUSERBOT {ASENA_VERSION}")
 
 """
 if len(argv) not in (1, 3, 4):
