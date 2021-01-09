@@ -4,11 +4,11 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by @TheC0ala
 #
 
 """
-Grup yönetmenize yardımcı olacak UserBot modülü
+Qrupu idarə etməyinizə kömək edəcək plugin (modul)
 """
 
 from asyncio import sleep
@@ -79,7 +79,7 @@ MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
-@register(outgoing=True, pattern="^.ekle ?(.*)")
+@register(outgoing=True, pattern="^.elaveet ?(.*)")
 async def ekle(event):
     if event.fwd_from:
         return
@@ -89,7 +89,7 @@ async def ekle(event):
     else:
         if not event.is_channel and event.is_group:
             for user_id in to_add_users.split(" "):
-                await event.edit(f'`{user_id} gruba ekleniyor...`')
+                await event.edit(f'`{user_id} qrupa əlavə edilir...`')
                 try:
                     await event.client(AddChatUserRequest(
                         chat_id=event.chat_id,
@@ -97,36 +97,36 @@ async def ekle(event):
                         fwd_limit=1000000
                     ))
                 except Exception as e:
-                    await event.edit(f'`{user_id} gruba eklenemedi!`')
+                    await event.edit(f'`{user_id} qrupa əlavə edilə bilmədi!`')
                     continue
-                await event.edit(f'`{user_id} gruba eklendi!`')
+                await event.edit(f'`{user_id} uğurla qrupa əlavə edildi!`')
         else:
             for user_id in to_add_users.split(" "):
-                await event.edit(f'`{user_id} gruba ekleniyor...`')
+                await event.edit(f'`{user_id} qrupa əlavə edilir...`')
                 try:
                     await event.client(InviteToChannelRequest(
                         channel=event.chat_id,
                         users=[user_id]
                     ))
                 except Exception as e:
-                    await event.edit(f'`{user_id} gruba eklenemedi!`')
+                    await event.edit(f'`{user_id} qrupa əlava edilə bilmədi!`')
                     continue
-                await event.edit(f'`{user_id} gruba eklendi!`')
+                await event.edit(f'`{user_id} uğurla qrupa əlavə edildi!`')
 
 @register(outgoing=True, pattern="^.gban(?: |$)(.*)")
 async def gbanspider(gspdr):
-    """ .gban komutu belirlenen kişiyi küresel olarak yasaklar """
-    # Yetki kontrolü
+    """ .gban komandası isdifadəçini dünya miqyasında qadağan edər """
+     # Adminlik Kontrolu
     chat = await gspdr.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
 
-    # Yönetici değil ise geri dön
+    # Admin deyilsənsə geri qayıt
     if not admin and not creator:
         await gspdr.edit(NO_ADMIN)
         return
 
-    # Fonksiyonun SQL modu altında çalışıp çalışmadığını kontrol et
+    # Funksiyanın SQL modu altında işləyib işləmədiyini kontrol ele
     try:
         from userbot.modules.sql_helper.gban_sql import gban
     except:
@@ -139,12 +139,12 @@ async def gbanspider(gspdr):
     else:
         return
 
-    # Eğer kullanıcı sudo ise
+    # Əgər isdifadəçi Sudo isə
     if user.id in BRAIN_CHECKER or user.id in WHITELIST:
         await gspdr.edit(LANG['BRAIN'])
         return
 
-    # Başarı olursa bilgi ver
+    # Uğurlu olarsa melumat ver
     await gspdr.edit(LANG['BANNING'])
     if gban(user.id) == False:
         await gspdr.edit(
