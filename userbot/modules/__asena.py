@@ -21,9 +21,9 @@ LANG = get_value("__asena")
 
 # ████████████████████████████████ #
 
-@register(outgoing=True, pattern="^.ddq(?: |$)(.*)")
+@register(outgoing=True, pattern="^.tgbot(?: |$)(.*)")
 async def asena(event):
-    """ .ddq komanda üçün """
+    """ .tgbot komanda üçün """
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
