@@ -28,7 +28,7 @@ pip install -r requirements.txt
 python3 main.py
 ```
 
-## Bilgilendirme
+## Məlumatlandırma
 Botla hər hansı probleminiz, istək/irad olarsa [dəstək qrupuna](https://t.me/DDQSupport) yaza bilərsiz.
 
 ```
