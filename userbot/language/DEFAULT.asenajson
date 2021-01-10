@@ -1,8 +1,8 @@
 {
     "__ASENAJSON__": true,
-    "LANGUAGE": "Türkçe",
+    "LANGUAGE": "Azerbaycan",
     "LANGCODE": "tr",
-    "AUTHOR": "Asena Ekibi / TDU",
+    "AUTHOR": "@bkhsv_n",
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Plugin-Port için lütfen bir dosyaya yanıt verin.`",
