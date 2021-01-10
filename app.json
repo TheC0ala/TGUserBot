@@ -5,7 +5,7 @@
   "keywords": [
     "telegram",
     "userbot",
-	"DDQ",
+	"TGUSERBOT",
     "plugin",
     "modular",
     "productivity"
@@ -177,7 +177,7 @@
     },
     "DEFAULT_BIO": {
       "description": "Varsayılan profil biyografisi.",
-      "value": "@AsenaUserBot",
+      "value": "@UserBotTG",
       "required": false
     },
     "G_DRIVE_CLIENT_SECRET": {
