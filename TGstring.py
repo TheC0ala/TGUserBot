@@ -15,9 +15,9 @@ pip install bs4
 clear
 echo -e $MESAJ
 echo "Fayl yazılır"
-curl "https://raw.githubusercontent.com/TheC0ala/TGUserBot/main/TGstring.py" --output "TGstring.py"
+curl "https://raw.githubusercontent.com/TheC0ala/TGUserBot/main/TGUserBotStringAlıcı.py" --output "TGUserBotStringAlıcı.py"
 clear
 echo -e $MESAJ
 echo "Qurulum hazırdır, Artıq String ala bilersiz"
 clear
-python TGstring.py
+python TGUserBotStringAlıcı.py
