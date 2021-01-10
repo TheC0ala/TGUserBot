@@ -363,10 +363,10 @@
             "GOODMORNIN_YALL": "`Günaydın!`",
             "GOODBYE_MFRS": "`Görüşürüz... *Windows XP kapanma sesi*`",
             "RESTARTING": "`Bot yeniden başlatılıyor...`",
-            "SUPPORT_GROUP": "[Buradan](http://t.me/AsenaSupport) destek grubumuza ulaşabilirsiniz.",
-            "CREATOR": "Bu bot \n[Yusuf Usta](https://t.me/Fusuf) tarafından geliştirilmiştir. \n",
-            "README": "[Asena README.md](https://github.com/quiec/AsenaUserBot/blob/master/README.md)",
-            "REPO": "[Asena Repo](https://github.com/quiec/asenauserbot)",
+            "SUPPORT_GROUP": "[Buradan](http://t.me/TGUserBotSup) destek grubumuza ulaşabilirsiniz.",
+            "CREATOR": "Bu bot \n[Yusuf Usta](https://t.me/TheC0ala) tarafından geliştirilmiştir. \n",
+            "README": "[Asena README.md](https://github.com/TheC0ala/TGUserBot/blob/master/README.md)",
+            "REPO": "[TGUSERBOT](https://github.com/TheC0ala/TGUserBot)",
             "CHECK_LOGS": "`Çözülmüş mesaj için userbot loglarını kontrol et!`"
         },
 
