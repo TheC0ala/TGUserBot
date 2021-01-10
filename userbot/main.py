@@ -235,7 +235,7 @@ for module_name in ALL_MODULES:
 
 LOGS.info("Botunuz işləyir! Hər hansı söhbətə .alive yazaraq Test edə bilərsiz.."
           " Köməyə ehtiyacınız varsa, Dəstək qrupuna gəlin t.me/TGUserBotSup")
-LOGS.info(f"Bot versiyası: TGUSERBOT {ASENA_VERSION}")
+LOGS.info(f"Bot versiyası: TGUSERBOT {TGUSERBOT_VERSION}")
 
 """
 if len(argv) not in (1, 3, 4):
