@@ -2,7 +2,7 @@
     "__ASENAJSON__": true,
     "LANGUAGE": "Azərbaycanca",
     "LANGCODE": "az",
-    "AUTHOR": "@senanoguz",
+    "AUTHOR": "@BKHSV_N",
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Zəhmət olmasa Plugin-Port üçün bir fayla cavab yazın`",
@@ -30,12 +30,12 @@
             "ALREADY_DELETED": "`Plugin faylı artıq silinib.`",
             "NOT_FOUND_PLUGIN": "`Belə bir plugin bəlkə var idi, bəlkədə yox. Ancaq hazırda olmadığı dəqiqdir.`",
             "PLUG_DELETED": "`Plugin uğurla yükləndi!` **Tətbiq ediləcək əməliyyatlar üçün yenidən başlatmağınız lazımdır.**",
-            "ASENA_PLUGIN_CAPTION": "Bu [Asena](https://t.me/AsenaUserBot) pluginidir."
+            "ASENA_PLUGIN_CAPTION": "Bu [TGUserBot](https://t.me/UserBotTG) pluginidir."
         },
         
         "__asena": {
-            "NEED_PLUGIN": "Zəhmət olmasa bir Asena modulu adı yazın.",
-            "NEED_MODULE": "Zəhmət olmasa hansı Asena modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .asena <modul adı>"
+            "NEED_PLUGIN": "Zəhmət olmasa bir TGUserBot modulu adı yazın.",
+            "NEED_MODULE": "Zəhmət olmasa hansı TGUserBot modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .asena <modul adı>"
         },
 
         "__helpme": {
@@ -53,7 +53,7 @@
             "INVALID_MEDIA": "```Media etibarlı deyil.```",
             "PRIVATE": "`Bu əmr xüsusi mesajda istifadə edilə bilməz!`",
             "EKLE": "`Uğurla əlavə edildi`",
-            "BRAIN": "`Xəta! Bunu Asena Səlahiyyətli birinə edə bilmərəm.`",
+            "BRAIN": "`Xəta! Bunu TGUserBot Səlahiyyətli birinə edə bilmərəm.`",
             "BANNING": "`İstifadəçi qara siyahıya əlavə edilir...`",
             "ALREADY_GBANNED": "`Xəta! İstifadəçi artıq dünya miqyasında qadağan edilmişdir.`",
             "GBANNED_REASON": "`İstifadəçi dünya miqyasında qadağan edildi!`\n**Səbəbi:**",
@@ -114,7 +114,7 @@
             "ALREADY": "`Hazırda %s onsuzda avtomatik olaraq dəyişir.`",
             "SETTING": "`%s nizamlanır...`",
             "BIO": "📅 Tarix: {tarih} | ⌚️ Saat: {saat} | ",
-            "NICK": "@AsenaUserBot",
+            "NICK": "@UserBotTG",
             "SETTED": "`%s nizamlandı :)`",
             "NAME": "⏰%s"
         },
