@@ -63,7 +63,7 @@ if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
     LOGS.info("Bilinmeyən bir dil yazdınız. Buna görə DEFAULT işlədilir.")
     LANGUAGE = "DEFAULT"
     
-# Asena Sürümü
+# TGUSERBOT VERSİON
 TGUSERBOT_VERSION = "v1.0"
 
 # Telegram API KEY ve HASH
