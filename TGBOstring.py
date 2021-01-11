@@ -1,21 +1,23 @@
-MESAJ="TGUSERBOT"
+MESAJ="TGUSERBOT String"
 MESAJ+="\nTelegram: @UserBotTG"
+pkg upgrade
+clear
 echo -e $MESAJ
-echo "Python yüklenir"
+echo "Python yüklənir"
 pkg install python -y
 clear
 echo -e $MESAJ
-echo "TeleThon yüklenir"
+echo "TeleThon yüklənir"
 pip install telethon
-echo "Requests/BS4 yüklenir"
+echo "Requests/BS4 yüklənir"
 pip install requests
 pip install bs4
 clear
 echo -e $MESAJ
-echo "Fayl yazılır"
-curl "https://raw.githubusercontent.com/TheC0ala/TGUserBot/main/TGstring.py" --output "TGstring.py"
+echo "Fayl yazılır..."
+curl "https://raw.githubusercontent.com/umudmmmdov1/DTOUserBot/master/dto.py" --output "TGBOT.py"
 clear
 echo -e $MESAJ
-echo "Qurulum Tamamlandı!, String Ala Bilərsiz."
+echo "Qurulum Tamamlandı!, İndi String Ala Bilərsiz."
 clear
-python TGBOstring.py
+python TGBOT.py
