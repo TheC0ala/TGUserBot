@@ -32,17 +32,17 @@ TUM_QALERIYA = SESSION.query(Qaleriya).all()
 def ekle_foto(foto):
     with KOMUT_INSERTION_LOCK:
         try:
-            SESSION.query(Qaleriya).filter(Galeri.foto == foto).delete()
+            SESSION.query(Qaleriya).filter(Qaleriya.foto == foto).delete()
         except:
             pass
 
-        ekleme = Galeri(foto)
+        ekleme = Qaleriya(foto)
         SESSION.merge(ekleme)
         SESSION.commit()
 
 
 def getir_foto():
-    global TUM_GALERI
+    global TUM_QALERIYA
     TUM_GALERI = SESSION.query(Qaleriya).all()
 
 def sil_foto(gid):
