@@ -211,7 +211,7 @@
       "required": false
     },
     "QALERIYA_VAXT": {
-      "description": "Galeri modulu üçündür. Profil şəkilləri neçə saniyədən bir dəyişsin?",
+      "description": "Qaleriya modulu üçündür. Profil şəkilləri neçə saniyədən bir dəyişsin?",
       "value": "60",
       "required": false
     },
