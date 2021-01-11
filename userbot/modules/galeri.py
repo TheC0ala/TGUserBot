@@ -1,15 +1,15 @@
-# Copyright (C) 2020 Yusuf Usta.
+# Copyright (C) 2020 
 #
 # Licensed under the GPL-3.0 License;
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 
 import re
 import asyncio
 
-from userbot import CMD_HELP, ASYNC_POOL, GALERI_SURE
+from userbot import CMD_HELP, ASYNC_POOL, QALERIYA_VAXT
 from userbot.events import register
 from userbot.main import FotoDegistir
 from userbot.cmdhelp import CmdHelp
@@ -17,7 +17,7 @@ from userbot.cmdhelp import CmdHelp
 # ██████ LANGUAGE CONSTANTS ██████ #
 
 from userbot.language import get_value
-LANG = get_value("galeri")
+LANG = get_value("qaleriya")
 
 # ████████████████████████████████ #
 
@@ -30,15 +30,15 @@ URL_REGEX = re.compile(
     r'(?::\d+)?' # optional port
     r'(?:/?|[/?]\S+)$', re.IGNORECASE)
 
-@register(outgoing=True, pattern="^.galeri ?(.*)")
+@register(outgoing=True, pattern="^.qaleriya ?(.*)")
 async def galeri(event):
     try:
         import userbot.modules.sql_helper.galeri_sql as sql
     except:
-        await event.edit("`SQL dışı mod'ta galeri çalışmaz!`")
+        await event.edit("`SQL xarici mod'da Qaleriya işləməz!`")
     secenek = event.pattern_match.group(1)
     secen = secenek.split(" ")
-    if secen[0] == "ekle":
+    if secen[0] == "elave et":
         if len(secen) > 1:
             URL = re.search(URL_REGEX, secen[1])
             if URL != None:
@@ -49,10 +49,10 @@ async def galeri(event):
                 await event.edit(LANG['INVALID_URL'])
         else:
             await event.edit(LANG['EXAMPLE'])
-    elif secen[0] == "liste":
+    elif secen[0] == "siyahı":
         yfoto = ""
         sql.getir_foto()
-        fotolar = sql.TUM_GALERI
+        fotolar = sql.TUM_QALERIYA
         for foto in fotolar:
             yfoto += f"\n▶️ ({foto.g_id}) [Fotoğraf]({foto.foto})"
         await event.edit(f"**{LANG['LIST']}**\n" + yfoto)
@@ -69,12 +69,12 @@ async def galeri(event):
         if "galeri" in ASYNC_POOL:
             await event.edit(LANG['WORKING'])
             return
-        ASYNC_POOL.append("galeri")
+        ASYNC_POOL.append("qaleriya")
         sql.getir_foto()
         await event.edit(LANG['STARTED'])
-        if len(sql.TUM_GALERI) >= 1:
-            while "galeri" in ASYNC_POOL:
-                fotolar = sql.TUM_GALERI
+        if len(sql.TUM_QALERIYA) >= 1:
+            while "qaleriya" in ASYNC_POOL:
+                fotolar = sql.TUM_QALERIYA
                 i = 0
                 while i < len(fotolar):
                     if not "galeri" in ASYNC_POOL:
@@ -82,7 +82,7 @@ async def galeri(event):
                     if i == len(fotolar):
                         i = 0
                     await FotoDegistir(i)
-                    await asyncio.sleep(GALERI_SURE)
+                    await asyncio.sleep(QALERIYA_VAXT)
                     i += 1
         else:
             await event.edit(LANG['NEED_PHOTO'])
@@ -97,10 +97,10 @@ async def galeri(event):
     else:
         await event.edit(LANG['INVALID'])
 
-CmdHelp('galeri').add_command(
-    'galeri ekle', '<url>', 'Galeri sırasına fotoğraf ekler', 'galeri ekle https://i.hizliresim.com/wFSVKd.jpg'
+CmdHelp('qaleriya').add_command(
+    'galeri elave et', '<url>', 'Qaleriya sırasına şəkil əlavə edər', 'qaleriya elave et https://i.hizliresim.com/wFSVKd.jpg'
 ).add_command(
-    'galeri liste', None, 'Galeri sırasını gösterir.'
+    'galeri siyahı', None, 'Galeri sırasını gösterir.'
 ).add_command(
-    'galeri sil', '<sayı>', 'Galeri sırasından bir resmi siler.', 'galeri sil 4'
+    'galeri sil', '<reqem>', 'Qaleriya sırasından bir şəkli silər.', 'qaleriya sil 4'
 ).add()
