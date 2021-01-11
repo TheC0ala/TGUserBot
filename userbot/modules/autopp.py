@@ -91,7 +91,7 @@ async def autopic(event):
     FONT_FILE_TO_USE = await get_font_file(event.client, "@FontDunyasi")
 
     downloaded_file_name = "./userbot/eskipp.png"
-    r = requests.get(AUTO_PP)
+    r = requests.get(AVTO_PP)
 
     with open(downloaded_file_name, 'wb') as f:
         f.write(r.content)    
