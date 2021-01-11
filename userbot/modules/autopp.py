@@ -80,7 +80,7 @@ async def autovideo(event):
 
     os.remove(video)
 
-@register(outgoing=True, pattern="^.autopp (.*)")
+@register(outgoing=True, pattern="^.avtopp (.*)")
 async def autopic(event):
     if 'autopic' in ASYNC_POOL:
         await event.edit(LANG['PHOTO_ALREADY_CHANGING'])
