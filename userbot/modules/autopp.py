@@ -4,18 +4,14 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-
-# @NaytSeyd tarafından portlanmıştır.
-# @frknkrc44 tarafından düzenlenmiştir.
-# @Fusuf tarafından AutoVideo yazılmıştır.
+# TGUSERBOT - by BABAŞ
 
 import os
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl import functions
 from telethon.tl.types import InputMessagesFilterDocument
-from userbot import CMD_HELP, AUTO_PP, ASYNC_POOL
+from userbot import CMD_HELP, AVTO_PP, ASYNC_POOL
 from userbot.events import register
 import asyncio
 import random
@@ -32,7 +28,6 @@ LANG = get_value("autopp")
 
 # ████████████████████████████████ #
 
-# Before kang; please ask to @fusuf :) #
 @register(outgoing=True, pattern="^.autovideo ?(.*)$")
 async def autovideo(event):
     if 'autovideo' in ASYNC_POOL:
