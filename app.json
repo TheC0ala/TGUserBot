@@ -210,7 +210,7 @@
       "value": "gmute",
       "required": false
     },
-    "GALERI_SURE": {
+    "QALERIYA_VAXT": {
       "description": "Galeri modulu üçündür. Profil şəkilləri neçə saniyədən bir dəyişsin?",
       "value": "60",
       "required": false
