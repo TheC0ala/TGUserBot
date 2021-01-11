@@ -233,8 +233,8 @@ async def FotoDegistir (foto):
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-LOGS.info("Botunuz işləyir! Hər hansı söhbətə .alive yazaraq Test edə bilərsiz.."
-          " Köməyə ehtiyacınız varsa, Dəstək qrupuna gəlin t.me/TGUserBotSup")
+LOGS.info("Botunuz işleyir! Hansısa söhhbete .alive yazaraq Test ede bilersiz!."
+          " Kömeye ehtiyazınız varsa, destek qrupuna gelin: t.me/TGUserBotSup")
 LOGS.info(f"Bot versiyası: TGUSERBOT {TGUSERBOT_VERSION}")
 
 """
