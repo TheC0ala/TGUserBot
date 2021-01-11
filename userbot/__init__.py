@@ -281,7 +281,7 @@ def butonlastir(sayfa, moduller):
     return [max_pages, butonlar]
 
 with bot:
-    if OTOMATIK_KATILMA:
+    if AVTO_QATILMA:
         try:
             bot(JoinChannelRequest("@TGUserBotSup"))
             bot(JoinChannelRequest("@UserBotTG"))
