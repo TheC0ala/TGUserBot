@@ -152,7 +152,7 @@ try:
     except:
         pass
     
-    # Galeri için değerler
+    # Qaleriya üçün deyerler
     QALERIYA = {}
 
     # PLUGIN MESAJLARI AYARLIYORUZ
