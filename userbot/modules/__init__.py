@@ -4,10 +4,10 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOR - by BABAŞ
 #
 
-""" Tüm modülleri yükleyen init dosyası """
+""" Bütün modulları yükleyen init faylı """
 from userbot import LOGS
 
 
@@ -24,5 +24,5 @@ def __list_all_modules():
 
 
 ALL_MODULES = sorted(__list_all_modules())
-LOGS.info("Yüklenecek modüller: %s", str(ALL_MODULES))
+LOGS.info("Yüklenecek modullar: %s", str(ALL_MODULES))
 __all__ = ALL_MODULES + ["ALL_MODULES"]
