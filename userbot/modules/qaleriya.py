@@ -33,7 +33,7 @@ URL_REGEX = re.compile(
 @register(outgoing=True, pattern="^.qaleriya ?(.*)")
 async def qaleriya(event):
     try:
-        import userbot.modules.sql_helper.galeri_sql as sql
+        import userbot.modules.sql_helper.qaleriya_sql as sql
     except:
         await event.edit("`SQL xarici mod'da Qaleriya işləməz!`")
     secenek = event.pattern_match.group(1)
