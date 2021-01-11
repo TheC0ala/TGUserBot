@@ -64,7 +64,7 @@ async def qaleriya(event):
             else:
                 await event.edit(f"{LANG['REMOVED_ERROR']}: {silme}")
         else:
-            await event.edit(f"**{LANG['NEED_NUMBER']}** `.galeri sil 2`")
+            await event.edit(f"**{LANG['NEED_NUMBER']}** `.qaleriya sil 2`")
     elif secen[0] == "başla":
         if "qaleriya" in ASYNC_POOL:
             await event.edit(LANG['WORKING'])
