@@ -102,7 +102,7 @@
       "description": "Bura aldığınız Genius API KEY'i yazın",
       "required": false
     },
-    "AUTO_PP": {
+    "AVTO_PP": {
       "description": "Autopp modulunun işləməsi üçün vacib dəyişgəndir. İşləməsi üçün şəklin adresini yazmalısız.",
       "required": false      
     },
@@ -220,7 +220,7 @@
       "value": "@UserBotTG",
       "required": false
     },
-    "OTOMATIK_KATILMA": {
+    "AVTO_QATILMA": {
       "description": "Support qrupuba və Kanal'a avtomatik qatılmaq istəmirsinizsə False yazın.",
       "value": "True",
       "required": true
