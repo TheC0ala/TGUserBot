@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# TGUSERBOT - by TheC0ala
+# TGUSERBOT - by BABAŞ
 
 from userbot import BOT_USERNAME
 from userbot.events import register
