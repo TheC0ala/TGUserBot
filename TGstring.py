@@ -1,7 +1,5 @@
 MESAJ="TGUSERBOT"
 MESAJ+="\nTelegram: @UserBotTG"
-pkg upgrade
-clear
 echo -e $MESAJ
 echo "Python yüklenir"
 pkg install python -y
