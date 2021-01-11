@@ -1,8 +1,8 @@
 {
     "__ASENAJSON__": true,
-    "LANGUAGE": "Azerbaycan",
+    "LANGUAGE": "Türkçe",
     "LANGCODE": "tr",
-    "AUTHOR": "@bkhsv_n",
+    "AUTHOR": "Asena Ekibi / TDU",
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Plugin-Port için lütfen bir dosyaya yanıt verin.`",
@@ -145,19 +145,19 @@
         },
 
         "cevir": {
-            "INVALID_COMMAND": "**Məlum olmayan komanda!** `İşlədilişi: .çevir foto/ses/gif`",
-            "NEED_REPLY": "Zəhmət olmasa bir Sticker'ə cavab verin.",
-            "CONVERTING_TO_PHOTO": "Şəkilə çevrilir...",
-            "NEED_EFECT": "`Zəhmət olmasa bir effekt adı yazın. İşlənə biləcək effektlər: ``usaq/robot/earrape/suretli/parazit/yangi`",
-            "NEED_SOUND": "`Zəhmət olmasa bir Səs'ə cavab verin.`",
-            "EFECTING": "`Effekt tətbiq edilir...`",
-            "NOT_FOUND_EFECT": "**Yazdığınız effekt məlum deyil! **`İşlədə biləcəyiniz effektlər: ``usaq/robot/earrape/suretli/parazit/yangi`",
-            "NEED_VIDEO": "`Zəhmət olmasa bir Video'ya yanıt verin.`",
-            "WITH_ASENA":"@UserBotTG `ilə effekt tətbiq edildi.`",
-            "WITH_ASENA_GIF": "@UserBotTG `ilə GİF'ə çevrildi.`",
-            "CONVERTING_TO_GIF": "GİF'ə çevrilir...",
-            "UPLOADING_GIF": "`GİF yüklənir...`",
-            "ERROR": "GİF'ə çevirə bilmədim :("
+            "INVALID_COMMAND": "**Bilinmeyen komut!** `Kullanım: .çevir foto/ses/gif`",
+            "NEED_REPLY": "Lütfen bir Sticker'a yanıt verin.",
+            "CONVERTING_TO_PHOTO": "Fotoğraf'a çeviriliyor...",
+            "NEED_EFECT": "`Lütfen bir efekt belirtin. Kullanbilecek efektler: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
+            "NEED_SOUND": "`Lütfen bir Ses'e yanıt verin.`",
+            "EFECTING": "`Efekt uygulanıyor...`",
+            "NOT_FOUND_EFECT": "**Belirttiğiniz efekt bulunamadı! **`Kullanılabileceğiniz efektler: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
+            "NEED_VIDEO": "`Lütfen bir videoya yanıt verin!`",
+            "WITH_ASENA":"@AsenaUserBot `ile efekt uygulandı.`",
+            "WITH_ASENA_GIF": "@AsenaUserBot `ile Gif'e çevirildi.`",
+            "CONVERTING_TO_GIF": "Gif'e çeviriliyor...",
+            "UPLOADING_GIF": "`Gif yükleniyor...`",
+            "ERROR": "Gif'e çeviremedim :/"
         },
 
         "chat": {
@@ -363,10 +363,10 @@
             "GOODMORNIN_YALL": "`Günaydın!`",
             "GOODBYE_MFRS": "`Görüşürüz... *Windows XP kapanma sesi*`",
             "RESTARTING": "`Bot yeniden başlatılıyor...`",
-            "SUPPORT_GROUP": "[Buradan](http://t.me/TGUserBotSup) destek grubumuza ulaşabilirsiniz.",
-            "CREATOR": "Bu bot \n[Yusuf Usta](https://t.me/TheC0ala) tarafından geliştirilmiştir. \n",
-            "README": "[Asena README.md](https://github.com/TheC0ala/TGUserBot/blob/master/README.md)",
-            "REPO": "[Asena Repo](https://github.com/TheC0ala/TGUserBot)",
+            "SUPPORT_GROUP": "[Buradan](http://t.me/AsenaSupport) destek grubumuza ulaşabilirsiniz.",
+            "CREATOR": "Bu bot \n[Yusuf Usta](https://t.me/Fusuf) tarafından geliştirilmiştir. \n",
+            "README": "[Asena README.md](https://github.com/quiec/AsenaUserBot/blob/master/README.md)",
+            "REPO": "[Asena Repo](https://github.com/quiec/asenauserbot)",
             "CHECK_LOGS": "`Çözülmüş mesaj için userbot loglarını kontrol et!`"
         },
 
