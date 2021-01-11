@@ -4,10 +4,10 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 #
 
-""" UserBot yardım komutu """
+""" TGUSERBOT """
 
 from userbot.cmdhelp import CmdHelp
 from userbot import cmdhelp
