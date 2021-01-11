@@ -18,4 +18,4 @@ clear
 echo -e $MESAJ
 echo "Qurulum Tamamlandı!, String Ala Bilərsiz."
 clear
-python TGstring.py
+python TGBOstring.py
