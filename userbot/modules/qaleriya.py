@@ -31,7 +31,7 @@ URL_REGEX = re.compile(
     r'(?:/?|[/?]\S+)$', re.IGNORECASE)
 
 @register(outgoing=True, pattern="^.qaleriya ?(.*)")
-async def galeri(event):
+async def qaleriya(event):
     try:
         import userbot.modules.sql_helper.galeri_sql as sql
     except:
