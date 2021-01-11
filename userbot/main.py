@@ -18,7 +18,7 @@ from telethon.tl.functions.channels import GetMessagesRequest
 from . import BRAIN_CHECKER, LOGS, bot, PLUGIN_CHANNEL_ID, CMD_HELP, LANGUAGE, TGUSERBOT_VERSION, PATTERNS
 from .modules import ALL_MODULES
 import userbot.modules.sql_helper.mesaj_sql as MSJ_SQL
-import userbot.modules.sql_helper.galeri_sql as GALERI_SQL
+import userbot.modules.sql_helper.qaleriya_sql as QALERİYA_SQL
 from pySmartDL import SmartDL
 from telethon.tl import functions
 
@@ -153,7 +153,7 @@ try:
         pass
     
     # Galeri için değerler
-    GALERI = {}
+    QALERİYA = {}
 
     # PLUGIN MESAJLARI AYARLIYORUZ
     PLUGIN_MESAJLAR = {}
