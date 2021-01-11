@@ -153,7 +153,7 @@ try:
         pass
     
     # Galeri için değerler
-    QALERİYA = {}
+    QALERIYA = {}
 
     # PLUGIN MESAJLARI AYARLIYORUZ
     PLUGIN_MESAJLAR = {}
@@ -216,7 +216,7 @@ except PhoneNumberInvalidError:
     exit(1)
 
 async def FotoDegistir (foto):
-    FOTOURL = GALERI_SQL.TUM_GALERI[foto].foto
+    FOTOURL = QALERIYA_SQL.TUM_GALERI[foto].foto
     r = requests.get(FOTOURL)
 
     with open(str(foto) + ".jpg", 'wb') as f:
