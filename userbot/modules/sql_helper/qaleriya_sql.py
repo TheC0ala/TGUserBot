@@ -43,7 +43,7 @@ def ekle_foto(foto):
 
 def getir_foto():
     global TUM_QALERIYA
-    TUM_GALERI = SESSION.query(Qaleriya).all()
+    TUM_QALERIYA = SESSION.query(Qaleriya).all()
 
 def sil_foto(gid):
     try:
