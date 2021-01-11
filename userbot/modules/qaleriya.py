@@ -77,7 +77,7 @@ async def qaleriya(event):
                 fotolar = sql.TUM_QALERIYA
                 i = 0
                 while i < len(fotolar):
-                    if not "galeri" in ASYNC_POOL:
+                    if not "qaleriya" in ASYNC_POOL:
                         break
                     if i == len(fotolar):
                         i = 0
@@ -88,8 +88,8 @@ async def qaleriya(event):
             await event.edit(LANG['NEED_PHOTO'])
             return
     elif secen[0] == "kapa":
-        if "galeri" in ASYNC_POOL:
-            ASYNC_POOL.remove("galeri")
+        if "qaleriya" in ASYNC_POOL:
+            ASYNC_POOL.remove("qaleriya")
             await event.edit(LANG['STOPPED'])
         else:
             event.edit(LANG['ALREADY_STOP'])
