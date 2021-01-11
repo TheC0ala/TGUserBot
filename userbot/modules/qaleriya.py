@@ -98,9 +98,9 @@ async def qaleriya(event):
         await event.edit(LANG['INVALID'])
 
 CmdHelp('qaleriya').add_command(
-    'galeri elave et', '<url>', 'Qaleriya sırasına şəkil əlavə edər', 'qaleriya elave et https://i.imgyukle.com/2021/01/09/aF9ADo.md.jpg'
+    'qaleriya elave et', '<url>', 'Qaleriya sırasına şəkil əlavə edər', 'qaleriya elave et https://i.imgyukle.com/2021/01/09/aF9ADo.md.jpg'
 ).add_command(
-    'galeri siyahı', None, 'Galeri sırasını gösterir.'
+    'qaleriya siyahı', None, 'Galeri sırasını gösterir.'
 ).add_command(
-    'galeri sil', '<reqem>', 'Qaleriya sırasından bir şəkli silər.', 'qaleriya sil 4'
+    'qaleriya sil', '<reqem>', 'Qaleriya sırasından bir şəkli silər.', 'qaleriya sil 4'
 ).add()
