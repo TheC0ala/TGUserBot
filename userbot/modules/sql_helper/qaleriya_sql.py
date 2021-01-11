@@ -6,8 +6,8 @@ except ImportError:
     raise AttributeError
 
 
-class Galeri(BASE):
-    __tablename__ = "galeri"
+class Qaleriya(BASE):
+    __tablename__ = "qaleriya"
     
     g_id = Column(Integer, autoincrement=True, primary_key=True, nullable=False)
     foto = Column(UnicodeText, nullable=False)
@@ -24,7 +24,7 @@ class Galeri(BASE):
             and self.g_id == other.g_id)
 
 
-Galeri.__table__.create(checkfirst=True)
+Qaleriya.__table__.create(checkfirst=True)
 
 KOMUT_INSERTION_LOCK = threading.RLock()
 TUM_GALERI = SESSION.query(Galeri).all()
@@ -32,7 +32,7 @@ TUM_GALERI = SESSION.query(Galeri).all()
 def ekle_foto(foto):
     with KOMUT_INSERTION_LOCK:
         try:
-            SESSION.query(Galeri).filter(Galeri.foto == foto).delete()
+            SESSION.query(Qaleriya).filter(Galeri.foto == foto).delete()
         except:
             pass
 
@@ -43,11 +43,11 @@ def ekle_foto(foto):
 
 def getir_foto():
     global TUM_GALERI
-    TUM_GALERI = SESSION.query(Galeri).all()
+    TUM_GALERI = SESSION.query(Qaleriya).all()
 
 def sil_foto(gid):
     try:
-        SESSION.query(Galeri).filter(Galeri.g_id == gid).delete()
+        SESSION.query(Qaleriya).filter(Qaleriya.g_id == gid).delete()
         SESSION.commit()
     except Exception as e:
         return e
