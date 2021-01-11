@@ -191,7 +191,7 @@ SPOTIFY_KEY = os.environ.get("SPOTIFY_KEY", None)
 PAKET_ISMI = os.environ.get("PAKET_ISMI", "@UserBotTG Paketi")
 
 # AVTO_QATILMA
-AVTO_KATILMA = sb(os.environ.get("AVTO_QATILMA", "True"))
+AVTO_QATILMA = sb(os.environ.get("AVTO_QATILMA", "True"))
 
 # Xüsusi Pattern'ler
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
