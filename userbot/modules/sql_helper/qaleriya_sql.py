@@ -16,10 +16,10 @@ class Qaleriya(BASE):
         self.foto = foto
 
     def __repr__(self):
-        return "<Galeri '%s' için %s>" % (self.g_id, self.foto)
+        return "<Qaleriya '%s' için %s>" % (self.g_id, self.foto)
 
     def __eq__(self, other):
-        return bool(isinstance(other, Galeri)
+        return bool(isinstance(other, Qaleriya)
             and self.foto == other.foto
             and self.g_id == other.g_id)
 
