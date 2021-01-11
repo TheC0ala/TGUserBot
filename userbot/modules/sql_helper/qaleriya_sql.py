@@ -27,7 +27,7 @@ class Qaleriya(BASE):
 Qaleriya.__table__.create(checkfirst=True)
 
 KOMUT_INSERTION_LOCK = threading.RLock()
-TUM_GALERI = SESSION.query(Galeri).all()
+TUM_QALERIYA = SESSION.query(Qaleriya).all()
 
 def ekle_foto(foto):
     with KOMUT_INSERTION_LOCK:
