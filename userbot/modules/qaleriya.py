@@ -100,7 +100,7 @@ async def qaleriya(event):
 CmdHelp('qaleriya').add_command(
     'qaleriya elave et', '<url>', 'Qaleriya sırasına şəkil əlavə edər', 'qaleriya elave et https://i.imgyukle.com/2021/01/09/aF9ADo.md.jpg'
 ).add_command(
-    'qaleriya siyahı', None, 'Galeri sırasını gösterir.'
+    'qaleriya siyahı', None, 'Qaleriya sırasını gösterir.'
 ).add_command(
     'qaleriya sil', '<reqem>', 'Qaleriya sırasından bir şəkli silər.', 'qaleriya sil 4'
 ).add()
