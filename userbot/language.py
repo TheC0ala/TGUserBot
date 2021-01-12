@@ -16,7 +16,7 @@ LOGS.info("Dil faylı yüklenir...")
 LANGUAGE_JSON = None
 
 for dil in bot.iter_messages(pchannel, filter=InputMessagesFilterDocument):
-    if ((len(dil.file.name.split(".")) >= 2) and (dil.file.name.split(".")[1] == "asenajson")):
+    if ((len(dil.file.name.split(".")) >= 2) and (dil.file.name.split(".")[1] == "tgjson")):
         if path.isfile(f"./userbot/language/{dil.file.name}"):
             try:
                 LANGUAGE_JSON = loads(open(f"./userbot/language/{dil.file.name}", "r").read())
@@ -24,9 +24,9 @@ for dil in bot.iter_messages(pchannel, filter=InputMessagesFilterDocument):
                 dil.delete()
                 remove(f"./userbot/language/{dil.file.name}")
 
-                if path.isfile("./userbot/language/DEFAULT.asenajson"):
-                    LOGS.warn("Varsayılan dil dosyası kullanılıyor...")
-                    LANGUAGE_JSON = loads(open(f"./userbot/language/DEFAULT.asenajson", "r").read())
+                if path.isfile("./userbot/language/az.tgjson"):
+                    LOGS.warn("Varsayılan dil faylı işledilir...")
+                    LANGUAGE_JSON = loads(open(f"./userbot/language/az.tgjson", "r").read())
                 else:
                     raise Exception("Your language file is invalid")
         else:
@@ -35,25 +35,25 @@ for dil in bot.iter_messages(pchannel, filter=InputMessagesFilterDocument):
                 LANGUAGE_JSON = loads(open(DOSYA, "r").read())
             except JSONDecodeError:
                 dil.delete()
-                if path.isfile("./userbot/language/DEFAULT.asenajson"):
-                    LOGS.warn("Varsayılan dil dosyası kullanılıyor...")
-                    LANGUAGE_JSON = loads(open(f"./userbot/language/DEFAULT.asenajson", "r").read())
+                if path.isfile("./userbot/language/az.tgjson"):
+                    LOGS.warn("Varsayılan dil faylı işledilir...")
+                    LANGUAGE_JSON = loads(open(f"./userbot/language/az.tgjson", "r").read())
                 else:
-                    raise Exception("Your language file is invalid")
+                    raise Exception("Dil faylı düzgün deyil.")
         break
 
 if LANGUAGE_JSON == None:
-    if path.isfile(f"./userbot/language/{LANGUAGE}.asenajson"):
+    if path.isfile(f"./userbot/language/{LANGUAGE}.tgjson"):
         try:
-            LANGUAGE_JSON = loads(open(f"./userbot/language/{LANGUAGE}.asenajson", "r").read())
+            LANGUAGE_JSON = loads(open(f"./userbot/language/{LANGUAGE}.tgjson", "r").read())
         except JSONDecodeError:
-            raise Exception("Invalid json file")
+            raise Exception("Sef json faylı")
     else:
-        if path.isfile("./userbot/language/DEFAULT.asenajson"):
-            LOGS.warn("Varsayılan dil dosyası kullanılıyor...")
-            LANGUAGE_JSON = loads(open(f"./userbot/language/DEFAULT.asenajson", "r").read())
+        if path.isfile("./userbot/language/AZ.tgjson"):
+            LOGS.warn("Varsayılan dil faylı işledilir...")
+            LANGUAGE_JSON = loads(open(f"./userbot/language/AZ.tgjson", "r").read())
         else:
-            raise Exception(f"Didn't find {LANGUAGE} file")
+            raise Exception(f"{LANGUAGE} faylını tapa bilmedim")
 
 LOGS.info(f"{LANGUAGE_JSON['LANGUAGE']} dili yüklendi.")
 
@@ -61,12 +61,12 @@ def get_value (plugin = None, value = None):
     global LANGUAGE_JSON
 
     if LANGUAGE_JSON == None:
-        raise Exception("Please load language file first")
+        raise Exception("Zehmet olmasa evvelce dil faylını yükleyin")
     else:
         if not plugin == None or value == None:
             Plugin = LANGUAGE_JSON.get("STRINGS").get(plugin)
             if Plugin == None:
-                raise Exception("Invalid plugin")
+                raise Exception("Sehv plugin")
             else:
                 String = LANGUAGE_JSON.get("STRINGS").get(plugin).get(value)
                 if String == None:
@@ -74,4 +74,4 @@ def get_value (plugin = None, value = None):
                 else:
                     return String
         else:
-            raise Exception("Invalid plugin or string")
+            raise Exception("Sehv plugin veya string")
