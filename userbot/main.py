@@ -41,40 +41,40 @@ DIZCILIK_STR = [
 AFKSTR = [
     "İndi burda deyiləm gələndə yazaram.",
     "Sahibim burda deyil gözlə gələndə yazar.",
-    "İstirahətdəyəm narahat eləmə məni!",
+    "Sahibim istirahətdədi onu narahat eləmə :)",
     "Zəng etdiyiniz şəxsə zəng çatmır, telefon ya söndürülüb yada əhatə dairəsi xaricindədir xaiş olunur daha sonra təkrar cəhd edin.",
-    "Güller kırmızı\nMenekşeler mavi\nBana bir mesaj bırak\nVe sana döneceğim.",
-    "Bazen hayattaki en iyi şeyler beklemeye değer…\nHemen dönerim.",
-    "Hemen dönerim,\nama eğer geri dönmezsem,\ndaha sonra dönerim.",
-    "Henüz anlamadıysan,\nburada değilim.",
-    "Merhaba, uzak mesajıma hoş geldiniz, bugün sizi nasıl görmezden gelebilirim?",
-    "7 deniz ve 7 ülkeden uzaktayım,\n7 su ve 7 kıta,\n7 dağ ve 7 tepe,\n7 ovala ve 7 höyük,\n7 havuz ve 7 göl,\n7 bahar ve 7 çayır,\n7 şehir ve 7 mahalle,\n7 blok ve 7 ev...\n\nMesajların bile bana ulaşamayacağı bir yer!",
+    "Gizlenqaç oynayıram sakit durrr",
+    "Bəli?",
+    "Salam mən sahibimin meneceriyəm\nBuyurun istəklərinizi mənə deyə bilərsiz. Sizin üçün sahibimə çatdıraram.",
+    "Hələdə anlamadınsa burda deyiləm.",
+    "Salam, uzaq mesajıma xoş gəldiniz, sizə necə kömək edə bilərəm?",
+    "Mən sahibimin xüsusi botuyam!, sizdə bot istəyirsizsə: @UserBotTG",
     "Şu anda klavyeden uzaktayım, ama ekranınızda yeterince yüksek sesle çığlık atarsanız, sizi duyabilirim.",
-    "Şu yönde ilerliyorum\n---->",
-    "Şu yönde ilerliyorum\n<----",
-    "Lütfen mesaj bırakın ve beni zaten olduğumdan daha önemli hissettirin.",
-    "Sahibim burada değil, bu yüzden bana yazmayı bırak.",
+    "Bu tərəfə gedirəm\n---->",
+    "Bu tərəfə gedirəm\n<----",
+    "Zəhmət olmasa mesajınızı yazın sahibim gələndə sizə cavab yazar.",
+    "Sahibim burda deyil mənə yazmağı kəs artıq.",
     "Burada olsaydım,\nSana nerede olduğumu söylerdim.\n\nAma ben değilim,\ngeri döndüğümde bana sor...",
     "Uzaklardayım!\nNe zaman dönerim bilmiyorum !\nUmarım birkaç dakika sonra!",
     "Sahibim şuan da müsait değil. Adınızı, numarınızı ve adresinizi verirseniz ona iletibilirm ve böylelikle geri döndüğü zaman.",
     "Üzgünüm, sahibim burada değil.\nO gelene kadar benimle konuşabilirsiniz.\nSahibim size sonra döner.",
-    "Bahse girerim bir mesaj bekliyordun!",
-    "Hayat çok kısa, yapacak çok şey var...\nOnlardan birini yapıyorum...",
-    "Şu an burada değilim....\nama öyleysem ...\n\nbu harika olmaz mıydı?",
+    "Belə gözəl bir gündə niyə məni narahat edirsən?",
+    "Sahibimə mesaj atmaq üçün zəhmət olmasa aşağıdakıları yazın:\nAdınız:\nSoyadınız:\nİsdifadəçi Adınız:\n\nƏgər yuxarıadakıları düzgün yazdızsa sahibim ən qısa zamanda sizə yazacaq.",
+    "Hal hazırda burdayam amma mesajını görməzdən gələcəm :)",
 ]
 
-UNAPPROVED_MSG = ("`Hey,` {mention}`! Bu bir bot. Endişelenme.\n\n`"
-                  "`Sahibim sana PM atma izni vermedi. `"
-                  "`Lütfen sahibimin aktif olmasını bekleyin, o genellikle PM'leri onaylar.\n\n`"
-                  "`Bildiğim kadarıyla o kafayı yemiş insanlara PM izni vermiyor.`")
+UNAPPROVED_MSG = ("`Hey,` {mention}`! Bu bir bot. Narahat olma.\n\n`"
+                  "`Sahibim sənə PM atma icazəsi verməyib. `"
+                  "`Zəhnət olmasa sahibimin aktiv olmağını gözləyin, o əsasən PM'ləri qəbul edir.\n\n`"
+                  "`Bildiyim qədəri ilə o dəlilərə PM atma icazəsi vermir.`")
 
 DB = connect("learning-data-root.check")
 CURSOR = DB.cursor()
 CURSOR.execute("""SELECT * FROM BRAIN1""")
 ALL_ROWS = CURSOR.fetchall()
-INVALID_PH = '\nHATA: Girilen telefon numarası geçersiz' \
-             '\n  Ipucu: Ülke kodunu kullanarak numaranı gir' \
-             '\n       Telefon numaranızı tekrar kontrol edin'
+INVALID_PH = '\nXETA: Yazılan telefon nömresi keçersizdir' \
+             '\n  Meslehet: Ölke kodundan isdifade etmekle nömreni yazın' \
+             '\n       Telefon nömrenizi yeniden yoxlayın.'
 
 for i in ALL_ROWS:
     BRAIN_CHECKER.append(i[0])
@@ -95,7 +95,7 @@ def extractCommands(file):
         dosyaAdi = file.replace('.py', '')
         CmdHelp = userbot.cmdhelp.CmdHelp(dosyaAdi, False)
 
-        # Komutları Alıyoruz #
+        # Komandaları alırıq #
         for Command in Pattern:
             Command = Command[1]
             if Command == '' or len(Command) <= 1:
@@ -117,11 +117,11 @@ def extractCommands(file):
                             KomutStr = Command
                         Komutlar.append(KomutStr)
 
-            # AsenaPY
-            Asenapy = re.search('\"\"\"ASENAPY(.*)\"\"\"', FileRead, re.DOTALL)
-            if not Asenapy == None:
-                Asenapy = Asenapy.group(0)
-                for Satir in Asenapy.splitlines():
+            # TGUSERBOT
+            Tguserbotpy = re.search('\"\"\"TGUSERBOTPY(.*)\"\"\"', FileRead, re.DOTALL)
+            if not Tguserbotpy == None:
+                Tguserbotpy = Tguserbotpy.group(0)
+                for Satir in Tguserbotpy.splitlines():
                     if (not '"""' in Satir) and (':' in Satir):
                         Satir = Satir.split(':')
                         Isim = Satir[0]
@@ -136,7 +136,7 @@ def extractCommands(file):
             for Komut in Komutlar:
                 # if re.search('\[(\w*)\]', Komut):
                     # Komut = re.sub('(?<=\[.)[A-Za-z0-9_]*\]', '', Komut).replace('[', '')
-                CmdHelp.add_command(Komut, None, 'Bu plugin dışarıdan yüklenmiştir. Herhangi bir açıklama tanımlanmamıştır.')
+                CmdHelp.add_command(Komut, None, 'Bu plugin xaricden yüklenmişdir. Her hansı bir açıqlama yoxdur.')
             CmdHelp.add()
 
 try:
@@ -146,7 +146,7 @@ try:
     if idim in asenabl:
         bot.disconnect()
 
-    # ChromeDriver'ı Ayarlayalım #
+    # ChromeDriver'ı Ayarlayaq #
     try:
         chromedriver_autoinstaller.install()
     except:
@@ -155,9 +155,9 @@ try:
     # Qaleriya üçün deyerler
     QALERIYA = {}
 
-    # PLUGIN MESAJLARI AYARLIYORUZ
+    # PLUGIN MESAJLARINI AYARLAYAQ
     PLUGIN_MESAJLAR = {}
-    ORJ_PLUGIN_MESAJLAR = {"alive": "`TGᑌSEᖇᗷOT Əla İşləyir⚡`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Sağolun Mən Getdim...", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, banlandı!`", "mute": "{mention}`, səssizləşdirildi!`", "approve": "{mention}`, mənə mesaj yazmağın üçün icazə verildi", "disapprove": "{mention}`, artıq mənə yaza bilməssən!`", "block": "{mention}`, bloklandın!`"}
+    ORJ_PLUGIN_MESAJLAR = {"alive": "`TGᑌSEᖇᗷOT Əla İşləyir⚡`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Sağolun Mən Getdim...", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, banlandı!`", "mute": "{mention}`, səssizləşdirildi!`", "approve": "{mention}`, mənə mesaj yazmağın üçün icazə verildi", "disapprove": "{mention}`, artıq mənə yaza bilməssən!`", "block": "{mention}`, bloklandın☺️`"}
 
     PLUGIN_MESAJLAR_TURLER = ["alive", "afk", "kickme", "pm", "dızcı", "ban", "mute", "approve", "disapprove", "block"]
     for mesaj in PLUGIN_MESAJLAR_TURLER:
@@ -173,7 +173,7 @@ try:
             else:
                 PLUGIN_MESAJLAR[mesaj] = dmsj
     if not PLUGIN_CHANNEL_ID == None:
-        LOGS.info("Pluginler Yükleniyor")
+        LOGS.info("Pluginler Yüklenir")
         try:
             KanalId = bot.get_entity(PLUGIN_CHANNEL_ID)
         except:
@@ -187,7 +187,7 @@ try:
                 if not os.path.exists("./userbot/modules/" + plugin.file.name):
                     dosya = bot.download_media(plugin, "./userbot/modules/")
                 else:
-                    LOGS.info("Bu Plugin Zaten Yüklü " + plugin.file.name)
+                    LOGS.info("Bu Plugin Onsuzda Yüklenib " + plugin.file.name)
                     extractCommands('./userbot/modules/' + plugin.file.name)
                     dosya = plugin.file.name
                     continue 
@@ -198,7 +198,7 @@ try:
 
                     spec.loader.exec_module(mod)
                 except Exception as e:
-                    LOGS.info(f"`Yükleme başarısız! Plugin hatalı.\n\nHata: {e}`")
+                    LOGS.info(f"`Yükleme Uğursuz! Plugin xetalıdır.\n\nHata: {e}`")
 
                     try:
                         plugin.delete()
@@ -210,7 +210,7 @@ try:
                     continue
                 extractCommands('./userbot/modules/' + plugin.file.name)
     else:
-        bot.send_message("me", f"`Lütfen pluginlerin kalıcı olması için PLUGIN_CHANNEL_ID'i ayarlayın.`")
+        bot.send_message("me", f"`Zehmet olmasa pluginlerin qalıcı olması üçün PLUGIN_CHANNEL_ID'i ayarlayın.`")
 except PhoneNumberInvalidError:
     print(INVALID_PH)
     exit(1)
