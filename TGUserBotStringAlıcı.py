@@ -121,7 +121,7 @@ if __name__ == '__main__':
          hashh = soup.find("input", {"name": "hash"}).get("value")
          AppInfo = {
             "hash": hashh,
-            "app_title":"TG USER BOT",
+            "app_title":"TGUSERBOT",
             "app_shortname": "tguserbot" + str(random.randint(9, 99)) + str(time.time()).replace(".", ""),
             "app_url": "",
             "app_platform": "android",
