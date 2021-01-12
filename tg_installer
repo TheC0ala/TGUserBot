@@ -1,26 +1,23 @@
-MESAJ=TGᑌSEᖇᗷOT Avto Deploy"
-MESAJ+="\nTELEGRAM: @UserBotTG"
-pkg update -y
+MESAJ="DTÖUserBot Yükleyici"
+MESAJ+="\nTelegram: @DTOUserBot"
+pkg upgrade
 clear
 echo -e $MESAJ
-echo "Python yüklənir"
+echo "Python yüklenir"
 pkg install python -y
-clear
-echo -e $MESAJ
-echo "Git yüklenir"
-pkg install git -y
 clear
 echo -e $MESAJ
 echo "TeleThon yüklenir"
 pip install telethon
-echo "Repo klonlanır"
-git clone https://github.com/TheC0ala/TGUserBotDeploy
+echo "Requests/BS4 yüklenir"
+pip install requests
+pip install bs4
 clear
 echo -e $MESAJ
-cd Qurulum
+echo "Fayl yazılır..."
+curl "https://raw.githubusercontent.com/thec0ala/tguserbot/tgb.py" --output "tgb.py"
 clear
-echo "Tələblər yüklənir"
 echo -e $MESAJ
-pip install wheel
-pip install -r requirements.txt
-python -m tg_installer
+echo "Qurulum hazırdır, İndi StringSessionu ala bilersiz"
+clear
+python tgb.py
