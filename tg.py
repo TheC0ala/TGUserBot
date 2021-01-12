@@ -1,6 +1,5 @@
-# Coded By GitHub/umudmmmdov1 TG/umudmmmdov1 #
-# Don't kang without permission #
-# @DTOUserBot #
+# by BABAŞ
+# TGUSERBOT #
 
 
 import asyncio
@@ -30,7 +29,7 @@ try:
    import bs4
 except:
    print("[!] Requests Tapılmadı. Yüklenir...")
-   print("[!] Bs4 Tapılmadı. Yüklenir...")
+   print("[!] Bs4 Tapılmadı. Yükldnir...")
 
    subprocess.check_call([sys.executable, "-m", "pip", "install", 'requests'])
    subprocess.check_call([sys.executable, "-m", "pip", "install", 'bs4'])
@@ -61,26 +60,26 @@ class InteractiveTelegramClient(TelegramClient):
             proxy=proxy
         )
         self.found_media = {}
-        bilgi('[i] Telegramın serverlerine bağlanır...')
+        bilgi('[i] Telegram serverlerine bağlanılır...')
         try:
             loop.run_until_complete(self.connect())
         except IOError:
-            hata('[!] Bağlanarken bir xeta yarandı. Yeniden başladılır...')
+            hata('[!] Bağlanarken xeta baş verdi. Yeniden başladılır...')
             loop.run_until_complete(self.connect())
 
         if not loop.run_until_complete(self.is_user_authorized()):
             if telefon == None:
-               user_phone = soru('[?] Telefon nömreniz (Nümune: +994xxxxxxxxx): ')
+               user_phone = soru('[?] Telefon nömreniz (Meselen: +994xxxxxxxxx): ')
             else:
                user_phone = telefon
             try:
                 loop.run_until_complete(self.sign_in(user_phone))
                 self_user = None
             except PhoneNumberInvalidError:
-                hata("[!] Sehv nömre yazdız nümunedeki kimi girin. Nümune: +994xxxxxxxxxx")
+                hata("[!] Nömreni sehv yazdınız. Meselen: +994xxxxxxxxxx")
                 exit(1)
             except ValueError:
-               hata("[!] Sehv nömre yazdız nümunedeki kimi girin. Nümune: +994xxxxxxxxx")
+               hata("[!] Nömreni sehv yazdınız. Meselen: +994xxxxxxxxx")
                exit(1)
 
             while self_user is None:
@@ -89,70 +88,70 @@ class InteractiveTelegramClient(TelegramClient):
                   self_user =\
                      loop.run_until_complete(self.sign_in(code=code))
                except PhoneCodeInvalidError:
-                  hata("[!] Kodu sehv yazdız. Zehmet olmasa yeniden cehd edin. [Çoxlu cehd elemek hesabınızın blok olmasına sebeb olur]")
+                  hata("[!] Kodu sehvdir. Zehmet olmasa tekrar cehd edin. [Çoxlu cehd elemek hesabınızın bloklanmasına sebeb olur]")
                except SessionPasswordNeededError:
-                  bilgi("[i] İki faktorlu doğrulama aşkar olundu.")
+                  bilgi("[i] İki faktorlu doğrulama müeyyen edildi.")
                   pw = soru('[?] Şifrenizi yazın: ')
                   try:
                      self_user =\
                         loop.run_until_complete(self.sign_in(password=pw))
                   except PasswordHashInvalidError:
-                     hata("[!] 2 faktorlu şifrenizi sehv yazdız. Zehmet olmasa yeniden cehd edin [Çoxlu cehd elemek hesabınızın blok olmasına sebeb olur]")
+                     hata("[!] 2 faktorlu şifrenizi sehv yazdınız. Zehmet olmasa yeniden cehd edin [Çoxlu cehd elemek hesabınızın bloklanmasına sebeb olur]")
 
 
 if __name__ == '__main__':
    surum = str(sys.version_info[0]) + "." + str(sys.version_info[1])
-   bilgi("@DTOUserBot String V1\nTelegram: @DTOUserBot\nPython: " + surum + "\nTeleThon: " + version.__version__ + "\nBs4/Requests: ✅\n")
+   bilgi("@UserBotTG String v1\nTelegram: @UserBotTG\nPython: " + surum + "\nTeleThon: " + version.__version__ + "\nBs4/Requests: ✅\n")
    onemli("[1] Yeni")
    onemli("[2] Köhne\n")
    
    try:
       secim = int(soru("[?] Seçim edin [1/2]: "))
    except:
-      hata("\n[!] Zehmet olmasa [1 ya da 2] yazın!")
+      hata("\n[!] Zehmet olmasa [1 veya 2] yazın!")
       exit(1)
 
    if secim == 2:
-      API_ID = soru('[?] API ID\'iniz [Hazır key\'leri işletmek üçün gözleyin]: ')
+      API_ID = soru('[?] API ID\'niz [Hazır key\'leri işletmek üçün boş buraxın]: ')
       if API_ID == "":
          bilgi("[i] Hazır keyler işledilir...")
          API_ID = 6
          API_HASH = "eb06d4abfb49dc3eeb1aeb98ae0f581e"
       else:
-         API_HASH = soru('[?] API HASH\'iniz: ')
+         API_HASH = soru('[?] API HASH\'nız: ')
 
       client = InteractiveTelegramClient(StringSession(), API_ID, API_HASH)
-      bilgi("[i] String keyiniz aşağıdadır!\n\n\n" + client.session.save())
+      bilgi("[i] String keyiniz aşağıdakıdır!\n\n\n" + client.session.save())
    elif secim == 1:
       numara = soru("[?] Telefon nömreniz: ")
       try:
          rastgele = requests.post("https://my.telegram.org/auth/send_password", data={"phone": numara}).json()["random_hash"]
       except:
-         hata("[!] Kod gönderilmei. Telefon nömrenizi yoxlayın.")
+         hata("[!] Kod gönderilmedi. Telefon nömrenizi yoxlayın.")
          exit(1)
       
       sifre = soru("[?] Telegram'dan gelen kodu yazın: ")
       try:
          cookie = requests.post("https://my.telegram.org/auth/login", data={"phone": numara, "random_hash": rastgele, "password": sifre}).cookies.get_dict()
       except:
-         hata("[!] Büyük ehtimalla kodu sehv yazdız. zehmet olmasa scripti yeniden başladın")
+         hata("[!] Yeqin ki kodu sehv yazdız. Zehmet olmasa Scripti yeniden başladın")
          exit(1)
       app = requests.post("https://my.telegram.org/apps", cookies=cookie).text
       soup = bs4.BeautifulSoup(app, features="html.parser")
 
       if soup.title.string == "Create new application":
-         bilgi("[i] Proqramınız yoxdur. Yaradılır...")
+         bilgi("[i] Tetbiqiniz yoxdur. Yaradılır...")
          hashh = soup.find("input", {"name": "hash"}).get("value")
          AppInfo = {
             "hash": hashh,
-            "app_title":"DTO UserBot",
-            "app_shortname": "DTOUserBot",
+            "app_title":"TGUSERBOT",
+            "app_shortname": "TGUSERBOT",
             "app_url": "",
             "app_platform": "android",
             "app_desc": ""
          }
          app = requests.post("https://my.telegram.org/apps/create", data=AppInfo, cookies=cookie).text
-         bilgi("[i] Proqram yaradıldı!")
+         bilgi("[i] Tetbiq yaradıldı!")
          bilgi("[i] API ID/HASH hazırlanır...")
          newapp = requests.get("https://my.telegram.org/apps", cookies=cookie).text
          newsoup = bs4.BeautifulSoup(newapp, features="html.parser")
@@ -160,28 +159,28 @@ if __name__ == '__main__':
          g_inputs = newsoup.find_all("span", {"class": "form-control input-xlarge uneditable-input"})
          app_id = g_inputs[0].string
          api_hash = g_inputs[1].string
-         bilgi("[i] Melumat alındı! Zehmet olmasa bunları kopyalayıb yadda saxlayın.\n")
+         bilgi("[i] Melumat alındı! Zehmet olmasa bunları bir yere qeyd edin.\n")
          onemli(f"[i] API ID: {app_id}")
          onemli(f"[i] API HASH: {api_hash}\n\n")
          bilgi("[i] String hazırlanır...")
          client = InteractiveTelegramClient(StringSession(), app_id, api_hash, numara)
-         print("[i] String keyiniz aşağıdadır!\n\n\n" + client.session.save())
+         print("[i] String keyiniz aşağıdakıdır!\n\n\n" + client.session.save())
 
       elif  soup.title.string == "App configuration":
-         bilgi("[i] Halihazır da Proqram yaradılıb. API ID/HASH hazırlanır...")
+         bilgi("[i] Halihazır da Tetbiq yaradılıb. API ID/HASH hazırlanır...")
          g_inputs = soup.find_all("span", {"class": "form-control input-xlarge uneditable-input"})
          app_id = g_inputs[0].string
          api_hash = g_inputs[1].string
-         bilgi("[i] Melumatlar alındı! Zehmet olmasa bunları kopyalayıb yaddaşa saxlayın.\n")
+         bilgi("[i] Melumatlar alındı! Zehmet olmasa bunları bir yere qeyd edin.\n")
          onemli(f"[i] API ID: {app_id}")
          onemli(f"[i] API HASH: {api_hash}\n\n")
          bilgi("[i] String hazırlanır...")
 
          client = InteractiveTelegramClient(StringSession(), app_id, api_hash, numara)
-         print("[i] String keyiniz aşağıdadır!\n\n\n" + client.session.save())
+         print("[i] String keyiniz aşağıdakıdır!\n\n\n" + client.session.save())
       else:
-         hata("[!] Bir xeta yarandı.")
+         hata("[!] Bir xeta baş verdi.")
          exit(1)
    else:
-      hata("[!] Tapılmayan seçim.")
+      hata("[!] Bilinmeyen seçim.")
       exit(1)
