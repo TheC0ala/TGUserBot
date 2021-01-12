@@ -383,15 +383,15 @@ Hesabınızı bota çevire bilersiz. Unutmayın, siz başqasının botunu idare 
             result = f"**📗 Fayl:** `{cmd}`\n"
             if CMD_HELP_BOT[cmd]['info']['info'] == '':
                 if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
-                    result += f"**⬇️ Resmi:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
-                    result += f"**⚠️ Xeberdarlıq:** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
+                    result += f"**⬇️ Rəsmi:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                    result += f"**⚠️ Xəbərdadlıq:** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
                 else:
-                    result += f"**⬇️ Resmi:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
+                    result += f"**⬇️ Rəsmi:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
             else:
-                result += f"**⬇️ Resmi:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                result += f"**⬇️ Rəsmi:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                 if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
-                    result += f"**⚠️ Xeberdarlıq:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
-                result += f"**ℹ️ Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
+                    result += f"**⚠️ Xəbəddarlıq:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
+                result += f"**ℹ️ Məlumat:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
 
             command = CMD_HELP_BOT[cmd]['commands'][komut]
             if command['params'] is None:
@@ -403,7 +403,7 @@ Hesabınızı bota çevire bilersiz. Unutmayın, siz başqasının botunu idare 
                 result += f"**💬 Açıqlama:** `{command['usage']}`\n\n"
             else:
                 result += f"**💬 Açıqlama:** `{command['usage']}`\n"
-                result += f"**⌨️ Nümune:** `{PATTERNS[:1]}{command['example']}`\n\n"
+                result += f"**⌨️ Nümunə:** `{PATTERNS[:1]}{command['example']}`\n\n"
 
             await event.edit(
                 result,
