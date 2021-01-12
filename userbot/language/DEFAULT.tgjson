@@ -2,7 +2,7 @@
     "__ASENAJSON__": true,
     "LANGUAGE": "Türkçe",
     "LANGCODE": "tr",
-    "AUTHOR": "Asena Ekibi / TDU",
+    "AUTHOR": "@thec0ala",
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Plugin-Port için lütfen bir dosyaya yanıt verin.`",
