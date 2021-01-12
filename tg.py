@@ -1,6 +1,7 @@
-# by BABAŞ #
-# TGUSERBOT #
+#      by BABAŞ             #
+#      TGUSERBOT            #
 #############################
+
 
 import asyncio
 import os
