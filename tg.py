@@ -1,7 +1,6 @@
 # by BABAŞ
 # TGUSERBOT #
 
-
 import asyncio
 import os
 import sys
