@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Yusuf Usta.
+# Copyright (C) 2020 
 #
 # Licensed under the GPL-3.0 License;
 # you may not use this file except in compliance with the License.
@@ -24,34 +24,34 @@ for dil in bot.iter_messages(pchannel, filter=InputMessagesFilterDocument):
                 dil.delete()
                 remove(f"./userbot/language/{dil.file.name}")
 
-                if path.isfile("./userbot/language/az.tgjson"):
+                if path.isfile("./userbot/language/AZ.TGjson"):
                     LOGS.warn("Varsayılan dil faylı işledilir...")
-                    LANGUAGE_JSON = loads(open(f"./userbot/language/az.tgjson", "r").read())
+                    LANGUAGE_JSON = loads(open(f"./userbot/language/az.TGjson", "r").read())
                 else:
-                    raise Exception("Your language file is invalid")
+                    raise Exception("Sehv Dil Faylı")
         else:
             try:
                 DOSYA = dil.download_media(file="./userbot/language/")
                 LANGUAGE_JSON = loads(open(DOSYA, "r").read())
             except JSONDecodeError:
                 dil.delete()
-                if path.isfile("./userbot/language/az.tgjson"):
+                if path.isfile("./userbot/language/AZ.TGjson"):
                     LOGS.warn("Varsayılan dil faylı işledilir...")
-                    LANGUAGE_JSON = loads(open(f"./userbot/language/az.tgjson", "r").read())
+                    LANGUAGE_JSON = loads(open(f"./userbot/language/AZ.TGjson", "r").read())
                 else:
                     raise Exception("Dil faylı düzgün deyil.")
         break
 
 if LANGUAGE_JSON == None:
-    if path.isfile(f"./userbot/language/{LANGUAGE}.tgjson"):
+    if path.isfile(f"./userbot/language/{LANGUAGE}.TGjson"):
         try:
-            LANGUAGE_JSON = loads(open(f"./userbot/language/{LANGUAGE}.tgjson", "r").read())
+            LANGUAGE_JSON = loads(open(f"./userbot/language/{LANGUAGE}.TGjson", "r").read())
         except JSONDecodeError:
-            raise Exception("Sef json faylı")
+            raise Exception("Sehv json faylı")
     else:
-        if path.isfile("./userbot/language/AZ.tgjson"):
+        if path.isfile("./userbot/language/AZ.TGjson"):
             LOGS.warn("Varsayılan dil faylı işledilir...")
-            LANGUAGE_JSON = loads(open(f"./userbot/language/AZ.tgjson", "r").read())
+            LANGUAGE_JSON = loads(open(f"./userbot/language/AZ.TGjson", "r").read())
         else:
             raise Exception(f"{LANGUAGE} faylını tapa bilmedim")
 
