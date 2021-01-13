@@ -269,7 +269,7 @@
             "NEED_BOTLOG": "`BOTLOG_CHATID dəyəri filtrə cavab olaraq bir medianın qeyd olunmasından əvvəl təyin olunmalıdır.`"
         },
 
-        "galeri": {
+        "qaleriya": {
             "ADDED_LIST": "`Şəkil növbəyə əlavə edildi.`",
             "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.asena galeri` `yazın.`",
             "EXAMPLE": "`Zəhmət olmasa bir şəkil adressi yazın. Nümunə olaraq: ` `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`",
