@@ -90,7 +90,6 @@ HEROKU_APIKEY = os.environ.get("HEROKU_APIKEY", None)
 
 # Güncelleyici üçün xüsusi repo linki
 UPSTREAM_REPO_URL = os.environ.get(
-    "https://github.com/TheC0ala/TGUserBot.git",
     "https://github.com/TheC0ala/TGUserBot.git")
 
 # Esraflı konsol log
