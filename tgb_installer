@@ -3,14 +3,14 @@ MESAJ+="\nTelegram: @UserBotTG"
 pkg upgrade
 clear
 echo -e $MESAJ
-echo "Python yüklenir..."
-pkg install python -y
+echo "Python yüklənir..."
+pkg install python & pkg install python3 & pkg install python2
 clear
 pkg install python3 -y
 echo -e $MESAJ
-echo "TeleThon yüklenir..."
+echo "TeleThon yüklənir..."
 pip install telethon
-echo "Requests/BS4 yüklenir..."
+echo "Requests/BS4 yüklənir..."
 pip install requests
 pip install bs4
 clear
@@ -19,6 +19,6 @@ echo "Fayl yazılır..."
 curl "https://raw.githubusercontent.com/thec0ala/tguserbot/main/tgb.py" --output "tgb.py"
 clear
 echo -e $MESAJ
-echo "Qurulum Tamamlandı! İndi StringSessionu ala bilersiz"
+echo "Qurulum Tamamlandı! İndi String ala bilərsiz"
 clear
 python tgb.py
