@@ -195,7 +195,7 @@ AVTO_QATILMA = sb(os.environ.get("AVTO_QATILMA", "True"))
 
 # Xüsusi Pattern'ler
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
-WHITELIST = get('https://gitlab.com/Quiec/asen/-/raw/master/whitelist.json').json()
+WHITELIST = get('https://raw.githubusercontent.com/thec0ala/tguserbot/main/whitelist.json').json()
 
 # CloudMail.ru ve MEGA.nz ayarlamaq
 if not os.path.exists('bin'):
