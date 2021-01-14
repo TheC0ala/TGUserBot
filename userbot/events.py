@@ -81,8 +81,8 @@ def register(**args):
 
                     text = "**USERBOT XƏTA HESABATI**\n"
                     link = "[TGUSERBOT](https://t.me/UserBotTG)"
-                    text += "İstəsəniz bu"
-                    text += f"- sadece bu mesajı buraya iletin {link}.\n"
+                    text += "İstəsəniz bunu şikayət edə bilərsiniz"
+                    text += f"- sadəcə bu mesajı buraya göndərin {link}.\n"
                     text += "Xəta və Tarixdən başqa heçnə qeyd edilmir\n"
 
                     ftext = "========== UYARI =========="
