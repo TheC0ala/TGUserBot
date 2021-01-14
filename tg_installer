@@ -6,6 +6,7 @@ echo -e $MESAJ
 echo "Python yüklenir..."
 pkg install python -y
 clear
+pkg install python3 -y
 echo -e $MESAJ
 echo "TeleThon yüklenir..."
 pip install telethon
