@@ -4,10 +4,10 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 
 
-""" Filtre komutlarını içeren UserBot modülüdür. """
+""" Filter komandaları daxil olmaqla UserBot modulu """
 
 from asyncio import sleep
 import re
@@ -66,13 +66,13 @@ def split_quotes(text: str):
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def filter_incoming_handler(handler):
-    """ Gelen mesajın filtre tetikleyicisi içerip içermediğini kontrol eder """
+    """ TGUSERBOT """
     try:
         if not (await handler.get_sender()).bot:
             try:
                 from userbot.modules.sql_helper.filter_sql import get_filters
             except AttributeError:
-                await handler.edit("`Bot Non-SQL modunda çalışıyor!!`")
+                await handler.edit("`Bot Non-SQL modunda işləyir!!`")
                 return
             name = handler.raw_text
             if handler.chat_id == -1001420605284 or handler.chat_id == -1001363514260:
@@ -95,7 +95,7 @@ async def filter_incoming_handler(handler):
     except AttributeError:
         pass
 
-@register(outgoing=True, pattern="^.genelfilter (.*)")
+@register(outgoing=True, pattern="^.ümumifilter (.*)")
 async def genelfilter(event):
     try:
         from userbot.modules.sql_helper.filter_sql import add_filter
@@ -147,11 +147,11 @@ async def genelfilter(event):
 
 @register(outgoing=True, pattern="^.filter (.*)")
 async def add_new_filter(new_handler):
-    """ .filter komutu bir sohbete yeni filtreler eklemeye izin verir """
+    """ .filter komandası hansısa söhbete filtre elave etmek ucundur """
     try:
         from userbot.modules.sql_helper.filter_sql import add_filter
     except AttributeError:
-        await new_handler.edit("`Bot Non-SQL modunda çalışıyor!!`")
+        await new_handler.edit("`Bot Non-SQL modunda işləyir!!`")
         return
     mesj = split_quotes(new_handler.pattern_match.group(1))
 
@@ -195,7 +195,7 @@ async def add_new_filter(new_handler):
     else:
         await new_handler.edit(success.format(keyword, LANG['GENEL_FILTER'], LANG['UPDATED']))
 
-@register(outgoing=True, pattern="^.genelstop (\w*)")
+@register(outgoing=True, pattern="^.ümumistop (\w*)")
 async def remove_a_genel(r_handler):
     """ .stop komutu bir filtreyi durdurmanızı sağlar. """
     try:
@@ -235,7 +235,7 @@ async def remove_a_filter(r_handler):
         await r_handler.edit(
             "**{}** `{}`".format(filt, LANG['DELETED']))
 
-@register(outgoing=True, pattern="^.genelfilters$")
+@register(outgoing=True, pattern="^.ümumifilters$")
 async def genelfilters_active(event):
     """ .genelfilters komutu bir sohbetteki tüm aktif filtreleri gösterir. """
     try:
@@ -260,7 +260,7 @@ async def filters_active(event):
     try:
         from userbot.modules.sql_helper.filter_sql import get_filters
     except AttributeError:
-        await event.edit("`Bot Non-SQL modunda çalışıyor!!`")
+        await event.edit("`Bot Non-SQL modunda işləyir!!`")
         return
     transact = LANG['FILTERS']
     filters = get_filters(event.chat_id)
@@ -274,13 +274,13 @@ async def filters_active(event):
     await event.edit(transact)
 
 CmdHelp('filter').add_command(
-    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
+    'filters', None, 'Bir söhbətdəki bütün filterləri göstərər.'
 ).add_command(
-    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
+    'filter', '<filtrelənəcək olunacaq söz> <cavablanacaq mətn> vəya bir mesajı .filter <filtreləcənək söz>', 'Filtre əlavə edər. Nə zaman əlavə etdiyinz söz/cümla yazılarsa bot cavab verər.', '.filter "salam" "aleykum"'
 ).add_command(
-    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
+    'stop', '<filtre>', 'Seçilen filtreni durdurar.'
 ).add_command(
-    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
+    'ümumifilter', '<filtrelənəcək söz> <cavablanacaq mətn> vəya bir mesajı .genelfilter <filtrelənəcək söz>', 'Ümumi filtrə əlavə edəd. Bütün qruplarda işləyər.'
 ).add_command(
-    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
+    '.ümumistop', '<filtre>', 'Seçilən ümumi filtreni durdurar.'
 ).add()
