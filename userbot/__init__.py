@@ -97,7 +97,7 @@ UPSTREAM_REPO_URL = os.environ.get(
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
 # SQL Verilenler Bazası
-DB_URI = os.environ.get("DATABASE_URL", "sqlite:///asena.db")
+DB_URI = os.environ.get("DATABASE_URL", "sqlite:///tgbot.db")
 
 # OCR API key
 OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
@@ -143,7 +143,7 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 # Youtube API key
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
-# Saat & Tarox - Ölke Ve Saat Dilimi
+# Saat & Tarix - Ölke Ve Saat Dilimi
 COUNTRY = str(os.environ.get("COUNTRY", ""))
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 
@@ -249,7 +249,7 @@ async def check_botlog_chatid():
     if entity.default_banned_rights.send_messages:
         LOGS.info(
             "Hesabınızın BOTLOG_CHATID qrupuna mesaj yazma selahiyyeti yoxdur. "
-            "Arup ID'sini doğru yazıb yazmadığınızı yoxlayın.")
+            "Qrup ID'sini doğru yazıb yazmadığınızı yoxlayın.")
         quit(1)
         
 if not BOT_TOKEN == None:
@@ -277,7 +277,7 @@ def butonlastir(sayfa, moduller):
             custom.Button.inline("🔸 " + pair, data=f"bilgi[{sayfa}]({pair})") for pair in pairs
         ])
 
-    butonlar.append([custom.Button.inline("◀️ Geri", data=f"sayfa({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"), custom.Button.inline("İleri ▶️", data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
+    butonlar.append([custom.Button.inline("◀️ Geri", data=f"sayfa({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"), custom.Button.inline("İreli ▶️", data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
     return [max_pages, butonlar]
 
 with bot:
@@ -309,7 +309,7 @@ with bot:
                 rev_text = query[::-1]
                 veriler = (butonlastir(0, sorted(CMD_HELP)))
                 result = await builder.article(
-                    f"Lütfen Sadece .yardım Komutu İle Kullanın",
+                    f"Zehmet olmasa sadece .komek komandası ile işledi.",
                     text=f"**TGᑌSEᖇᗷOT Əla İşləyir⚡** [TGUSERBOT](https://t.me/UserBotTG) __İşleyir...__\n\n**Yüklenen Modul Sayı:** `{len(CMD_HELP)}`\n**Sayfa:** 1/{veriler[0]}",
                     buttons=veriler[1],
                     link_preview=False
@@ -317,7 +317,7 @@ with bot:
             elif query.startswith("http"):
                 parca = query.split(" ")
                 result = builder.article(
-                    "Dosya Yüklendi",
+                    "Fayl yüklendi",
                     text=f"**Fayl uğurla {parca[2]} saytına yüklendi!**\n\nYükleme zamanı: {parca[1][:3]} saniye\n[‏‏‎ ‎]({parca[0]})",
                     buttons=[
                         [custom.Button.url('URL', parca[0])]
@@ -414,7 +414,7 @@ Hesabınızı bota çevire bilersiz. Unutmayın, siz başqasının botunu idare 
         print(e)
         LOGS.info(
             "Botunuzda inline desteyi deaktiv edildi. "
-            "Aktivleşdirmek üçün bir bot token müeylenleşdirmek ve botunuzda inline modunu aktivleşdirin. "
+            "Aktivleşdirmek üçün bir bot token müeylenleşdirin ve botunuzda inline modunu aktivleşdirin. "
             "Eger bunnan başqa probleminiz varsa bize yazın."
         )
 
