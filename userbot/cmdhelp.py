@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - by BABAŞ
+# TGUSERBOT - by BABAŞ
 from userbot import PATTERNS, CMD_HELP, CMD_HELP_BOT
 
 class CmdHelp:
@@ -40,7 +40,7 @@ class CmdHelp:
         
     def add_command(self, command : str, params = None, usage: str = '', example = None):
         """
-        Komut ekler.
+        Komanda elave eder.
         """
         
         self.COMMANDS[command] = {'command': command, 'params': params, 'usage': usage, 'example': example}
