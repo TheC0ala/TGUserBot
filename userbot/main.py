@@ -49,15 +49,13 @@ AFKSTR = [
     "Hələdə anlamadınsa burda deyiləm.",
     "Salam, uzaq mesajıma xoş gəldiniz, sizə necə kömək edə bilərəm?",
     "Mən sahibimin xüsusi botuyam!, sizdə bot istəyirsizsə: @UserBotTG",
-    "Şu anda klavyeden uzaktayım, ama ekranınızda yeterince yüksek sesle çığlık atarsanız, sizi duyabilirim.",
+    "Hal hazırda burdan çoox uzaqdayam.\nQışqırsan bəlkə eşitdim.",
     "Bu tərəfə gedirəm\n---->",
     "Bu tərəfə gedirəm\n<----",
     "Zəhmət olmasa mesajınızı yazın sahibim gələndə sizə cavab yazar.",
     "Sahibim burda deyil mənə yazmağı kəs artıq.",
-    "Burada olsaydım,\nSana nerede olduğumu söylerdim.\n\nAma ben değilim,\ngeri döndüğümde bana sor...",
-    "Uzaklardayım!\nNe zaman dönerim bilmiyorum !\nUmarım birkaç dakika sonra!",
-    "Sahibim şuan da müsait değil. Adınızı, numarınızı ve adresinizi verirseniz ona iletibilirm ve böylelikle geri döndüğü zaman.",
-    "Üzgünüm, sahibim burada değil.\nO gelene kadar benimle konuşabilirsiniz.\nSahibim size sonra döner.",
+    "Sahibim işi var onu narahat eləmə. O iş görərkən onu narahat etmək onu əsəbləşdirir:)",
+    "Sahibim burda deyil. O gələnə qədər mənimlə danışa bilərsiz.",
     "Belə gözəl bir gündə niyə məni narahat edirsən?",
     "Sahibimə mesaj atmaq üçün zəhmət olmasa aşağıdakıları yazın:\nAdınız:\nSoyadınız:\nİsdifadəçi Adınız:\n\nƏgər yuxarıadakıları düzgün yazdızsa sahibim ən qısa zamanda sizə yazacaq.",
     "Hal hazırda burdayam amma mesajını görməzdən gələcəm :)",
@@ -65,7 +63,7 @@ AFKSTR = [
 
 UNAPPROVED_MSG = ("`Hey,` {mention}`! Bu bir bot. Narahat olma.\n\n`"
                   "`Sahibim sənə PM atma icazəsi verməyib. `"
-                  "`Zəhnət olmasa sahibimin aktiv olmağını gözləyin, o əsasən PM'ləri qəbul edir.\n\n`"
+                  "`Zəhnət olmasa sahibimin aktiv olmağını gözləyin, o adətəm PM'ləri qəbul edir.\n\n`"
                   "`Bildiyim qədəri ilə o dəlilərə PM atma icazəsi vermir.`")
 
 DB = connect("learning-data-root.check")
@@ -173,7 +171,7 @@ try:
             else:
                 PLUGIN_MESAJLAR[mesaj] = dmsj
     if not PLUGIN_CHANNEL_ID == None:
-        LOGS.info("Pluginler Yüklenir")
+        LOGS.info("Pluginler Yüklenir...")
         try:
             KanalId = bot.get_entity(PLUGIN_CHANNEL_ID)
         except:
@@ -233,8 +231,8 @@ async def FotoDegistir (foto):
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-LOGS.info("Botunuz işleyir! Hansısa söhhbete .alive yazaraq Test ede bilersiz!."
-          " Kömeye ehtiyazınız varsa, destek qrupuna gelin: t.me/TGUserBotSup")
+LOGS.info("Botunuz işleyir! Hansısa söhbete  .alive yazaraq Test ede bilersiz!."
+          " Kömeye ehtiyacınız varsa, destek qrupuna gelin: t.me/TGUserBotSup")
 LOGS.info(f"Bot versiyası: TGUSERBOT {TGUSERBOT_VERSION}")
 
 """
