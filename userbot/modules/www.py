@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# 
 
 
 """ Internet ile alakalı bilgileri edinmek için kullanılan UserBot modülüdür. """
