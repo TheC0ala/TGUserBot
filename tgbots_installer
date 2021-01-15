@@ -4,9 +4,8 @@ pkg upgrade
 clear
 echo -e $MESAJ
 echo "Python yüklənir..."
-pkg install python & pkg install python3 & pkg install python2
+pkg install python 
 clear
-pkg install python3 -y
 echo -e $MESAJ
 echo "TeleThon yüklənir..."
 pip install telethon
