@@ -4,10 +4,10 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 #
 
-""" AFK ile ilgili komutları içeren UserBot modülü """
+""" AFK ilə əlaqəli UserBot modulu """
 
 from random import randint
 from asyncio import sleep
@@ -36,13 +36,13 @@ def time_formatter(seconds, short=True):
     days, hours = divmod(hours, 24)
     tmp = ((str(days) + (" gün, " if not short else "g, ")) if days else "") + \
         ((str(hours) + (" saat, " if not short else "s, ")) if hours else "") + \
-        ((str(minutes) + (" dakika, " if not short else "d, ")) if minutes else "") + \
-        ((str(seconds) + (" saniye, " if not short else "s, ")) if seconds else "")
-    return tmp[:-2] + " önce"
+        ((str(minutes) + (" dəqiqə, " if not short else "d, ")) if minutes else "") + \
+        ((str(seconds) + (" saniyə, " if not short else "s, ")) if seconds else "")
+    return tmp[:-2] + " əvvəl"
 
 @register(incoming=True, disable_edited=True)
 async def mention_afk(mention):
-    """ Bu fonksiyon biri sizi etiketlediğinde sizin AFK olduğunuzu bildirmeye yarar."""
+    """ Bu funksiya size kimse etiket verende AFK olduğunuzu bilmənizi temin edir. """
     global COUNT_MSG
     global USERS
     global ISAFK
@@ -155,7 +155,7 @@ async def mention_afk(mention):
 
 @register(incoming=True, disable_errors=True)
 async def afk_on_pm(sender):
-    """ Siz afk iken PM atanları afk olduğunuza dair bildirmeye yarayan fonksiyondur. """
+    """ AFK olarken PM atanları xeberdar etmek üçün bir funksiyadır. """
     global ISAFK
     global USERS
     global COUNT_MSG
@@ -276,7 +276,7 @@ async def afk_on_pm(sender):
 
 @register(outgoing=True, pattern="^.afk(?: |$)(.*)", disable_errors=True)
 async def set_afk(afk_e):
-    """ .afk komutu siz afk iken insanları afk olduğunuza dair bilgilendirmeye yarar. """
+    """ .afk emri insanlara afk olduğunuz zaman afk olduğunuzu bildirmek üçün istifade olunur """
     message = afk_e.text
     string = afk_e.pattern_match.group(1)
     global ISAFK
@@ -299,7 +299,7 @@ async def set_afk(afk_e):
 
 @register(outgoing=True)
 async def type_afk_is_not_true(notafk):
-    """ Bu kısım bir yere bir şey yazdığınızda sizi AFK modundan çıkarmaya yarar. """
+    """ Bura siz AFK olanda harasa mesaj yazanda sizi AFK modundan çıxarmağa yarar. """
     global ISAFK
     global COUNT_MSG
     global USERS
@@ -311,8 +311,8 @@ async def type_afk_is_not_true(notafk):
         if BOTLOG:
             await notafk.client.send_message(
                 BOTLOG_CHATID,
-                "Siz AFK iken " + str(len(USERS)) + " kişi size " +
-                str(COUNT_MSG) + " mesaj gönderdi.",
+                "Siz AFK olan zaman " + str(len(USERS)) + " isdifadəçi sizə " +
+                str(COUNT_MSG) + " mesaj göndərdi.",
             )
             for i in USERS:
                 name = await notafk.client.get_entity(i)
@@ -320,7 +320,7 @@ async def type_afk_is_not_true(notafk):
                 await notafk.client.send_message(
                     BOTLOG_CHATID,
                     "[" + name0 + "](tg://user?id=" + str(i) + ")" +
-                    " size " + "`" + str(USERS[i]) + " mesaj gönderdi`",
+                    " sizə " + "`" + str(USERS[i]) + " mesaj göndərdi`",
                 )
         COUNT_MSG = 0
         USERS = {}
@@ -328,6 +328,6 @@ async def type_afk_is_not_true(notafk):
 
 CmdHelp('afk').add_command(
     'afk', 
-    '<İsteğe bağlı sebep>', 
-    'AFK olduğunuzu belirtir. Kim size pm atarsa ya da sizi etiketlerse sizin AFK olduğunuzu ve belirlediğiniz sebebi gösterir. Herhangi bir yere mesaj yazdığınızda AFK modu kapanır.'
+    '<İstəyə bağlı səbəb>', 
+    'AFK olduğunuzu bildirər. Kim sizə PM atarsa ya da sizi tağ edərsə sizin AFK olduğunuzu və yazdığınız səbəbi göstərər. Hansısa bir mesaj yazdığınızda AFK modu dayanar.'
     ).add()
