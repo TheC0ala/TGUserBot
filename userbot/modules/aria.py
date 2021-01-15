@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 #
 
 import aria2p
@@ -15,7 +15,7 @@ from userbot.events import register
 from requests import get
 from userbot.cmdhelp import CmdHelp
 
-# Gelişmiş indirme hızları için en iyi trackerları çağırır, bunun için K-E-N-W-A-Y'e teşekkürler.
+# İnkşaf etmiş yükleme süretleri üçün en yaxşı trackerları çağırır.
 trackers_list = get(
     'https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best.txt'
 ).text.replace('\n\n', ',')
@@ -46,12 +46,12 @@ aria2 = aria2p.API(aria2p.Client(host="http://localhost", port=6800,
 @register(outgoing=True, pattern="^.amag(?: |$)(.*)")
 async def magnet_download(event):
     magnet_uri = event.pattern_match.group(1)
-    # Magnet URI'ı kuyruğa ekler.
+    # Magnet URI'ı əlavə edər.
     try:
         download = aria2.add_magnet(magnet_uri)
     except Exception as e:
         LOGS.info(str(e))
-        await event.edit("Hata:\n`" + str(e) + "`")
+        await event.edit("Xəta:\n`" + str(e) + "`")
         return
     gid = download.gid
     await check_progress_for_dl(gid=gid, event=event, previous=None)
@@ -63,7 +63,7 @@ async def magnet_download(event):
 @register(outgoing=True, pattern="^.ator(?: |$)(.*)")
 async def torrent_download(event):
     torrent_file_path = event.pattern_match.group(1)
-    # Torrent'i kuyruğa ekler.
+    # Torrent'i əlavə edər.
     try:
         download = aria2.add_torrent(torrent_file_path,
                                      uris=None,
@@ -79,7 +79,7 @@ async def torrent_download(event):
 @register(outgoing=True, pattern="^.aurl(?: |$)(.*)")
 async def amagnet_download(event):
     uri = [event.pattern_match.group(1)]
-    try:  # URL'yi kuyruğa ekler.
+    try:  # URL'yi əlavə edər.
         download = aria2.add_uris(uri, options=None, position=None)
     except Exception as e:
         LOGS.info(str(e))
@@ -95,14 +95,14 @@ async def amagnet_download(event):
 
 @register(outgoing=True, pattern="^.aclear(?: |$)(.*)")
 async def remove_all(event):
-    await event.edit("`Devam eden indirmeler temizleniyor... `")
+    await event.edit("`Davam edən yükləmələr təmizlənir... `")
     try:
         removed = aria2.remove_all(force=True)
         aria2.purge_all()
     except:
         pass
-    if not removed:  # Eğer API False olarak dönerse sistem vasıtasıyla kaldırılmaya çalışılır.
-        system("aria2p remove-all")
+    if not removed:  # API False qaytararsa, sistem terefinden silinmeye çalışılır.
+        system("aria2p re
     await event.edit("`Tüm indirilenler başarıyla temizlendi.`")
 
 
