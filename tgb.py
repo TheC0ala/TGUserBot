@@ -1,6 +1,6 @@
 # by BABAŞ #
 # icaze almadan götürme ;) #
-# TGUSERBOT #
+# TGUSERBOT str #
 
 
 import asyncio
