@@ -17,6 +17,7 @@
 ## Qurulum
 
 Android - ```bash <(curl -L https://t.ly/w38Z)```
+
 iOS - https://repl.it/@xBabas/tguserbot#main.py
 
 Botu necə quracağınızı bilmirsizsə oxuyun: [Qurulum](https://github.com/TheC0ala/TGUserBot/wiki)
