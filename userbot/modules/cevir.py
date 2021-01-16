@@ -21,8 +21,8 @@ LANG = get_value("cevir")
 
 # ████████████████████████████████ #
 
-@register(outgoing=True, pattern="^.çevir ?(foto|ses|gif|mp3)? ?(.*)")
-@register(outgoing=True, pattern="^.convt ?(gif|voice|photo|mp3)? ?(.*)")
+@register(outgoing=True, pattern="^.çevir ?(foto|ses|gif|ses)? ?(.*)")
+@register(outgoing=True, pattern="^.convt ?(gif|voice|photo|sound)? ?(.*)")
 async def cevir(event):
     islem = event.pattern_match.group(1)
     try:
@@ -45,7 +45,7 @@ async def cevir(event):
 
         im = Image.open(foto).convert("RGB")
         im.save("sticker.png", "png")
-        await event.client.send_file(event.chat_id, "sticker.png", reply_to=rep_msg, caption="@UserBotTG `ilə şəklə çevrildi.`")
+        await event.client.send_file(event.chat_id, "sticker.png", reply_to=rep_msg, caption="@UserBotTG `ilə şəklə çevirildi.`")
 
         await event.delete()
         os.remove("sticker.png")
@@ -70,7 +70,7 @@ async def cevir(event):
             indir = await rep_msg.download_media()
             ses = await asyncio.create_subprocess_shell(f"ffmpeg -i '{indir}' {KOMUT[efekt]} output.mp3")
             await ses.communicate()
-            await event.client.send_file(event.chat_id, "output.mp3", reply_to=rep_msg, caption="@UserBotTG `ilə effekt tətbiq edildi.`")
+            await event.client.send_file(event.chat_id, "output.mp3", reply_to=rep_msg, caption="@UserBotTG `ilƏ effekt tətbiq edildi.`")
             
             await event.delete()
             os.remove(indir)
@@ -96,7 +96,7 @@ async def cevir(event):
         await event.edit(f"`{LANG['UPLOADING_GIF']}`")
 
         try:
-            await event.client.send_file(event.chat_id, "out.gif",reply_to=rep_msg, caption=LANG['WITH_ASENA_GIF'])
+            await event.client.send_file(event.chat_id, "out.gif",reply_to=rep_msg, caption=LANG['WITH_DTO_GIF'])
         except:
             await event.edit(LANG['ERROR'])
             await event.delete()
@@ -106,38 +106,37 @@ async def cevir(event):
             await event.delete()
             os.remove("out.gif")
             os.remove(video)
-    elif islem == "mp3":
+    elif islem == "sound" or islem == "ses":
         rep_msg = await event.get_reply_message()
         if not event.is_reply or not rep_msg.video:
             await event.edit(LANG['NEED_VIDEO'])
             return
-        await event.edit('`Sesə çevrilir...`')
+        await event.edit(LANG['CONVERTING_TO_SOUND'])
         video = io.BytesIO()
         video = await event.client.download_media(rep_msg.video)
-        gif = await asyncio.create_subprocess_shell(
-            f"ffmpeg -y -i '{video}' -vn -b:a 128k -c:a libmp3lame out.mp3")
+        gif = await asyncio.create_subprocess_shell(f"ffmpeg -vn -sn -dn -i {video} -codec:a libmp3lame -qscale:a 4 out.mp3")
         await gif.communicate()
-        await event.edit('`Ses yüklenir...`')
-        
+        await event.edit(LANG['UPLOADING_SOUND'])
         try:
-            await event.client.send_file(event.chat_id, "out.mp3",reply_to=rep_msg, caption='@UserBotTG ilə səsə çevrildi.')
+            await event.client.send_file(event.chat_id, "out.mp3",reply_to=rep_msg, caption=LANG['WITH_DTO_SOUND'])
         except:
+            await event.edit(LANG['ERROR'])
+            await event.delete()
+            os.remove("out.mp3")
             os.remove(video)
-            return await event.edit('`Sese çevirə bilmədim!`')
+        finally:
+            await event.delete()
+            os.remove("out.mp3")
+            os.remove(video)
 
-        await event.delete()
-        os.remove("out.mp3")
-        os.remove(video)
     else:
         await event.edit(LANG['INVALID_COMMAND'])
         return
 
 CmdHelp('cevir').add_command(
-    'çevir foto', '<cavab>', 'Stickeri şəkilə çevirər.'
+    'çevir foto', None, 'Stickeri şəklə çevirər.'
 ).add_command(
-    'çevir gif', '<cavab>', 'Videolu vəya animasiyali Stickeri GİFə çevirər.'
+    'çevir gif', None, 'Videonu vəya animasyonlu stickeri gifə çevirər.'
 ).add_command(
-    'çevir ses', '<usaq/robot/earrape/suretli/parazit/yangi>', 'Sese effekt tətbiq edər.'
-).add_command(
-    'çevir mp3', '<cavab>', 'Cavab verdiyiniz videonu mp3 edər.'
+    'çevir ses', '<usaq/robot/earrape/suretli/parazit/yangi>', 'Səsə efekt verər.'
 ).add()
