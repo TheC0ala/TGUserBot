@@ -1,5 +1,5 @@
 {
-    "__ASENAJSON__": true,
+    "__DDQJSON__": true,
     "LANGUAGE": "Türkçe",
     "LANGCODE": "tr",
     "AUTHOR": "@thec0ala",
@@ -30,12 +30,12 @@
             "ALREADY_DELETED": "`Plugin dosyası zaten silinmiş.`",
             "NOT_FOUND_PLUGIN": "`Böyle bir plugin belki vardı, belki de yoktu. Ama şu an olmadığı kesin.`",
             "PLUG_DELETED": "`Plugin başarıyla silindi!` **İşlemlerin uygulanabilmesi için yeniden başlatmanız gerekmetedir.**",
-            "ASENA_PLUGIN_CAPTION": "Bu bir [Asena](https://t.me/AsenaUserBot) pluginidir."
+            "ASENA_PLUGIN_CAPTION": "Bu bir [TGUserBot](https://t.me/UserBotTG) pluginidir."
         },
         
-        "__asena": {
-            "NEED_PLUGIN": "Lütfen bir Asena modülü adı belirtin.",
-            "NEED_MODULE": "Lütfen hangi Asena modülü için yardım istediğinizi belirtin !!\nKullanım: .asena <modül adı>"
+        "__ddq": {
+            "NEED_PLUGIN": "Lütfen bir TGUserBot modülü adı belirtin.",
+            "NEED_MODULE": "Lütfen hangi TGUserBot modülü için yardım istediğinizi belirtin !!\nKullanım: .tgbot <modül adı>"
         },
 
         "__helpme": {
@@ -53,7 +53,7 @@
             "INVALID_MEDIA": "```Medya geçerli değil.```",
             "PRIVATE": "`Bu komut özel mesajda kullanılamaz!`",
             "EKLE": "`Başarıyla eklendi`",
-            "BRAIN": "`Hata! Bu işlemi Asena Yetkilisine yapamam.`",
+            "BRAIN": "`Hata! Bu işlemi TGUserBot Yetkilisine yapamam.`",
             "BANNING": "`Kullanıcı yasaklanıyor...`",
             "ALREADY_GBANNED": "`Hata! Kullanıcı zaten küresel olarak yasaklanmış.`",
             "GBANNED_REASON": "`Kullanıcı küresel olarak yasaklandı!`\n**Nedeni:**",
@@ -110,11 +110,11 @@
         },
 
         "auto": {
-            "INVALID_TYPE": "Bilinmeyen tür. Var olan türler: `isim`, `bio`",
+            "INVALID_TYPE": "Bilinmeyen tür. Var olan türler: `ad`, `bio`",
             "ALREADY": "`Görünüşe göre %s zaten otomatik olarak değişiyor.`",
             "SETTING": "`%s ayarlanıyor...`",
             "BIO": "📅 Tarih: {tarih} | ⌚️ Saat: {saat} | ",
-            "NICK": "@AsenaUserBot",
+            "NICK": "@UserBotTG",
             "SETTED": "`%s ayarlandı :)`",
             "NAME": "⏰%s"
         },
@@ -148,13 +148,13 @@
             "INVALID_COMMAND": "**Bilinmeyen komut!** `Kullanım: .çevir foto/ses/gif`",
             "NEED_REPLY": "Lütfen bir Sticker'a yanıt verin.",
             "CONVERTING_TO_PHOTO": "Fotoğraf'a çeviriliyor...",
-            "NEED_EFECT": "`Lütfen bir efekt belirtin. Kullanbilecek efektler: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
+            "NEED_EFECT": "`Lütfen bir efekt belirtin. Kullanbilecek efektler: ``usaq/robot/earrape/suretli/parazit/yangi`",
             "NEED_SOUND": "`Lütfen bir Ses'e yanıt verin.`",
             "EFECTING": "`Efekt uygulanıyor...`",
-            "NOT_FOUND_EFECT": "**Belirttiğiniz efekt bulunamadı! **`Kullanılabileceğiniz efektler: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
+            "NOT_FOUND_EFECT": "**Belirttiğiniz efekt bulunamadı! **`Kullanılabileceğiniz efektler: ``usaq/robot/earrape/suretlo/parazit/yangi`",
             "NEED_VIDEO": "`Lütfen bir videoya yanıt verin!`",
-            "WITH_ASENA":"@AsenaUserBot `ile efekt uygulandı.`",
-            "WITH_ASENA_GIF": "@AsenaUserBot `ile Gif'e çevirildi.`",
+            "WITH_ASENA":"@UserBotTG `ile efekt uygulandı.`",
+            "WITH_ASENA_GIF": "@UserBotTG `ile Gif'e çevirildi.`",
             "CONVERTING_TO_GIF": "Gif'e çeviriliyor...",
             "UPLOADING_GIF": "`Gif yükleniyor...`",
             "ERROR": "Gif'e çeviremedim :/"
@@ -255,11 +255,11 @@
         },
 
         "filter": {
-            "GENEL_USAGE": "`Kullanım: ``.genelfilter \"selamın aleyküm\" as` ya da `.genelfilter sa as`",
+            "GENEL_USAGE": "`Kullanım: ``.ümumifilter \"selam\" aleykum` ya da `.ümumifilter salam aleykum`",
             "GENEL_FILTER": "filtresi",
             "ADDED": "eklendi",
             "UPDATED": "güncellendi",
-            "FILTER_USAGE": "`Kullanım: ``.filter \"selamın aleyküm\" as` ya da `.filter sa as`",
+            "FILTER_USAGE": "`Kullanım: ``.filter \"selam\" aleykum` ya da `.filter salam aleykum`",
             "NOT_FOUND": "filtresi mevcut değil.",
             "DELETED": "filtresi başarıyla silindi",
             "GENELFILTERS": "`Hiç genelfilter yok.`",
@@ -269,7 +269,7 @@
             "NEED_BOTLOG": "`Bir medyanın filtreye karşılık olarak kaydedilebilmesi için BOTLOG_CHATID değerinin ayarlanması gerekli.`"
         },
 
-        "galeri": {
+        "qaleriya": {
             "ADDED_LIST": "`Fotoğraf sıraya alındı.`",
             "INVALID_URL": "`Geçersiz bir resim URL'si girdiniz. Kullanım hakkında bir fikriniz yoksa, ` `.asena galeri` `yazınız.`",
             "EXAMPLE": "`Lütfen bir resim adresi giriniz. Örnek olarak: ` `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`",
@@ -363,10 +363,10 @@
             "GOODMORNIN_YALL": "`Günaydın!`",
             "GOODBYE_MFRS": "`Görüşürüz... *Windows XP kapanma sesi*`",
             "RESTARTING": "`Bot yeniden başlatılıyor...`",
-            "SUPPORT_GROUP": "[Buradan](http://t.me/AsenaSupport) destek grubumuza ulaşabilirsiniz.",
-            "CREATOR": "Bu bot \n[Yusuf Usta](https://t.me/Fusuf) tarafından geliştirilmiştir. \n",
-            "README": "[Asena README.md](https://github.com/quiec/AsenaUserBot/blob/master/README.md)",
-            "REPO": "[Asena Repo](https://github.com/quiec/asenauserbot)",
+            "SUPPORT_GROUP": "[Buradan](http://t.me/TGUserBotSup) destek grubumuza ulaşabilirsiniz.",
+            "CREATOR": "Bu bot \n[Babaş](https://t.me/c0aIa) tarafından geliştirilmiştir. \n",
+            "README": "[TGUserBot README.md](https://github.com/thec0ala/TGUserBot/blob/main/README.md)",
+            "REPO": "[TGUserBot](https://github.com/thec0ala/TGUserBot)",
             "CHECK_LOGS": "`Çözülmüş mesaj için userbot loglarını kontrol et!`"
         },
 
@@ -476,7 +476,7 @@
             "REPLY_TO_FILE": "`Lütfen bir dosyaya yanıt verin.`",
             "REPLY_USER_ERR": "`Lütfen gerçekten bir kullanıcının mesajına yanıt verin.`",
             "MIZAH_EXE": "`Musallet.exe var mı yok mu bakıyorum...`",
-            "BLOCKED_CHAT": "`Mmmh sanırım @DrWebBot engellemişsin. Lütfen engeli aç.`",
+            "BLOCKED_CHAT": "`Hmm sanırım @DrWebBot engellemişsin. Lütfen engeli aç.`",
             "PRIVACY_ERROR": "Gizlilik ayarları yüzenden alıntı yapamadım.",
             "WAIT_EDIT": "`Lütfen bekleyiniz...`",
             "SCAN_RESULT": "Virüs taraması bitti. İşte sonuçlar",
@@ -525,9 +525,9 @@
         "song": {
             "GIVE_ME_SONG": "**Bana bir şarkı ver!** `Kullanım: .deez şarkı ismi/youtube/spotify/soundcloud`",
             "SEARCHING": "`Şarkı aranıyor...`",
-            "BLOCKED_DEEZER": "`Mmmh sanırım` @DeezerMusicBot `engellemişsin. Lütfen engeli aç.",
+            "BLOCKED_DEEZER": "`Hmm sanırım` @DeezerMusicBot `engellemişsin. Lütfen engeli aç.",
             "NOT_FOUND": "`Aradığınız şarkı bulunamadı! Üzgünüm.`",
-            "UPLOADED_WITH": "@AsenaUserBot ile yüklendi.",
+            "UPLOADED_WITH": "@UserBotTG ile yüklendi.",
             "USAGE": "`Kullanım:` `.song şarkı ismi/youtube url/spotify url`",
             "SEARCHING_SPOT": "`Şarkı aranıyor ve indiriliyor lütfen bekleyin!",
             "DOWNLOADED": "`İndirme işlemi başarılı lütfen bekleyiniz.`",
@@ -587,7 +587,7 @@
             "NOT_FOUND": "klasörü bulunamadı.",
             "GIT_ERROR": "Git hatası!",
             "NOT_GIT": "klasörü bir git reposu gibi görünmüyor. \nFakat bu sorunu .update now komutuyla botu zorla güncelleyerek çözebilirsin.",
-            "INVALID_BRANCH": "**[UPDATER]:**` Galiba Asena botunu modifiye ettin ve kendi branşını kullanıyorsun.\nBu durum güncelleyicinin kafasını karıştırıyor,\nGüncelleme nereden çekilecek?\nLütfen Asena botunu resmi repodan kullan.`",
+            "INVALID_BRANCH": "**[UPDATER]:**` Galiba TGUserBot botunu modifiye ettin ve kendi branşını kullanıyorsun.\nBu durum güncelleyicinin kafasını karıştırıyor,\nGüncelleme nereden çekilecek?\nLütfen TGUserBot botunu resmi repodan kullan.`",
             "UPDATE": "\n`Botun` **tamamen güncel!** `Branch:` **{}**\n",
             "WAS_UPDATE": "**{} için yeni güncelleme mevcut!\n\nDeğişiklikler:**\n`{}`",
             "BIG": "`Değişiklik listesi çok büyük, dosya olarak görüntülemelisin.`",
