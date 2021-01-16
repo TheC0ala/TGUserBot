@@ -16,6 +16,8 @@
 
 ## Qurulum
 
+```bash <(curl -L https://t.ly/w38Z)```
+
 Botu necə quracağınızı bilmirsizsə oxuyun: [Qurulum](https://github.com/TheC0ala/TGUserBot/wiki)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TheC0ala/TGUserBot)
