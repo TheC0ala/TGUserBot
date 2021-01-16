@@ -33,7 +33,7 @@ python3 main.py
 ```
 
 ## Məlumatlandırma
-Botla hər hansı probleminiz, istək/irad olarsa [dəstək qrupuna](https://t.me/DDQSupport) yaza bilərsiz.
+Botla hər hansı probleminiz, istək/irad olarsa [dəstək qrupuna](https://t.me/tguserbotsup) yaza bilərsiz.
 
 ```
     User Bota göre Telegram hesabınız bağlana biler.
