@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by Nurlan
 
 import io
 import re
@@ -115,9 +115,9 @@ async def on_delete_blacklist(rmbl):
     await rmbl.edit(LANG['REMOVED'])
     
 CmdHelp('blacklist').add_command(
-    'listblacklist', None, 'Bir sohbetteki etkin kara listeyi listeler.'
+    'listblacklist', None, 'Bir söhbətdə qara siyahıda olan sözləri göstərər.'
 ).add_command(
-    'addblacklist', '<kelime(ler)/yanıt>', 'İletiyi \'kara liste anahtar kelimesine\' kaydeder. \'Kara liste anahtar kelimesinden\' bahsedildiğinde bot iletiyi siler.', '.addblacklist amk'
+    'addblacklist', '<söz(lər)/cavab>', 'Sözü qara siyahıya əlavə edər. \'Qara siyahı açar sözündə \' işlədildiyindən bot cavabı silər.', '.addblacklist amk'
 ).add_command(
-    'rmblacklist', '<kelime>', 'Belirtilen kara listeyi durdurur.', '.rmblacklist amk'
-).add_warning('Bu işlemleri gerçekleştirmek için yönetici olmalı ve **Mesaj Silme** yetkiniz olmalı.').add()
+    'rmblacklist', '<söz>', 'İstifadə edilən qara siyahını dayandır.', '.rmblacklist amk'
+).add_warning('Bu əməliyyatı həyata keçirtmək üçün admin olmalı və **Mesaj Silmə** icazəniz olmalıdır.').add()
