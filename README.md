@@ -7,7 +7,7 @@
     Bununla yanaşı bu bot vaistəsi ilə əylənədə bilərsiz.
     <br>
         <a href="https://github.com/TheC0ala/TGUserBot/wiki">Qurulum</a> |
-        <a href="https://t.me/UserBotTG">Güncellemə</a> |
+        <a href="https://t.me/UserBotTG">Güncəllemə</a> |
         <a href="https://t.me/TGUserBotSup">Support</a>
     <br>
 </p>
