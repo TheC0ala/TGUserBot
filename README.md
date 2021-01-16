@@ -6,9 +6,9 @@
     TGUSERBOT Telegramı daha rahat işlətmək üçün bir botdur.
     Bununla yanaşı bu bot vaistəsi ilə əylənədə bilərsiz.
     <br>
-        <a href="https://github.com/quiec/AsenaUserBot/blob/master/README.md#kurulum">Kurulum</a> |
-        <a href="https://github.com/Quiec/AsenaUserBot/wiki/G%C3%BCncelleme">Güncelleme</a> |
-        <a href="https://t.me/c0alaa">Telegram Kanalı</a>
+        <a href="https://github.com/TheC0ala/TGUserBot/wiki">Qurulum</a> |
+        <a href="https://t.me/UserBotTG">Güncellemə</a> |
+        <a href="https://t.me/TGUserBotSup">Support</a>
     <br>
 </p>
 
