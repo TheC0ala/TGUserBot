@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOR - by BABAŞ
 
 
 from telethon.tl.functions.messages import EditChatDefaultBannedRightsRequest
@@ -200,17 +200,17 @@ async def rem_locks(event):
 
 CMD_HELP.update({
     "locks":
-    ".lock <kilitlenecek medya tipi> veya .unlock <kilitlenecek medya tipi>\
-\nKullanım: Sohbetteki birtakım şeyleri engelleyebilmeni sağlar. (sticker atmak, oyun oynamak vs.)\
-[Not: Yönetici hakları gerektirir!]\
-\n\nKilitleyebileceğin ve kilidini açabileceklerin şunlardır: \
+    ".lock <kilidlənəcək media> vəya .unlock <kilidlənəcək media>\
+\nİşlədiliş: Söhbətdəki bəzi şeylərin qarşısını almağa kömək edər. (sticker atmaq, səs atmaq vs.)\
+[Qeyd: Admin Hüquqları Vacibdir!]\
+\n\nKilidləyə biləcəyin vs kilidini aça biləcəyin şeylər bunlardır: \
 \n`all, msg, media, sticker, gif, game, inline, poll, invite, pin, info`"
 })
 
 CmdHelp('locks').add_command(
-    'lock', '<kilitlenecek medya tipi> veya .unlock <kilitlenecek medya tipi>', 'Sohbetteki birtakım şeyleri engelleyebilmeni sağlar. (sticker atmak, oyun oynamak vs.)'
+    'lock', '<kilidlənəcək media> vəya .unlock <kiliddən çıxarılacaq media>', `Söhbətdəki bəzi şeylərin qarşısını almağa kömək edər. (sticker atmaq, səs atmaq vs.)'
 ).add_info(
-    'Kilitleyebileceğin ve kilidini açabileceklerin şunlardır: all, msg, media, sticker, gif, game, inline, poll, invite, pin, info'
+    'Kilidləyə biləcəyin və kilidini aça biləcəyin şeylər bunlardır: all, msg, media, sticker, gif, game, inline, poll, invite, pin, info'
 ).add_warning(
-    'Yönetici hakları gerektirir!'
+    'Admin Hüquqları Vacibdir!'
 ).add()
