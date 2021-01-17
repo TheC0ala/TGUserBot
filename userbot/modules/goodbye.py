@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 
 
 from userbot.events import register
@@ -90,7 +90,7 @@ async def save_goodbye(event):
     try:
         from userbot.modules.sql_helper.goodbye_sql import add_goodbye_setting
     except:
-        await event.edit("`SQL dışı modda çalışıyor!`")
+        await event.edit("`SQL xarici modda işləyir!`")
         return
     msg = await event.get_reply_message()
     string = event.pattern_match.group(1)
@@ -98,9 +98,9 @@ async def save_goodbye(event):
     if msg and msg.media and not string:
         if BOTLOG_CHATID:
             await event.client.send_message(
-                BOTLOG_CHATID, f"#GORUSURUZ_NOTU\
-            \nGRUP ID: {event.chat_id}\
-            \nAşağıdaki mesaj sohbet için yeni Karşılama notu olarak kaydedildi, lütfen silmeyin !!"
+                BOTLOG_CHATID, f"#SAGOLLASMA_NOTU\
+            \nQRUP ID: {event.chat_id}\
+            \nAşağıdakı mesaj söhbət üçün yeni Qarşılama mesajı olaraq qeyd edildi, Zəhmət olmasa silməyin !!"
             )
             msg_o = await event.client.forward_messages(
                 entity=BOTLOG_CHATID,
@@ -110,17 +110,17 @@ async def save_goodbye(event):
             msg_id = msg_o.id
         else:
             await event.edit(
-                "`Karşılama notunu kaydetmek için BOTLOG_CHATID ayarlanması gerekir.`"
+                "`Qarşılama mesaj qeyd etmək üçün BOTLOG_CHATID ayarlamaq lazımdır.`"
             )
             return
     elif event.reply_to_msg_id and not string:
         rep_msg = await event.get_reply_message()
         string = rep_msg.text
-    success = "`Görüşürüz mesajı bu sohbet için {} `"
+    success = "`Görüşərik mesajı bu söhbət üçün {} `"
     if add_goodbye_setting(event.chat_id, 0, string, msg_id) is True:
-        await event.edit(success.format('kaydedildi'))
+        await event.edit(success.format('qeyd edildi'))
     else:
-        await event.edit(success.format('güncellendi'))
+        await event.edit(success.format('güncəlləndi'))
 
 
 @register(outgoing=True, pattern="^.checkgoodbye$")
@@ -128,21 +128,21 @@ async def show_goodbye(event):
     try:
         from userbot.modules.sql_helper.goodbye_sql import get_current_goodbye_settings
     except:
-        await event.edit("`SQL dışı modda çalışıyor!`")
+        await event.edit("`SQL xarici modda işləyir!`")
         return
     cws = get_current_goodbye_settings(event.chat_id)
     if not cws:
-        await event.edit("`Burada kayıtlı karşılama mesajı yok.`")
+        await event.edit("`Burada qeydli qarşılama mesajı yoxdur.`")
         return
     elif cws and cws.f_mesg_id:
         msg_o = await event.client.get_messages(entity=BOTLOG_CHATID,
                                                 ids=int(cws.f_mesg_id))
         await event.edit(
-            "`Şu anda bu not ile çıkanları/ban yiyenlere yanıtlıyorum.`")
+            "`Hal hazırda bu mesaj çıxanları/ban yeyənlərə cavablayıram.`")
         await event.reply(msg_o.message, file=msg_o.media)
     elif cws and cws.reply:
         await event.edit(
-            "`Şu anda bu not ile çıkanları/ban yiyenlere yanıtlıyorum.`")
+            "`Hal hazırda bu mesaj çıxanları/ban yeyənlərə cavablayıram.`")
         await event.reply(cws.reply)
 
 
@@ -151,17 +151,17 @@ async def del_goodbye(event):
     try:
         from userbot.modules.sql_helper.goodbye_sql import rm_goodbye_setting
     except:
-        await event.edit("`SQL dışı modda çalışıyor!`")
+        await event.edit("`SQL xarici modda işləyir!`")
         return
     if rm_goodbye_setting(event.chat_id) is True:
-        await event.edit("`Karşılama mesajı bu sohbet için silindi.`")
+        await event.edit("`Qarşılama mesajı bu söhbət üçün silindi.`")
     else:
-        await event.edit("`Burada karşılama notu var mı ?`")
+        await event.edit("`Burada qarşılama mesajı var?`")
 
 CmdHelp('goodbye').add_command(
-    'setgoodbye', '<yanıt mesajı> veya .setgoodbye ile bir mesaja cevap verin', 'Mesajı sohbete görüşürüz notu olarak kaydeder.'
+    'setgoodbye', '<cavab> vəya .setgoodbye ilə bir mesaja cevab verin', 'Mesajı söhbətdə Görüşərik mesajı olaraq qeyd edər.'
 ).add_command(
-    'checkgoodbye', None, 'Sohbette görüşürz notu olup olmadığını kontrol edin.'
+    'checkgoodbye', None, 'Söhbətdə Görüşərik mesajı olub olmadığını yoxlayar.'
 ).add_command(
-    'rmgoodbye', None, 'Geçerli sohbet için görüşürüz notunu siler.'
+    'rmgoodbye', None, 'Keçərli söhbət üçün Görüşərik mesajını silər.'
 ).add()
