@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOR - by BABAŞ
 
 
 from asyncio import sleep
@@ -57,8 +57,8 @@ LastLog = False
 
 @register(outgoing=True, pattern="^.lastfm$")
 async def last_fm(lastFM):
-    """ .lastfm komutu last.fm'den verileri çeker. """
-    await lastFM.edit("İşleniyor...")
+    """ .lastfm komandası last.fm'den melumatları çeker. """
+    await lastFM.edit("İşlənilir...")
     preview = None
     playing = User(LASTFM_USERNAME, lastfm).get_now_playing()
     username = f"https://www.last.fm/user/{LASTFM_USERNAME}"
@@ -74,10 +74,10 @@ async def last_fm(lastFM):
         rectrack = sub("^", "https://www.youtube.com/results?search_query=",
                        rectrack)
         if image:
-            output = f"[‎]({image})[{LASTFM_USERNAME}]({username}) __şu an şunu dinliyor:__\n\n• [{playing}]({rectrack})\n`{tags}`"
+            output = f"[‎]({image})[{LASTFM_USERNAME}]({username}) __hal hazırda bunu dinləyir:__\n\n• [{playing}]({rectrack})\n`{tags}`"
             preview = True
         else:
-            output = f"[{LASTFM_USERNAME}]({username}) __şu an şunu dinliyor:__\n\n• [{playing}]({rectrack})\n`{tags}`"
+            output = f"[{LASTFM_USERNAME}]({username}) __hal hazırda bunu dinləyir:__\n\n• [{playing}]({rectrack})\n`{tags}`"
     else:
         recent = User(LASTFM_USERNAME, lastfm).get_recent_tracks(limit=3)
         playing = User(LASTFM_USERNAME, lastfm).get_now_playing()
@@ -151,7 +151,7 @@ async def get_curr_track(lfmbio):
                     if BOTLOG and LastLog:
                         await bot.send_message(
                             BOTLOG_CHATID,
-                            f"Biyografi şuna çevrildi: \n{lfmbio}")
+                            f"Bio buna çevrildi: \n{lfmbio}")
                     await bot(UpdateProfileRequest(about=lfmbio))
                 except AboutTooLongError:
                     short_bio = f"🎧: {SONG}"
@@ -162,7 +162,7 @@ async def get_curr_track(lfmbio):
                     await bot(UpdateProfileRequest(about=DEFAULT_BIO))
                     if BOTLOG and LastLog:
                         await bot.send_message(
-                            BOTLOG_CHATID, f"Biyografi geri şuna çevrildi: \n{DEFAULT_BIO}")
+                            BOTLOG_CHATID, f"Bio yenidən buna çevrildi: \n{DEFAULT_BIO}")
         except AttributeError:
             try:
                 if user_info.about != DEFAULT_BIO:
@@ -170,19 +170,19 @@ async def get_curr_track(lfmbio):
                     await bot(UpdateProfileRequest(about=DEFAULT_BIO))
                     if BOTLOG and LastLog:
                         await bot.send_message(
-                            BOTLOG_CHATID, f"Biyografi geri şuna çevrildi \n{DEFAULT_BIO}")
+                            BOTLOG_CHATID, f"Bio yenidən buna çevrildi \n{DEFAULT_BIO}")
             except FloodWaitError as err:
                 if BOTLOG and LastLog:
                     await bot.send_message(BOTLOG_CHATID,
-                                           f"Biyografi değiştirilirken hata oluştu :\n{err}")
+                                           f"Bio dəyişdirilərkən xəta baş verdi :\n{err}")
         except FloodWaitError as err:
             if BOTLOG and LastLog:
                 await bot.send_message(BOTLOG_CHATID,
-                                       f"Biyografi değiştirilirken hata oluştu :\n{err}")
+                                       f"Bio dəyişdirilərkən xəta baş verdi :\n{err}")
         except WSError as err:
             if BOTLOG and LastLog:
                 await bot.send_message(BOTLOG_CHATID,
-                                       f"Biyografi değiştirilirken hata oluştu: \n{err}")
+                                       f"Bio dəyişdirilərkən xəta baş verdi: \n{err}")
         await sleep(2)
     RUNNING = False
 
@@ -226,9 +226,9 @@ async def lastlog(lstlog):
         await lstlog.edit(LFM_LOG_ERR)
 
 CmdHelp('lastfm').add_command(
-    'lastfm', None, 'Şu anlık oynatılan parça ya da en son oynatılan parça gösterilir.'
+    'lastfm', None, 'Hal hazırda oynadılan parça vəya ən son oynadılan parça göstərilir.'
 ).add_command(
-    'lastbio', '<on/off>', 'last.fm\'deki şu an oynatılan parça gösterimi etkinleştirilir/devre dışı bırakılır.'
+    'lastbio', '<on/off>', 'last.fm\'dəki indi oynadılan parça göstərimini aktivləşdirər/deaktiv edər.'
 ).add_command(
-    'lastlog', '<on/off>', 'last.fm biyografi loglamasını etkinleştirir/devre dışı bırakır.'
+    'lastlog', '<on/off>', 'last.fm bio loglamasını aktivləşdirər/deaktiv edər.'
 ).add()
