@@ -1,10 +1,10 @@
-# Copyright (C) 2020 Yusuf Usta.
+# Copyright (C) 2020 
 #
 # Licensed under the GPL-3.0 License;
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 
 from userbot import CMD_HELP
 from userbot.events import register
@@ -17,13 +17,14 @@ from userbot.cmdhelp import CmdHelp
 # ██████ LANGUAGE CONSTANTS ██████ #
 
 from userbot.language import get_value
-LANG = get_value("liste")
+LANG = get_value("siyahi")
 
 # ████████████████████████████████ #
 
-@register(outgoing=True, pattern="^.liste ?(gmute|gban)?")
-async def liste(event):
-    liste = event.pattern_match.group(1)
+@register(outgoing=True, pattern="^.siyahi də
+p pop ?(gmute|gban)?")
+async def siyahi(event):
+    siyahi = event.pattern_match.group(1)
     try:
         if len(liste) < 1:
             await event.edit(LANG['WRONG_INPUT'])
@@ -50,7 +51,7 @@ async def liste(event):
             os.remove("gban_liste.txt")
         else:
             await event.edit(LANG['GBAN_LIST'] % mesaj)
-    elif liste == "gmute":
+    elif siyahi == "gmute":
         try:
             from userbot.modules.sql_helper.gmute_sql import gmutelist
         except:
@@ -69,6 +70,6 @@ async def liste(event):
         else:
             await event.edit(LANG['GMUTE_LIST'] % mesaj)
 
-CmdHelp('liste').add_command(
-    'liste', '<gmute/gban>', 'Gbanladığınız ya da Gmutelediğiniz kişileri getirir.'
+CmdHelp('siyahı').add_command(
+    'siyahı', '<gmute/gban>', 'Gbanladığınız vəya Gmutelədiyiniz isdifadəçiləri göstərər.'
 ).add()
