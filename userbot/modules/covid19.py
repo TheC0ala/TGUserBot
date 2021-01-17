@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 
 # ██████ LANGUAGE CONSTANTS ██████ #
 
@@ -24,7 +24,7 @@ from userbot.cmdhelp import CmdHelp
 async def covid(event):
     try:
         if event.pattern_match.group(1) == '':
-            country = 'TR'
+            country = 'AZ'
         else: 
             country = event.pattern_match.group(1)
 
@@ -41,17 +41,17 @@ async def covid(event):
                 f"**{LANG['DEATH']}** `{worldData['deaths']}`\n" +
                 f"**{LANG['HEAL']}** `{worldData['recovered']}`\n" +
                 f"\n**{pytz.country_names[country]}**\n" +
-                f"**{bayrak} {LANG['TR_ALL_CASES']}** `{countryData['cases']}`\n" +
-                f"**{bayrak} {LANG['TR_CASES']}** `{countryData['todayCases']}`\n" +
-                f"**{bayrak} {LANG['TR_CASE']}** `{countryData['active']}`\n" +
-                f"**{bayrak} {LANG['TR_ALL_DEATHS']}** `{countryData['deaths']}`\n" +
-                f"**{bayrak} {LANG['TR_DEATHS']}** `{countryData['todayDeaths']}`\n" +
-                f"**{bayrak} {LANG['TR_HEAL']}** `{countryData['recovered']}`\n" +
-                f"**{bayrak} Test Sayısı:** `{countryData['totalTests']}`"
+                f"**{bayrak} {LANG['AZ_ALL_CASES']}** `{countryData['cases']}`\n" +
+                f"**{bayrak} {LANG['AZ'CASES']}** `{countryData['todayCases']}`\n" +
+                f"**{bayrak} {LANG['AZ_CASE']}** `{countryData['active']}`\n" +
+                f"**{bayrak} {LANG['AZ_ALL_DEATHS']}** `{countryData['deaths']}`\n" +
+                f"**{bayrak} {LANG['AZ_DEATHS']}** `{countryData['todayDeaths']}`\n" +
+                f"**{bayrak} {LANG['AZ_HEAL']}** `{countryData['recovered']}`\n" +
+                f"**{bayrak} Test Sayı:** `{countryData['totalTests']}`"
                 )
     await event.edit(sonuclar)
 
 CmdHelp('covid19').add_command(
-    'covid', '<ülke kodu>', 'Hem Dünya geneli hem de verdiğiniz ülke için güncel Covid 19 istatistikleri. Ülkeniz farklı ise komutun yanına eklemeniz yeterlidir.',
-    'covid az -> Azerbaycanı getirir.'
-).add_warning('`Ülke yazmazsanız Türkiyeyi seçer.`').add()
+    'covid', '<ölkə kodu>', 'Həm Dünya geneli həm də verdiyiniz ölkə üçün güncəl Covid 19 statistikası. Ölkəniz fərqlidirsə komandanın yanına əlavə etməyiniz bəsdir.',
+    'covid tr -> Türkiyəni gətirər.'
+).add_warning('`Ölkə yazmasanız Azərbaycanı seçər.`').add()
