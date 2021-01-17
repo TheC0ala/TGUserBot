@@ -4,10 +4,10 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOR - by BABAŞ
 
 
-""" Telegram'dan kod ve terminal komutlarını yürütmek için UserBot modülü. """
+""" Telegram'dan kod ve terminal komandalarını yeritmek üçün UserBot modulu. """
 
 import asyncio
 from getpass import getuser
@@ -26,7 +26,7 @@ LANG = get_value("evaluators")
 
 @register(outgoing=True, pattern="^.eval(?: |$)(.*)")
 async def evaluate(query):
-    """ .eval komutu verilen Python ifadesini değerlendirir. """
+    """ .eval komandası verilen Python ifadesini deyerlendirer. """
     if query.is_channel and not query.is_group:
         await query.edit(LANG['FORBIDDEN_IN_CHANNEL'])
         return
@@ -75,12 +75,12 @@ async def evaluate(query):
     if BOTLOG:
         await query.client.send_message(
             BOTLOG_CHATID,
-            f"Eval sorgusu {expression} başarıyla yürütüldü")
+            f"Eval sorğusu {expression} uğurla yeridildi")
 
 
 @register(outgoing=True, pattern=r"^.exec(?: |$)([\s\S]*)")
 async def run(run_q):
-    """ .exec komutu dinamik olarak oluşturulan programı yürütür """
+    """ .exec komandası dinamik olaraq yaradılan programı yerider """
     code = run_q.pattern_match.group(1)
 
     if run_q.is_channel and not run_q.is_group:
@@ -139,19 +139,19 @@ async def run(run_q):
     if BOTLOG:
         await run_q.client.send_message(
             BOTLOG_CHATID,
-            "Exec sorgusu " + codepre + " başarıyla yürütüldü")
+            "Exec sorğusu " + codepre + " uğurla yeridildi.")
 
 
 @register(outgoing=True, pattern="^.term(?: |$)(.*)")
 async def terminal_runner(term):
-    """ .term komutu sunucunuzda bash komutlarını ve komut dosyalarını çalıştırır. """
+    """ .term komandası serverinizdeki bash komandalarını ve komanda fayllarını işe salar. """
     curruser = getuser()
     command = term.pattern_match.group(1)
     try:
         from os import geteuid
         uid = geteuid()
     except ImportError:
-        uid = "Bu değil şef!"
+        uid = "Bu deyil şef!"
 
     if term.is_channel and not term.is_group:
         await term.edit(LANG['FORBIDDEN_IN_CHANNEL'])
@@ -194,13 +194,13 @@ async def terminal_runner(term):
     if BOTLOG:
         await term.client.send_message(
             BOTLOG_CHATID,
-            "Terminal Komutu " + command + " başarıyla yürütüldü",
+            "Terminal Komandası " + command + " uğurla yeridildi",
         )
 
 CmdHelp('evaluators').add_command(
-    'eval', '<işlem>', 'Mini ifadeleri değerlendirin.', 'eval 2+3'
+    'eval', '<əməliyyat', 'Kiçik ifadələri dəyərləndirin.', 'eval 2+3'
 ).add_command(
-    'exec', '<python kodu>', 'Küçük python komutları yürütün.', 'exec print(\"AsenaUserbottan Selamlar!\")'
+    'exec', '<python kodu>', 'Kiçik Python komanlarını işə salın.', 'exec print(\"TGUSERBOT 🦈!\")'
 ).add_command(
-    'term', '<işlem>', 'Sunucunuzda bash komutlarını ve komut dosyalarını çalıştırın.', 'term ls'
+    'term', '<əməliyyat>', 'Serverinizdəki bash komandaları vs komanda fayllarını işə salar.', 'term ls'
 ).add()
