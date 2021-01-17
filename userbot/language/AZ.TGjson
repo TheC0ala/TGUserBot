@@ -153,8 +153,8 @@
             "EFECTING": "`Effekt hazırlanır...`",
             "NOT_FOUND_EFECT": "**Qeyd etdiyiniz effekt tapılmadı! **`İstifadə edə biləcəyiniz effektlər: ``usaq/robot/earrape/suretli/parazit/yangi`",
             "NEED_VIDEO": "`Zəhmət olmasa bir videoya cavab verin!`",
-            "WITH_ASENA":"@UserBotTG `ilə effekt hazırlandı.`",
-            "WITH_ASENA_GIF": "@UserBotTG `ilə Gif'ə çevrildi.`",
+            "WITH_DDQ":"@UserBotTG `ilə effekt hazırlandı.`",
+            "WITH_ddq_GIF": "@UserBotTG `ilə Gif'ə çevrildi.`",
             "CONVERTING_TO_GIF": "Gif'ə çevrilir...",
             "UPLOADING_GIF": "`Gif yüklənir...`",
             "ERROR": "Gif'ə çevirə bilmədim :/"
