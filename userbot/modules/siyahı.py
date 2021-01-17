@@ -21,9 +21,8 @@ LANG = get_value("siyahi")
 
 # ████████████████████████████████ #
 
-@register(outgoing=True, pattern="^.siyahi də
-p pop ?(gmute|gban)?")
-async def siyahi(event):
+@register(outgoing=True, pattern="^.siyahı ?(gmute|gban)?")
+async def liste(event):
     siyahi = event.pattern_match.group(1)
     try:
         if len(liste) < 1:
