@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 
 
 import aiohttp
@@ -64,5 +64,5 @@ async def github(event):
                 await event.edit(REPLY)
 
 CmdHelp('git').add_command(
-    'git', '<kullanıcı adı>', 'Hedeflenen kişinin GitHub bilgilerini gösterir.', 'git quiec'
+    'git', '<isdifadəçi adı>', 'Hədəflənən isdifadəçinin GitHub məlumatlarını gətirər.', 'git thec0ala'
 ).add()
