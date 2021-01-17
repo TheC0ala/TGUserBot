@@ -1,9 +1,3 @@
-# Copyright (C) 2020 
-#
-# Licensed under the  GPL-3.0 License;
-# you may not use this file except in compliance with the License.
-#
-
 # TGUSERBOT - by BABAŞ
 
 from userbot import CMD_HELP
@@ -21,8 +15,8 @@ LANG = get_value("cevir")
 
 # ████████████████████████████████ #
 
-@register(outgoing=True, pattern="^.çevir ?(foto|ses|gif|mp3)? ?(.*)")
-@register(outgoing=True, pattern="^.convt ?(gif|voice|photo|mp3)? ?(.*)")
+@register(outgoing=True, pattern="^.çevir ?(foto|ses|gif|ses)? ?(.*)")
+@register(outgoing=True, pattern="^.convt ?(gif|voice|photo|sound)? ?(.*)")
 async def cevir(event):
     islem = event.pattern_match.group(1)
     try:
@@ -45,14 +39,14 @@ async def cevir(event):
 
         im = Image.open(foto).convert("RGB")
         im.save("sticker.png", "png")
-        await event.client.send_file(event.chat_id, "sticker.png", reply_to=rep_msg, caption="@AsenaUserBot `ile fotoğrafa çevirildi.`")
+        await event.client.send_file(event.chat_id, "sticker.png", reply_to=rep_msg, caption="@UserBotTG  `ilə şəklə çevirildi.`")
 
         await event.delete()
         os.remove("sticker.png")
     elif islem == "ses" or islem == "voice":
-        EFEKTLER = ["çocuk", "robot", "earrape", "hızlı", "parazit", "yankı"]
+        EFEKTLER = ["uşaq", "robot", "earrape", "suretli", "parazit", "yangi"]
         # https://www.vacing.com/ffmpeg_audio_filters/index.html #
-        KOMUT = {"çocuk": '-filter_complex "rubberband=pitch=1.5"', "robot": '-filter_complex "afftfilt=real=\'hypot(re,im)*sin(0)\':imag=\'hypot(re,im)*cos(0)\':win_size=512:overlap=0.75"', "earrape": '-filter_complex "acrusher=level_in=8:level_out=18:bits=8:mode=log:aa=1"', "hızlı": "-filter_complex \"rubberband=tempo=1.5\"", "parazit": '-filter_complex "afftfilt=real=\'hypot(re,im)*cos((random(0)*2-1)*2*3.14)\':imag=\'hypot(re,im)*sin((random(1)*2-1)*2*3.14)\':win_size=128:overlap=0.8"', "yankı": "-filter_complex \"aecho=0.8:0.9:500|1000:0.2|0.1\""}
+        KOMUT = {"uşaq": '-filter_complex "rubberband=pitch=1.5"', "robot": '-filter_complex "afftfilt=real=\'hypot(re,im)*sin(0)\':imag=\'hypot(re,im)*cos(0)\':win_size=512:overlap=0.75"', "earrape": '-filter_complex "acrusher=level_in=8:level_out=18:bits=8:mode=log:aa=1"', "suretli": "-filter_complex \"rubberband=tempo=1.5\"", "parazit": '-filter_complex "afftfilt=real=\'hypot(re,im)*cos((random(0)*2-1)*2*3.14)\':imag=\'hypot(re,im)*sin((random(1)*2-1)*2*3.14)\':win_size=128:overlap=0.8"', "yangi": "-filter_complex \"aecho=0.8:0.9:500|1000:0.2|0.1\""}
         efekt = event.pattern_match.group(2)
 
         if len(efekt) < 1:
@@ -70,7 +64,7 @@ async def cevir(event):
             indir = await rep_msg.download_media()
             ses = await asyncio.create_subprocess_shell(f"ffmpeg -i '{indir}' {KOMUT[efekt]} output.mp3")
             await ses.communicate()
-            await event.client.send_file(event.chat_id, "output.mp3", reply_to=rep_msg, caption="@AsenaUserBot `ile efekt uygulandı.`")
+            await event.client.send_file(event.chat_id, "output.mp3", reply_to=rep_msg, caption="@UserBotTG `ilƏ effekt tətbiq edildi.`")
             
             await event.delete()
             os.remove(indir)
@@ -96,7 +90,7 @@ async def cevir(event):
         await event.edit(f"`{LANG['UPLOADING_GIF']}`")
 
         try:
-            await event.client.send_file(event.chat_id, "out.gif",reply_to=rep_msg, caption=LANG['WITH_ASENA_GIF'])
+            await event.client.send_file(event.chat_id, "out.gif",reply_to=rep_msg, caption=LANG['WITH_DDQ_GIF'])
         except:
             await event.edit(LANG['ERROR'])
             await event.delete()
@@ -106,38 +100,37 @@ async def cevir(event):
             await event.delete()
             os.remove("out.gif")
             os.remove(video)
-    elif islem == "mp3":
+    elif islem == "sound" or islem == "ses":
         rep_msg = await event.get_reply_message()
         if not event.is_reply or not rep_msg.video:
             await event.edit(LANG['NEED_VIDEO'])
             return
-        await event.edit('`Sese çevriliyor...`')
+        await event.edit(LANG['CONVERTING_TO_SOUND'])
         video = io.BytesIO()
         video = await event.client.download_media(rep_msg.video)
-        gif = await asyncio.create_subprocess_shell(
-            f"ffmpeg -y -i '{video}' -vn -b:a 128k -c:a libmp3lame out.mp3")
+        gif = await asyncio.create_subprocess_shell(f"ffmpeg -vn -sn -dn -i {video} -codec:a libmp3lame -qscale:a 4 out.mp3")
         await gif.communicate()
-        await event.edit('`Ses yükleniyor...`')
-        
+        await event.edit(LANG['UPLOADING_SOUND'])
         try:
-            await event.client.send_file(event.chat_id, "out.mp3",reply_to=rep_msg, caption='@AsenaUserBot ile sese çevrildi.')
+            await event.client.send_file(event.chat_id, "out.mp3",reply_to=rep_msg, caption=LANG['WITH_DDQ_SOUND'])
         except:
+            await event.edit(LANG['ERROR'])
+            await event.delete()
+            os.remove("out.mp3")
             os.remove(video)
-            return await event.edit('`Sese çevirilemedi!`')
+        finally:
+            await event.delete()
+            os.remove("out.mp3")
+            os.remove(video)
 
-        await event.delete()
-        os.remove("out.mp3")
-        os.remove(video)
     else:
         await event.edit(LANG['INVALID_COMMAND'])
         return
 
 CmdHelp('cevir').add_command(
-    'çevir foto', '<yanıt>', 'Stickeri fotoğrafa çevirir.'
+    'çevir foto', None, 'Stickeri şəklə çevirər.'
 ).add_command(
-    'çevir gif', '<yanıt>', 'Videoyu veya animasyonlu stickeri gife çevirir.'
+    'çevir gif', None, 'Videonu vəya animasyonlu stickeri GİFə çevirər.'
 ).add_command(
-    'çevir ses', '<çocuk/robot/earrape/hızlı/parazit/yankı>', 'Sese efekt uygular.'
-).add_command(
-    'çevir mp3', '<yanıt>', 'Yanıt verdiğiniz videoyu mp3 yapar.'
+    'çevir ses', '<uşaq/robot/earrape/suretli/parazit/yangi>', 'Səsə effekt tətbiq edər.'
 ).add()
