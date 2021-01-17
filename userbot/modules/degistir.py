@@ -70,7 +70,7 @@ async def degistir(event):
         else:
             await event.edit(LANG['NOT_FOUND'] + ":`afk/alive/pm/kickme/dızcı/ban/mute/approve/disapprove/block`")
 
-CmdHelp('degistir').add_command(
+CmdHelp('deyisdir').add_command(
     'değiştir', '<modul> <mesaj/cavab>', 'Deyisdir, botdakı pluginlərin mesajlarını dəyişdirməyə yarar. Əgər mesaj yazmasanız Plugin mesajını orjinal halına salar.', '.deyisdir afk \"İndi burda deyiləm... Belkə heç gəlmərəm\"'
 ).add_info(
     '**Dəstəklənən Pluginlər:** `afk/alive/pm/kickme/dızcı/ban/mute/approve/disapprove/block`\n**Alive Dəyişkənləri:** `{plugin}, {telethon}, {python}`\n\
