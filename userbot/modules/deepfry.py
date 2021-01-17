@@ -4,11 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-
-
-# Deepfry modülü kaynak kodu: https://github.com/Ovyerus/deeppyer
-# @NaytSeyd tarafından portlanmıştır.
+# TGUSERBOT - by BABAŞ
 
 import io
 from random import randint, uniform
@@ -46,13 +42,13 @@ async def deepfryer(event):
         await event.edit(LANG['REPLY_PHOTO'])
         return
 
-    # Fotoğrafı (yüksek çözünürlük) bayt dizisi olarak indir
+    # TGUSERBOT
     await event.edit(LANG['MEDIA_DOWNLOADING'])
     image = io.BytesIO()
     await event.client.download_media(data, image)
     image = Image.open(image)
 
-    # Resime uygula
+    # Şekle tetbiq et
     await event.edit(LANG['APPLYING_DEEPFRY'])
     for _ in range(frycount):
         image = await deepfry(image)
@@ -73,7 +69,7 @@ async def deepfry(img: Image) -> Image:
 
     img = img.copy().convert("RGB")
 
-    # Resim formatı ayarla
+    # Şekil formatı ayarla
     img = img.convert("RGB")
     width, height = img.width, img.height
     img = img.resize((int(width ** uniform(0.8, 0.9)), int(height ** uniform(0.8, 0.9))), resample=Image.LANCZOS)
@@ -82,14 +78,14 @@ async def deepfry(img: Image) -> Image:
     img = img.resize((width, height), resample=Image.BICUBIC)
     img = ImageOps.posterize(img, randint(3, 7))
 
-    # Renk yerleşimi oluştur
+    # Reng
     overlay = img.split()[0]
     overlay = ImageEnhance.Contrast(overlay).enhance(uniform(1.0, 2.0))
     overlay = ImageEnhance.Brightness(overlay).enhance(uniform(1.0, 2.0))
 
     overlay = ImageOps.colorize(overlay, colours[0], colours[1])
 
-    # Kırmızı ve sarıyı ana görüntüye yerleştir ve keskinleştir
+    # Qırmızı ve sarını ana görüntüye yerleşdir ve kesginleşdir
     img = Image.blend(img, overlay, uniform(0.1, 0.4))
     img = ImageEnhance.Sharpness(img).enhance(randint(5, 300))
 
@@ -117,5 +113,5 @@ async def check_media(reply_message):
         return data
 
 CmdHelp('deepfry').add_command(
-    'deepfry', '<numara 1-5>', 'Belirlenen görüntüye deepfry efekti uygular.', 'deepfry 5'
+    'deepfry', '<nömrə 1-5>', 'Seçilən şəklə deepfry effekti tətbiq edər.', 'deepfry 5'
 ).add()
