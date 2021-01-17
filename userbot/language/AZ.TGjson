@@ -1,8 +1,8 @@
 {
-    "__ASENAJSON__": true,
+    "__TGJSON__": true,
     "LANGUAGE": "Azərbaycanca",
     "LANGCODE": "az",
-    "AUTHOR": "@thec0ala",
+    "AUTHOR": "BABAŞ",
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Zəhmət olmasa Plugin-Port üçün bir fayla cavab yazın`",
