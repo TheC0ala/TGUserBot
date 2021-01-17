@@ -42,7 +42,7 @@ async def covid(event):
                 f"**{LANG['HEAL']}** `{worldData['recovered']}`\n" +
                 f"\n**{pytz.country_names[country]}**\n" +
                 f"**{bayrak} {LANG['AZ_ALL_CASES']}** `{countryData['cases']}`\n" +
-                f"**{bayrak} {LANG['AZ'CASES']}** `{countryData['todayCases']}`\n" +
+                f"**{bayrak} {LANG['AZ_CASES']}** `{countryData['todayCases']}`\n" +
                 f"**{bayrak} {LANG['AZ_CASE']}** `{countryData['active']}`\n" +
                 f"**{bayrak} {LANG['AZ_ALL_DEATHS']}** `{countryData['deaths']}`\n" +
                 f"**{bayrak} {LANG['AZ_DEATHS']}** `{countryData['todayDeaths']}`\n" +
