@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Yusuf Usta.
+# Copyright (C) 2020 
 #
 # Licensed under the  GPL-3.0 License;
 # you may not use this file except in compliance with the License.
@@ -71,11 +71,11 @@ async def degistir(event):
             await event.edit(LANG['NOT_FOUND'] + ":`afk/alive/pm/kickme/dızcı/ban/mute/approve/disapprove/block`")
 
 CmdHelp('degistir').add_command(
-    'değiştir', '<modul> <mesaj/cavab>', 'Deyisdir, botdakı pluginlerin mesajlarini deyisdirmeye yarar. Eger mesaj yazmasaniz Plugin mesajini orjinal halina salar.', '.deyisdir afk \"İndi burda deyilem... Belke hec gelmerem\"'
+    'değiştir', '<modul> <mesaj/cavab>', 'Deyisdir, botdakı pluginlərin mesajlarını dəyişdirməyə yarar. Əgər mesaj yazmasanız Plugin mesajını orjinal halına salar.', '.deyisdir afk \"İndi burda deyiləm... Belkə heç gəlmərəm\"'
 ).add_info(
-    '**Desteklenen Pluginler:** `afk/alive/pm/kickme/dızcı/ban/mute/approve/disapprove/block`\n**Alive Deyisgenleri:** `{plugin}, {telethon}, {python}`\n\
-**Ban/Mute Deyisgenleri:** `{id}, {username}, {first_name}, {last_name}, {mention}, {date}, {count}`\n\
+    '**Dəstəklənən Pluginlər:** `afk/alive/pm/kickme/dızcı/ban/mute/approve/disapprove/block`\n**Alive Dəyişkənləri:** `{plugin}, {telethon}, {python}`\n\
+**Ban/Mute Dəyişkənləri:** `{id}, {username}, {first_name}, {last_name}, {mention}, {date}, {count}`\n\
 **AFK Deyisgenleri:** `{username}, {mention}, {first_name}, {last_name}, {last_seen_seconds}, {last_seen}, {last_seen_long}`\n\
-**PMpermit Deyisgenleri(pm, block, approve, disapprove):** `{id}, {username}, {mention}, {first_name}, {last_name}`\
-**Kickme Deyisgenleri:** `{title}`'
+**PMpermit Dəyişkənləri(pm, block, approve, disapprove):** `{id}, {username}, {mention}, {first_name}, {last_name}`\
+**Kickme Dəyişkənləri:** `{title}`'
 ).add()
