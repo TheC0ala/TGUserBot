@@ -4,10 +4,10 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 
 
-""" Hash ve encode/decode çözme komutlarını içeren UserBot modülü. """
+""" Hash ve encode/decode hell etme komandaları üçün UserBot modulu. """
 
 from subprocess import PIPE
 from subprocess import run as runapp
@@ -42,7 +42,7 @@ async def gethash(hash_q):
             hash_q.chat_id,
             "hashes.txt",
             reply_to=hash_q.id,
-            caption="`Çok büyük, bunun yerine bir metin dosyası gönderiliyor. `")
+            caption="`Çox böyük, bunun yerinə bir mətn faylı göndərilir. `")
         runapp(["rm", "hashes.txt"], stdout=PIPE)
     else:
         await hash_q.reply(ans)
@@ -50,7 +50,7 @@ async def gethash(hash_q):
 
 @register(outgoing=True, pattern="^.base64 (en|de) (.*)")
 async def endecrypt(query):
-    """ .base64 komutu verilen dizenin base64 kodlamasını bulur. """
+    """ .base64 komandası verilən base64 kodlamasını tapar. """
     if query.pattern_match.group(1) == "en":
         lething = str(
             pybase64.b64encode(bytes(query.pattern_match.group(2),
@@ -63,7 +63,7 @@ async def endecrypt(query):
         await query.reply("Decoded: `" + lething[:-1] + "`")
 
 CmdHelp('hash').add_command(
-    'base64', None, 'Verilen dizenin base64 kodlamasını bulun'
+    'base64', None, 'Verilən sətrin base64 kodlamasını tapın'
 ).add_command(
-    'hash', None, 'Bir txt dosyası yazıldığında md5, sha1, sha256, sha512 dizelerini bulun.'
+    'hash', None, 'Bir txt faylı yazıldığında md5, sha1, sha256, sha512 sətrlərini tapın.'
 ).add()
