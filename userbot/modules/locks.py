@@ -198,19 +198,10 @@ async def rem_locks(event):
         return
 
 
-CMD_HELP.update({
-    "locks":
-    ".lock <kilidlənəcək media> vəya .unlock <kilidlənəcək media>\
-\nİşlədiliş: Söhbətdəki bəzi şeylərin qarşısını almağa kömək edər. (sticker atmaq, səs atmaq vs.)\
-[Qeyd: Admin Hüquqları Vacibdir!]\
-\n\nKilidləyə biləcəyin vs kilidini aça biləcəyin şeylər bunlardır: \
-\n`all, msg, media, sticker, gif, game, inline, poll, invite, pin, info`"
-})
-
 CmdHelp('locks').add_command(
-    'lock', '<kilidlənəcək media> vəya .unlock <kiliddən çıxarılacaq media>', `Söhbətdəki bəzi şeylərin qarşısını almağa kömək edər. (sticker atmaq, səs atmaq vs.)'
+    'lock', '<kilidlənəcək media> vəya .unlock <kiliddən çıxarılacaq media>', 'Söhbətdəki bir çox şeyləri əngəlləyə bilməni edər. (stiker atmaq, səs atmaq vs.)'
 ).add_info(
-    'Kilidləyə biləcəyin və kilidini aça biləcəyin şeylər bunlardır: all, msg, media, sticker, gif, game, inline, poll, invite, pin, info'
+    'Kilidləyə biləcəyiniz və kilidini aça biləcəyiniz şeylər: all, msg, media, sticker, gif, game, inline, poll, invite, pin, info'
 ).add_warning(
-    'Admin Hüquqları Vacibdir!'
+    'İdarəçi olmaq lazımdır!'
 ).add()
