@@ -4,10 +4,10 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 
 
-""" Küresel notlar tutmak için yapılmış olan UserBot modülü. """
+""" Mesajları qeyd etmek üçün UserBot modulu. """
 
 from userbot.events import register
 from userbot import CMD_HELP, BOTLOG_CHATID
@@ -25,7 +25,7 @@ LANG = get_value("snips")
           ignore_unsafe=True,
           disable_errors=True)
 async def on_snip(event):
-    """ Snip mantığı. """
+    """ Snip məntiqi. """
     try:
         from userbot.modules.sql_helper.snips_sql import get_snip
     except AttributeError:
@@ -51,7 +51,7 @@ async def on_snip(event):
 
 @register(outgoing=True, pattern="^.snip (\w*)")
 async def on_snip_save(event):
-    """ .snip komutu gelecekte kullanılmak üzere snips kaydeder. """
+    """ .snip komandası mesajı gelecekde işletmek üçün qeyd eder. """
     try:
         from userbot.modules.sql_helper.snips_sql import add_snip
     except AtrributeError:
@@ -65,8 +65,8 @@ async def on_snip_save(event):
         if BOTLOG_CHATID:
             await event.client.send_message(
                 BOTLOG_CHATID, f"#SNIP\
-            \nKELIME: {keyword}\
-            \n\nAşağıdaki mesaj snip için veri olarak kaydedilir, lütfen silmeyin !!"
+            \nSÖZ: {keyword}\
+            \n\nAşağıdakı mesaj Snip üçün qeyd edilir, zəhmət olmasa silməyin!!"
             )
             msg_o = await event.client.forward_messages(
                 entity=BOTLOG_CHATID,
@@ -91,11 +91,11 @@ async def on_snip_save(event):
 
 @register(outgoing=True, pattern="^.snips$")
 async def on_snip_list(event):
-    """ .snips komutu sizin tarafınızdan kaydedilen snip'leri listeler. """
+    """ .snips komandası qeyd etdiykniz snip'leri gösterer. """
     try:
         from userbot.modules.sql_helper.snips_sql import get_snips
     except AttributeError:
-        await event.edit("`SQL dışı modda çalışıyor!`")
+        await event.edit("`SQL xarici modda işləyir!`")
         return
 
     message = LANG['NO_SNIP']
@@ -112,11 +112,11 @@ async def on_snip_list(event):
 
 @register(outgoing=True, pattern="^.remsnip (\w*)")
 async def on_snip_delete(event):
-    """ .remsnip komutu belirlenini snipi siler. """
+    """ .remsnip komandası seçdiyiniz Snip'i silər. """
     try:
         from userbot.modules.sql_helper.snips_sql import remove_snip
     except AttributeError:
-        await event.edit("`SQL dışı modda çalışıyor!`")
+        await event.edit("`SQL xarici modda işləyir!`")
         return
     name = event.pattern_match.group(1)
     if remove_snip(name) is True:
@@ -125,11 +125,11 @@ async def on_snip_delete(event):
         await event.edit(f"`Snip:` **{name}** `{LANG['NOT_FOUND']}` ")
 
 CmdHelp('snips').add_command(
-    '$<snip_adı>', None, 'Snipi çağırır.'
+    '$<snip_adı>', None, 'Snipi çağırar.'
 ).add_command(
-    'snip', '<isim> <veri/yanıt>', 'Bir snip (küresel not) olarak kaydeder. (Resimler, dokümanlar ve çıkartmalar ile çalışır !)'
+    'snip', '<ad> <söz/cavab>', 'Bir snip olaraq qeyd eder. (Şəkillər, Stickerlər!)'
 ).add_command(
-    'snips', None, 'Kaydedilen tüm snip\'leri listeler.'
+    'snips', None, 'Qeyd edilən Snip\'ləri göstərər.'
 ).add_command(
-    'remsnip', '<snip adı>', 'Belirtilen snip\'i siler.'
+    'remsnip', '<snip adı>', 'Seçdiyiniz Snip\'i silər.'
 ).add()
