@@ -4,10 +4,8 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 
-# credit goes to @snapdragon and @devpatel_73 for making it work on this userbot.
-#
 
 from userbot.events import register
 from userbot import CMD_HELP
@@ -33,9 +31,9 @@ try:
     from userbot.modules.sql_helper.lydia_sql import get_s, get_all_s, add_s, remove_s
 except:
     logging.log(level=logging.WARNING,
-                msg="Lydia veritabanı bağlantısı başarısız oldu")
+                msg="Lydia verilənlər bazası bağlantısı uğursuz oldu")
 
-# SQL dışı mod
+# SQL xarici mod
 ACC_LYDIA = {}
 
 if LYDIA_API_KEY:
@@ -108,9 +106,9 @@ async def user(event):
         return
 
 CmdHelp('lydia').add_command(
-    'addcf', '<kullanıcı adı/yanıtlayarak>', 'Lydia\'nın otomatik sohbetini etkinleştirir.'
+    'addcf', '<isdifadəçi adı/cavablayaraq>', 'Lydia\'nın avtomatik söhbətini aktivləşdirər.'
 ).add_command(
-    'remcf', '<kullanıcı adı/yanıtlayarak>', 'Lydia\'nın otomatik sohbetini devre dışı bırakır.'
+    'remcf', '<isdifadəçi adı/cavablayaraq>', 'Lydia\'nın avtomatik söhbətini deaktivləşdirər.'
 ).add_command(
-    'repcf', '<kullanıcı adı/yanıtlayarak>', 'Lydia\'nın otomatik sohbetiini belli bir kişi için etkinleştirir.'
+    'repcf', '<isdifadəçi adı/cavablayaraq>', 'Lydia\'nın avtomatik söhbətini müəyyən bir isdifadəçi üçün aktivləşdirər.'
 ).add()
