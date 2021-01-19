@@ -126,11 +126,11 @@ async def incom_note(getnt):
         pass
 
 CmdHelp('notes').add_command(
-    '#<notadı>', None, 'Yazılan notu çağırar.'
-).add_command
-    'save', '<not adı> <not olaraq qeyd edilecek bir şey> vəya bir mesajı .save <not adı> şəklində işlədin', 'Cavablanan mesajı o adıyla birlikdə bir not olaraq qeyd edər. (Şəkillər, fayllar və Stickerlərdə də işləyər.)'
+    '#<notadı>', None, 'Seçilən notu çağırar.'
 ).add_command(
-    'notes', None, 'Bir söhbətdəki bütün notları çağırar'
+    'save', '<not adı> <not olaraq qeyd ediləcək şey> ya da bir mesajı .save <not adı> şəklində cavablayaraq işlədilir', 'Cavablanan mesajı adı ilə birlikdə bir not olaraq qeyd edər. (Fotolar, sənədlər və Stickerlərdə işləyir.)'
 ).add_command(
-    'clear', '<not adı>', 'Yazdığınız notu silər.'
+    'notes', None, 'Bir söhbətdəki bütün notları çağırar.'
+).add_command(
+    'clear', '<not adı>', 'Seçilən notu silər.'
 ).add()
