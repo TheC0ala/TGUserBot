@@ -37,7 +37,6 @@ opener.addheaders = [('User-agent', useragent)]
 
 @register(outgoing=True, pattern=r"^.reverse(?: |$)(\d*)")
 async def okgoogle(img):
-    """ .reverse komutu Google'da görsel araması yapar """
     if os.path.isfile("okgoogle.png"):
         os.remove("okgoogle.png")
 
@@ -59,7 +58,7 @@ async def okgoogle(img):
         name = "okgoogle.png"
         image.save(name, "PNG")
         image.close()
-        # https://stackoverflow.com/questions/23270175/google-reverse-image-search-using-post-request#28792943
+        # TGUSERBOT 
         searchUrl = 'https://www.google.com/searchbyimage/upload'
         multipart = {
             'encoded_image': (name, open(name, 'rb')),
@@ -110,7 +109,6 @@ async def okgoogle(img):
 
 
 async def ParseSauce(googleurl):
-    """ İstediğiniz bilgi için HTML kodunu ayrıştırın / kazıyın. """
 
     source = opener.open(googleurl).read()
     soup = BeautifulSoup(source, 'html.parser')
@@ -152,5 +150,5 @@ async def scam(results, lim):
     return imglinks
 
 CmdHelp('reverse').add_command(
-    'reverse', '<yanıt>', 'Fotoğraf veya çıkartmaya yanıt vererek görüntüyü Google üzerniden arayabilirsiniz.'
+    'reverse', '<cavab>', 'Foto vəya stikerə cavab verərək görüntünü Google üstündən axtara bilərsiz.'
 ).add()
