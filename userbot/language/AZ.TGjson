@@ -305,8 +305,8 @@
            "ERROR_MSG": "```last.fm modulu gözlənilməz bir səhvə görə dayandırıldı.```"
         },
 
-        "liste": {
-            "WRONG_INPUT": "**Bilinməyən komanda!** `İstifadəsi: .liste gmute/gban`",
+        "siyahi": {
+            "WRONG_INPUT": "**Bilinməyən komanda!** `İstifadəsi: .siyahı gmute/gban`",
             "NEED_SQL_MODE": "`Bu xüsusiyyət qeyri-sql rejimində işləmir!`",
             "GBANNED_USERS": "`Qlobal olaraq qadağan olunmuş istifadəçilər gətirilir...`",
             "TOO_MANY_GBANNED": "`Vay! Vay! Bir çox insana qadağa qoymusuz. Fayl kimi göndərirəm...`",
