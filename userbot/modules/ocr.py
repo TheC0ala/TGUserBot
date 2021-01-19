@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 
 
 import os
@@ -24,17 +24,17 @@ async def ocr_space_file(filename,
                          overlay=False,
                          api_key=OCR_SPACE_API_KEY,
                          language='tur'):
-    """ OCR.space API yerel dosya ister.
-        Python3.5 ve üzeri için - 2.7 üzerinde test edilmedi.
-    :param filename: Dosya yolu ve adı.
-    :param overlay: Cevabınızda OCR.space yerleşimi gerekli mi?
-                    Varsayılan olarak Hayır.
+    """ OCR.space API yerli fayl isteyer.
+        Python3.5 ve yuxarısı üçün - 2.7 üsdünden test edilmelidir.
+    :param filename: Fayl yolu ve adı.
+    :param overlay: Cavabınızda OCR.space yerləşimi vacibdir?
+                    Varsayılan olaraq Yox.
     :param api_key: OCR.space API key.
-                    varsayılan olarak 'merhabadünya'.
-    :param language: OCR'de kullanılacak dil kodu.
-                    Mevcut dil kodlarının listesi burudan bulunabilir https://ocr.space/OCRAPI
-                    Varsayılan olarak 'tr'.
-    :return: Sonuçlar JSON formatında gelir.
+                    varsayılan olaraq 'salamdünya'.
+    :param language: OCR'de işledilecek dilin kodu.
+                    Mövcud dil kodlarının siyahısı buradan tapıla bilər: https://ocr.space/OCRAPI
+                    Varsayılan olaraq 'tr'.
+    :return: Neticeler JSON formatında gelir.
     """
 
     payload = {
@@ -71,7 +71,7 @@ async def ocr(event):
     os.remove(downloaded_file_name)
 
 CmdHelp('ocr').add_command(
-    'ocr', '<dil>', 'Metin ayıklamak için bir resme veya çıkartmaya cevap verin.'
+    'ocr', '<dil>', 'Mətn ayarlamaq üçün bir şəklə vəya Stickerə cavab verin.'
 ).add_info(
     'Dil kodlarını [buradan](https://ocr.space/ocrapi) alın.'
 ).add()
