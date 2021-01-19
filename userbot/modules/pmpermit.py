@@ -4,10 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-
-
-""" Kimin size özel mesaj gönderebileceğini kontrol altına almanızı sağlayan UserBot modülüdür. """
+# TGUSERBOT - by BABAŞ
 
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
@@ -29,8 +26,6 @@ LANG = get_value("pmpermit")
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def permitpm(event):
-    """ İzniniz olmadan size PM gönderenleri yasaklamak içindir. \
-        Yazmaya devam eden kullanıcıları engeller. """
     if PM_AUTO_BAN:
         self_user = await event.client.get_me()
         if event.is_private and event.chat_id != 777000 and event.chat_id != self_user.id and not (
@@ -54,13 +49,9 @@ async def permitpm(event):
             username = '@' + reply_user.username if reply_user.username else f'[{first_name} {last_name}](tg://user?id={id})'
             mention = f'[{first_name} {last_name}](tg://user?id={id})'
 
-            # Bu bölüm basitçe akıl sağlığı kontrolüdür.
-            # Eğer mesaj daha önceden onaylanmamış olarak gönderildiyse
-            # flood yapmayı önlemek için unapprove mesajı göndermeyi durdurur.
             if not apprv and event.text != PLUGIN_MESAJLAR['pm']:
                 if event.chat_id in LASTMSG:
                     prevmsg = LASTMSG[event.chat_id]
-                    # Eğer önceden gönderilmiş mesaj farklıysa unapprove mesajı tekrardan gönderilir.
                     if event.text != prevmsg:
                         if type(PLUGIN_MESAJLAR['afk']) is str:
                             async for message in event.client.iter_messages(
@@ -86,7 +77,7 @@ async def permitpm(event):
                             async for message in event.client.iter_messages(
                                 event.chat_id,
                                 from_user='me',
-                                limit=PM_AUTO_BAN_LIMIT + 1):
+                                limit=PM_AUTO_BAN_LIMIT):
                                     await message.delete()
                             if not PLUGIN_MESAJLAR['pm'].text == '':
                                 PLUGIN_MESAJLAR['pm'].text = PLUGIN_MESAJLAR['pm'].text.format(
@@ -149,7 +140,6 @@ async def permitpm(event):
 
 @register(disable_edited=True, outgoing=True, disable_errors=True)
 async def auto_accept(event):
-    """ İlk mesajı atan sizseniz otomatik olarak onaylanır. """
     if not PM_AUTO_BAN:
         return
     self_user = await event.client.get_me()
@@ -201,18 +191,17 @@ async def auto_accept(event):
                 if is_approved(event.chat_id) and BOTLOG:
                     await event.client.send_message(
                         BOTLOG_CHATID,
-                        "#OTOMATIK-ONAYLANDI\n" + "Kullanıcı: " +
+                        "#AVTOMATIK-TƏSDIQLƏNDI\n" + "İsdifadəçi: " +
                         f"[{chat.first_name}](tg://user?id={chat.id})",
                     )
 
 
 @register(outgoing=True, pattern="^.notifoff$")
 async def notifoff(noff_event):
-    """ .notifoff komutu onaylanmamış kişilerden gelen PM lerden bildirim almamanızı sağlar. """
     try:
         from userbot.modules.sql_helper.globals import addgvar
     except AttributeError:
-        await noff_event.edit("`Bot Non-SQL modunda çalışıyor!!`")
+        await noff_event.edit("`Bot Non-SQL modunda işləyir!`")
         return
     addgvar("NOTIF_OFF", True)
     await noff_event.edit(LANG['NOTIFOFF'])
@@ -220,11 +209,10 @@ async def notifoff(noff_event):
 
 @register(outgoing=True, pattern="^.notifon$")
 async def notifon(non_event):
-    """ .notifon komutu onaylanmamış kişilerden gelen PM lerden bildirim almanızı sağlar. """
     try:
         from userbot.modules.sql_helper.globals import delgvar
     except:
-        await non_event.edit("`Bot Non-SQL modunda çalışıyor!!`")
+        await non_event.edit("`Bot Non-SQL modunda işləyir!`")
         return
     delgvar("NOTIF_OFF")
     await non_event.edit(LANG['NOTIFON'])
@@ -232,11 +220,10 @@ async def notifon(non_event):
 
 @register(outgoing=True, pattern="^.approve$")
 async def approvepm(apprvpm):
-    """ .approve komutu herhangi birine PM atabilme izni verir. """
     try:
         from userbot.modules.sql_helper.pm_permit_sql import approve
     except:
-        await apprvpm.edit("`Bot Non-SQL modunda çalışıyor!!`")
+        await apprvpm.edit("`Bot Non-SQL modunda işləyir!`")
         return
 
     if apprvpm.reply_to_msg_id:
@@ -282,7 +269,7 @@ async def approvepm(apprvpm):
     if BOTLOG:
         await apprvpm.client.send_message(
             BOTLOG_CHATID,
-            "#ONAYLANDI\n" + "Kullanıcı: " + mention,
+            "#TƏSDIQLƏNDI\n" + "İsdifadəçi: " + mention,
         )
 
 
@@ -291,7 +278,7 @@ async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
     except:
-        await disapprvpm.edit("`Bot Non-SQL modunda çalışıyor!!`")
+        await disapprvpm.edit("`Bot Non-SQL modunda işləyir!`")
         return
 
     if disapprvpm.reply_to_msg_id:
@@ -311,19 +298,18 @@ async def disapprovepm(disapprvpm):
         await disapprvpm.client.send_message(
             BOTLOG_CHATID,
             f"[{name0}](tg://user?id={disapprvpm.chat_id})"
-            " kişisinin PM atma izni kaldırıldı.",
+            " isdifadəçisinin PM atma icazəsi qaldırıldı",
         )
 
 
 @register(outgoing=True, pattern="^.block$")
 async def blockpm(block):
-    """ .block komutu insanları engellemenizi sağlar. """
     if block.reply_to_msg_id:
         reply = await block.get_reply_message()
         replied_user = await block.client.get_entity(reply.from_id)
         if replied_user.id in BRAIN_CHECKER or replied_user.id in WHITELIST:
             await block.edit(
-                "`Hayır dostum! Asena yöneticisini engellemeyeceğim!!`"
+                "`Yox! TGUserBot sahibini bloklamayacam!`"
             )
             return
 
@@ -347,7 +333,7 @@ async def blockpm(block):
     else:
         if block.chat_id in BRAIN_CHECKER:
             await block.edit(
-                "`Hayır dostum! Asena sahibini engellemeyeceğim!!`"
+                "`Yox! TGUserBot sahibini bloklamayacam!`"
             )
             return
 
@@ -379,13 +365,12 @@ async def blockpm(block):
     if BOTLOG:
         await block.client.send_message(
             BOTLOG_CHATID,
-            "#ENGELLENDI\n" + "Kullanıcı: " + mention,
+            "#BLOKLANDI\n" + "İsdifadəçi: " + mention,
         )
 
 
 @register(outgoing=True, pattern="^.unblock$")
 async def unblockpm(unblock):
-    """ .unblock komutu insanların size yeniden PM atabilmelerini sağlar. """
     if unblock.reply_to_msg_id:
         reply = await unblock.get_reply_message()
         replied_user = await unblock.client.get_entity(reply.from_id)
@@ -397,19 +382,19 @@ async def unblockpm(unblock):
         await unblock.client.send_message(
             BOTLOG_CHATID,
             f"[{name0}](tg://user?id={replied_user.id})"
-            " kişisinin engeli kaldırıldı.",
+            " isdifadəçisinin bloku qaldırıldı",
         )
 
 CmdHelp('pmpermit').add_command(
-    'approve', None, 'Yanıt verilen kullanıcıya PM atma izni verilir.', 
+    'approve', None, 'Cavab verilən isdifadəçiyə PM atma icazəsi verər.', 
 ).add_command(
-    'disapprove', None, 'Yanıt verilen kullanıcının PM onayını kaldırır.'
+    'disapprove', None, 'Cavab verilən isdifadəçinin PM atma icazəsini qaldırar.'
 ).add_command(
-    'block', '<kullanıcı adı/yanıtlama>', 'Kullanıcıyı engeller.'
+    'block', '<isdifadəçi adı/cavab>', 'İsdifadəçini bloklayar.'
 ).add_command(
-    'unblock', '<kullanıcı adı/yanıtlama>', 'Kullanıcının engellemesini kaldırır.'
+    'unblock', '<isdifadəçi adı/cavab>', 'İsdifadəçini blokdan çıxarar.'
 ).add_command(
-    'notifoff', None, 'Onaylanmamış özel mesajların bildirimlerini temizler ya da devre dışı bırakır.'
+    'notifoff', None, 'Təsdiqlənməmiş şəxsi mesajların bildirişlərini təmizləyir və ya aradan qaldırır..'
 ).add_command(
-    'notifon', None, 'Onaylanmamış özel mesajların bildirim göndermesine izin verir.'
+    'notifon', None, 'Təsdiqlənməmiş xüsusi mesajların bildiriş göndərməsinə imkan verir..'
 ).add()
