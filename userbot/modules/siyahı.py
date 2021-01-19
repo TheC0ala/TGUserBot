@@ -22,17 +22,17 @@ LANG = get_value("siyahi")
 # ████████████████████████████████ #
 
 @register(outgoing=True, pattern="^.siyahı ?(gmute|gban)?")
-async def liste(event):
+async def siyahi(event):
     siyahi = event.pattern_match.group(1)
     try:
-        if len(liste) < 1:
+        if len(siyahi) < 1:
             await event.edit(LANG['WRONG_INPUT'])
             return
     except:
         await event.edit(LANG['WRONG_INPUT'])
         return
     
-    if liste == "gban":
+    if siyahi == "gban":
         try:
             from userbot.modules.sql_helper.gban_sql import gbanlist
         except:
