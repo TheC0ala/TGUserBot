@@ -4,10 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-
-# @NaytSeyd tarafından portlanmıştır.
-#
+# TGUSERBOT - by BABAŞ
 
 import io
 import os
@@ -52,7 +49,7 @@ async def sticklet(event):
     draw = ImageDraw.Draw(image)
     fontsize = 230
 
-    FONT_FILE = await get_font_file(event.client, "@FontArsiv")
+    FONT_FILE = await get_font_file(event.client, "@ddqfont")
 
     font = ImageFont.truetype(FONT_FILE, size=fontsize)
 
@@ -93,16 +90,13 @@ async def get_font_file(client, channel_id):
     font_file_message_s = await client.get_messages(
         entity=channel_id,
         filter=InputMessagesFilterDocument,
-        # Bu işlem çok fazla kullanıldığında
-        # "FLOOD_WAIT" yapmaya neden olabilir
+        # Bunu çox işletdiyiniz zaman
+        # "FLOOD_WAIT" yeyə bilersiz
         limit=None
     )
-    # Yazı tipi listesinden rastgele yazı tipi al
-    # https://docs.python.org/3/library/random.html#random.choice
     font_file_message = random.choice(font_file_message_s)
-    # Dosya yolunu indir ve geri dön
     return await client.download_media(font_file_message)
 
 CmdHelp('rgb').add_command(
-    'rbg', '<yanıt>', 'Metninizi RGB çıkartmaya dönüştürün.'
+    'rbg', '<cavab>', 'Mətninizi RGB Stickerə çevirin.'
 ).add()
