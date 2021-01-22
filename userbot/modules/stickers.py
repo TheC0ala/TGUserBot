@@ -3,7 +3,8 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Paperplane module for kanging stickers or making new ones. """
+
+# TGUSERBOT - by BABAŞ #
 
 import io
 import math
@@ -76,7 +77,7 @@ async def kang(event):
         if message.file.emoji: # ...but the sticker has one
             emoji = message.file.emoji
         else: # ...and the sticker doesn't have one either
-            emoji = "🤔"
+            emoji = "⚡"
 
     packname = f"a{user.id}_by_{pack_username}_{number}{'_anim' if is_anim else ''}"
     packtitle = (f"@{user.username or user.first_name} {PAKET_ISMI} "
@@ -145,11 +146,11 @@ async def kang(event):
             kontrol = await conv.get_response()
         
             if "Sorry, the image dimensions are invalid." in kontrol.text:
-                await event.edit("`Sticker's kabul etmedi. İkinci yöntem deneniyor...`")
+                await event.edit("`Sticker's qəbul etmədi. İkinci yol yoxlanılır...`")
                 try:
                     await bot.send_file("@ezstickerbot", message, force_document=True)
                 except YouBlockedUserError:
-                    return await event.edit("`Lütfen` @EzStickerBot `engelini açın ve tekrar deneyin!`")
+                    return await event.edit("`Zəhmət olmasa` @EzStickerBot `blokdan çıxarın və yenidən cəhd edin!`")
 
                 try:
                     response = await conv.wait_event(events.NewMessage(incoming=True,from_users=350549033))
@@ -182,9 +183,9 @@ async def kang(event):
     )
 
     await event.edit(
-        f"`Sticker {number}{'(animasyonlu)' if is_anim else ''} sayılı pakete eklendi, "
-        f"{emoji} emojisi ile birlikte! "
-        f"Paket `[burada](t.me/addstickers/{packname})` bulunabilinir.`",
+        f"`Sticker {number}{'(animasyonlu)' if is_anim else ''} saylı paketə əlavə edildi, "
+        f"{emoji} emojisi ilə birlikdə! "
+        f"Paket `[burada](t.me/addstickers/{packname})` tapıla bilər`",
         parse_mode='md')
 
 
@@ -257,11 +258,11 @@ async def resize_photo(photo):
     return image
 
 CmdHelp('stickers').add_command(
-    'dızla', None, 'Dızla ile bir çıkartmaya ya da resme yanıtlayarak kendi çıkartma paketinize çıkartma olarak ekleyebilirsiniz.'
+    'dızla', None, 'Dızla ilə bir Stickerə yada Şəkili cavablayaraq öz Sticker paketinizə Sticker olaraq əlavə edə bilərsiz.'
 ).add_command(
-    'dızla', '<emoji(ler)>', 'Dızla gibi çalışır fakat istediğiniz emojiyi çıkartmanın emojisi olarak belirtir.'
+    'dızla', '<emoji(lər)>', 'Dızla kimi işləyər ancaq istədiyiniz emojini Stickerin emojisi olaraq qeyd edir.'
 ).add_command(
-    'dızla', '<numara>', 'Çıkartmayı ya da resmi belirtilen pakete ekler fakat emoji olarak şu kullanılır: 🤔 '
+    'dızla', '<rəqəm>', 'Stickeri və ya şəkli göstərilən paketə əlavə edir, lakin aşağıdakılardan emoji olaraq istifadə edir: 🤔 '
 ).add_command(
-    'dızla', '<emoji(ler)> <numara>', 'Çıkartmayı ya da resmi belirtilen pakete ekler ve belirttiğiniz emoji çıkartmanın emojisi olarak kullanılır.'
+    'dızla', '<emoji(lər)> <rəqəm>', 'Stickeri yada Şəkli seçilən paketə əlavə edildi və seçdiyiniz emoji stickerin emojisi olaraq işlədilər.'
 ).add()
