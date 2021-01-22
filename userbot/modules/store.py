@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Yusuf Usta.
+# Copyright (C) 2020 
 #
 # Licensed under the  GPL-3.0 License;
 # you may not use this file except in compliance with the License.
@@ -117,9 +117,9 @@ async def sinstall(event):
                 return await event.edit(f'**TGUSERBOT Plugin Mağazası**\n__Versiyon 1.0__\n\n**✅ Modul uğurla yükləndi!**\n__ℹ️ Modulun komandaları və işlədilişi haqqında məlumat üçün__ `.tgbot {dosyaAdi}` __yazın.__')
 
 userbot.cmdhelp.CmdHelp('store').add_command(
-    'magaza', '<soz>', 'Plugin kanalıa atılan son pluginleri gösterer. Eger söz yazsanız axtarış eder.'
+    'magaza', '<söz>', 'Plugin kanalına atılan son pluginləri göstərər. Əgər söz yazsanız axtarış edər.'
 ).add_command(
-    'magaza random', '<reqem>', 'Pluginler kanalından random plugin getirer.', 'magaza random 10'
+    'magaza random', '<rəqəm>', 'Pluginlər kanalından random plugin seçər.', 'mağaza random 10'
 ).add_command(
-    'sinstall', '<reqem>', 'Plugin kanalından plugini yükleyer.'
+    'sinstall', '<plugin kodu>', 'Plugin kanalından plugini yükləyər.'
 ).add()
