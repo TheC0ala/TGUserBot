@@ -1,8 +1,8 @@
 {
-    "__ASENAJSON__": true,
+    "__DDQJON__": true,
     "LANGUAGE": "Azərbaycanca",
     "LANGCODE": "az",
-    "AUTHOR": "@TheC0ala",
+    "AUTHOR": "Babaş",
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Zəhmət olmasa Plugin-Port üçün bir fayla cavab yazın`",
@@ -30,12 +30,12 @@
             "ALREADY_DELETED": "`Plugin faylı artıq silinib.`",
             "NOT_FOUND_PLUGIN": "`Belə bir plugin bəlkə var idi, bəlkədə yox. Ancaq hazırda olmadığı dəqiqdir.`",
             "PLUG_DELETED": "`Plugin uğurla yükləndi!` **Tətbiq ediləcək əməliyyatlar üçün yenidən başlatmağınız lazımdır.**",
-            "ASENA_PLUGIN_CAPTION": "Bu [Asena](https://t.me/UserBotTG) pluginidir."
+            "ASENA_PLUGIN_CAPTION": "Bu [TGUserBot](https://t.me/UserBotTG) pluginidir."
         },
         
         "__asena": {
-            "NEED_PLUGIN": "Zəhmət olmasa bir Asena modulu adı yazın.",
-            "NEED_MODULE": "Zəhmət olmasa hansı Asena modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .asena <modul adı>"
+            "NEED_PLUGIN": "Zəhmət olmasa bir TGUserBot modulu adı yazın.",
+            "NEED_MODULE": "Zəhmət olmasa hansı TGUserBot modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .asena <modul adı>"
         },
 
         "__helpme": {
@@ -105,12 +105,12 @@
         "afk": {
             "REASON": "Səbəb",
             "AFK": "Sahibim hazırda burda deyil.",
-            "IM_AFK": "Hazırda AFK-yam.",
+            "IM_AFK": "Artıq AFK-yam.",
             "IM_NOT_AFK": "Artıq AFK deyiləm."
         },
 
         "auto": {
-            "INVALID_TYPE": "Naməlum növ. Mövcud növlər: `isim`, `bio`",
+            "INVALID_TYPE": "Naməlum növ. Mövcud növlər: `ad`, `bio`",
             "ALREADY": "`Hazırda %s onsuzda avtomatik olaraq dəyişir.`",
             "SETTING": "`%s nizamlanır...`",
             "BIO": "📅 Tarix: {tarih} | ⌚️ Saat: {saat} | ",
@@ -227,7 +227,7 @@
             "PLUGIN_COUNT": "Plugin Sayı",
             "PERMAMENT": "Ömürlük",
             "PLUGINS": "Pluginlər",
-            "OK": "Hər Şey QaydasındadırA"
+            "OK": "Hər Şey Qaydasındadır"
         },
 
         "evaluators": {
@@ -237,7 +237,7 @@
             "BIG_FILE": "`Çıxış çox böyük, fayl kimi göndərilir`",
             "QUERY": "Sorğu",
             "RESULT": "Nəticə",
-            "EMPTY_RESULT": "Nəticə qaytarıla bilmədi / Səhfdir",
+            "EMPTY_RESULT": "Nəticə qaytarıla bilmədi / Səhvdir",
             "ERROR": "İstisna"
         },
 
@@ -255,7 +255,7 @@
         },
 
         "filter": {
-            "GENEL_USAGE": "`İstifadəsi: ``.genelfilter \"salam aleykum\" as",
+            "GENEL_USAGE": "`İstifadəsi: ``.ümumifilter \"salam aleykum\" as",
             "GENEL_FILTER": "filtri",
             "ADDED": "əlavə edildi",
             "UPDATED": "yeniləndi",
@@ -269,20 +269,20 @@
             "NEED_BOTLOG": "`BOTLOG_CHATID dəyəri filtrə cavab olaraq bir medianın qeyd olunmasından əvvəl təyin olunmalıdır.`"
         },
 
-        "galeri": {
+        "qaleriya": {
             "ADDED_LIST": "`Şəkil növbəyə əlavə edildi.`",
-            "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.asena galeri` `yazın.`",
-            "EXAMPLE": "`Zəhmət olmasa bir şəkil adressi yazın. Nümunə olaraq: ` `.galeri ekle https://i.imgyukle.com/2021/01/06/a2KNDy.jpg`",
+            "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.tgbot qaleriya` `yazın.`",
+            "EXAMPLE": "`Zəhmət olmasa bir şəkil adressi yazın. Nümunə olaraq: ` `.qeriya elave et https://i.imgyukle.com/2021/01/06/a2KNDy.jpg`",
             "LIST": "Növbəyə əlavə etdiyiniz şəkillər",
             "REMOVED": "**Növbədəki şəkil uğurla silindi**",
             "REMOVE_ERROR": "**Növbədəki şəkil silinmədi** Xəta",
             "NEED_NUMBER": "Zəhmət olmasa şəklin sırasını qeyd edin. Nümunə:",
             "WORKING": "`Hal-hazırda Qalareya işləyir.`",
             "STARTED": "`Qalareya işləməyə başladı.`",
-            "NEED_PHOTO": "Qalereya işi üçün fotoşəkillər əlavə etməlisiniz. Əlavə etməyi bilmirsinizsə, .asena galeri ilə istifadəsini öyrənə bilərsiniz.",
+            "NEED_PHOTO": "Qalereya işi üçün fotoşəkillər əlavə etməlisiniz. Əlavə etməyi bilmirsinizsə, .tgbot qaleriya ilə istifadəsini öyrənə bilərsiniz.",
             "STOPPED": "`Qalereya dayandı!`",
             "ALREADY_STOP": "`Qalareya onsuzda işləmir.`",
-            "INVALID": "**Bilinməyən komanda** İstifadəsi:\n\nQalareyaya şəkil əlavə etmək: `.galeri ekle https://i.imgyukle.com/2021/01/06/a2KNDy.jpg`\nQalareya siyahısını görmək: `.galeri liste`\nSıradan bir şəkil silmək: `.galeri sil <sıra sayı>`"
+            "INVALID": "**Bilinməyən komanda** İstifadəsi:\n\nQalareyaya şəkil əlavə etmək: `.qaleriya elave ethttps://i.imgyukle.com/2021/01/06/a2KNDy.jpg`\nQalariya siyahısını görmək: `.qaleriya siyahı`\nSıradan bir şəkil silmək: `.qaleriya sil <sıra sayı>`"
         },
 
         "github": {
@@ -332,7 +332,7 @@
         },
 
         "lyrics": {
-            "WRONG_TYPE": "`Xəta: zəhmət olmasa <müğənni> və <mahnı> üçün bölücü olaraq '-' istifadə edin`\nNümunə: `Duman - Haberin Yok Ölüyorum`",
+            "WRONG_TYPE": "`Xəta: zəhmət olmasa <müğənni> və <mahnı> üçün bölücü olaraq '-' istifadə edin`",
             "GENIUS_NOT_FOUND": "`Zəhmət olmasa Genius tokenini təyin edin`",
             "GIVE_INFO": "`Zəhmət olmasa ifaçı və mahnı adını verin`",
             "SEARCHING": "`{} - {} üçün mahnı sözləri axtarılır...`",
@@ -345,7 +345,7 @@
         },
 
         "locks":{
-		    "EVERYTHING_LOCK": "`Dostum olmayan birşeyi qıfıllaya bilmirəm!`",
+		    "EVERYTHING_LOCK": "`Olmayan birşeyi necə qıfıllayım?`",
 			"INVALID_MEDIA_TYPE": "`Səhf media növü: %s`",
 			"LOCK": "`%s bu çat üçün qıfıllandı`",
 			"INVALID_AUTHORITY": "`Bunu etmək hüququna sahib olduğunuzdan əminsiniz?`\n**Xəta:**",
@@ -359,14 +359,14 @@
             "RESULT": "Nəticə",
             "NEED_MUCH_DATA_FOR_RANDOM": "`2 və ya daha çox məhsul tələb olunur. Daha çox məlumat üçün .asena təsadüfi əmrini daxil edin.`",
             "SLEEP_DESC": "İstifadə qaydası: `.sleep [saniyə]`",
-            "SLEEPING": "`Xoruldayaraq yatıram...`",
+            "SLEEPING": "`Sakit dur yatıram...`",
             "GOODMORNIN_YALL": "`Sabahınız xeyir!`",
-            "GOODBYE_MFRS": "`Görüşənədək... *Windows XP söndürlmə səsi*`",
+            "GOODBYE_MFRS": "`Görüşənədək...`",
             "RESTARTING": "`Bot yenidən qoşulur..`",
-            "SUPPORT_GROUP": "[Buradan](http://t.me/AsenaSupport) Dəstək qrupumuza çata bilərsiniz.",
-            "CREATOR": "Bu bot \n[Yusuf Usta](https://t.me/Fusuf) tərəfindən hazırlanmışdır. \n",
-            "README": "[Asena README.md](https://github.com/quiec/AsenaUserBot/blob/master/README.md)",
-            "REPO": "[Asena Repo](https://github.com/quiec/asenauserbot)",
+            "SUPPORT_GROUP": "[Buradan](http://t.me/tguserbotsup) Dəstək qrupumuza çata bilərsiniz.",
+            "CREATOR": "Bu bot \n[Babaş](https://t.me/c0alaa) tərəfindən hazırlanmışdır. \n",
+            "README": "[TGUserBot README.md](https://github.com/thec0ala/tguserbot/blob/main/README.md)",
+            "REPO": "[TGUserBot Repo](https://github.com/thec0ala/tguserbot)",
             "CHECK_LOGS": "`Tapılmış Mesaj üçün istifadəçi qeydlərini yoxlayın!`"
         },
 
@@ -388,7 +388,7 @@
         },
 
         "pmpermit": {
-            "BLOCKED": "`Sən mənim Sahibimin PM-sını spamlayırsan, bu mənim heç xoşuma gəlmir.`\n`Hazırda BLOKLANDIN və SPAM olaraq bildirildin, gələcəkdə dəyişiklik olmadığı ərəfəyədək...`",
+            "BLOCKED": "`Sən mənim Sahibimin PM-sını spamlayırsan, bu mənim heç xoşuma gəlmir.`\n`Hazırda BLOKLANDIN və SPAM olaraq bildirildin, gələcəkdə dəyişiklik olmadığı ərəfəyədək...\n\n@UserBotTG`",
             "ERROR": "PM sayğacı başını itirmiş kimidir, botu zəhmət olmasa yenidən başladın.",
             "BOTLOG_BLOCKED": " adamı sadəcə bir xəyal qırıqlığı idi. PM-nı məşğul etdiyi üçün bloklandı.",
             "NOTIFOFF": "`PM icazəsi olmayan istifadəçilərin bildirişləri səssizə alındı!`",
@@ -464,7 +464,7 @@
             "NOT_RESPONSE": "Botdan cavab ala bilmedim!",
             "USER_PRIVACY": "Məxfilik ayarlarına görə cavab ala bilmədim",
             "REPLY_TO_MEME": "İstifadəsi: Zəhmət olmasa bir mesaja cavab olaraq yazın. Nümunə: .meme üst; alt",
-            "REPLY_TO_PHOTO": "Bir fotoya / stikerə / gifə cavab verin.",
+            "REPLY_TO_PHOTO": "Bir fotoya / stikerə / GİFə cavab verin.",
             "REPLY_TO_BOT": "Həqiqi bir istifadəçinin mesajına cavab verin.",
             "MEMING": "Memeleniyor! (」ﾟﾛﾟ)｣",
             "MEMEBOT_BLOCKED": "Xahiş edirəm @MemeAutobot-un blokundan çıxarın və yenidən cəhd edin.",
@@ -535,7 +535,7 @@
             "USAGE_PL": "`İstifadəsi: .songpl spotify playlist url`",
             "SEARCHING_PL": "`Playlist axtarılır və yüklənir zəhmət olmasa gözləyin`",
             "SENDING_SONGS": "Mahnı göndərilir Mahnı:",
-            "NOT_FOUND_PL": "`Axtardığınız playlist tapılmadı.Bağışayın.`"
+            "NOT_FOUND_PL": "`Axtardığınız playlist tapılmadı. Bağışayın.`"
         },
 
         "spotify": {
@@ -543,7 +543,7 @@
             "BIO_DISABLED": "`Spotify plagini deaktivdir. Bioqrafiya əvvəlki halına qayıtdı.`",
             "BIO_RUNNING": "`Spotify plagini artıq işləyir.`",
             "ERROR": "`Spotify plagini dayandı. Xəta alındı.`",
-            "ERROR_NP": "`Hata! Spotify'da çalan şarkı getirilemedi!`",
+            "ERROR_NP": "`Xəta! Spotify'da çalan şarkı getirilemedi!`",
             "ERROR_TOKEN": "`Bot Spotify ayarları yapılmamış!`",
             "NP_NONE": "`Şu anda Spotify'da bir şey dinlemiyorum!`",
             "NP_GET": "`Spotify'da dinlediğim şarkı getiriliyor...`"			
@@ -571,7 +571,7 @@
 
         "time": {
             "CLOCK": "Burada saat",
-            "INVALID_COUNTRY": "`Səhf ölkə.`",
+            "INVALID_COUNTRY": "`Səhv ölkə.`",
             "TOO_TIMEZONE": "ölkənin birdən çox saat qurşağı var",
             "CHOICE_TIMEZONE": "Rəqəm göstərərək birini seçin",
             "EXAMPLE": "Nümunə",
@@ -639,7 +639,7 @@
         },
 
         "whois": {
-            "GETTING_DATA": "`Məlumatı oğurlayıram  ... Xahiş edirəm gözləyin...`",
+            "GETTING_DATA": "`Məlumatı oğurlayıram🤭 ... Xahiş edirəm gözləyin...`",
             "FAILED_GETTING_DATA": "`Bu istifadəçinin məlumatlarını ala bilmədim.`",
             "NO_PROFILE_PHOTO": "Şəxsin profil şəklini yükləyəməy üçün köməyə ehtiyac var.",
             "NO_DC_ID": "DC ID gətirə bilmədim",
@@ -647,7 +647,7 @@
             "NO_LAST_NAME": "Bu istifadəçinin soyadı yoxdur",
             "NO_USERNAME": "Bu istifadəçinin istifadəçi adı yoxdur",
             "NO_BIO": "Bu istifadəçinin biosu boşdur",
-            "USER_INFO": "İSTİFADƏÇİ BİLGİLƏRİ",
+            "USER_INFO": "İSTİFADƏÇİ MƏLUMATLARI",
             "NAME": "Ad",
             "LASTNAME": "Soyad",
             "NICKNAME": "İstifadəçi Adı",
