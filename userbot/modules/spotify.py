@@ -331,9 +331,9 @@ async def getmp3(event):
                 await sleep(1)
 
 CmdHelp('spotify').add_command(
-    'spotify aç', None, 'Spotify bio aktifleştirir.'
+    'spotify aç', None, 'Spotify bio aktivləşdirər'
 ).add_command(
-    'spotify kapa', None, 'Spotify bio devredışı bırakır.'
+    'spotify kapa', None, 'Spotify bio deaktiv edər.'
 ).add_command(
     'spotify np', '<animasya vaxt = 5>', "Vaxt qədər player animasyalı şəkildə Spotify'da oxuyan mahnınızı göstərər. (Qısaltma komandası: .snp)"
 ).add_command(
