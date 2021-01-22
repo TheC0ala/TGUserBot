@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 
 
 import asyncio
@@ -27,7 +27,7 @@ async def tmeme(e):
             await e.client.send_message(
                 BOTLOG_CHATID,
                 "#TSPAM \n\n"
-                "TSpam başarıyla gerçekleştirildi"
+                "TSpam uğurla gerçəkləşdi."
                 )
 
 @register(outgoing=True, pattern="^.spam")
@@ -43,7 +43,7 @@ async def spammer(e):
             await e.client.send_message(
                 BOTLOG_CHATID,
                 "#SPAM \n\n"
-                "Spam başarıyla gerçekleştirildi"
+                "Spam uğurla gerçəkləşdi."
                 )
                                
 @register(outgoing=True, pattern="^.bigspam")
@@ -60,7 +60,7 @@ async def bigspam(e):
             await e.client.send_message(
                 BOTLOG_CHATID,
                 "#BIGSPAM \n\n"
-                "Bigspam başarıyla gerçekleştirildi"
+                "Bigspam uğurl gerçəkləşdi."
                 )
         
         
@@ -78,13 +78,12 @@ async def tiny_pic_spam(e):
             await e.client.send_message(
                 BOTLOG_CHATID,
                 "#PICSPAM \n\n"
-                "PicSpam başarıyla gerçekleştirildi"
+                "PicSpam uğurla gerçəkləşdi."
                 )
 
 
 @register(outgoing=True, pattern="^.delayspam")
 async def delayspammer(e):
-    # Teşekkürler @ReversedPosix
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
         messageSplit= message.split(" ", 3)
@@ -101,19 +100,19 @@ async def delayspammer(e):
             await e.client.send_message(
                 BOTLOG_CHATID,
                 "#DelaySPAM \n\n"
-                "DelaySpam başarıyla gerçekleştirildi"
+                "DelaySpam uğurla gerçəkləşdi."
                 )
 
 CmdHelp('spammer').add_command(
-    'tspam', '<metin>', 'Verilen mesajı tek tek göndererek spam yapar.'
+    'tspam', '<mətn>', 'Verilən mesajı tək tək göndərərək spam edər.'
 ).add_command(
-    'spam', '<miktar> <metin>', 'Verilen miktarda spam gönderir.'
+    'spam', '<miqdar> <mətn>', 'Verilen miqdarda spam göndərər.'
 ).add_command(
-    'bigspam', '<miktar> <metin>', 'Verilen miktarda spam gönderir.'
+    'bigspam', '<miqdar> <mətn>', 'Verilən miqdarda spam göndərər.'
 ).add_command(
-    'picspam', '<miktar> <link>', 'Verilen miktarda resimli spam gönderir.'
+    'picspam', '<miqdar> <link>', 'Verilən miqdarda şəkilli spam göndərər.'
 ).add_command(
-    'delayspam', '<gecikme> <miktar> <metin>', 'Verilen miktar ve verilen gecikme ile gecikmeli spam yapar.'
+    'delayspam', '<gecikmə> <miqdar> <mətn>', 'Verilən miqdar və verilən gecikmə ilə gecikməli spam edər.'
 ).add_warning(
-    'Sorumluluk size aittir!!'
+    'Məsuliyyət sizə aiddir!!'
 ).add()
