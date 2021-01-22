@@ -1,7 +1,3 @@
-# TGUSERBOT - by BABAŞ #
-
-
-
 import os
 from telethon.tl.types import InputMessagesFilterDocument
 from userbot.events import register
@@ -10,6 +6,7 @@ import userbot.cmdhelp
 from random import choice, sample
 import importlib
 import re
+from userbot.main import extractCommands
 
 # ██████ LANGUAGE CONSTANTS ██████ #
 
@@ -19,17 +16,17 @@ LANG = get_value("__plugin")
 # ████████████████████████████████ #
 
 # Plugin Mağazası
-@register(outgoing=True, pattern="^.mağaza ?(.*)")
+@register(outgoing=True, pattern="^.store ?(.*)")
 @register(outgoing=True, pattern="^.ma[gğ]aza ?(.*)")
 async def magaza(event):
     plugin = event.pattern_match.group(1)
-    await event.edit('**TGUSERBOT Plugin Mağazası**\n__Versiya 1.0__\n\n`🔎 Plugin\'i axtarıram... Zəhmət olmasa gözləyin.`')
+    await event.edit('**🐺 Asena Plugin Mağazası**\n__Versiyon 1.0__\n\n`🔎 Plugin\'i arıyorum... Lütfen biraz bekle.`')
     split = plugin.split()
     if plugin == '':
-        plugin = 'Son Yüklənən'
+        plugin = 'Son Yüklenen'
         plugins = await event.client.get_messages('@tguserbotplugin', limit=15, filter=InputMessagesFilterDocument)
     elif len(split) >= 1 and (split[0] == 'random' or split[0] == 'rastgele'):
-        plugin = 'Təsadufi'
+        plugin = 'Rastgele'
         plugins = await event.client.get_messages('@tguserbotplugin', limit=None, filter=InputMessagesFilterDocument)
         plugins = sample(plugins, int(split[1]) if len(split) == 2 else 5)
     else:
@@ -38,10 +35,10 @@ async def magaza(event):
         random = choice(random)
         random_file = random.file.name
 
-    result = f'**TGUSERBOT Plugin Mağazası**\n\n**🔎 Axtarış:** `{plugin}`\n**🔢 Nəticələr: __({len(plugins)})__**\n➖➖➖➖➖\n\n'
+    result = f'**🐺 Asena Plugin Mağazası**\n__Versiyon 1.0__\n\n**🔎 Arama:** `{plugin}`\n**🔢 Sonuçlar: __({len(plugins)})__**\n➖➖➖➖➖\n\n'
     
     if len(plugins) == 0:
-        result += f'**Həçnə tapa bilmədim...**\n`{random_file}` __plugininə necədi?__'
+        result += f'**Hiçbir şey bulamadım...**\n`{random_file}` __pluginine ne dersin?__'
     else:
         for plugin in plugins:
             plugin_lines = plugin.raw_text.splitlines()
@@ -50,24 +47,24 @@ async def magaza(event):
                 result += f'__{plugin_lines[2]}__'
             else:
                 result += f'__{plugin_lines[2][:50]}...__'
-            result += f'\n**ℹ️ Yükləmək üçün:** `{PATTERNS[:1]}sinstall {plugin.id}`\n➖➖➖➖➖\n'
+            result += f'\n**ℹ️ Yüklemek için:** `{PATTERNS[:1]}sinstall {plugin.id}`\n➖➖➖➖➖\n'
     return await event.edit(result)
 
 # Plugin Mağazası
-@register(outgoing=True, pattern="^.sinstall ?(.*)")
+@register(outgoing=True, pattern="^.sy[üu]kle ?(.*)")
 @register(outgoing=True, pattern="^.sinstall ?(.*)")
 async def sinstall(event):
     plugin = event.pattern_match.group(1)
     try:
         plugin = int(plugin)
     except:
-        return await event.edit('**TGUSERBOT Plugin Mağazası**\n__Versiya 1.0__\n\n**⚠️ Xəta:** `Zəhmət olmasa sadəcə rəqəm yazın. Əgər Plugin axtarmaq istəyirsinizsə .mağaza komandasını işlədin.`')
+        return await event.edit('**🐺 Asena Plugin Mağazası**\n__Versiyon 1.0__\n\n**⚠️ Hata:** `Lütfen sadece sayı yazın. Eğer Plugin aramak istiyorsanız .store komutunu kullanın.`')
     
-    await event.edit('**TGUSERBOT Plugin Mağazası**\n\n`🔎 Plugin\'i gətirirəm... Biraz Gözlə...`')
-    plugin = await event.client.get_messages('@dtoplugin', ids=plugin)
-    await event.edit(f'**TGUSERBOT Plugin Mağazası**\n\n`✅ {plugin.file.name} plugini gətirildi!`\n`⬇️ Plugini yükləyirəm... Zəhmət olmasa gözləyin.`')
+    await event.edit('**🐺 Asena Plugin Mağazası**\n__Versiyon 1.0__\n\n`🔎 Plugin\'i getiriyorum... Lütfen biraz bekle.`')
+    plugin = await event.client.get_messages('@asenaplugin', ids=plugin)
+    await event.edit(f'**🐺 Asena Plugin Mağazası**\n__Versiyon 1.0__\n\n`✅ {plugin.file.name} plugini getirildi!`\n`⬇️ Plugini indiriyorum... Lütfen bekleyiniz.`')
     dosya = await plugin.download_media('./userbot/modules/')
-    await event.edit(f'**TGUSERBOT Plugin Mağazası**\n\n`✅ {plugin.file.name} yüklənmə uğurlu oldu!`\n`⬇️ Plugini yükləyirəm... Zəhmət olmasa gözlə...`')
+    await event.edit(f'**🐺 Asena Plugin Mağazası**\n__Versiyon 1.0__\n\n`✅ {plugin.file.name} indirme başarılı!`\n`⬇️ Plugini yüklüyorum... Lütfen bekleyiniz.`')
     
     try:
         spec = importlib.util.spec_from_file_location(dosya, dosya)
@@ -75,7 +72,7 @@ async def sinstall(event):
         spec.loader.exec_module(mod)
     except Exception as e:
         os.remove("./userbot/modules/" + dosya)
-        return await event.edit(f'**TGUSERBOT Plugin Mağazası**\n\n**⚠️ Xəta:** `Plugində xəta var. {e}`\n**BUNU ADMİNLƏRƏ BİLDİRİN!**')
+        return await event.edit(f'**🐺 Asena Plugin Mağazası**\n__Versiyon 1.0__\n\n**⚠️ Hata:** `Plugin hatalı. {e}`\n**LÜTFEN BUNU ADMİNLERE BİLDİRİN!**')
 
     dosy = open(dosya, "r").read()
     if re.search(r"@tgbot\.on\(.*pattern=(r|)\".*\".*\)", dosy):
@@ -90,63 +87,31 @@ async def sinstall(event):
         await event.edit(LANG['PLUGIN_DOWNLOADED'] % komutlar)
     else:
         Pattern = re.findall(r"@register\(.*pattern=(r|)\"(.*)\".*\)", dosy)
-        Komutlar = []
 
         if (not type(Pattern) == list) or (len(Pattern) < 1 or len(Pattern[0]) < 1):
-            CMD_HELP[dosya] = LANG['PLUGIN_WITHOUT_DESC']
-            return await event.edit(LANG['PLUGIN_DESCLESS'])
+            if re.search(r'CmdHelp\(.*\)', dosy):
+                cmdhelp = re.findall(r"CmdHelp\([\"'](.*)[\"']\)", dosy)[0]
+                await plugin.forward_to(PLUGIN_CHANNEL_ID)
+                return await event.edit(f'**Modül başarıyla yüklendi!**\n__Modülun komutları ve kullanım hakkında bilgi almak için__ `.asena {cmdhelp}` __yazınız.__')
+            else:
+                await plugin.forward_to(PLUGIN_CHANNEL_ID)
+                userbot.cmdhelp.CmdHelp(dosya).add_warning('Komutlar bulunamadı!').add()
+                return await event.edit(LANG['PLUGIN_DESCLESS'])
         else:
             if re.search(r'CmdHelp\(.*\)', dosy):
                 cmdhelp = re.findall(r"CmdHelp\([\"'](.*)[\"']\)", dosy)[0]
                 await plugin.forward_to(PLUGIN_CHANNEL_ID)
-                return await event.edit(f'**U S Σ R Δ T O R Plugin Mağazası**\n\n**✅ Modul uğurlar yükləndi!**\n__ℹ️ Modulun əmrləri və işlədilişi haqqında məlumat almaq üçün__ `.dto {cmdhelp}` __yazın.__')
+                return await event.edit(f'**🐺 Asena Plugin Mağazası**\n__Versiyon 1.0__\n\n**✅ Modül başarıyla yüklendi!**\n__ℹ️ Modülun komutları ve kullanım hakkında bilgi almak için__ `.asena {cmdhelp}` __yazınız.__')
             else:
                 dosyaAdi = plugin.file.name.replace('.py', '')
-                CmdHelp = userbot.cmdhelp.CmdHelp(dosyaAdi, False)
-                #  #
-                for Command in Pattern:
-                    Command = Command[1]
-                    if Command == '' or len(Command) <= 1:
-                        continue
-                    Komut = re.findall("([^.].*\w)(\W*)", Command)
-                    if (len(Komut[0]) > 1) and (not Komut[0][1] == ''):
-                        KomutStr = Command.replace(Komut[0][1], '')
-                        if KomutStr[0] == '^':
-                            KomutStr = KomutStr[1:]
-                            if KomutStr[0] == '.':
-                                KomutStr = PATTERNS[:1] + KomutStr[1:]
-                        Komutlar.append(KomutStr)
-                    else:
-                        if Command[0] == '^':
-                            KomutStr = Command[1:]
-                            if KomutStr[0] == '.':
-                                KomutStr = PATTERNS[:1] + KomutStr[1:]
-                        else:
-                            KomutStr = Command
-                        Komutlar.append(KomutStr)
-
-                # TGPy
-                tgpy = re.search('\"\"\"tgpy(.*)\"\"\"', dosy, re.DOTALL)
-                if not tgpy == None:
-                    tgpy = tgpy.group(0)
-                    for Satir in tgpy.splitlines():
-                        if (not '"""' in Satir) and (':' in Satir):
-                            Satir = Satir.split(':')
-                            Isim = Satir[0]
-                            Deger = Satir[1][1:]
-
-                            CmdHelp.set_file_info(Isim, Deger)
-                            
-                for Komut in Komutlar:
-                    CmdHelp.add_command(Komut, None, 'Bu Plugin xaricdən yüklənib. Heç bir açıqlama yoxdur.')
-                CmdHelp.add()
+                extractCommands(dosya)
                 await plugin.forward_to(PLUGIN_CHANNEL_ID)
-                return await event.edit(f'**TGUSERBOT Plugin Mağazası**\n\n**✅ Modul uğurla yükləndi!**\n__ℹ️ Modulun əmrləri və işlədilişi haqqında məlumat almaq üçün` `.tgbot {dosyaAdi}` `yazın.__')
+                return await event.edit(f'**🐺 Asena Plugin Mağazası**\n__Versiyon 1.0__\n\n**✅ Modül başarıyla yüklendi!**\n__ℹ️ Modülun komutları ve kullanım hakkında bilgi almak için__ `.asena {dosyaAdi}` __yazınız.__')
 
 userbot.cmdhelp.CmdHelp('store').add_command(
-    'mağaza', '<söz>', 'Plugin kanalına son atılan Pluginləri gətirər. Əgər söz yazarsanız axtarış edər.'
+    'store', '<kelime>', 'Plugin kanalına son atılan Pluginleri getirir. Eğer kelime yazarsanız arama yapar.'
 ).add_command(
-    'mağaza random', '<rəqəm>', 'Plugin kanalından təsadufi plugin gətirər.', 'mağaza random 10'
+    'store random', '<sayı>', 'Pluginden kanalından rastgele plugin getirir.', 'store random 10'
 ).add_command(
-    'sinstall', '<rəqəm>', 'Plugin kanalından tez olaraq Plugini yükləyər.'
+    'sinstall', '<sayı>', 'Plugin kanalından direkt olarak Plugini yükler.'
 ).add()
