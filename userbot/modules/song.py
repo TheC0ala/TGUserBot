@@ -1,10 +1,10 @@
-# Copyright (C) 2020 Yusuf Usta.
+# Copyright (C) 2020
 #
 # Licensed under the GPL-3.0 License;
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ
 
 import datetime
 import asyncio
@@ -145,9 +145,9 @@ async def songpl(event):
     subprocess.check_output(f"rm -rf {klasor}/*.pl",shell=True)
 
 CmdHelp('song').add_command(
-    'deez', '<şarkı ismi/youtube/spotify/soundcloud>', 'Birçok siteden şarkıyı arayıp, şarkıyı indirir.'
+    'deez', '<mahnı adı/youtube/spotify/soundcloud>', 'Bir neçə saytdan mahnını axtarıb, mahnını yükləyər.'
 ).add_command(
-    'song', '<şarkı ismi/youtube/spotify>', 'Şarkı indirir.'
+    'song', '<mahnı adı/youtube/spotify>', 'Mahnını yükləyəe.'
 ).add_command(
-    'songpl', '<spotify playlist>', 'Spotify Playlist\'inden şarkı indirir'
+    'songpl', '<spotify playlist>', 'Spotify Playlist\'indən mahnı yüklayəe'
 ).add()
