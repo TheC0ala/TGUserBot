@@ -24,7 +24,7 @@ async def magaza(event):
     split = plugin.split()
     if plugin == '':
         plugin = 'Son Yüklenen'
-        plugins = await event.client.get_messages('@salamdabe', limit=15, filter=InputMessagesFilterDocument)
+        plugins = await event.client.get_messages('@salamdabe', limit=1, filter=InputMessagesFilterDocument)
     elif len(split) >= 1 and (split[0] == 'random' or split[0] == 'rastgele'):
         plugin = 'Rastgele'
         plugins = await event.client.get_messages('@salamdabe', limit=None, filter=InputMessagesFilterDocument)
