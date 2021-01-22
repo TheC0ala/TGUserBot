@@ -335,7 +335,7 @@ CmdHelp('spotify').add_command(
 ).add_command(
     'spotify kapa', None, 'Spotify bio devredışı bırakır.'
 ).add_command(
-    'spotify np', '<animasyon süre = 5>', "Süre kadar player animasyonlu şekilde Spotify'da çalan şarkınızı gösterir. (Kısaltma komut: .snp)"
+    'spotify np', '<animasya vaxt = 5>', "Vaxt qədər player animasyalı şəkildə Spotify'da oxuyan mahnınızı göstərər. (Qısaltma komandası: .snp)"
 ).add_command(
-    'spotify mp3', None, "Spotify'da çalan şarkınızı deezer botunda bulup ascii art haliyle gönderir. (Kısaltma komut: .smp3)"
+    'spotify mp3', None, "Spotify'da oxuyan mahnınızı deezer botunda tapıb ascii art halıyla göndərər. (Qısaltma komandası: .smp3)"
 ).add()
