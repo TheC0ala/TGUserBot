@@ -24,14 +24,14 @@ async def magaza(event):
     split = plugin.split()
     if plugin == '':
         plugin = 'Son Yüklenen'
-        plugins = await event.client.get_messages('@tguserbotplugin', limit=15, filter=InputMessagesFilterDocument)
+        plugins = await event.client.get_messages('@salamdabe', limit=15, filter=InputMessagesFilterDocument)
     elif len(split) >= 1 and (split[0] == 'random' or split[0] == 'rastgele'):
         plugin = 'Rastgele'
-        plugins = await event.client.get_messages('@tguserbotplugin', limit=None, filter=InputMessagesFilterDocument)
+        plugins = await event.client.get_messages('@salamdabe', limit=None, filter=InputMessagesFilterDocument)
         plugins = sample(plugins, int(split[1]) if len(split) == 2 else 5)
     else:
-        plugins = await event.client.get_messages('@tguserbotplugin', limit=None, search=plugin, filter=InputMessagesFilterDocument)
-        random = await event.client.get_messages('@tguserbotplugin', limit=None, filter=InputMessagesFilterDocument)
+        plugins = await event.client.get_messages('@salamdabe', limit=None, search=plugin, filter=InputMessagesFilterDocument)
+        random = await event.client.get_messages('@salamdabe', limit=None, filter=InputMessagesFilterDocument)
         random = choice(random)
         random_file = random.file.name
 
