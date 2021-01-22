@@ -1,8 +1,8 @@
 {
-    "__ASENAJSON__": true,
+    "__DDQJSON__": true,
     "LANGUAGE": "Uzbekcha",
     "LANGCODE": "uz",
-    "AUTHOR": "@H_A_Eshimov",
+    "AUTHOR": "Babaş",
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Iltimos Plugin-Port uchun faylga javob bering.`",
@@ -30,11 +30,11 @@
             "ALREADY_DELETED": "`Plugin fayli allaqachon yo'q qilingan.`",
             "NOT_FOUND_PLUGIN": "`Qachonlardir bunday plugin mavjud edi. ehtimol hozirda yo'q.  Ammo bu aniq emas.`",
             "PLUG_DELETED": "`Plugin yo'q qilindi!` **Amalga oshiriladigan operatsiyalar uchun qayta yuklashingiz kerak.**",
-            "ASENA_PLUGIN_CAPTION": "Bu [Asena](https://t.me/AsenaUserBot) plugini."
+            "ASENA_PLUGIN_CAPTION": "Bu [TGUserBot](https://t.me/UserBotTG) plugini."
         },
-        "__asena": {
-            "NEED_PLUGIN": "Iltimos Asena moduli nomini ko'rsating.",
-            "NEED_MODULE": "Iltimos qaysi Asena moduli bilan yordam olishni xohlayotganingizni ko'rsating !!\nMasalan: .asena <modul nomi>"
+        "__ddq": {
+            "NEED_PLUGIN": "Iltimos TGUserBot moduli nomini ko'rsating.",
+            "NEED_MODULE": "Iltimos qaysi TGUserBot moduli bilan yordam olishni xohlayotganingizni ko'rsating !!\nMasalan: .tgbot <modul nomi>"
         },
         "__helpme": {
             "NO_BOT": "`Bot ishlamayapti!  Bot Token va foydalanuvchi nomini to'g'ri o'rnating.  Modul to'xtatildi.`"
@@ -50,7 +50,7 @@
             "INVALID_MEDIA": "```Mediya yaroqsiz.```",
             "PRIVATE": "`Ushbu buyruqni shaxsiy xabarda ishlatib bolmaydi!`",
             "EKLE": "`Muvaffaqiyatli yuklandi`",
-            "BRAIN": "`Xato!  Men buni Asena rasmiysiga qila olmayman.`",
+            "BRAIN": "`Xato!  Men buni TGUserBot rasmiysiga qila olmayman.`",
             "BANNING": "`Foydalanuvchiga taqiq qoyilmoqda...`",
             "ALREADY_GBANNED": "`Xato! Global miqyosda foydalanuvchi allaqachon taqiqlangan.`",
             "GBANNED_REASON": "`Foydalanuvchi global miqyosda taqiqlangan!`\n**Sabab:**",
@@ -105,7 +105,7 @@
             "IM_NOT_AFK": "Ortiq AFK emasman."
         },
         "auto": {
-            "INVALID_TYPE": "Nomalum buyruq. Mavjud buyruq: `isim`, `bio`",
+            "INVALID_TYPE": "Nomalum buyruq. Mavjud buyruq: `ad`, `bio`",
             "ALREADY": "`Bu jarayon %s avvaldan avtomatik uzgartrilgan.`",
             "SETTING": "`%s sozlanmoqda...`",
             "BIO": "📅 Sana: {tarih} | ⌚️ Soat: {saat} | ",
@@ -126,7 +126,7 @@
         "blacklist": {
             "FORBIDDEN_KUFUR": "**Ushbu guruhdagi xabarlarni o'chirishga vakolatim yo'q.  Dag'allik filtri o'chirilgan.**",
             "HAVENT_PERMISSION": "Xabarni yuq qilaolmayman",
-            "USAGE_KUFUR": "`Qullanma: .küfür aç/kapa`",
+            "USAGE_KUFUR": "`Qullanma: .küfür aç/bağla`",
             "OPENED_KUFUR": "`Ushbu guruh uchun qora ruyxat filtri yoqilgan!`",
             "CLOSED_KUFUR": "`Ushbu guruh uchun qora ruyxat filtri o'chirilgan!`",
             "ALREADY_CLOSED_KUFUR": "`Ushbu guruh uchun qora ruyxat filtri allaqachon o'chirilgan!`",
@@ -140,13 +140,13 @@
             "INVALID_COMMAND": "**Noma'lum buyruq!** `Namuna: .çevir foto/ovoz/gif`",
             "NEED_REPLY": "Iltimos stikerga javob bering.",
             "CONVERTING_TO_PHOTO": "Suratga aylantirilmoqda...",
-            "NEED_EFECT": "`Iltimos effektni ko'rsating.  Siz foydalanishingiz mumkin bo'lgan effektlar: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
+            "NEED_EFECT": "`Iltimos effektni ko'rsating.  Siz foydalanishingiz mumkin bo'lgan effektlar: ``uşaq/robot/earrape/suretli/parazit/yangi`",
             "NEED_SOUND": "`Iltimos hohlagan bir videoni yuboring.`",
             "EFECTING": "`Effekt joylanmoqda...`",
-            "NOT_FOUND_EFECT": "**Siz ko'rsatgan effekt topilmadi! **`Siz foydalanishingiz mumkin bo'lgan effektlar: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
+            "NOT_FOUND_EFECT": "**Siz ko'rsatgan effekt topilmadi! **`Siz foydalanishingiz mumkin bo'lgan effektlar: ``uşaq/robot/earrape/suretli/parazit/yangi`",
             "NEED_VIDEO": "`Iltimos hohlagan bir videoni yuborin!`",
-            "WITH_ASENA": "@AsenaUserBot `ila effekt joylandi`",
-            "WITH_ASENA_GIF": "@AsenaUserBot `ila Gif'ga aylantirildi.`",
+            "WITH_ASENA": "@UserBotTG `ila effekt joylandi`",
+            "WITH_ASENA_GIF": "@UserBotTG `ila Gif'ga aylantirildi.`",
             "CONVERTING_TO_GIF": "Gif'ga aylantrilmoqda...",
             "UPLOADING_GIF": "`Gif yuklanmoqda?..`",
             "ERROR": "Gif'ga aylantirilmadi :/"
@@ -176,7 +176,7 @@
             "CASE": "🌎 Kasalllar:",
             "DEATH": "🌎 O'lim:",
             "HEAL": "🌎 Davolangan:",
-            "TR": "Turkiya",
+            "TR": "Ozarbayjon",
             "TR_ALL_CASES": "Kasallanish (to'plam):",
             "TR_CASES": "Kasaolanish (bugun):",
             "TR_CASE": "Kasallanish (aktiv)",
@@ -238,7 +238,7 @@
             "YATSI": "Xufton"
         },
         "filter": {
-            "GENEL_USAGE": "`Foydalanish: ``.genelfilter \"Assalomu alaykum\" as` ya da `.genelfilter as al`",
+            "GENEL_USAGE": "`Foydalanish: ``.ümumifilter \"Assalomu alaykum\" as` ya da `.ümumifilter as al`",
             "GENEL_FILTER": "filtr",
             "ADDED": "qushildi",
             "UPDATED": "yangilandi",
@@ -254,17 +254,17 @@
         "galeri": {
             "ADDED_LIST": "`Surat navbatga qo'yildi.`",
             "INVALID_URL": "`Siz yaroqsiz rasmning URL manzilini kiritdingiz.  Agar siz foydalanish haqida hech qanday tasavvurga ega bo'lmasangiz: ` `.asena galeri` `yozing.`",
-            "EXAMPLE": "`Iltimos hohlagan bir rasm manziliga kiring. Misol uchun: ` `.galeriyaga qo'shish https://i.resimyukle.xyz/7Qbbc9.jpeg`",
+            "EXAMPLE": "`Iltimos hohlagan bir rasm manziliga kiring. Misol uchun: ` `.qaleriyayaga qo'shish https://i.resimyukle.xyz/7Qbbc9.jpeg`",
             "LIST": "Siz navbatga qo'yilgan fotosuratlar",
             "REMOVED": "**Keyingi rasm muvaffaqiyatli olib tashlandi**",
             "REMOVE_ERROR": "**Keyingi rasm o'chirilmadi** Xato",
             "NEED_NUMBER": "Iltimos rasmning tartibini ko'rsating.  Namuna:",
             "WORKING": "`Hozirda galereya ishlayapti.`",
-            "STARTED": "`Galeriya ish faoliyatini boshladi.`",
-            "NEED_PHOTO": "Galeriya ish faoliyatini boshlashi uchun rasm yuklashingiz kerakdir. Yuklashni bilmasangiz agar .asena galeri ile kullanım hakkında bilgi sahibi olabilirsiniz.",
-            "STOPPED": "`Galeriya ish faoliyati tuxtatildi!`",
-            "ALREADY_STOP": "`Galeriya avvaldan ish faoliyati tuxtagan edi.`",
-            "INVALID": "**Nomalum buyruq** Masalan:\n\nGaleri'da rasm yuklash: `.galeriyaga qo'shish https://i.resimyukle.xyz/7Qbbc9.jpeg`\nGalereya ro'yxatiga qarang: `.galeriya ruyxati`\nOddiy fotosuratni o'chirish: `.galeriya uchirish <sıra sayısı>`"
+            "STARTED": "`Qaleriya ish faoliyatini boshladi.`",
+            "NEED_PHOTO": "Qaleriya ish faoliyatini boshlashi uchun rasm yuklashingiz kerakdir. Yuklashni bilmasangiz agar .tgbot qaleriya siz foydalanish haqida bilib olishingiz mumkin .",
+            "STOPPED": "`Qaleriya ish faoliyati tuxtatildi!`",
+            "ALREADY_STOP": "`Qaleriya avvaldan ish faoliyati tuxtagan edi.`",
+            "INVALID": "**Nomalum buyruq** Masalan:\n\nQaleriya'da rasm yuklash: `.qaleriyayaga qo'shish https://i.resimyukle.xyz/7Qbbc9.jpeg`\nQaleriya ro'yxatiga qarang: `.qaleriya ruyxati`\nOddiy fotosuratni o'chirish: `.qaleriya uchirish <qatorlar soni>`"
         },
         "github": {
             "INFO": "GitHub haqida ma'lumot",
@@ -285,7 +285,7 @@
             "ERROR_MSG": "```Last.fm moduli kutilmagan xato tufayli to'xtatildi..```"
         },
         "liste": {
-            "WRONG_INPUT": "**Noma'lum buyruq!** `Masalan: .liste gmute/gban`",
+            "WRONG_INPUT": "**Noma'lum buyruq!** `Masalan: .siyahı gmute/gban`",
             "NEED_SQL_MODE": "`Ushbu xususiyat sql bo'lmagan rejimda ishlamaydi!`",
             "GBANNED_USERS": "`Global taqiqlangan foydalanuvchilar olib kelinadi...`",
             "TOO_MANY_GBANNED": "`Qoyil!  Siz ko'p odamlarga taqiq qo'ydingiz.  Fayl sifatida yuborayapman ...`",
@@ -309,13 +309,13 @@
             "LYDIA_OFF_FOR_USER": "Lydia ushbu foydalanuvchida faol emas"
         },
         "lyrics": {
-            "WRONG_TYPE": "`Xato: Iltimos <artist> ve <qushiq nomi> kurinishida qidiriladi'-' bajaring`\nMasalan: `Jahongir Otajonov - Jingalamo`",
+            "WRONG_TYPE": "`Xato: Iltimos <artist> ve <qushiq nomi> kurinishida qidiriladi'-' bajaring`",
             "GENIUS_NOT_FOUND": "`Iltimos, Genius tokenini o'rnating`",
             "GIVE_INFO": "`Iltimos artist va qushiq nomini bering!`",
             "SEARCHING": "`{} - {} buyicha qushiq matn qidirilmoqda...`",
-            "NOT_FOUND": "Qushiq **{} - {}** Topilmadi😞",
+            "NOT_FOUND": "Qushiq **{} - {}** Topilmadi",
             "TOO_LONG": "`Qushiq matni juda uzun kurish uchun fayl kurinishiga keltiriladi.`",
-            "LYRICS": "**Buyurtmangiz 👌**:",
+            "LYRICS": "**Buyurtmangiz **:",
             "SINGER_ERROR": "`Xato: Iltimos <qushiqchi> va <qushiq nomi> uchungina qidirsa buladi '-' bajaring`\nMasalan: `Bojalar - atirgulim`",
             "SINGER_LYRICS": "🎙 Men sizning qulog'ingizning zangini artib tashlayman!  {} Dan {} gacha keladi!!",
             "SINGER_ENDED": "🎙Men juda yaxshi gapirdim to'g'rimi?"
@@ -324,7 +324,7 @@
             "EVERYTHING_LOCK": "`Hech narsani qulflab bo'lmaydi!`",
             "INVALID_MEDIA_TYPE": "`Noto'g'ri media turi: %s`",
             "LOCK": "`%s bu chat uchun qulflangan`",
-            "INVALID_AUTHORITY": "`Buni amalga oshirish huquqiga ega ekanligingizga aminmisiz?`\n**Hata:**",
+            "INVALID_AUTHORITY": "`Buni amalga oshirish huquqiga ega ekanligingizga aminmisiz?`\n**Xato:**",
             "EVERYTHING_UNLOCK": "`Men bo'shliqni ocholmayapman!`",
             "UNLOCK": "`%s ushbu chat uchun blokdan chiqarildi`"
         },
@@ -332,22 +332,22 @@
             "REPLY_TO_FILE": "`Faylga javob bering.`",
             "QUERY": "So'rov",
             "RESULT": "Chiqish",
-            "NEED_MUCH_DATA_FOR_RANDOM": "`2 yoki undan ortiq narsalar talab qilinadi.  Qo'shimcha ma'lumot olish uchun .asena random tasodifiy buyrug'ini kiriting..`",
+            "NEED_MUCH_DATA_FOR_RANDOM": "`2 yoki undan ortiq narsalar talab qilinadi.  Qo'shimcha ma'lumot olish uchun .tgbot random tasodifiy buyrug'ini kiriting..`",
             "SLEEP_DESC": "Foydalanish shakli: `.sleep [soniya]`",
             "SLEEPING": "`Sokin uyqudaman...`",
             "GOODMORNIN_YALL": "`Xayrli tong!`",
-            "GOODBYE_MFRS": "`Ko'rishguncha... *Windows XP yopiq ovoz*`",
+            "GOODBYE_MFRS": "`Ko'rishguncha...`",
             "RESTARTING": "`Bot qayta yuklanmoqda...`",
-            "SUPPORT_GROUP": "Siz bizning qo'llab-quvvatlash guruhimizga murojaat qilishingiz mumkin [Bu Erda](http://t.me/AsenaSupport).",
-            "CREATOR": "Bu bot \n[Yusuf](https://t.me/Fusuf) [Usta](https://t.me/SelaxG) tomonidan ishlab chiqilgan. [Hamudulla](https://t.me/H_A_Eshimov) tomonidan Uzbekchaga ugirildi \n",
-            "README": "[Asena README.md](https://github.com/quiec/AsenaUserBot/blob/master/README.md)",
-            "REPO": "[Asena Repo](https://github.com/quiec/asenauserbot)",
+            "SUPPORT_GROUP": "Siz bizning qo'llab-quvvatlash guruhimizga murojaat qilishingiz mumkin [Bu Erda](http://t.me/tguserbotsup).",
+            "CREATOR": "Bu bot \n[Babaş](https://t.me/c0alaa) tomonidan ishlab chiqilgan.",
+            "README": "[Asena README.md](https://github.com/thec0ala/tguserbot/blob/main/README.md)",
+            "REPO": "[TGUserBot Repo](https://github.com/thec0ala/tguserbot)",
             "CHECK_LOGS": "`Xabar hal qilinganligi uchun userbot jurnallarini tekshiring!`"
         },
         "notes": {
             "NOT_FOUND": "`Bu yerga saqlangan notlar topilmadi`",
             "NOTES": "Bu yerdagi jami notlar",
-            "CLEAR_NOT_FOUND": "Not topilmadi☹️",
+            "CLEAR_NOT_FOUND": "Not topilmadi",
             "CLEAR": "Not muvaffaqiyatli yo'q qilindi",
             "SUCCESS": "Not muvaffaqiyatli",
             "UPDATED": "Yangilandi🔄",
@@ -360,13 +360,13 @@
             "READ": "Mana nima o'qishim mumkin:"
         },
         "pmpermit": {
-            "BLOCKED": "`Siz mening egamning bosh vazirini spam-xabar bilan yuborgansiz, bu menga yoqmaydi.`\n`Agar kelajakda o'zgarishlar bo'lmasa, siz hozirda bloklanmoqdasiz va SPAM deb xabar berilgansiz..`",
+            "BLOCKED": "`Siz mening egamning bosh vazirini spam-xabar bilan yuborgansiz, bu menga yoqmaydi.`\n`Agar kelajakda o'zgarishlar bo'lmasa, siz hozirda bloklanmoqdasiz va SPAM deb xabar berilgansiz...\n\n@UserBotTG`",
             "ERROR": "PM hisoblagichi yong'oqqa tushganda botni qayta yoqing.",
             "BOTLOG_BLOCKED": " uning odami shunchaki ko'ngli qolgan edi.  Bosh vazirni band qilish uchun bloklangan.",
             "NOTIFOFF": "`PM ruxsatisiz foydalanuvchilarning bildirishnomalari o'chiriladi!`",
             "NOTIFON": "`PM ruxsatisiz foydalanuvchilarga bildirishnoma yuborishga ruxsat berildi!`",
             "ALREADY": "`Foydalanuvchi allaqachon PM yuborishi kerak.`",
-            "DISAPPROVE": "kişisinin PM atma izni kaldırıldı.",
+            "DISAPPROVE": "isdifadəçisinin PM icazəsi geri alındı.",
             "UNBLOCKED": "Block olib tashlandi."
         },
         "profile": {
@@ -477,19 +477,19 @@
             "NO_SQL": "`SQL dan tashqari rejimda ishlaydi!`",
             "NEED_BOTLOG": "`BOTLOG_CHATID sozlamalarini ommaviy axborot vositalari Snip bilan saqlash uchun sozlanishi kerak.`",
             "USAGE": "Qo'llanma",
-            "UPDATED": "Yangilandi🔄",
+            "UPDATED": "Yangilandi",
             "SAVED": "Saqlandi",
-            "NO_SNIP": "`Shu onda hech bir snip mavjud emas😞`",
+            "NO_SNIP": "`Shu onda hech bir snip mavjud emas`",
             "SNIPS": "Mavjud sniplar",
-            "DELETED": "Muvaffaqiyatli yuq qilindi✅",
-            "NOT_FOUND": "Hech narsa topilmadi😞"
+            "DELETED": "Muvaffaqiyatli yuq qilindi",
+            "NOT_FOUND": "Hech narsa topilmadi"
         },
         "song": {
             "GIVE_ME_SONG": "**Menga bir qushiqni yuboring!** `Qullanma: .deez qushiq nomi/youtube/spotify/soundcloud`",
             "SEARCHING": "`Qushiq qidirilmoqda...`",
-            "BLOCKED_DEEZER": "`Mmmh menimcha` @DeezerMusicBot `ni siz blokladingiz  Blockni oching.",
-            "NOT_FOUND": "`Qidirilgan qushiq topilmadi😞 Kechiring.`",
-            "UPLOADED_WITH": "@AsenaUserBot orqali yuklandi.",
+            "BLOCKED_DEEZER": "`Hmm menimcha` @DeezerMusicBot `ni siz blokladingiz  Blockni oching.",
+            "NOT_FOUND": "`Qidirilgan qushiq topilmadi Kechiring.`",
+            "UPLOADED_WITH": "@UserBotTG orqali yuklandi.",
             "USAGE": "`Qullanma:` `.song qushiq nomi/youtube url/spotify url`",
             "SEARCHING_SPOT": "`Qushiq qidirilmoqda va yuklanmoqda. Iltimos kuting!",
             "DOWNLOADED": "`Yuklash ishlari bajarildi. Iltimos kuting...`",
@@ -504,10 +504,10 @@
             "BIO_DISABLED": "`spotify plagini o'chirilgan.  Biografiya asl shakliga qaytdi.`",
             "BIO_RUNNING": "`Spotify plagini allaqachon ishlamoqda.`",
             "ERROR": "`Spotify plaginlari to'xtatildi.  Xatolik yuz berdi.`",
-            "ERROR_NP": "`Hata! Spotify'da çalan şarkı getirilemedi!`",
-            "ERROR_TOKEN": "`Bot Spotify ayarları yapılmamış!`",
-            "NP_NONE": "`Şu anda Spotify'da bir şey dinlemiyorum!`",
-            "NP_GET": "`Spotify'da dinlediğim şarkı getiriliyor...`"			
+            "ERROR_NP": "`Xato! Spotify-da ijro etilayotgan qo'shiqni yuklab bo'lmadi`",
+            "ERROR_TOKEN": "`Bot Spotify sozlamalari o'rnatilmagan!`",
+            "NP_NONE": "`Hozirda Spotify-da hech narsa tinglamayman!`",
+            "NP_GET": "`Men Spotify-da tinglayotgan qo'shiq olib kelinmoqda ...`"			
         },
         "stickers": {
             "GIVE_STICKER": "`Menga tahrir qilish uchun stiker yoki fotosurat berishingiz kerak!`",
@@ -523,8 +523,8 @@
             "BIG": "`O'zgarishlar ro'yxati juda katta, uni fayl sifatida ko'rishingiz kerak.`",
             "QUERY": "So'rov",
             "RESULT": "Natija",
-            "NOT_FOUND": "Biron nima topilmadi😔",
-            "EXAMPLE": "`Foydalanish uchun .asena pip buyruqni bajaring`"
+            "NOT_FOUND": "Biron nima topilmadi",
+            "EXAMPLE": "`Foydalanish uchun .tgbot pip buyruqni bajaring`"
         },
         "time": {
             "CLOCK": "Bu yerda soat",
@@ -543,7 +543,7 @@
             "NOT_FOUND": "Topilmadi.",
             "GIT_ERROR": "Git xatosi!",
             "NOT_GIT": "papka git omboriga o'xshamaydi. \nAmmo bu muammoni botni .update now buyrug'i bilan kuch bilan yangilash orqali hal qilishingiz mumkin..",
-            "INVALID_BRANCH": "**[UPDATER]:**` O'ylaymanki siz Asena yuklashingizni o'zgartirgansiz va o'zingizning filialingizdan foydalanasiz.\nUshbu holat yangilanuvchini chalkashtirib yuboradi,\nYangilanish qayerdan olinadi?\nIltimos, rasmiy repodan Asena botidan foydalaning.`",
+            "INVALID_BRANCH": "**[UPDATER]:**` O'ylaymanki siz TGUserBot yuklashingizni o'zgartirgansiz va o'zingizning filialingizdan foydalanasiz.\nUshbu holat yangilanuvchini chalkashtirib yuboradi,\nYangilanish qayerdan olinadi?\nIltimos, rasmiy repodan TGUserBot botidan foydalaning.`",
             "UPDATE": "\n`Botingiz:` **butunlay yangi!** `Daraja:` **{}**\n",
             "WAS_UPDATE": "**{} uchun yangi yangilanish mavjud!\n\nO'zgarishlar:**\n`{}`",
             "BIG": "`O'zgarishlar ro'yxati juda katta uni fayl sifatida ko'rishingiz kerak.`",
@@ -569,7 +569,7 @@
             "FOUND_FILES": "**{} ta fayl topildi.** `Yuklash birozda boshlanadi. Iltimos kuting :)`",
             "UPLOADING": "`Yuklanmoqda...`",
             "SUCCESSFULLY_MULTI_UPLOADED": "`{} ta fayl muvaffaqiyatli yuklandi`",
-            "WARNING": "`Bu xavfli jarayon. Ogohlantrish❗`",
+            "WARNING": "`Bu xavfli jarayon. Ogohlantrish`",
             "SUCESSFULLY_UPLOADED": "**Yuklash Muvaffaqiyatli Bajarildi!**",
             "NOT_FOUND": "Fayl topilmadi",
             "DOWNLOADED": "`{}, {} soniya vaqt sarflandi`",
@@ -588,8 +588,8 @@
             "MAX_TEMP": "Eng yuqori harorat",
             "HUMIDITY": "Namlik",
             "WIND_SPEED": "Shamol tezligi",
-            "SUNRISE": "Quyosh chiqish vaqti🌅",
-            "SUNSET": "Quyosh botish vaqti🌄"
+            "SUNRISE": "Quyosh chiqish vaqti",
+            "SUNSET": "Quyosh botish vaqti"
         },
         "whois": {
             "GETTING_DATA": "`Ma'lumotlar yuklanmoqda... Iltimos kuting...`",
