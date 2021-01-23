@@ -4,17 +4,14 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-
-# @NaytSeyd tarafından portlanmıştır.
-#
+# TGUSERBOT - by BABAŞ
 
 from telethon.tl.types import ChannelParticipantsAdmins
 from userbot import CMD_HELP, bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
-@register(outgoing=True, pattern="^.tagall$")
+@register(outgoing=True, pattern="^.tagherkes$")
 async def _(event):
     if event.fwd_from:
         return
@@ -45,7 +42,7 @@ async def _(event):
     await event.delete()
 
 CmdHelp('tagall').add_command(
-    'tagall', None, 'Bu komutu kullandığınızda sohbet içerisinde ki herkesi etiketler.'
+    'tagall', None, 'Bu komanda yazdığınız qrupda hamını tağ edər.'
 ).add_command(
-    'admin', None, 'Bu komutu kullandığınızda sohbet içerisinde ki yöneticileri etiketler.'
+    'admin', None, 'Bu komanda yazdığınız qrupdakı adminləri tağ edər.'
 ).add()
