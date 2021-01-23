@@ -4,10 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-
-
-""" Bir konumun ya da UserBot sunucusunun tarih/saatini gösterebilecek modüldür. """
+# TGUSERBOT - by BABAŞ
 
 from datetime import datetime as dt
 
@@ -22,7 +19,7 @@ from userbot.cmdhelp import CmdHelp
 # ██████ LANGUAGE CONSTANTS ██████ #
 
 from userbot.language import get_value
-LANG = get_value("time")
+LANG = get_value("vaxt")
 
 # ████████████████████████████████ #
 
@@ -51,13 +48,8 @@ async def get_tz(con):
         return
 
 
-@register(outgoing=True, pattern="^.time(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
+@register(outgoing=True, pattern="^.vaxt(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
 async def time_func(tdata):
-    """ .time komutu şu şekilde kullanılabilir
-        1- Bölge belirtilerek.
-        2. Varsayılan userbot bölgesi (.settime komutuyla ayarlanabilir)
-        3. UserBot'un barındığı sunucunun tarihi.
-    """
     con = tdata.pattern_match.group(1).title()
     tz_num = tdata.pattern_match.group(2)
 
@@ -113,13 +105,8 @@ async def time_func(tdata):
         return
 
 
-@register(outgoing=True, pattern="^.date(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
+@register(outgoing=True, pattern="^.tarix(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
 async def date_func(dat):
-    """ .date komutu şu şekilde kullanılabilir
-        1- Bölge belirtilerek.
-        2. Varsayılan userbot bölgesi (.settime komutuyla ayarlanabilir)
-        3. UserBot'un barındığı sunucunun tarihi.
-    """
     con = dat.pattern_match.group(1).title()
     tz_num = dat.pattern_match.group(2)
 
@@ -175,7 +162,7 @@ async def date_func(dat):
         return
 
 CmdHelp('time').add_command(
-    'time', '<ülke ismi/kodu> <saat dilimi numarası>', 'Bir ülkenin saatini gösterir. Eğer bir ülke birden fazla saat dilimine sahipse, tümü birden gösterilir ve seçim sana bırakılır.'
+    'vaxt', '<ölkə adı/kodu> <saat dilimi nömrəsi>', 'Bir ölkənin saatını göstərər. Əgər bir ölkə birdən çox saat diliminə sahibdirsə, hamısı birdən göstərilər.'
 ).add_command(
-    'date', '<ülke ismi/kodu> <saat dilimi numarası>', 'Bir ülkenin tarihini gösterir. Eğer bir ülke birden fazla saat dilimine sahipse, tümü birden gösterilir. ve seçim sana bırakılır.'
+    'tarix', '<ölkə adı/kodu> <saat dilimi nömrəsi>', 'Bir ölkənin tarixini göstərər . Əgər bir ölkə birdən çox saat diliminə sahibdirsə, hamısı birdən göstərilər.'
 ).add()
