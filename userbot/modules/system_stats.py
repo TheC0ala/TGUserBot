@@ -4,10 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-
-
-""" Sunucu hakkında bilgi veren UserBot modülüdür. """
+# TGUSERBOT - by BABAŞ
 
 from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
@@ -31,9 +28,8 @@ LANG = get_value("system_stats")
 # ████████████████████████████████ #
 # ============================================
 
-@register(outgoing=True, pattern="^.sysd$")
+@register(outgoing=True, pattern="^.sistem$")
 async def sysdetails(sysd):
-    """ .sysd komutu neofetch kullanarak sistem bilgisini gösterir. """
     try:
         neo = "neofetch --stdout"
         fetch = await asyncrunapp(
@@ -51,9 +47,8 @@ async def sysdetails(sysd):
         await sysd.edit(LANG['NO_NEOFETCH'])
 
 
-@register(outgoing=True, pattern="^.botver$")
+@register(outgoing=True, pattern="^.botversion$")
 async def bot_ver(event):
-    """ .botver komutu bot versiyonunu gösterir. """
     if which("git") is not None:
         invokever = "git describe --all --long"
         ver = await asyncrunapp(
@@ -83,13 +78,12 @@ async def bot_ver(event):
                          "`")
     else:
         await event.edit(
-            "Tanrı Türk'ü Korusun 🐺"
+            "[TGUSERBOT](https://t.me/userbottg)"
         )
 
 
 @register(outgoing=True, pattern="^.pip(?: |$)(.*)")
 async def pipcheck(pip):
-    """ .pip komutu python-pip araması yapar. """
     pipmodule = pip.pattern_match.group(1)
     if pipmodule:
         await pip.edit(f"`{LANG['SEARCHING']} . . .`")
@@ -136,7 +130,7 @@ async def amialive(e):
         await e.edit(PLUGIN_MESAJLAR['alive'].format(
             telethon=version.__version__,
             python=python_version(),
-            asena=TGUSERBOT_VERSION,
+            tguserbot=TGUSERBOT_VERSION,
             plugin=len(CMD_HELP),
             id=me.id,
             username='@' + me.username if me.username else f'[{me.first_name}](tg://user?id={me.id})',
@@ -165,11 +159,11 @@ async def amialive(e):
 
 
 CmdHelp('system_stats').add_command(
-    'sysd', None, 'Neofetch modülünü kullanarak sistem bilgisi gösterir.'
+    'sysd', None, 'Neofetch modulunu işlədərək sistem məlumatlarını göstərər.'
 ).add_command(
-    'botver', None, 'Userbot sürümünü gösterir.'
+    'botversion', None, 'Userbotun versiasını göstərər.'
 ).add_command(
-    'pip', '<modül(ler)>', 'Pip modüllerinde arama yapar.'
+    'pip', '<modul(lar)>', 'Pip modullarında axtarış edər.'
 ).add_command(
-    'alive', None, 'Asena botunun çalışıp çalışmadığını kontrol etmek için kullanılır.'
+    'alive', None, 'TGUserBotun işləyib işləmədiyini yoxlamaq üçündür.'
 ).add()
