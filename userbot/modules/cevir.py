@@ -1,4 +1,4 @@
-# TGUSERBOT - by BABAŞ
+# TGUSERBOT - by BABAŞ #
 
 from userbot import CMD_HELP
 from userbot.events import register
@@ -39,7 +39,7 @@ async def cevir(event):
 
         im = Image.open(foto).convert("RGB")
         im.save("sticker.png", "png")
-        await event.client.send_file(event.chat_id, "sticker.png", reply_to=rep_msg, caption="@UserBotTG  `ilə şəklə çevirildi.`")
+        await event.client.send_file(event.chat_id, "sticker.png", reply_to=rep_msg, caption="@UseratorOT 🐍 `ilə fotoya çevirildi.`")
 
         await event.delete()
         os.remove("sticker.png")
@@ -64,7 +64,7 @@ async def cevir(event):
             indir = await rep_msg.download_media()
             ses = await asyncio.create_subprocess_shell(f"ffmpeg -i '{indir}' {KOMUT[efekt]} output.mp3")
             await ses.communicate()
-            await event.client.send_file(event.chat_id, "output.mp3", reply_to=rep_msg, caption="@UserBotTG `ilƏ effekt tətbiq edildi.`")
+            await event.client.send_file(event.chat_id, "output.mp3", reply_to=rep_msg, caption="@DTOUserBot `ilƏ efekt edildi.`")
             
             await event.delete()
             os.remove(indir)
@@ -90,7 +90,7 @@ async def cevir(event):
         await event.edit(f"`{LANG['UPLOADING_GIF']}`")
 
         try:
-            await event.client.send_file(event.chat_id, "out.gif",reply_to=rep_msg, caption=LANG['WITH_DDQ_GIF'])
+            await event.client.send_file(event.chat_id, "out.gif",reply_to=rep_msg, caption=LANG['WITH_DTO_GIF'])
         except:
             await event.edit(LANG['ERROR'])
             await event.delete()
@@ -112,7 +112,7 @@ async def cevir(event):
         await gif.communicate()
         await event.edit(LANG['UPLOADING_SOUND'])
         try:
-            await event.client.send_file(event.chat_id, "out.mp3",reply_to=rep_msg, caption=LANG['WITH_DDQ_SOUND'])
+            await event.client.send_file(event.chat_id, "out.mp3",reply_to=rep_msg, caption=LANG['WITH_DTO_SOUND'])
         except:
             await event.edit(LANG['ERROR'])
             await event.delete()
@@ -128,9 +128,9 @@ async def cevir(event):
         return
 
 CmdHelp('cevir').add_command(
-    'çevir foto', None, 'Stickeri şəklə çevirər.'
+    'çevir foto', None, 'Stickeri fotoğrafa çevirər.'
 ).add_command(
-    'çevir gif', None, 'Videonu vəya animasyonlu stickeri GİFə çevirər.'
+    'çevir gif', None, 'Videonu və ya animasyonlu stickeri gifə çevirər.'
 ).add_command(
-    'çevir ses', '<uşaq/robot/earrape/suretli/parazit/yangi>', 'Səsə effekt tətbiq edər.'
+    'çevir ses', '<uşaq/robot/earrape/suretli/parazit/yangi>', 'Səsə efekt verər.'
 ).add()
