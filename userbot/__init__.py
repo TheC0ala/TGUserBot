@@ -97,7 +97,7 @@ UPSTREAM_REPO_URL = os.environ.get(
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
 # SQL Verilenler Bazası
-DB_URI = os.environ.get("DATABASE_URL", "sqlite:///tgbot.db")
+DB_URI = os.environ.get("DATABASE_URL", "sqlite:///bot.db")
 
 # OCR API key
 OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
