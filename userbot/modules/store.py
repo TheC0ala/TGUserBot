@@ -123,7 +123,7 @@ async def sinstall(event):
                             KomutStr = Command
                         Komutlar.append(KomutStr)
 
-                # DtoPY
+                # ddqpy
                 Dtopy = re.search('\"\"\"DTOPY(.*)\"\"\"', dosy, re.DOTALL)
                 if not Dtopy == None:
                     Dtopy = Dtopy.group(0)
