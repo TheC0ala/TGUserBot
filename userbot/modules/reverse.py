@@ -4,12 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-
-# Teşekkürler @kandnub
-#
-
-""" Google'da görsel aramak için kullanılabilen UserBot modülü """
+# TGUSERBOT - by BABAŞ #
 
 import io
 import os
