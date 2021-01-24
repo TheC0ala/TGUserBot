@@ -4,10 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-
-
-""" Sunucuya dosya indirme/yükleme yapmayı sağlayan UserBot modülüdür. """
+# TGUSERBOT - by BABAŞ #
 
 import json
 import os
@@ -45,7 +42,6 @@ def get_lst_of_files(input_directory, output_lst):
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
-    """Upload-download için genel process_callback dir."""
     now = time.time()
     diff = now - start
     if round(diff % 10.00) == 0 or current == total:
@@ -72,8 +68,6 @@ async def progress(current, total, event, start, type_of_ps, file_name=None):
 
 
 def humanbytes(size):
-    """ Boyut okunabilir olması için bayt olarak gösterilir """
-    # https://stackoverflow.com/a/49361727/4723940
     if not size:
         return ""
     # 2 ** 10 = 1024
@@ -87,7 +81,6 @@ def humanbytes(size):
 
 
 def time_formatter(milliseconds: int) -> str:
-    """ Daha güzel görünmesi için zamanı milisaniye olarak belirtir. """
     seconds, milliseconds = divmod(int(milliseconds), 1000)
     minutes, seconds = divmod(seconds, 60)
     hours, minutes = divmod(minutes, 60)
@@ -102,7 +95,6 @@ def time_formatter(milliseconds: int) -> str:
 
 @register(pattern=r".download(?: |$)(.*)", outgoing=True)
 async def download(target_file):
-    """ .download komutu userbot sunucusuna dosya indirmenizi sağlar. """
     await target_file.edit(LANG['DOWNLOADING'])
     input_str = target_file.pattern_match.group(1)
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
@@ -175,7 +167,6 @@ async def download(target_file):
 
 @register(pattern=r".uploadir (.*)", outgoing=True)
 async def uploadir(udir_event):
-    """ .uploadir komutu bir klasördeki tüm dosyaları uploadlamanıza yarar """
     input_str = udir_event.pattern_match.group(1)
     if os.path.exists(input_str):
         await udir_event.edit(LANG['TRYING'])
@@ -251,7 +242,6 @@ async def uploadir(udir_event):
 
 @register(pattern=r".upload (.*)", outgoing=True)
 async def upload(u_event):
-    """ .upload komutu userbot sunucusundan dosya uploadlamaya yarar. """
     await u_event.edit(LANG['TRYING'])
     input_str = u_event.pattern_match.group(1)
     if input_str in ("userbot.session", "config.env"):
@@ -436,7 +426,6 @@ async def wupload(event):
             await event.edit(urll)
 
 def get_video_thumb(file, output=None, width=90):
-    """ Video kapak resmini gösterir """
     metadata = extractMetadata(createParser(file))
     popen = subprocess.Popen(
         [
@@ -462,7 +451,6 @@ def get_video_thumb(file, output=None, width=90):
 
 
 def extract_w_h(file):
-    """ Bir medyanın yüksekliğini-genişliğini gösterir. """
     command_to_run = [
         "ffprobe",
         "-v",
@@ -489,8 +477,7 @@ def extract_w_h(file):
 
 @register(pattern=r".uploadas(stream|vn|all) (.*)", outgoing=True)
 async def uploadas(uas_event):
-    """ .uploadas komutu size upload yaparken bazı argümanlar belirtmenizi sağlar. """
-    await uas_event.edit("Lütfen bekleyin...")
+    await uas_event.edit("Zəhmət olmasa gözləyin...")
     type_of_upload = uas_event.pattern_match.group(1)
     supports_streaming = False
     round_message = False
@@ -545,7 +532,7 @@ async def uploadas(uas_event):
                     ],
                     progress_callback=lambda d, t: asyncio.get_event_loop(
                     ).create_task(
-                        progress(d, t, uas_event, c_time, "Uploadlanıyor...",
+                        progress(d, t, uas_event, c_time, "Uploadlanır...",
                                  file_name)))
             elif round_message:
                 c_time = time.time()
@@ -567,26 +554,26 @@ async def uploadas(uas_event):
                     ],
                     progress_callback=lambda d, t: asyncio.get_event_loop(
                     ).create_task(
-                        progress(d, t, uas_event, c_time, "Uploadlanıyor...",
+                        progress(d, t, uas_event, c_time, "Uploadlanır...",
                                  file_name)))
             elif spam_big_messages:
-                await uas_event.edit("TBD: Halihazırda uygulanamadı.")
+                await uas_event.edit("TBD: Hal hazırda tətbiq edilmədi.")
                 return
             os.remove(thumb)
-            await uas_event.edit("Upload başarılı !!")
+            await uas_event.edit("Upload uğurludur !!")
         except FileNotFoundError as err:
             await uas_event.edit(str(err))
     else:
-        await uas_event.edit("404: Dosya bulunamadı.")
+        await uas_event.edit("404: Qovluq tapılmadı.")
 
 CmdHelp('updown').add_command(
-    'download', '<bağlantı-dosya adı> (ya da bir şeye cevap vererek)', 'Sunucuya dosyayı indirir.'
+    'download', '<bağlantı-fayl adı> (cavab)', 'Faylı serverə yükləyər.'
 ).add_command(
-    'upload', '<sunucudaki dosya yolu>', 'Sunucunuzdaki bir dosyayı sohbete upload eder.'
+    'upload', '<serverdəki qovluq yolu>', 'Serverinizdəki bir faylı söhbətə upload edər.'
 ).add_command(
-    'wupload', ' <dosyaya yanıt verin> anonfiles|transfer|filebin|tmpninja|anonymousfiles|megaupload|bayfiles|letsupload|vshare', 'Seçtiğiniz websiteye yükler.'
+    'wupload', ' <fayla cavab vedin> anonfiles|transfer|filebin|tmpninja|anonymousfiles|megaupload|bayfiles|letsupload|vshare', 'Seçtiyiniz web saytına yükləyər.'
 ).add_command(
-    'unzip', '<yanıt>', 'Yanıt verdiğiniz Zip dosyasını çıkarır.'
+    'unzip', '<cavab>', 'Cavab verdiyiniz Zip qovluğunu çıxarar.'
 ).add_command(
-    'uploadir', '<klasör>', 'Tüm klasöru yükler.'
+    'uploadir', '<qovluq>', 'Bütün qovluğu yükləyər.'
 ).add()
