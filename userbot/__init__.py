@@ -280,7 +280,7 @@ def butonlastir(sayfa, moduller):
     butonlar.append([custom.Button.inline("◀️ Geri", data=f"sayfa({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"), custom.Button.inline("İreli ▶️", data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
     return [max_pages, butonlar]
 
-with tgbot:
+with bot:
     if AVTO_QATILMA:
         try:
             bot(JoinChannelRequest("@TGUserBotSup"))
