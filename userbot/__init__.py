@@ -253,7 +253,7 @@ async def check_botlog_chatid():
         quit(1)
         
 if not BOT_TOKEN == None:
-    tgbot = TelegramClient(
+    bot = TelegramClient(
         "TG_BOT_TOKEN",
         api_id=API_KEY,
         api_hash=API_HASH
