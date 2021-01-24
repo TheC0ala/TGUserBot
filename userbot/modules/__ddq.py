@@ -21,9 +21,9 @@ LANG = get_value("__ddq")
 
 # ████████████████████████████████ #
 
-@register(outgoing=True, pattern="^.tgbot(?: |$)(.*)")
+@register(outgoing=True, pattern="^.bot(?: |$)(.*)")
 async def ddq(event):
-    """ .tgbot komanda üçün """
+    """ necesen """
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
