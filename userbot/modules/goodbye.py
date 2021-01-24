@@ -158,7 +158,7 @@ async def del_goodbye(event):
     else:
         await event.edit("`Burada qarşılama mesajı yoxdur.`")
 
-CmdHelp('goodbye').add_command(
+CmdHelp('goruserik').add_command(
     'goruserik', '<cavab> vəya .goruserik ilə bir mesaja cevab verin', 'Mesajı söhbətdə Görüşərik mesajı olaraq qeyd edər.'
 ).add_command(
     'yoxlagoruserik', None, 'Söhbətdə Görüşərik mesajı olub olmadığını yoxlayar.'
