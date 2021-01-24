@@ -22,7 +22,7 @@ LANG = get_value("__ddq")
 # ████████████████████████████████ #
 
 @register(outgoing=True, pattern="^.tgbot(?: |$)(.*)")
-async def asena(event):
+async def ddq(event):
     """ .tgbot komanda üçün """
     args = event.pattern_match.group(1).lower()
     if args:
