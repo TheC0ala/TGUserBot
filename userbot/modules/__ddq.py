@@ -17,7 +17,7 @@ from userbot.events import register
 # ██████ LANGUAGE CONSTANTS ██████ #
 
 from userbot.language import get_value
-LANG = get_value("__asena")
+LANG = get_value("__ddq")
 
 # ████████████████████████████████ #
 
