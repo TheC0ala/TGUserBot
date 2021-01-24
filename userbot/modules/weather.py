@@ -4,10 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-
-
-"""Bir bölgenin hava durumunu gösterir."""
+# TGUSERBOT - by BABAŞ
 
 import json
 from requests import get
@@ -37,8 +34,6 @@ else:
 
 
 async def get_tz(con):
-    """ Verilen ülkenin zaman dilimini alır. """
-    """ @aragon12 ve @zakaryan2004'e teşekkürler. """
     for c_code in c_n:
         if con == c_n[c_code]:
             return tz(c_tz[c_code][0])
@@ -51,7 +46,6 @@ async def get_tz(con):
 
 @register(outgoing=True, pattern="^.weather(?: |$)(.*)")
 async def get_weather(weather):
-    """ .weather komutu bir bölgenin hava durumunu OpenWeatherMap üzerinden alır. """
 
     if not OWM_API:
         await weather.edit(
@@ -149,5 +143,5 @@ async def get_weather(weather):
         f"`{cityname}, {fullc_n}`\n" + f"`{time}`")
 
 CmdHelp('weather').add_command(
-    'weather', '<şehir>', 'Bir bölgenin hava durumunu verir.'
+    'weather', '<şəhər>', 'Bir bölgənin hava məlumatlarını verər.'
 ).add()
