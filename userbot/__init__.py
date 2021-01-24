@@ -216,10 +216,10 @@ for binary, path in binaries.items():
 # 'bot' deyişgeni
 if STRING_SESSION:
     # pylint: devre dışı=geçersiz ad
-    bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
+    tgbot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
 else:
     # pylint: devre dışı=geçersiz ad
-    bot = TelegramClient("userbot", API_KEY, API_HASH)
+    tgbot = TelegramClient("userbot", API_KEY, API_HASH)
 
 
 if os.path.exists("learning-data-root.check"):
