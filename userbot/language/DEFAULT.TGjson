@@ -35,7 +35,7 @@
         
         "__ddq": {
             "NEED_PLUGIN": "Zəhmət olmasa bir TGUserBot modulu adı yazın.",
-            "NEED_MODULE": "Zəhmət olmasa hansı TGUserBot modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .asena <modul adı>"
+            "NEED_MODULE": "Zəhmət olmasa hansı TGUserBot modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .tgbot <modul adı>"
         },
 
         "__helpme": {
