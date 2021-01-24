@@ -38,7 +38,7 @@ async def durums(event):
 
 **{LANG['PLUGIN_COUNT']}:** `{len(CMD_HELP)}`
 
-**Inline Bot:** `{durum(bot)}`
+**Inline Bot:** `{durum(tgbot)}`
 **Spotify:** `{durum(SPOTIFY_DC)}`
 **GDrive:** `{durum(G_DRIVE_CLIENT_ID)}`
 **LastFm:** `{durum(lastfm)}`
