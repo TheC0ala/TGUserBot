@@ -124,10 +124,10 @@ async def sinstall(event):
                         Komutlar.append(KomutStr)
 
                 # ddqpy
-                Dtopy = re.search('\"\"\"DTOPY(.*)\"\"\"', dosy, re.DOTALL)
-                if not Dtopy == None:
-                    Dtopy = Dtopy.group(0)
-                    for Satir in Dtopy.splitlines():
+                Tguserbotpy = re.search('\"\"\"TGUSERBOTPY(.*)\"\"\"', dosy, re.DOTALL)
+                if not Tguserbotpy == None:
+                    Tguserbotpy = Tguserbotpy.group(0)
+                    for Satir in Tguserbotpy.splitlines():
                         if (not '"""' in Satir) and (':' in Satir):
                             Satir = Satir.split(':')
                             Isim = Satir[0]
