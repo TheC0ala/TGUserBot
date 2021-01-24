@@ -271,7 +271,7 @@
 
         "qaleriya": {
             "ADDED_LIST": "`Şəkil növbəyə əlavə edildi.`",
-            "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.tgbot qaleriya` `yazın.`",
+            "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.bot qaleriya` `yazın.`",
             "EXAMPLE": "`Zəhmət olmasa bir şəkil adressi yazın. Nümunə olaraq: ` `.qeriya elave et https://i.imgyukle.com/2021/01/06/a2KNDy.jpg`",
             "LIST": "Növbəyə əlavə etdiyiniz şəkillər",
             "REMOVED": "**Növbədəki şəkil uğurla silindi**",
@@ -279,10 +279,10 @@
             "NEED_NUMBER": "Zəhmət olmasa şəklin sırasını qeyd edin. Nümunə:",
             "WORKING": "`Hal-hazırda Qalareya işləyir.`",
             "STARTED": "`Qalareya işləməyə başladı.`",
-            "NEED_PHOTO": "Qalereya işi üçün fotoşəkillər əlavə etməlisiniz. Əlavə etməyi bilmirsinizsə, .tgbot qaleriya ilə istifadəsini öyrənə bilərsiniz.",
+            "NEED_PHOTO": "Qalereya işi üçün fotoşəkillər əlavə etməlisiniz. Əlavə etməyi bilmirsinizsə, .bot qaleriya ilə istifadəsini öyrənə bilərsiniz.",
             "STOPPED": "`Qalereya dayandı!`",
             "ALREADY_STOP": "`Qalareya onsuzda işləmir.`",
-            "INVALID": "**Bilinməyən komanda** İstifadəsi:\n\nQalareyaya şəkil əlavə etmək: `.qaleriya elave ethttps://i.imgyukle.com/2021/01/06/a2KNDy.jpg`\nQalariya siyahısını görmək: `.qaleriya siyahı`\nSıradan bir şəkil silmək: `.qaleriya sil <sıra sayı>`"
+            "INVALID": "**Bilinməyən komanda** İstifadəsi:\n\nQalareyaya şəkil əlavə etmək: `.qaleriya elave et https://i.imgyukle.com/2021/01/06/a2KNDy.jpg`\nQalariya siyahısını görmək: `.qaleriya siyahı`\nSıradan bir şəkil silmək: `.qaleriya sil <sıra sayı>`"
         },
 
         "github": {
