@@ -4,10 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# 
-
-
-""" Internet ile alakalı bilgileri edinmek için kullanılan UserBot modülüdür. """
+# TGUSERBOT - by BABAŞ 
 
 from datetime import datetime
 
@@ -26,7 +23,6 @@ LANG = get_value("www")
 
 @register(outgoing=True, pattern="^.speed$")
 async def speedtst(spd):
-    """ .speed komutu sunucu hızını tespit etmek için SpeedTest kullanır. """
     await spd.edit(LANG['SPEED'])
     test = Speedtest()
 
@@ -51,7 +47,7 @@ async def speedtst(spd):
 
 def speed_convert(size):
     """
-    Merhaba Asena, baytları okuyamıyor musun?
+    Salam 
     """
     power = 2**10
     zero = 0
@@ -64,16 +60,14 @@ def speed_convert(size):
 
 @register(outgoing=True, pattern="^.dc$")
 async def neardc(event):
-    """ .dc komutu en yakın datacenter bilgisini verir. """
     result = await event.client(functions.help.GetNearestDcRequest())
-    await event.edit(f"Şehir : `{result.country}`\n"
-                     f"En yakın datacenter : `{result.nearest_dc}`\n"
-                     f"Şu anki datacenter : `{result.this_dc}`")
+    await event.edit(f"Şəhər : `{result.country}`\n"
+                     f"Ən yaxın datacenter : `{result.nearest_dc}`\n"
+                     f"Hal hazırki datacenter : `{result.this_dc}`")
 
 
 @register(outgoing=True, pattern="^.ping$")
 async def pingme(pong):
-    """ .ping komutu userbotun ping değerini herhangi bir sohbette gösterebilir.  """
     start = datetime.now()
     await pong.edit("`Pong!`")
     end = datetime.now()
@@ -81,9 +75,9 @@ async def pingme(pong):
     await pong.edit("`Pong!\n%sms`" % (duration))
 
 CmdHelp('www').add_command(
-    'speed', None, 'Bir speedtest uygular ve sonucu gösterir.'
+    'speed', None, 'Bir speedtest tətbiq edər və nəticəni göstərər.'
 ).add_command(
-    'dc', None, 'Sunucunuza en yakın datacenter\'ı gösterir.'
+    'dc', None, 'Serverinizə ən yaxın datacenter\'ı göstərər.'
 ).add_command(
-    'ping', None, 'Botun ping değerini gösterir.'
+    'ping', None, 'Botun ping dəyərini göstərər.'
 ).add()
