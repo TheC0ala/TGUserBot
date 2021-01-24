@@ -259,7 +259,7 @@ if not BOT_TOKEN == None:
         api_hash=API_HASH
     ).start(bot_token=BOT_TOKEN)
 else:
-    tgbot = None
+    bot = None
 
 def butonlastir(sayfa, moduller):
     Satir = 5
