@@ -30,10 +30,10 @@
             "ALREADY_DELETED": "`Plugin faylı artıq silinib.`",
             "NOT_FOUND_PLUGIN": "`Belə bir plugin bəlkə var idi, bəlkədə yox. Ancaq hazırda olmadığı dəqiqdir.`",
             "PLUG_DELETED": "`Plugin uğurla yükləndi!` **Tətbiq ediləcək əməliyyatlar üçün yenidən başlatmağınız lazımdır.**",
-            "ASENA_PLUGIN_CAPTION": "Bu [TGUserBot](https://t.me/UserBotTG) pluginidir."
+            "DDQ_PLUGIN_CAPTION": "Bu [TGUserBot](https://t.me/UserBotTG) pluginidir."
         },
         
-        "__asena": {
+        "__ddq": {
             "NEED_PLUGIN": "Zəhmət olmasa bir TGUserBot modulu adı yazın.",
             "NEED_MODULE": "Zəhmət olmasa hansı TGUserBot modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .asena <modul adı>"
         },
@@ -187,13 +187,13 @@
             "CASE": "🌎 Xəstə:",
             "DEATH": "🌎 Ölüm:",
             "HEAL": "🌎 Sağalan:",
-            "TR": "Azərbaycan",
-            "TR_ALL_CASES": "Xəstə (ümumi):",
-            "TR_CASES": "Xəstə (bugün):",
-            "TR_CASE": "Xəstə (aktiv):",
-            "TR_ALL_DEATHS": "Ölüm (ümumi):",
-            "TR_DEATHS": "Ölüm (bugün):",
-            "TR_HEAL": "Sağalan:"
+            "AZ": "Azərbaycan",
+            "AZ_ALL_CASES": "Xəstə (ümumi):",
+            "AZ_CASES": "Xəstə (bugün):",
+            "AZ_CASE": "Xəstə (aktiv):",
+            "AZ_ALL_DEATHS": "Ölüm (ümumi):",
+            "AZ_DEATHS": "Ölüm (bugün):",
+            "AZ_HEAL": "Sağalan:"
         },
 
         "deepfry":{
