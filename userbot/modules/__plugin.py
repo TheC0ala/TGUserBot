@@ -128,7 +128,7 @@ async def plist(event):
     else:
         await event.edit(LANG["TEMP_PLUGIN"])
 
-@register(outgoing=True, pattern="^.pinstall")
+@register(outgoing=True, pattern="^.py[üu]kle")
 async def pins(event):
     if event.is_reply:
         reply_message = await event.get_reply_message()
@@ -166,7 +166,7 @@ async def pins(event):
             if re.search(r'CmdHelp\(.*\)', dosy):
                 cmdhelp = re.findall(r"CmdHelp\([\"'](.*)[\"']\)", dosy)[0]
                 await reply_message.forward_to(PLUGIN_CHANNEL_ID)
-                return await event.edit(f'**Modül başarıyla yüklendi!**\n__Modülun komutları ve kullanım hakkında bilgi almak için__ `.asena {cmdhelp}` __yazınız.__')
+                return await event.edit(f'**Modul uğurla yükləndi!**\n__Modulun komandaları və işlədilişi haqqında məlumat üçün__ `.bot {cmdhelp}` __yazın.__')
             else:
                 await reply_message.forward_to(PLUGIN_CHANNEL_ID)
                 userbot.cmdhelp.CmdHelp(dosya).add_warning('Komutlar bulunamadı!').add()
@@ -175,14 +175,14 @@ async def pins(event):
             if re.search(r'CmdHelp\(.*\)', dosy):
                 cmdhelp = re.findall(r"CmdHelp\([\"'](.*)[\"']\)", dosy)[0]
                 await reply_message.forward_to(PLUGIN_CHANNEL_ID)
-                return await event.edit(f'**Modül başarıyla yüklendi!**\n__Modülun komutları ve kullanım hakkında bilgi almak için__ `.asena {cmdhelp}` __yazınız.__')
+                return await event.edit(f'**Modul uğurla yükləndi!**\n__Modulun komandaları və işlədilişi haqqında məlumat üçün__ `.bot {cmdhelp}` __yazın.__')
             else:
                 dosyaAdi = reply_message.file.name.replace('.py', '')
                 extractCommands(dosya)
                 await reply_message.forward_to(PLUGIN_CHANNEL_ID)
-                return await event.edit(f'**Modül başarıyla yüklendi!**\n__Modülun komutları ve kullanım hakkında bilgi almak için__ `.asena {dosyaAdi}` __yazınız.__')
+                return await event.edit(f'**Modul uğurla yükləndi!**\n__Modulun komandaları və işlədilişi haqqında məlumat üçün__ `.bot {dosyaAdi}` __yazın.__')
 
-@register(outgoing=True, pattern="^.premove ?(.*)")
+@register(outgoing=True, pattern="^.psil ?(.*)")
 async def premove(event):
     modul = event.pattern_match.group(1).lower()
     if len(modul) < 1:
@@ -244,5 +244,5 @@ async def ptest(event):
         await event.edit(f"{LANG['PLUGIN_BUGGED']} {e}`")
         return os.remove("./userbot/temp_plugins/" + dosya)
 
-    return await event.edit(f'**Modül başarıyla yüklendi!**\
-    \n__Modül denemenizi yapabilirsiniz. Botu yeniden başlattığınız da plugin çalışmayacak.__')
+    return await event.edit(f'**Modul uğurla yükləndi!**\
+    \n__Modul yoxlamanızı edə bilərsiz. Bota restart atandan sonra modul silinəcəkdir.__')
