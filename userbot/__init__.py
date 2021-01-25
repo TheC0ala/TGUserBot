@@ -4,9 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Thanks github.com/spechide for creating inline bot support.
-# Asena UserBot - Yusuf Usta
-""" UserBot hazırlanışı. """
+# TGUSERBOT - by BABAŞ UserBot Hazırlanışı #
 
 import os
 from re import compile
@@ -25,34 +23,34 @@ from math import ceil
 
 load_dotenv("config.env")
 
-# Bot günlükleri kurulumu:
+# TGUSERBOT:
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
 ASYNC_POOL = []
 
 if CONSOLE_LOGGER_VERBOSE:
     basicConfig(
-        format="%(asctime)s - @AsenaUserBot - %(levelname)s - %(message)s",
+        format="%(asctime)s - @UserBotTG - %(levelname)s - %(message)s",
         level=DEBUG,
     )
 else:
-    basicConfig(format="%(asctime)s - @AsenaUserBot - %(levelname)s - %(message)s",
+    basicConfig(format="%(asctime)s - @UserBotTG - %(levelname)s - %(message)s",
                 level=INFO)
 LOGS = getLogger(__name__)
 
 if version_info[0] < 3 or version_info[1] < 6:
-    LOGS.info("En az python 3.6 sürümüne sahip olmanız gerekir."
-              "Birden fazla özellik buna bağlıdır. Bot kapatılıyor.")
+    LOGS.info("En az python 3.6 versiyasına sahib olmalısınız."
+              "Birden çox xüsusiyyet buna bağlıdır. Bot söndürülür.")
     quit(1)
 
 # Yapılandırmanın önceden kullanılan değişkeni kullanarak düzenlenip düzenlenmediğini kontrol edin.
 # Temel olarak, yapılandırma dosyası için kontrol.
 CONFIG_CHECK = os.environ.get(
-    "___________LUTFEN_______BU_____SATIRI_____SILIN__________", None)
+    "___________XAIS_______BU_____SETIRI_____SILIN__________", None)
 
 if CONFIG_CHECK:
     LOGS.info(
-        "Lütfen ilk hashtag'de belirtilen satırı config.env dosyasından kaldırın"
+        "Zehmet olmasa hashtag'deki setiri config.env faylından silin"
     )
     quit(1)
 
@@ -60,13 +58,13 @@ if CONFIG_CHECK:
 LANGUAGE = os.environ.get("LANGUAGE", "DEFAULT").upper()
 
 if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
-    LOGS.info("Bilinmeyen bir dil yazdınız. Bundan dolayı DEFAULT kullanılıyor.")
+    LOGS.info("Namelum dil yazdınız. Buna görr DEFAULT işledilir.")
     LANGUAGE = "DEFAULT"
     
 # Version
 TGUSERBOT_VERSION = "v1.0"
 
-# Telegram API KEY ve HASH
+# Telegram API KEY ve HASh
 API_KEY = os.environ.get("API_KEY", None)
 API_HASH = os.environ.get("API_HASH", None)
 
@@ -74,63 +72,63 @@ SILINEN_PLUGIN = {}
 # UserBot Session String
 STRING_SESSION = os.environ.get("STRING_SESSION", None)
 
-# Kanal / Grup ID yapılandırmasını günlüğe kaydetme.
+# TGUSERBOT
 BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", None))
 
-# UserBot günlükleme özelliği.
+# UserBot günlüye qeyd etme
 BOTLOG = sb(os.environ.get("BOTLOG", "False"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 
-# Hey! Bu bir bot. Endişelenme ;)
+# Hey! Bu bir bot.
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 
-# Güncelleyici için Heroku hesap bilgileri.
+# Güncelliyici
 HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
 HEROKU_APPNAME = os.environ.get("HEROKU_APPNAME", None)
 HEROKU_APIKEY = os.environ.get("HEROKU_APIKEY", None)
 
-# Güncelleyici için özel (fork) repo linki.
+# Güncelleyici üçün repo linki
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/quiec/AsenaUserBot.git")
+    "https://github.com/thec0ala/tguserbot.git")
 
-# Ayrıntılı konsol günlügü
+# TGUSERBOR
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
-# SQL Veritabanı
+# SQL
 DB_URI = os.environ.get("DATABASE_URL", "sqlite:///asena.db")
 
 # OCR API key
 OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
 
-# remove.bg API key
+# remove.bg API
 REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
 
-# AUTO PP
-AUTO_PP = os.environ.get("AUTO_PP", None)
+# AVTO PP
+AVTO_PP = os.environ.get("AVTO_PP", None)
 
-# Warn modül
+# Warn 
 WARN_LIMIT = int(os.environ.get("WARN_LIMIT", 3))
 WARN_MODE = os.environ.get("WARN_MODE", "gmute")
 
 if not WARN_MODE in ["gmute", "gban"]:
     WARN_MODE = "gmute"
 
-# Galeri
-GALERI_SURE = int(os.environ.get("GALERI_SURE", 60))
+# Qaleriya
+QALERIYA_VAXT = int(os.environ.get("QALERIYA_VAXT", 60))
 
-# Chrome sürücüsü ve Google Chrome dosyaları
+# TGUSERBOT
 CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
 GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
 
 PLUGINID = os.environ.get("PLUGIN_CHANNEL_ID", None)
-# Plugin İçin
+# Plugin 
 if not PLUGINID:
     PLUGIN_CHANNEL_ID = "me"
 else:
     PLUGIN_CHANNEL_ID = int(PLUGINID)
 
-# OpenWeatherMap API Key
+# OpenWeatherMap API
 OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
 WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", None)
 
@@ -141,18 +139,18 @@ LYDIA_API_KEY = os.environ.get("LYDIA_API_KEY", None)
 ANTI_SPAMBOT = sb(os.environ.get("ANTI_SPAMBOT", "False"))
 ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 
-# Youtube API key
+# Youtube API
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
-# Saat & Tarih - Ülke ve Saat Dilimi
+# Saat & Tarix - Ölke ve Saat Dilimi
 COUNTRY = str(os.environ.get("COUNTRY", ""))
 TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 
-# Temiz Karşılama
+# Temiz Qarşılama
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
 
-# Last.fm Modülü
-BIO_PREFIX = os.environ.get("BIO_PREFIX", "@AsenaUserBot | ")
+# Last.fm 
+BIO_PREFIX = os.environ.get("BIO_PREFIX", "@UserBotTG | ")
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
 
 LASTFM_API = os.environ.get("LASTFM_API", None)
@@ -168,7 +166,7 @@ if LASTFM_API and LASTFM_SECRET and LASTFM_USERNAME and LASTFM_PASS:
 else:
     lastfm = None
 
-# Google Drive Modülü
+# Google Drive 
 G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
 G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
 G_DRIVE_AUTH_TOKEN_DATA = os.environ.get("G_DRIVE_AUTH_TOKEN_DATA", None)
@@ -176,11 +174,11 @@ GDRIVE_FOLDER_ID = os.environ.get("GDRIVE_FOLDER_ID", None)
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY",
                                          "./downloads")
 
-# Inline bot çalışması için
+# Inline bot 
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
 
-# Genius modülünün çalışması için buradan değeri alın https://genius.com/developers her ikisi de aynı değerlere sahiptir
+# Genius
 GENIUS = os.environ.get("GENIUS", None)
 CMD_HELP = {}
 CMD_HELP_BOT = {}
@@ -189,16 +187,16 @@ PM_AUTO_BAN_LIMIT = int(os.environ.get("PM_AUTO_BAN_LIMIT", 4))
 SPOTIFY_DC = os.environ.get("SPOTIFY_DC", None)
 SPOTIFY_KEY = os.environ.get("SPOTIFY_KEY", None)
 
-PAKET_ISMI = os.environ.get("PAKET_ISMI", "@AsenaUserBot Paketi")
+PAKET_ISMI = os.environ.get("PAKET_ISMI", "@UserBotTG Paketi")
 
-# Otomatik Katılma
-OTOMATIK_KATILMA = sb(os.environ.get("OTOMATIK_KATILMA", "True"))
+# AVTO_QATILMA
+AVTO_QATILMA = sb(os.environ.get("AVTO_QATILMA", "True"))
 
 # Özel Pattern'ler
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
-WHITELIST = get('https://gitlab.com/Quiec/asen/-/raw/master/whitelist.json').json()
+WHITELIST = get('https://raw.githubusercontent.com/thec0ala/tguserbot/main/whitelist.json').json()
 
-# CloudMail.ru ve MEGA.nz ayarlama
+# CloudMail.ru ve MEGA.nz 
 if not os.path.exists('bin'):
     os.mkdir('bin')
 
@@ -214,7 +212,7 @@ for binary, path in binaries.items():
     downloader.start()
     os.chmod(path, 0o755)
 
-# 'bot' değişkeni
+# 'bot' 
 if STRING_SESSION:
     # pylint: devre dışı=geçersiz ad
     bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
@@ -235,12 +233,12 @@ with open('learning-data-root.check', 'wb') as load:
 async def check_botlog_chatid():
     if not BOTLOG_CHATID and LOGSPAMMER:
         LOGS.info(
-            "Özel hata günlüğünün çalışması için yapılandırmadan BOTLOG_CHATID değişkenini ayarlamanız gerekir.")
+            "Xüsusi xeta günlüyünün işlemesi üçün BOTLOG_CHATID olmalıdır.")
         quit(1)
 
     elif not BOTLOG_CHATID and BOTLOG:
         LOGS.info(
-            "Günlüğe kaydetme özelliğinin çalışması için yapılandırmadan BOTLOG_CHATID değişkenini ayarlamanız gerekir.")
+            "Günlüye qeyd etme xüsusiyyetibin işlemesi üçün BOTLOG_CHATID olmalıdır.")
         quit(1)
 
     elif not BOTLOG or not LOGSPAMMER:
@@ -249,8 +247,8 @@ async def check_botlog_chatid():
     entity = await bot.get_entity(BOTLOG_CHATID)
     if entity.default_banned_rights.send_messages:
         LOGS.info(
-            "Hesabınızın BOTLOG_CHATID grubuna mesaj gönderme yetkisi yoktur. "
-            "Grup ID'sini doğru yazıp yazmadığınızı kontrol edin.")
+            "Hesabınızın BOTLOG_CHATID qrupuna mesaj gönderme yetkisi yoxdur. "
+            "Qrup ID'sini doğru yazıb yazmadığınızı yoxlayın.")
         quit(1)
         
 if not BOT_TOKEN == None:
@@ -278,14 +276,14 @@ def butonlastir(sayfa, moduller):
             custom.Button.inline("🔸 " + pair, data=f"bilgi[{sayfa}]({pair})") for pair in pairs
         ])
 
-    butonlar.append([custom.Button.inline("◀️ Geri", data=f"sayfa({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"), custom.Button.inline("İleri ▶️", data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
+    butonlar.append([custom.Button.inline("◀️ Geri", data=f"sayfa({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"), custom.Button.inline("İreli ▶️", data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
     return [max_pages, butonlar]
 
 with bot:
-    if OTOMATIK_KATILMA:
+    if AVTO_QATILMA:
         try:
-            bot(JoinChannelRequest("@AsenaUserBot"))
-            bot(JoinChannelRequest("@AsenaSupport"))
+            bot(JoinChannelRequest("@UserBotTG"))
+            bot(JoinChannelRequest("@TGUserBotSup"))
         except:
             pass
 
@@ -297,9 +295,9 @@ with bot:
         @tgbot.on(NewMessage(pattern='/start'))
         async def start_bot_handler(event):
             if not event.message.from_id == uid:
-                await event.reply(f'`Merhaba ben` @AsenaUserBot`! Ben sahibime (`@{me.username}`) yardımcı olmak için varım, yaani sana yardımcı olamam :/ Ama sen de bir Asena açabilirsin; Kanala bak` @AsenaUserBot')
+                await event.reply(f'`Salam mən` @UserBotTG`! Mən sahibime (`@{me.username}`) kömək etmək üçün varam yəni sənə kömək edə bilmərəm amma səndə TGUserBot qura bilərsən. ; Kanala bax` @UserBotTG')
             else:
-                await event.reply(f'`Tengri save Turks! Asena working... 🐺`')
+                await event.reply(f'`TGUserBot Working...`')
 
         @tgbot.on(InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -311,7 +309,7 @@ with bot:
                 veriler = (butonlastir(0, sorted(CMD_HELP)))
                 result = await builder.article(
                     f"Lütfen Sadece .yardım Komutu İle Kullanın",
-                    text=f"**🐺 Tanrı Türk'ü Korusun!** [Asena](https://t.me/AsenaUserBot) __Çalışıyor...__\n\n**Yüklenen Modül Sayısı:** `{len(CMD_HELP)}`\n**Sayfa:** 1/{veriler[0]}",
+                    text=f"**TGᑌSEᖇᗷOT Əla İşləyir⚡!** [TGUserBot](https://t.me/UserBotTG) __İşləyir...__\n\n**Yüklenen Modul Sayı:** `{len(CMD_HELP)}`\n**Sehife:** 1/{veriler[0]}",
                     buttons=veriler[1],
                     link_preview=False
                 )
@@ -319,7 +317,7 @@ with bot:
                 parca = query.split(" ")
                 result = builder.article(
                     "Dosya Yüklendi",
-                    text=f"**Dosya başarılı bir şekilde {parca[2]} sitesine yüklendi!**\n\nYükleme zamanı: {parca[1][:3]} saniye\n[‏‏‎ ‎]({parca[0]})",
+                    text=f"**Fayl uğurla {parca[2]} saytına yükləndi!**\n\nYüklemə zamanı: {parca[1][:3]} saniyə\n[‏‏‎ ‎]({parca[0]})",
                     buttons=[
                         [custom.Button.url('URL', parca[0])]
                     ],
@@ -327,14 +325,14 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    "@AsenaUserBot",
-                    text="""@AsenaUserBot'u kullanmayı deneyin!
-Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın, siz başkasının botunu yönetemezsiniz! Alttaki GitHub adresinden tüm kurulum detayları anlatılmıştır.""",
+                    "@UserBotTG",
+                    text="""@UserBotTG işlədin!
+Hesabınızı bot'a çevirə bilərsiz və bunları işlədə bilərsiz. Unutmayın, siz başqasının botunu idarə etməssiniz! Altdakı GitHub adresindən bütün qurulum detalları var.""",
                     buttons=[
-                        [custom.Button.url("Kanala Katıl", "https://t.me/AsenaUserBot"), custom.Button.url(
-                            "Gruba Katıl", "https://t.me/AsenaSupport")],
+                        [custom.Button.url("Kanal", "https://t.me/UserBotTG"), custom.Button.url(
+                            "Support", "https://t.me/TGUserBotSup")],
                         [custom.Button.url(
-                            "GitHub", "https://github.com/quiec/AsenaUserBot")]
+                            "GitHub", "https://github.com/thec0ala/tguserbot")]
                     ],
                     link_preview=False
                 )
@@ -343,11 +341,11 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
         @tgbot.on(callbackquery.CallbackQuery(data=compile(b"sayfa\((.+?)\)")))
         async def sayfa(event):
             if not event.query.user_id == uid: 
-                return await event.answer("❌ Hey! Benim mesajlarımı düzenlemeye kalkma! Kendine bir @AsenaUserBot kur.", cache_time=0, alert=True)
+                return await event.answer(" Hey! Mənim mesajlarımı düzəltməyə çalışma! Özünə bir @UserBotTG qur.", cache_time=0, alert=True)
             sayfa = int(event.data_match.group(1).decode("UTF-8"))
             veriler = butonlastir(sayfa, CMD_HELP)
             await event.edit(
-                f"**🐺 Tanrı Türk'ü Korusun!** [Asena](https://t.me/AsenaUserBot) __Çalışıyor...__\n\n**Yüklenen Modül Sayısı:** `{len(CMD_HELP)}`\n**Sayfa:** {sayfa + 1}/{veriler[0]}",
+                f"**TGᑌSEᖇᗷOT Əla İşləyir⚡!** [TGUserBot](https://t.me/UserBotTG) __İşləyir...__\n\n**Yüklenən Modil Sayı:** `{len(CMD_HELP)}`\n**Səhifə:** {sayfa + 1}/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False
             )
@@ -355,19 +353,19 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
         @tgbot.on(callbackquery.CallbackQuery(data=compile(b"bilgi\[(\d*)\]\((.*)\)")))
         async def bilgi(event):
             if not event.query.user_id == uid: 
-                return await event.answer("❌  Hey! Benim mesajlarımı düzenlemeye kalkma! Kendine bir @AsenaUserBot kur.", cache_time=0, alert=True)
+                return await event.answer("Hey! Mənim mesajlarımı düzəltməyə çalışma! Özünə bir @UserBotTG qur.", cache_time=0, alert=True)
 
             sayfa = int(event.data_match.group(1).decode("UTF-8"))
             komut = event.data_match.group(2).decode("UTF-8")
             try:
                 butonlar = [custom.Button.inline("🔹 " + cmd[0], data=f"komut[{komut}[{sayfa}]]({cmd[0]})") for cmd in CMD_HELP_BOT[komut]['commands'].items()]
             except KeyError:
-                return await event.answer("❌ Bu modüle açıklama yazılmamış.", cache_time=0, alert=True)
+                return await event.answer("❌ Bu modula açıqlama yazılmayıb.", cache_time=0, alert=True)
 
             butonlar = [butonlar[i:i + 2] for i in range(0, len(butonlar), 2)]
             butonlar.append([custom.Button.inline("◀️ Geri", data=f"sayfa({sayfa})")])
             await event.edit(
-                f"**📗 Dosya:** `{komut}`\n**🔢 Komut Sayısı:** `{len(CMD_HELP_BOT[komut]['commands'])}`",
+                f"**📗 Fayl:** `{komut}`\n**🔢 Komanda Sayı:** `{len(CMD_HELP_BOT[komut]['commands'])}`",
                 buttons=butonlar,
                 link_preview=False
             )
@@ -375,36 +373,36 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
         @tgbot.on(callbackquery.CallbackQuery(data=compile(b"komut\[(.*)\[(\d*)\]\]\((.*)\)")))
         async def komut(event):
             if not event.query.user_id == uid: 
-                return await event.answer("❌ Hey! Benim mesajlarımı düzenlemeye kalkma! Kendine bir @AsenaUserBot kur.", cache_time=0, alert=True)
+                return await event.answer("Hey! Mənim mesajlarımı düzəltməyə çalışma! Özünə bir @UserBotTG qur.", cache_time=0, alert=True)
 
             cmd = event.data_match.group(1).decode("UTF-8")
             sayfa = int(event.data_match.group(2).decode("UTF-8"))
             komut = event.data_match.group(3).decode("UTF-8")
 
-            result = f"**📗 Dosya:** `{cmd}`\n"
+            result = f"**📗 Fayl:** `{cmd}`\n"
             if CMD_HELP_BOT[cmd]['info']['info'] == '':
                 if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
-                    result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
-                    result += f"**⚠️ Uyarı:** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
+                    result += f"**⬇️ Rəsmi:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                    result += f"**⚠️ Xəbərdarlıq:** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
                 else:
-                    result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
+                    result += f"**⬇️ Rəsmi:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
             else:
-                result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                result += f"**⬇️ Rəsmi:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                 if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
-                    result += f"**⚠️ Uyarı:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
+                    result += f"**⚠️ Xəbərdarlıq:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
                 result += f"**ℹ️ Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
 
             command = CMD_HELP_BOT[cmd]['commands'][komut]
             if command['params'] is None:
-                result += f"**🛠 Komut:** `{PATTERNS[:1]}{command['command']}`\n"
+                result += f"**🛠 Komanda:** `{PATTERNS[:1]}{command['command']}`\n"
             else:
-                result += f"**🛠 Komut:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
+                result += f"**🛠 Komanda:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
                 
             if command['example'] is None:
-                result += f"**💬 Açıklama:** `{command['usage']}`\n\n"
+                result += f"**💬 Açıqlama:** `{command['usage']}`\n\n"
             else:
-                result += f"**💬 Açıklama:** `{command['usage']}`\n"
-                result += f"**⌨️ Örnek:** `{PATTERNS[:1]}{command['example']}`\n\n"
+                result += f"**💬 Açıqlama:** `{command['usage']}`\n"
+                result += f"**⌨️ Nümunə:** `{PATTERNS[:1]}{command['example']}`\n\n"
 
             await event.edit(
                 result,
@@ -414,22 +412,22 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
     except Exception as e:
         print(e)
         LOGS.info(
-            "Botunuzda inline desteği devre dışı bırakıldı. "
-            "Etkinleştirmek için bir bot token tanımlayın ve botunuzda inline modunu etkinleştirin. "
-            "Eğer bunun dışında bir sorun olduğunu düşünüyorsanız bize ulaşın."
+            "Botunuzda inline desteyi deaktiv edildi. "
+            "Aktivleşdirmek üçün bir bot token yazın ve inline moduna aktivleşdirin. "
+            "Bunnan başqa probleminiz varsa bize yazın."
         )
 
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
     except:
         LOGS.info(
-            "BOTLOG_CHATID ortam değişkeni geçerli bir varlık değildir. "
-            "Ortam değişkenlerinizi / config.env dosyanızı kontrol edin."
+            "BOTLOG_CHATID ortam deyişkeni keçerli bir varlıq deyildir. "
+            "Ortam deyişkenlerinizi  / config.env faylını yoxlayın."
         )
         quit(1)
 
 
-# Küresel Değişkenler
+# Küresel Deyişkenler
 SON_GORULME = 0
 COUNT_MSG = 0
 USERS = {}
