@@ -22,5 +22,6 @@ curl "https://raw.githubusercontent.com/TheC0ala/TGUserBot/main/ddq.py" --output
 clear
 echo -e $MESAJ
 echo "Qurulum hazırdır! İndi String Session ala bilərsiz"
+pip install -r requirements.txt
 clear
 python3 ddq.py
