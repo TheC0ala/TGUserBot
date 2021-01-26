@@ -5,6 +5,7 @@ clear
 echo -e $MESAJ
 echo "Python yüklənir..."
 pkg install python3 -y
+pkg install python -y
 pkg install git
 clear
 echo -e $MESAJ
