@@ -159,7 +159,7 @@ async def amialive(e):
 
 
 CmdHelp('system_stats').add_command(
-    'sysd', None, 'Neofetch modulunu işlədərək sistem məlumatlarını göstərər.'
+    'sistem', None, 'Neofetch modulunu işlədərək sistem məlumatlarını göstərər.'
 ).add_command(
     'botversion', None, 'Userbotun versiasını göstərər.'
 ).add_command(
