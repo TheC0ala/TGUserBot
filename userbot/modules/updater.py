@@ -4,12 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# Asena UserBot - Yusuf Usta
-
-
-"""
-Bu modül commit sayısına bağlı olarak botu günceller.
-"""
+# TGUSERBOT - by BABAŞ #
 
 from os import remove, execle, path, environ
 import asyncio
@@ -56,14 +51,13 @@ async def update_requirements():
 
 @register(outgoing=True, pattern=r"^\.update(?: |$)(.*)")
 async def upstream(ups):
-    ".update komutu ile botunun güncel olup olmadığını denetleyebilirsin."
     await ups.edit(LANG['DETECTING'])
     conf = ups.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
     force_update = False
 
     try:
-        txt = "`Güncelleme başarısız oldu! Bazı sorunlarla karşılaştık.`\n\n**LOG:**\n"
+        txt = "`Yeniləmə uğursuz oldu! Bəzi problemlər baş verdi.`\n\n**LOG:**\n"
         repo = Repo()
     except NoSuchPathError as error:
         await ups.edit(f'{txt}\n`{error} {LANG["NOT_FOUND"]}.`')
@@ -130,7 +124,7 @@ async def upstream(ups):
         await ups.edit(LANG['FORCE_UPDATE'])
     else:
         await ups.edit(LANG['UPDATING'])
-    # Bot bir Heroku dynosunda çalışıyor, bu da bazı sıkıntıları beraberinde getiriyor.
+    # TGUSERBOT
     if HEROKU_APIKEY is not None:
         import heroku3
         heroku = heroku3.from_key(HEROKU_APIKEY)
@@ -168,20 +162,20 @@ async def upstream(ups):
             return
         await ups.edit(LANG['SUCCESSFULLY'])
     else:
-        # Klasik güncelleyici, oldukça basit.
+        # Klassik Güncəlləyici
         try:
             ups_rem.pull(ac_br)
         except GitCommandError:
             repo.git.reset("--hard", "FETCH_HEAD")
         await update_requirements()
         await ups.edit(LANG['SUCCESSFULLY'])
-        # Bot için Heroku üzerinde yeni bir instance oluşturalım.
+        # TGUserBot
         args = [sys.executable, "main.py"]
         execle(sys.executable, *args, environ)
         return
 
 CmdHelp('update').add_command(
-    'update', None, 'Botunuza siz kurduktan sonra herhangi bir güncelleme gelip gelmediğini kontrol eder.'
+    'update', None, 'Botunuza yeniləmə gəlib gəlmədiyini yoxlayar.'
 ).add_command(
-    'update now', None, 'Botunuzu günceller.'
+    'update now', None, 'Botunuzu güncəllər.'
 ).add()
