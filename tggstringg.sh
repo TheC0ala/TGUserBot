@@ -22,4 +22,4 @@ clear
 echo -e $MESAJ
 echo "Qurulum hazırdır! İndi String Session ala bilərsiz"
 clear
-python ddq.py
+python3 ddq.py
