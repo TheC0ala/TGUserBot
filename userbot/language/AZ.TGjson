@@ -35,7 +35,7 @@
         
         "__ddq": {
             "NEED_PLUGIN": "Zəhmət olmasa bir TGUserBot modulu adı yazın.",
-            "NEED_MODULE": "Zəhmət olmasa hansı TGUserBot modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .asena <modul adı>"
+            "NEED_MODULE": "Zəhmət olmasa hansı TGUserBot modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .bot <modul adı>"
         },
 
         "__helpme": {
@@ -357,7 +357,7 @@
             "REPLY_TO_FILE": "`Bir fayla cavab verin.`",
             "QUERY": "Sorğu",
             "RESULT": "Nəticə",
-            "NEED_MUCH_DATA_FOR_RANDOM": "`2 və ya daha çox məhsul tələb olunur. Daha çox məlumat üçün .asena təsadüfi əmrini daxil edin.`",
+            "NEED_MUCH_DATA_FOR_RANDOM": "`2 və ya daha çox məhsul tələb olunur. Daha çox məlumat üçün .bot təsadüfi əmrini daxil edin.`",
             "SLEEP_DESC": "İstifadə qaydası: `.sleep [saniyə]`",
             "SLEEPING": "`Sakit dur yatıram...`",
             "GOODMORNIN_YALL": "`Sabahınız xeyir!`",
