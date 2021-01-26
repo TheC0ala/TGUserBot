@@ -96,7 +96,7 @@ UPSTREAM_REPO_URL = os.environ.get(
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
 # SQL
-DB_URI = os.environ.get("DATABASE_URL", "sqlite:///asena.db")
+DB_URI = os.environ.get("DATABASE_URL", "sqlite:///tgbot.db")
 
 # OCR API key
 OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
@@ -304,11 +304,11 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query == "@AsenaUserBot":
+            if event.query.user_id == uid and query == "@UserBotTG":
                 rev_text = query[::-1]
                 veriler = (butonlastir(0, sorted(CMD_HELP)))
                 result = await builder.article(
-                    f"Lütfen Sadece .yardım Komutu İle Kullanın",
+                    f"Zəhmət olmasa sadəcə .kömek yazın",
                     text=f"**TGᑌSEᖇᗷOT Əla İşləyir⚡!** [TGUserBot](https://t.me/UserBotTG) __İşləyir...__\n\n**Yüklenen Modul Sayı:** `{len(CMD_HELP)}`\n**Sehife:** 1/{veriler[0]}",
                     buttons=veriler[1],
                     link_preview=False
