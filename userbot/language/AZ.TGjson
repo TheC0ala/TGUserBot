@@ -565,7 +565,7 @@
             "QUERY": "Sorğu",
             "RESULT": "Nəticə",
             "NOT_FOUND": "Heçnə tapılmadı",
-            "EXAMPLE": "`Bir nümunə görmək üçün .asena pip əmrindən istifadə edin.`"
+            "EXAMPLE": "`Bir nümunə görmək üçün .bot pip əmrindən istifadə edin.`"
 
         },
 
