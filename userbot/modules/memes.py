@@ -845,31 +845,29 @@ CmdHelp('memes').add_command(
 ).add_command(
     'owo', None, 'UwU'
 ).add_command(
-    'react', None, 'Hər şeyə .'
+    'react', None, 'Hər şeyə reaksiya verər.'
 ).add_command(
-    'slap', '<yanıt>', 'Rastgele nesnelerle tokatlamak için mesaja cevap verin.'
+    'slap', '<cavab>', 'Təsadüfi əşyalarla vurmaq üçün mesaja cavab verin.'
 ).add_command(
-    'cry', None, 'Ağlamak mı istiyorsun?'
+    'cry', None, 'Ağlamaq istəyirsən ?'
 ).add_command(
     'shg', None, '¯\_(ツ)_/¯'
 ).add_command(
-    'run', None, 'Koş!'
+    'run', None, 'Qaç!'
 ).add_command(
-    'mock', '<yanıt/mesaj>', 'Yap ve gerçek eğlenceyi bul.'
+    'mock', '<cavab/mesaj>', 'Et və Əyləncəni tap.'
 ).add_command(
-    'clap', None, 'Beni, yapraklar değil Ayzırbotlar alkışlıyor!'
+    'clap', None, 'Alqış :)'
 ).add_command(
     'f', '<mesaj>', 'F'
 ).add_command(
-    'type', '<yazı>', 'Daktilo gibi yazı yazın.'
+    'type', '<yazı>', 'Daktilo kimi yazın.'
 ).add_command(
-    'lfy', '<sorgu>', 'Bırakın Google bunu sizin için araştırsın.'
+    'lfy', '<sorğu>', 'Bırakın Google bunu sizin için araştırsın.'
 ).add_command(
     'scam', '<eylem> <süre>', 'Sahte eylemler oluşturun.\nMevcut eylemler: (typing, contact, game, location, voice, round, video, photo, document, cancel)'
 ).add_command(
-    'lfy', '<sorgu>', 'Bırakın Google bunu sizin için araştırsın.'
+    'lfy', '<sorgu>', 'Buxarın Google bunu sizin üçün araşdırsın.'
 ).add_command(
-    'boşluk', None, 'Boş mesaj. (Elon Musk\'tan öğrendim.)'
-).add_command(
-    'ğ', '<metin>', 'Ğ'
+    'boşluq', None, 'Boş mesaj.'
 ).add()
