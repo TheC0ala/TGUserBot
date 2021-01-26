@@ -1,11 +1,12 @@
 MESAJ="TGUSERBOT STRING"
 MESAJ+="\nTelegram: @UserBotTG"
 pkg upgrade
+pkg update 
 clear
 echo -e $MESAJ
 echo "Python yüklənir..."
-pkg install python3 -y
 pkg install python -y
+pkg install python3 -y
 pkg install git
 clear
 echo -e $MESAJ
