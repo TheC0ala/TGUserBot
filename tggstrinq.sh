@@ -6,7 +6,6 @@ clear
 echo -e $MESAJ
 echo "Python yüklənir..."
 pkg install python -y
-pkg install python3 -y
 pkg install git
 clear
 echo -e $MESAJ
@@ -24,4 +23,4 @@ echo -e $MESAJ
 echo "Qurulum hazırdır! İndi String Session ala bilərsiz"
 pip install -r requirements.txt
 clear
-python3 ddq.py
+python ddq.py
