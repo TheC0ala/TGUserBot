@@ -1,10 +1,4 @@
-# Copyright (C) 2020 Yusuf Usta.
-#
-# Licensed under the GPL-3.0 License;
-# you may not use this file except in compliance with the License.
-#
-
-# Asena UserBot - Yusuf Usta
+# TGUSERBOT - by BABAŞ #
 
 import datetime
 from telethon import events
@@ -86,7 +80,7 @@ def MemeYap (Resim, Text, FontS = 40, Bottom = False, BottomText = None):
                 drawTextWithOutline(Bottom_Satirlar[i], x, y)
                 lastY = y
 
-    Foto.save("asenameme.png")
+    Foto.save("ddqname.png")
 
 @register(outgoing=True, pattern="^.sangmata(?: |$)(.*)")
 async def sangmata(event):
@@ -128,7 +122,7 @@ async def sangmata(event):
 
 @register(outgoing=True, pattern="^.meme ?((\d*)(.*))")
 async def memeyap(event):
-    """ Daha iyi bir Meme modülü, @Fusuf tarafından yazıldı """
+    """ Meme modulu """
     font = event.pattern_match.group(2)
     if font == "":
         font = 35
@@ -152,31 +146,31 @@ async def memeyap(event):
             Resim = await reply.download_media()
         elif reply.sticker and reply.file.ext == ".webp":
             if os.path.exists("./AsenaSticker.png"):
-                os.remove("./AsenaSticker.png")
+                os.remove("./DDQSticker.png")
 
             foto = await reply.download_media()
             im = Image.open(foto).convert("RGB")
-            im.save("AsenaSticker.png", "png")
-            Resim = "AsenaSticker.png"
+            im.save("DDQSticker.png", "png")
+            Resim = "DDQSticker.png"
         elif reply.sticker and reply.file.ext == ".tgs":
             sticker = await reply.download_media()
-            os.system(f"lottie_convert.py --frame 0 -if lottie -of png '{sticker}' AsenaSticker.png")
+            os.system(f"lottie_convert.py --frame 0 -if lottie -of png '{sticker}' DDQSticker.png")
             os.remove(sticker)
-            Resim = "AsenaSticker.png"
+            Resim = "DDQSticker.png"
         elif reply.media:
             Resim = await reply.download_media()
             Sure = os.system("ffmpeg -i '"+Resim+"' 2>&1 | grep Duration | awk '{print $2}' | tr -d , | awk -F ':' '{print ($3+$2*60+$1*3600)/2}'``")
-            os.system(f"ffmpeg -i '{Resim}' -vcodec mjpeg -vframes 1 -an -f rawvideo -ss {Sure} AsenaThumb.jpg")
+            os.system(f"ffmpeg -i '{Resim}' -vcodec mjpeg -vframes 1 -an -f rawvideo -ss {Sure} DDQThumb.jpg")
             os.remove(Resim)
-            Resim = 'AsenaThumb.jpg'
+            Resim = 'DDQThumb.jpg'
         else:
             return await event.edit(LANG['REPLY_TO_MEME'])
             
-        if os.path.exists("./asenameme.png"):
-            os.remove("./asenameme.png")
+        if os.path.exists("./ddqmeme.png"):
+            os.remove("./ddqmeme.png")
 
         MemeYap(Resim, Text, font, Bottom, BottomText)
-        await event.client.send_file(event.chat_id, "./asenameme.png", reply_to=reply)
+        await event.client.send_file(event.chat_id, "./ddqmeme.png", reply_to=reply)
         await event.delete()
         os.remove(Resim)
     else:
@@ -250,7 +244,7 @@ async def creation(event):
         try:     
             await event.client.forward_messages(chat, reply_message)
         except YouBlockedUserError:
-            await event.reply(f"`Mmmh sanırım` {chat} `engellemişsin. Lütfen engeli aç.`")
+            await event.reply(f"`Hmm` {chat} `bloklamısan. Bloku aç.`")
             return
       
         response = conv.wait_event(events.NewMessage(incoming=True,from_users=747653812))
@@ -258,7 +252,7 @@ async def creation(event):
         if response.text.startswith("Looks"):
             await event.edit(LANG['PRIVACY_ERR'])
         else:
-            await event.edit(f"**Rapor hazır: **`{response.text.replace('**','')}`")
+            await event.edit(f"**Hesabat hazırdır: **`{response.text.replace('**','')}`")
 
 
 @register(outgoing=True, pattern="^.ocr2")
@@ -282,7 +276,7 @@ async def ocriki(event):
         try:     
             await event.client.forward_messages(chat, reply_message)
         except YouBlockedUserError:
-            await event.reply(f"`Mmmh sanırım` {chat} `engellemişsin. Lütfen engeli aç.`")
+            await event.reply(f"`Hmm` {chat} `bloklamısan. Bloku aç.`")
             return
       
         response = conv.wait_event(events.NewMessage(incoming=True,from_users=834289439))
@@ -296,7 +290,7 @@ async def ocriki(event):
         else:
             await event.edit(f"**{LANG['SEE_SOMETHING']}: **`{response.text}`")
 
-@register(outgoing=True, pattern="^.voicy")
+@register(outgoing=True, pattern="^.ses")
 async def voicy(event):
     if event.fwd_from:
         return 
@@ -317,7 +311,7 @@ async def voicy(event):
         try:     
             await event.client.forward_messages(chat, reply_message)
         except YouBlockedUserError:
-            await event.reply(f"`Mmmh sanırım` {chat} `engellemişsin. Lütfen engeli aç.`")
+            await event.reply(f"`Hmm` {chat} `bloklamısan. Bloku aç.`")
             return
       
         response = conv.wait_event(events.MessageEdited(incoming=True,from_users=259276793))
@@ -366,15 +360,15 @@ async def quotly(event):
             await event.edit(LANG['UNBLOCK_QUOTLY'])
             return
         except asyncio.TimeoutError:
-            await event.edit("`Botdan cevap alamadım!`")
+            await event.edit("`Botdan cavab almadım!`")
             return
         except ValueError:
             await event.edit(LANG['QUOTLY_VALUE_ERR'])
             return
             
         if not response:
-            await event.edit("`Botdan cevap alamadım!`")
-        elif response.text.startswith("Merhaba!"):
+            await event.edit("`Botdan cavab almadım!`")
+        elif response.text.startswith("Salam!"):
             await event.edit(LANG['USER_PRIVACY'])
         else: 
             await event.delete()
@@ -383,17 +377,17 @@ async def quotly(event):
         await conv.cancel_all()
 
 CmdHelp('scrapers_bot').add_command(
-    'sangmata', '<yanıt>', 'Belirtilen kullanıcının isim geçmişini görüntüleyin.'
+    'sangmata', '<cavab>', 'Seçilən isdifadəçinin ad keçmişini görüntələyər.'
 ).add_command(
-    'scan', '<yanıt>', 'Belirtilen dosyada virüs var mı yok mu bakın.'
+    'scan', '<cavab>', 'Seçilən faylds virus var yoxsa yox yoxlayın.'
 ).add_command(
-    'meme', '<font> <üst;alt>', 'Fotoğrafa yazı ekleyin. İsterseniz font büyüklüğünü de yazabilirsiniz.', 'meme 30 asena;usta'
+    'meme', '<font> <üst;alt>', 'Şəklə yazı əlavə edin. İstəsəniz font böyüklüyünü yaza bilərsiz.', 'meme 30 Babad;Usta'
 ).add_command(
-    'voicy', '<yanıt>', 'Sesi yazıya çevirin.'
+    'ses', '<cavab>', 'Səsi yazıya çevirin.'
 ).add_command(
-    'q', '<sayı>', 'Metninizi çıkartmaya dönüştürün.'
+    'q', '<say>', 'Mətni Stickerə çevirin.'
 ).add_command(
-    'ocr2', '<yanıt>', 'Fotoğraftaki metini okuyun.'
+    'ocr2', '<cavab>', 'Şəkldəki mətni oxuyun.'
 ).add_command(
-    'creation', '<yanıt>', 'Yanıt verdiğiniz kişinin hesabı oluşturma tarihinin öğrenin.'
+    'creation', '<cavab>', 'Cavab verdiyiniz isdifadəçinin hesabının yaranma tarixini öyrənin.'
 ).add()
