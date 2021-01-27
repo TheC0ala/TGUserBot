@@ -1,5 +1,5 @@
 MESAJ="TGUSERBOT STRING"
-MESAJ+="\nTelegram: @UserBotTG"
+MESAJ+="\nTelegram: @UserBotTG ❗"
 pkg upgrade
 pkg update 
 clear
@@ -17,10 +17,10 @@ pip install bs4
 clear
 echo -e $MESAJ
 echo "Fayl yazılır..."
-curl "https://raw.githubusercontent.com/TheC0ala/TGUserBot/main/ddq.py" --output "ddq.py"
+curl "https://raw.githubusercontent.com/TheC0ala/TGUserBot/main/main1.py" --output "main1.py"
 clear
 echo -e $MESAJ
 echo "Qurulum hazırdır! İndi String Session ala bilərsiz"
 pip install -r requirements.txt
 clear
-python ddq.py
+python main1.py
