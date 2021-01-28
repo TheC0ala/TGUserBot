@@ -38,7 +38,7 @@ async def qaleriya(event):
         await event.edit("`SQL xarici mod'da Qaleriya işləməz!`")
     secenek = event.pattern_match.group(1)
     secen = secenek.split(" ")
-    if secen[0] == "elave et":
+    if secen[0] == "elaveet":
         if len(secen) > 1:
             URL = re.search(URL_REGEX, secen[1])
             if URL != None:
