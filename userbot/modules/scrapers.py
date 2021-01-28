@@ -138,7 +138,7 @@ async def carbon_api(e):
     elif textx:
         pcode = str(textx.message)
     code = quote_plus(pcode)
-    await e.edit("`İşleniyor...\nTamamlanma Faizi: 25%`")
+    await e.edit("`İşlənir...\nTamamlanma Faizi: 25%`")
     if os.path.isfile("./carbon.png"):
         os.remove("./carbon.png")
     url = CARBON.format(code=code, lang=CARBONLANG)
@@ -167,7 +167,7 @@ async def carbon_api(e):
     driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
     # driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
     # driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
-    await e.edit("`İşleniyor...\nTamamlanma Oranı: 75%`")
+    await e.edit("`İşlənir...\nTamamlanma Oranı: 75%`")
     # TGUSERBOT
     while not os.path.isfile("./carbon.png"):
         await sleep(0.5)
@@ -177,7 +177,7 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Bu şəkil [Carbon](https://carbon.now.sh/about/) işlədilərək yaradıldı,\
+        caption="Bu şəkil [TGUserBot](http://t.me/UserBotTG) və [Carbon](https://carbon.now.sh/about/) işlədilərək yaradıldı,\
         \nbir [Dawn Labs](https://dawnlabs.io/) layihəsidir.",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
@@ -536,17 +536,16 @@ async def lang(value):
 
 @register(outgoing=True, pattern="^.yt (.*)")
 async def yt_search(video_q):
-    """ .yt komutu YouTube üzerinde arama yapar. """
     query = video_q.pattern_match.group(1)
     result = ''
 
     if not YOUTUBE_API_KEY:
         await video_q.edit(
-            "`Hata: YouTube API anahtarı tanımlanmamış!`"
+            "`Xəta: YouTube API ayarlanmayıb!`"
         )
         return
 
-    await video_q.edit("```İşleniyor...```")
+    await video_q.edit("```İşlənilir...```")
 
     full_response = await youtube_search(query)
     videos_json = full_response[1]
@@ -556,7 +555,7 @@ async def yt_search(video_q):
         link = f"https://youtu.be/{video['id']['videoId']}"
         result += f"{title}\n{link}\n\n"
 
-    reply_text = f"**Arama Sorgusu:**\n`{query}`\n\n**Sonuçlar:**\n\n{result}"
+    reply_text = f"**Axtarış Sorğusu:**\n`{query}`\n\n**Nəticələr:**\n\n{result}"
 
     await video_q.edit(reply_text)
 
@@ -566,7 +565,6 @@ async def youtube_search(query,
                          token=None,
                          location=None,
                          location_radius=None):
-    """ Bir YouTube araması yap. """
     youtube = build('youtube',
                     'v3',
                     developerKey=YOUTUBE_API_KEY,
@@ -593,17 +591,16 @@ async def youtube_search(query,
         nexttok = "last_page"
         return (nexttok, videos)
     except KeyError:
-        nexttok = "API anahtarı hatası, lütfen yeniden dene."
+        nexttok = "API xətası, zəhmət olmasa təkrar cəhd et."
         return (nexttok, videos)
 
 
 @register(outgoing=True, pattern=r".rip(audio|video) (.*)")
 async def download_video(v_url):
-    """ .rip komutu ile YouTube ve birkaç farklı siteden medya çekebilirsin. """
     url = v_url.pattern_match.group(2)
     type = v_url.pattern_match.group(1).lower()
 
-    await v_url.edit("`İndirmeye hazırlanıyor...`")
+    await v_url.edit("`Yüklənməyə hazırlanır...`")
 
     if type == "audio":
         opts = {
@@ -665,40 +662,40 @@ async def download_video(v_url):
         video = True
 
     try:
-        await v_url.edit("`Veri çekiliyor, lütfen bekleyin...`")
+        await v_url.edit("`Məlumat çəkilir, zəhmət olmasa gözləyin...`")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
         await v_url.edit(f"`{str(DE)}`")
         return
     except ContentTooShortError:
-        await v_url.edit("`İndirilecek içerik fazla kısa.`")
+        await v_url.edit("`Yüklənəcək şey çox qısa.`")
         return
     except GeoRestrictedError:
         await v_url.edit(
-            "`Maalesef coğrafi kısıtlamalar sebebiyle bu videoyla işlem yapamazsın.`")
+            "`Təsüfki coğrafi qadağalar səbəbi ilə bu videonu yükləyə bilməssən.`")
         return
     except MaxDownloadsReached:
-        await v_url.edit("`Maksimum indirme limitini aştın.`")
+        await v_url.edit("`Maksimum yükləmə limitini keçdin.`")
         return
     except PostProcessingError:
-        await v_url.edit("`İstek işlenirken bir hata oluştu.`")
+        await v_url.edit("`İstək işlənərkən bir xəta baş verdi.`")
         return
     except UnavailableVideoError:
-        await v_url.edit("`Medya belirtilen dosya formatında mevcut değil.`")
+        await v_url.edit("`Media yazılan fayl formatında mövcud deyil.`")
         return
     except XAttrMetadataError as XAME:
         await v_url.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
         return
     except ExtractorError:
-        await v_url.edit("`Bilgi çıkarılırken bir hata gerçekleşti.`")
+        await v_url.edit("`Məlumat çıxarılarkən bir xəta baş verdi!`")
         return
     except Exception as e:
         await v_url.edit(f"{str(type(e)): {str(e)}}")
         return
     c_time = time.time()
     if song:
-        await v_url.edit(f"`Şarkı yüklenmeye hazırlanıyor:`\
+        await v_url.edit(f"`Mahnı yüklənməyə hazırlanır:`\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
@@ -712,12 +709,12 @@ async def download_video(v_url):
             ],
             progress_callback=lambda d, t: asyncio.get_event_loop(
             ).create_task(
-                progress(d, t, v_url, c_time, "Karşıya yükleniyor...",
+                progress(d, t, v_url, c_time, "Qarşıya yüklənir...",
                          f"{rip_data['title']}.mp3")))
         os.remove(f"{rip_data['id']}.mp3")
         await v_url.delete()
     elif video:
-        await v_url.edit(f"`Şarkı yüklenmeye hazırlanıyor:`\
+        await v_url.edit(f"`Mahnı yüklənməyə hazırlanır:`\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
@@ -727,50 +724,41 @@ async def download_video(v_url):
             caption=rip_data['title'],
             progress_callback=lambda d, t: asyncio.get_event_loop(
             ).create_task(
-                progress(d, t, v_url, c_time, "Karşıya yükleniyor...",
+                progress(d, t, v_url, c_time, "Qarşıya yüklənir...",
                          f"{rip_data['title']}.mp4")))
         os.remove(f"{rip_data['id']}.mp4")
         await v_url.delete()
 
-
-def deEmojify(inputString):
-    """ Emojileri ve diğer güvenli olmayan karakterleri metinden kaldırır. """
-    return get_emoji_regexp().sub(u'', inputString)
-
 CmdHelp('scrapers').add_command(
-    'img', '<limit> <kelime>', 'Google üzerinde hızlı bir resim araması yapar. Limit yazmazsanız 5 tane fotoğraf getirir.', 'img10 system of a down'
+    'img', '<limit> <söz>', 'Googe\'də sürətli bir şəkil axtarışı edər. Limit yazmasanız 5 ədəd şəkil gətirsr.', 'img10 Azerbaycan'
 ).add_command(
-    'currency', '<miktar> <dönüştürülecek birim> <dönüşecek birim>', 'Yusufun Türk Lirası Botu gibi, ama boş kaldığında kızlara yazmıyor.'
+    'currency', '<miqdar> <dəyişdiriləcək döviz> <dəyişiləcək döviz>', 'Pul məzənnəsi.'
 ).add_command(
-    'carbon', '<metin>', 'carbon.now.sh sitesini kullanarak yazdıklarının aşşşşşşırı şekil görünmesini sağlar.'
+    'carbon', '<mətn>', 'carbon.now.sh saytından isdifadə edərək yazdıqlarınızı çoox gözəl formaya salar.'
 ).add_command(
-    'crblang', '<dil>', 'Carbon için dil ayarlar.'
+    'crblang', '<dil>', 'Carbon üçün dil ayarlayın.'
 ).add_command(
-    'karbon', '<metin>', 'Carbon ile aynı ama daha hızlımsı.'
+    'karbon', '<mətn>', 'Carbon ilə eyni amma daha sürətli.'
 ).add_command(
-    'google', '<kelime>', 'Hızlı bir Google araması yapar.'
+    'google', '<söz>', 'Sürətli şəkildə Google axtarışı edər.'
 ).add_command(
-    'wiki', '<terim>', 'Bir Vikipedi araması gerçekleştirir.'
+    'wiki', '<termin>', 'Bir Vikipedi axtarışı edər.'
 ).add_command(
-    'ud', '<terim>', 'Urban Dictionary araması yapmanın kolay yolu?'
+    'ud', '<termin>', 'Urban Dictionary axtarışı etmənin asan yolu.'
 ).add_command(
-    'tts', '<metin>', 'Metni sese dönüştürür.'
+    'tts', '<mətn>', 'Mətni Səsə çevirər.'
 ).add_command(
-    'lang', '<dil>', 'tts ve trt için dil ayarlayın.'
+    'lang', '<dil>', 'tts ve trt üçün dil ayarlayın.'
 ).add_command(
-    'tts2', '<cinsiyet> <metin>', 'Metni sese dönüştürür.', 'tts2 erkek selam'
+    'trt', '<mətn>', 'Tərcümə modulu.'
 ).add_command(
-    'trt', '<metin>', 'Basit bir çeviri modülü.'
+    'yt', '<mətn>', 'YouTube\'də axtarış edər.'
 ).add_command(
-    'yt', '<metin>', 'YouTube üzerinde bir arama yapar.'
+    'imdb', '<film>', 'Film haqqında məlumat verər.'
 ).add_command(
-    'haber', '<guncel/magazin/spor/ekonomi/politika/dunya>', 'Son dakika haberler.'
+    'ripaudio', '<bağlantı>', 'YouTube üzerindən (vəya başqa saytlar) Səs yükləyər.'
 ).add_command(
-    'imdb', '<film>', 'Film hakkında bilgi verir.'
-).add_command(
-    'ripaudio', '<bağlantı>', 'YouTube üzerinden (veya diğer siteler) ses indirir.'
-).add_command(
-    'ripvideo', '<bağlantı>', 'YouTube üzerinden (veya diğer siteler) video indirir.'
+    'ripvideo', '<bağlantı>', 'YouTube üzerindən (veya başqa saytlar) video yükləyər.'
 ).add_info(
-    '[Rip komutunun desteklediği siteler.](https://ytdl-org.github.io/youtube-dl/supportedsites.html)'
+    '[Rip komandasının dəstəklədiyi saytlar.](https://ytdl-org.github.io/youtube-dl/supportedsites.html)'
 ).add()
