@@ -145,7 +145,7 @@ async def memeyap(event):
         if reply.photo:
             Resim = await reply.download_media()
         elif reply.sticker and reply.file.ext == ".webp":
-            if os.path.exists("./AsenaSticker.png"):
+            if os.path.exists("./DDQSticker.png"):
                 os.remove("./DDQSticker.png")
 
             foto = await reply.download_media()
