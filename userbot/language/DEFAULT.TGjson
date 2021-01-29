@@ -58,7 +58,7 @@
             "ALREADY_GBANNED": "`Xəta! İstifadəçi artıq dünya miqyasında qadağan edilmişdir.`",
             "GBANNED_REASON": "`İstifadəçi dünya miqyasında qadağan edildi!`\n**Səbəbi:**",
             "GBANNED": "`İstifadəçi dünya miqyasında qadağan edildi!`",
-            "GBAN_TEXT": "```Sən pis birisən! Artıq sənin burada olmağıvı istəmirəm. Qadağan edildin!```",
+            "GBAN_TEXT": "```Sən pis birisən! Artıq sənin burada olmağıvı istəmirəm. Banlandın!```",
             "UNGBANNING": "```Dünya miqyasında qadağa ləğv edilir...```",
             "NO_BANNED": "`Xəta! Yəqin ki, istifadəçinin qadağası yoxdur.`",
             "UNGBANNED": "```İstifadəçinin dünya miqyasında qadağası ləğv edildi```",
@@ -85,7 +85,7 @@
             "GMUTED": "`İstifadəçi dünya miqyasında susduruldu!`",
             "NO_ZOMBIE": "`Silinmiş hesab tapılmadı, qrup təmizdir!`",
             "ZOMBIE": "`Var olmayan/silinmiş/zombi hesaplar  axtarılır...`",
-            "ZOMBIES": "**`Bu qrupda` **{}** `ədəd Var olmayan/ silinmiş / zombi hesab tapıldı,\ntəmizləmək üçün` **.zombies clean** `komandasını icra edin`",
+            "ZOMBIES": "**`Bu qrupda` **{}** `ədəd Silinən Hesab tapıldı,\ntəmizləmək üçün` **.zombies clean** `komandasını icra edin`",
             "CLEANING": "`Silinmiş hesablar çıxarılır...`",
             "NO_BAN_YT": "`Bu qrupda qadağan etmə icazəm yoxdur!`",
             "DELETED": "ədəd silinmiş hesab qrupdan çıxarıldı",
@@ -124,7 +124,7 @@
             "NEED_VIDEO": "`Zəhmət olmasa bir videoya cavab yazın!`",
             "SETTING_VIDEO": "`Profil videonuz nizamlanır..`",
             "INVALID_VIDEO": "`Verdiyiviz videonu profil videosu olaraq yükləyə bilmərəm!`\n\n**Kömək: **`Telegram tətbiqinizdən bir profil videosu hazırlayın, sonra yükləyin və mənə verin, autovideo plugini bu zaman yaxşı işləyəcək.!`",
-            "STARTED_VIDEO": "`Profil videosu dəyişməyə başladı :)!`",
+            "STARTED_VIDEO": "`Profil videosu dəyişməyə başladı :)`",
             "PHOTO_ALREADY_CHANGING": "`Görülənə görə profil şəkiliniz onsuzda avtomatik olaraq dəyişir.`",
             "SETTING": "`Profil şəkiliniz...`",
             "SETTED": "`Profil şəkiliniz nizamlandı`"
@@ -133,7 +133,7 @@
         "blacklist": {
             "FORBIDDEN_KUFUR": "**Bu Qrupda mesaj silmək icazəm yoxdur. Söyüş filtri qoşulmayıb.**",
             "HAVENT_PERMISSION": "Mesaj silmək icazəm yoxdur!",
-            "USAGE_KUFUR": "`İstifadəsi: .küfür aç/bağla`",
+            "USAGE_KUFUR": "`İstifadəsi: .söyüş aç/bağla`",
             "OPENED_KUFUR": "`Söyüş filtri bu qrup üçün təsdiq edildi!`",
             "CLOSED_KUFUR": "`Söyüş filtri bu qrup üçün ləğv edildi!`",
             "ALREADY_CLOSED_KUFUR": "`Bu qrup üçün söyüş filtri onsuzda ləğv edilib!`",
@@ -148,13 +148,13 @@
             "INVALID_COMMAND": "**Bilinməyən komanda!** `İstifadəsi: .çevir foto/ses/gif`",
             "NEED_REPLY": "Zəhmət olmasa bir Sticker-ə cavab verin.",
             "CONVERTING_TO_PHOTO": "Fotoğraf'a çeviriliyor...",
-            "NEED_EFECT": "`Zəhmət olmasa bir effekt qeyd edin. İstifadə edilə biləcək effektlər: ``uşaq/robot/earrape/süretli/parazit/yangı`",
+            "NEED_EFECT": "`Zəhmət olmasa bir effekt qeyd edin. İstifadə edilə biləcək effektlər: ``donma/robot/earrape/parazit`",
             "NEED_SOUND": "`Zəhmət olmasa bir Səs-ə cavab verin.`",
             "EFECTING": "`Effekt hazırlanır...`",
-            "NOT_FOUND_EFECT": "**Qeyd etdiyiniz effekt tapılmadı! **`İstifadə edə biləcəyiniz effektlər: ``uşaqrobot/earrape/süretli/parazit/yangı`",
+            "NOT_FOUND_EFECT": "**Qeyd etdiyiniz effekt tapılmadı! **`İstifadə edə biləcəyiniz effektlər: `donma/robot/earrape/parazit`",
             "NEED_VIDEO": "`Zəhmət olmasa bir videoya cavab verin!`",
-            "WITH_DDQ":"@UserBotTG  `ilə effekt hazırlandı.`",
-            "WITH_DDQ_GIF": "@UserBotTG  `ilə Gif'ə çevrildi.`",
+            "WITH_DDQ":"@UserBotTG  `ilə effekt hazırlandı :)`",
+            "WITH_DDQ_GIF": "@UserBotTG  `ilə Gif'ə çevrildi :)`",
             "CONVERTING_TO_GIF": "Gif'ə çevrilir...",
             "UPLOADING_GIF": "`Gif yüklənir...`",
             "ERROR": "Gif'ə çevirə bilmədim :("
@@ -271,18 +271,18 @@
 
         "qaleriya": {
             "ADDED_LIST": "`Şəkil növbəyə əlavə edildi.`",
-            "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.tgbot qaleriya` `yazın.`",
-            "EXAMPLE": "`Zəhmət olmasa bir şəkil adressi yazın. Nümunə olaraq: ` `.qeriya elave et https://i.imgyukle.com/2021/01/06/a2KNDy.jpg`",
+            "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.bot qaleriya` `yazın.`",
+            "EXAMPLE": "`Zəhmət olmasa bir şəkil adressi yazın. Nümunə olaraq: ` `.qaleriya elaveet https://i.imgyukle.com/2021/01/06/a2KNDy.jpg`",
             "LIST": "Növbəyə əlavə etdiyiniz şəkillər",
             "REMOVED": "**Növbədəki şəkil uğurla silindi**",
             "REMOVE_ERROR": "**Növbədəki şəkil silinmədi** Xəta",
             "NEED_NUMBER": "Zəhmət olmasa şəklin sırasını qeyd edin. Nümunə:",
             "WORKING": "`Hal-hazırda Qalareya işləyir.`",
             "STARTED": "`Qalareya işləməyə başladı.`",
-            "NEED_PHOTO": "Qalereya işi üçün fotoşəkillər əlavə etməlisiniz. Əlavə etməyi bilmirsinizsə, .tgbot qaleriya ilə istifadəsini öyrənə bilərsiniz.",
+            "NEED_PHOTO": "Qalereya işi üçün fotoşəkillər əlavə etməlisiniz. Əlavə etməyi bilmirsinizsə, .bot qaleriya ilə istifadəsini öyrənə bilərsiniz.",
             "STOPPED": "`Qalereya dayandı!`",
             "ALREADY_STOP": "`Qalareya onsuzda işləmir.`",
-            "INVALID": "**Bilinməyən komanda** İstifadəsi:\n\nQalareyaya şəkil əlavə etmək: `.qaleriya elave ethttps://i.imgyukle.com/2021/01/06/a2KNDy.jpg`\nQalariya siyahısını görmək: `.qaleriya siyahı`\nSıradan bir şəkil silmək: `.qaleriya sil <sıra sayı>`"
+            "INVALID": "**Bilinməyən komanda** İstifadəsi:\n\nQaleriyaya şəkil əlavə etmək: `.qaleriya elaveet https://i.imgyukle.com/2021/01/06/a2KNDy.jpg`\nQalariya siyahısını görmək: `.qaleriya siyahı`\nSıradan bir şəkil silmək: `.qaleriya sil <sıra sayı>`"
         },
 
         "github": {
@@ -306,7 +306,7 @@
         },
 
         "siyahi": {
-            "WRONG_INPUT": "**Bilinməyən komanda!** `İstifadəsi: .liste gmute/gban`",
+            "WRONG_INPUT": "**Bilinməyən komanda!** `İstifadəsi: .siyahı gmute/gban`",
             "NEED_SQL_MODE": "`Bu xüsusiyyət qeyri-sql rejimində işləmir!`",
             "GBANNED_USERS": "`Qlobal olaraq qadağan olunmuş istifadəçilər gətirilir...`",
             "TOO_MANY_GBANNED": "` Bir çox insana qadağa qoymusuz. Fayl kimi göndərirəm...`",
@@ -357,7 +357,7 @@
             "REPLY_TO_FILE": "`Bir fayla cavab verin.`",
             "QUERY": "Sorğu",
             "RESULT": "Nəticə",
-            "NEED_MUCH_DATA_FOR_RANDOM": "`2 və ya daha çox məhsul tələb olunur. Daha çox məlumat üçün .tgbot təsadüfi əmrini daxil edin.`",
+            "NEED_MUCH_DATA_FOR_RANDOM": "`2 və ya daha çox məhsul tələb olunur. Daha çox məlumat üçün .bot təsadüfi əmrini daxil edin.`",
             "SLEEP_DESC": "İstifadə qaydası: `.sleep [saniyə]`",
             "SLEEPING": "`Sakit dur yatıram...`",
             "GOODMORNIN_YALL": "`Sabahınız xeyir!`",
@@ -476,7 +476,7 @@
             "REPLY_TO_FILE": "Zəhmət olmasa bir fayla cavab verin.",
             "REPLY_USER_ERR": "Xahiş edirəm bir istifadəçinin mesajına cavab verin.",
             "MIZAH_EXE": "Musallet.exe var mı yoxdurmu baxıram...",
-            "BLOCKED_CHAT": "Pfff deyəsən` %s `bloklanmısan. Zəhmət olmasa bloku aç.",
+            "BLOCKED_CHAT": "Pfff ` %s `bloklanmısan. Zəhmət olmasa bloku aç.",
             "PRIVACY_ERROR": "Məxfilik ayarlarına görə cavab ala bilmədim",
             "WAIT_EDIT": "Zəhmət olmasa gözləyin...",
             "SCAN_RESULT": "Virus axtarışı bitdi. Nəticələr bunlardır",
@@ -525,7 +525,7 @@
         "song": {
             "GIVE_ME_SONG": "** Mənə bir mahnı ver!** `İstifadəsi: .deez mahnı adı/youtube/spotify/soundcloud`",
             "SEARCHING": "`Musiqi axtarılır...`",
-            "BLOCKED_DEEZER": "`Mmmh deyəsən` @DeezerMusicBot `bloklamısan zəhmət olmasa bloku aç",
+            "BLOCKED_DEEZER": "`Hmm` @DeezerMusicBot `bloklamısan zəhmət olmasa bloku aç",
             "NOT_FOUND": "`Axtardığınız mahnı tapılmadı! Bağışlayın.`",
             "UPLOADED_WITH": "@UserBotTG ilə yükləndi",
             "USAGE": "`İstifadəsi:` `.song mahnı ad/youtube url/spotify url`",
@@ -596,7 +596,7 @@
             "UPDATING": "`Bot yenilənir...`",
             "INVALID_APPNAME": "`[HEROKU UPDATER] Güncəlləmədən istifadə etmək üçün HEROKU_APPNAME dəyişənini təyin etməlisiniz.`",
             "INVALID_HEROKU": "{}\n`Heroku dəyişənləri səhv və ya müəyyənləşdirilmişdir.`",
-            "HEROKU_UPDATING": "`[HEROKU UPDATER]\nTGUserBot-unuzun daha yaxşı olacağına əmin ola bilərsiniz. Bu müddət maksimum 10 dəqiqə çəkir.`",
+            "HEROKU_UPDATING": "`[HEROKU UPDATER]\nTGUserBot-unuzun daha yaxşı olacağına əmin ola bilərsiniz. Bu müddət maksimum 10 dəqiqə çəkir.\n\n@UserBotTG`",
             "ERRORS": "Qarşılaşdığımız səhflər bunlardır",
             "SUCCESSFULLY": "`Yeniləmə uğurla başa çatdı! \n Yenidən yüklənir ...`"
         },
