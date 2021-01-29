@@ -15,10 +15,7 @@
 ----
 
 ## Qurulum
-
-Android - ```bash <(curl -L https://t.ly/w38Z)```
-
-iOS və Android: <a href="https://repl.it/@xBabas/tguserbot#main.py"><img src="https://img.shields.io/badge/run-string__session.py-blue?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
+Botu qurmaq üçün program yükləməyinizə ehtiyyac yoxdur. Sadəcə sayta girin və sağ aşağıdakı yaşıl butona basın: <a href="https://repl.it/@xBabas/tguserbot#main.py"><img src="https://img.shields.io/badge/run-string__session.py-blue?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 
 Botu necə quracağınızı bilmirsizsə oxuyun: [Qurulum](https://github.com/TheC0ala/TGUserBot/wiki)
 
