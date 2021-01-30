@@ -128,7 +128,7 @@ async def plist(event):
     else:
         await event.edit(LANG["TEMP_PLUGIN"])
 
-@register(outgoing=True, pattern="^.py[üu]kle")
+@register(outgoing=True, pattern="^.pinstall")
 async def pins(event):
     if event.is_reply:
         reply_message = await event.get_reply_message()
@@ -182,7 +182,7 @@ async def pins(event):
                 await reply_message.forward_to(PLUGIN_CHANNEL_ID)
                 return await event.edit(f'**Modul uğurla yükləndi!**\n__Modulun komandaları və işlədilişi haqqında məlumat üçün__ `.bot {dosyaAdi}` __yazın.__')
 
-@register(outgoing=True, pattern="^.psil ?(.*)")
+@register(outgoing=True, pattern="^.premove ?(.*)")
 async def premove(event):
     modul = event.pattern_match.group(1).lower()
     if len(modul) < 1:
