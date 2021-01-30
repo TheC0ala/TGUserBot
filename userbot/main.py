@@ -63,7 +63,7 @@ AFKSTR = [
 
 UNAPPROVED_MSG = ("`Hey,` {mention}`! Bu bir bot. Narahat olma.\n\n`"
                   "`Sahibim sənə PM atma icazəsi verməyib. `"
-                  "`Zəhnət olmasa sahibimin aktiv olmağını gözləyin, o adətəm PM'ləri qəbul edir.\n\n`"
+                  "`Zəhmət olmasa sahibimin aktiv olmağını gözləyin, o adətən PM'ləri qəbul edir.\n\n`"
                   "`Bildiyim qədəri ilə o dəlilərə PM atma icazəsi vermir.`")
 
 DB = connect("learning-data-root.check")
