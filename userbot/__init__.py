@@ -192,7 +192,7 @@ PAKET_ISMI = os.environ.get("PAKET_ISMI", "@UserBotTG Paketi")
 # AVTO_QATILMA
 AVTO_QATILMA = sb(os.environ.get("AVTO_QATILMA", "True"))
 
-# Özel Pattern'ler
+# Patternlər
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
 WHITELIST = get('https://raw.githubusercontent.com/thec0ala/tguserbot/main/whitelist.json').json()
 
@@ -224,7 +224,7 @@ else:
 if os.path.exists("learning-data-root.check"):
     os.remove("learning-data-root.check")
 else:
-    LOGS.info("Braincheck dosyası yok, getiriliyor...")
+    LOGS.info("Braincheck faylı yoxdur, gətirilir...")
 
 URL = 'https://raw.githubusercontent.com/quiec/databasescape/master/learning-data-root.check'
 with open('learning-data-root.check', 'wb') as load:
