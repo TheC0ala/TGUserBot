@@ -174,11 +174,11 @@ CMD_HELP.update({
 })
 
 CmdHelp('welcome').add_command(
-    'setwelcome', '<karışlama mesajı>', 'Mesajı sohbete karşılama notu olarak kaydeder.'
+    'setwelcome', '<qarşılama mesajı>', 'Mesajı söhbətə qarşılama mesajı olaraq qeyd edər.'
 ).add_command(
-    'checkwelcome', None, 'Sohbette karşılama notu olup olmadığını kontrol edin.'
+    'checkwelcome', None, 'Söhbətdə qarşılama mesajı varmı deyə yoxlayar.'
 ).add_command(
-    'rmwelcome', None, 'Geçerli sohbet için karşılama notunu siler.'
+    'rmwelcome', None, 'Keçərli söhbətdə qarşılama mesajını silər.'
 ).add_info(
-    'Değişkenler: `{mention}, {title}, {count}, {first}, {last}, {fullname}, {userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, {my_username}`'
+    'Dəyişkənlər: `{mention}, {title}, {count}, {first}, {last}, {fullname}, {userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, {my_username}`'
 ).add()
