@@ -15,7 +15,7 @@ import requests
 from telethon.tl.types import InputMessagesFilterDocument
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from telethon.tl.functions.channels import GetMessagesRequest
-from . import BRAIN_CHECKER, LOGS, bot, PLUGIN_CHANNEL_ID, CMD_HELP, LANGUAGE, TGUSERBOT_VERSION, PATTERNS
+from . import BRAIN_CHECKER, LOGS, bot, PLUGIN_CHANNEL_ID, CMD_HELP, LANGUAGE, USERLAND_VERSION, PATTERNS
 from .modules import ALL_MODULES
 import userbot.modules.sql_helper.mesaj_sql as MSJ_SQL
 import userbot.modules.sql_helper.qaleriya_sql as QALERIYA_SQL
@@ -64,7 +64,7 @@ AFKSTR = [
 UNAPPROVED_MSG = ("`Hey,` {mention}`! Bu bir bot. Narahat olma.\n\n`"
                   "`Sahibim sənə PM atma icazəsi verməyib. `"
                   "`Zəhmət olmasa sahibimin aktiv olmağını gözləyin, o adətən PM'ləri qəbul edir.\n\n`"
-                  "`Bildiyim qədəri ilə o dəlilərə PM atma icazəsi vermir.`")
+                  "`Bildiyim qədəri ilə o dəlilərə PM atma icazəsi vermir.`\n@UserLandResmi")
 
 DB = connect("learning-data-root.check")
 CURSOR = DB.cursor()
@@ -115,11 +115,11 @@ def extractCommands(file):
                             KomutStr = Command
                         Komutlar.append(KomutStr)
 
-            # TGUSERBOT
-            Tguserbotpy = re.search('\"\"\"TGUSERBOTPY(.*)\"\"\"', FileRead, re.DOTALL)
-            if not Tguserbotpy == None:
-                Tguserbotpy = Tguserbotpy.group(0)
-                for Satir in Tguserbotpy.splitlines():
+            # UserLand
+            Userlandpy = re.search('\"\"\"USERLANDPY(.*)\"\"\"', FileRead, re.DOTALL)
+            if not Userlandpy == None:
+                Userlandpy = Userlandpy.group(0)
+                for Satir in Userlandpu.splitlines():
                     if (not '"""' in Satir) and (':' in Satir):
                         Satir = Satir.split(':')
                         Isim = Satir[0]
@@ -140,8 +140,8 @@ def extractCommands(file):
 try:
     bot.start()
     idim = bot.get_me().id
-    asenabl = requests.get('https://raw.githubusercontent.com/thec0ala/tguserbot/main/ddqblacklist.json').json()
-    if idim in asenabl:
+    ddqbl = requests.get('https://raw.githubusercontent.com/thec0ala/tguserbot/main/ddqblacklist.json').json()
+    if idim in ddqbl:
         bot.disconnect()
 
     # ChromeDriver'ı Ayarlayaq #
@@ -155,7 +155,7 @@ try:
 
     # PLUGIN MESAJLARINI AYARLAYAQ
     PLUGIN_MESAJLAR = {}
-    ORJ_PLUGIN_MESAJLAR = {"alive": "`TGᑌSEᖇᗷOT Əla İşləyir⚡`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Sağolun Mən Getdim...", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, banlandı!`", "mute": "{mention}`, səssizləşdirildi!`", "approve": "{mention}`, mənə mesaj yazmağın üçün icazə verildi", "disapprove": "{mention}`, artıq mənə yaza bilməssən!`", "block": "{mention}`, bloklandın☺️`"}
+    ORJ_PLUGIN_MESAJLAR = {"alive": "`ᑌ S ᗴ ᖇ ᒪ ᗩ ᑎ ᗪ Əla İşləyir ⚡️`", "afk": f"`{str(choice(AFKSTR))}`", "kickme": "`Sağolun Mən Getdim ✨", "pm": UNAPPROVED_MSG, "dızcı": str(choice(DIZCILIK_STR)), "ban": "{mention}`, banlandı!`", "mute": "{mention}`, səssizləşdirildi!`", "approve": "{mention}`, mənə mesaj yazmağın üçün icazə verildi", "disapprove": "{mention}`, artıq mənə yaza bilməssən!`", "block": "{mention}`, bloklandın😊"}
 
     PLUGIN_MESAJLAR_TURLER = ["alive", "afk", "kickme", "pm", "dızcı", "ban", "mute", "approve", "disapprove", "block"]
     for mesaj in PLUGIN_MESAJLAR_TURLER:
@@ -232,8 +232,8 @@ for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
 LOGS.info("Botunuz işleyir! Hansısa söhbete  .alive yazaraq Test ede bilersiz!."
-          " Kömeye ehtiyacınız varsa, destek qrupuna gelin: t.me/TGUserBotSup")
-LOGS.info(f"Bot versiyası: TGUSERBOT {TGUSERBOT_VERSION}")
+          " Kömeye ehtiyacınız varsa, destek qrupuna gelin: t.me/UserLandSup")
+LOGS.info(f"Bot versiyası: UserLand {USERLAND_VERSION}")
 
 """
 if len(argv) not in (1, 3, 4):
