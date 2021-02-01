@@ -1,5 +1,5 @@
-MESAJ="TGUserBot String"
-MESAJ+="\nTelegram: @UserBotTG"
+MESAJ="UserLand String"
+MESAJ+="\nTelegram: @UserLandResmi"
 pkg upgrade
 clear
 echo -e $MESAJ
@@ -15,7 +15,7 @@ pip install bs4
 clear
 echo -e $MESAJ
 echo "Fayl yazılır..."
-curl "https://raw.githubusercontent.com/thec0ala/tguserbot/main/ddq.py" --output "ddq.py"
+curl "https://raw.githubusercontent.com/thec0ala/userland/main/ddq.py" --output "ddq.py"
 clear
 echo -e $MESAJ
 echo "Qurulum Bitdi! İndi String Ala Bilərsiz."
