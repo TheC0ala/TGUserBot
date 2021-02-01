@@ -1,6 +1,6 @@
 # @c0aIa #
 # by BABAŞ #
-# TGUSERBOT STR #
+# USERLAND STR #
 
 
 import asyncio
@@ -102,7 +102,7 @@ class InteractiveTelegramClient(TelegramClient):
 
 if __name__ == '__main__':
    surum = str(sys.version_info[0]) + "." + str(sys.version_info[1])
-   bilgi("TGUSERBOT String V1\nTelegram: @UserBotTG\nPython: " + surum + "\nTeleThon: " + version.__version__ + "\nBs4/Requests: ✅\n")
+   bilgi("UserLand String v1\nTelegram: @UserLand\nPython: " + surum + "\nTeleThon: " + version.__version__ + "\nBs4/Requests: ✅\n")
    onemli("[1] Yeni")
    onemli("[2] Köhnə\n")
    
@@ -145,8 +145,8 @@ if __name__ == '__main__':
          hashh = soup.find("input", {"name": "hash"}).get("value")
          AppInfo = {
             "hash": hashh,
-            "app_title":"TGUSERBOT",
-            "app_shortname": "TGUserBot",
+            "app_title":"UserLand",
+            "app_shortname": "UsedLand",
             "app_url": "",
             "app_platform": "android",
             "app_desc": ""
