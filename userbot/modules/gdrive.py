@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# TGUSERBOT - by BABAŞ #
+# UserLand - by BABAŞ #
 
 import asyncio
 import math
@@ -90,7 +90,7 @@ async def gdrive_upload_function(dryb):
                 pass
         if downloader.isSuccessful():
             await dryb.edit(
-                "`{}` dizinine indirme başarılı. \nGoogle Drive'a yükleme başlatılıyor.."
+                "`{}` yükləmə uğurludur. \nGoogle Drive'a yükləmə başladılır..."
                 .format(downloaded_file_name))
             required_file_name = downloaded_file_name
         else:
@@ -135,7 +135,7 @@ async def gdrive_upload_function(dryb):
                                              file_name, mime_type, dryb,
                                              parent_id)
             await dryb.edit(
-                f"Dosya :`{required_file_name}`\nUpload uğuruludur! \nYükləmə linki: [Google Drive]({g_drive_link})!"
+                f"Fayl :`{required_file_name}`\nUpload uğuruludur! \nYükləmə linki: [Google Drive]({g_drive_link})!"
             )
         except Exception as e:
             await dryb.edit(
