@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# TGUSERBOT - by BABAŞ #
+# UserLand - by BABAŞ #
 
 from os import remove, execle, path, environ
 import asyncio
@@ -124,7 +124,7 @@ async def upstream(ups):
         await ups.edit(LANG['FORCE_UPDATE'])
     else:
         await ups.edit(LANG['UPDATING'])
-    # TGUSERBOT
+    # UserLand
     if HEROKU_APIKEY is not None:
         import heroku3
         heroku = heroku3.from_key(HEROKU_APIKEY)
@@ -169,7 +169,7 @@ async def upstream(ups):
             repo.git.reset("--hard", "FETCH_HEAD")
         await update_requirements()
         await ups.edit(LANG['SUCCESSFULLY'])
-        # TGUserBot
+        # UserLand
         args = [sys.executable, "main.py"]
         execle(sys.executable, *args, environ)
         return
@@ -177,5 +177,5 @@ async def upstream(ups):
 CmdHelp('update').add_command(
     'update', None, 'Botunuza yeniləmə gəlib gəlmədiyini yoxlayar.'
 ).add_command(
-    'update now', None, 'Botunuzu güncəllər.'
+    'update now', None, 'Botunuzu yeniləyər.'
 ).add()
