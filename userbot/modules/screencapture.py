@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# TGUSERBOT - by BABAŞ
+# UserLand - by BABAŞ
 
 
 import io
@@ -70,5 +70,5 @@ async def capture(url):
                                    reply_to=message_id)
 
 CmdHelp('ss').add_command(
-    'ss', '<url>', 'Yazılan web saytından bir ekran şəkli alar və göndərər.', 'ss https://github.com/TheC0ala/TGUserBot'
+    'ss', '<url>', 'Yazılan web saytından bir ekran şəkli alar və göndərər.', 'ss https://github.com/TheC0ala/UserLand'
 ).add()
