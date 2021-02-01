@@ -25,7 +25,7 @@ NOT! Termuxu ilk dəfə yükləyirsinizsə ilk öncə (```pkg install python```)
 
 iOS üçün sayta girin və yaşıl butona basın: <a href="https://repl.it/@xBabas/tguserbot#main.py"><img src="https://img.shields.io/badge/run-string__session.py-blue?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 
-Botu necə quracağınızı bilmirsizsə oxuyun: [Qurulum](https://github.com/TheC0ala/UserLand/wiki)
+Botu necə quracağınızı bilmirsizsə Support qrupuna yazın: [UserLand Support](https://t.me/userlandsup)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TheC0ala/UserLand)
 ### Çətin Yol
