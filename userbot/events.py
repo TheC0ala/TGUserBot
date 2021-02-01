@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 #
 
-# TGUSERBOT - by BABAŞ
+# UserLand - by BABAŞ
 
 """ Hadiseleri idare etmek üçün User Bot modulu.
  UserBot'un esas komponentlerinden biri. """
@@ -79,7 +79,7 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**USERBOT XƏTA HESABATI**\n"
+                    text = "**USERBOT XETA HESABATI**\n"
                     link = "[TGUSERBOT](https://t.me/tguserbotsup)"
                     text += "İstəsəniz bunu şikayət edə bilərsiniz"
                     text += f" - sadəcə bu mesajı buraya göndərin {link}.\n"
