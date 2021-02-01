@@ -96,7 +96,7 @@ UPSTREAM_REPO_URL = os.environ.get(
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
 # SQL 
-DB_URI = os.environ.get("DATABASE_URL", "sqlite:///asena.db")
+DB_URI = os.environ.get("DATABASE_URL", "sqlite:///ddq.db")
 
 # OCR API
 OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
