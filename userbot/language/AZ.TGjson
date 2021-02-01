@@ -30,12 +30,12 @@
             "ALREADY_DELETED": "`Plugin faylı artıq silinib.`",
             "NOT_FOUND_PLUGIN": "`Belə bir plugin bəlkə var idi, bəlkədə yox. Ancaq hazırda olmadığı dəqiqdir.`",
             "PLUG_DELETED": "`Plugin uğurla silindi!` **Tətbiq ediləcək əməliyyatlar üçün yenidən başlatmağınız lazımdır.**",
-            "DDQ_PLUGIN_CAPTION": "Bu [TGUserBot](https://t.me/UserBotTG) pluginidir."
+            "DDQ_PLUGIN_CAPTION": "Bu [UserLand](https://t.me/UserLand) pluginidir."
         },
         
         "__ddq": {
-            "NEED_PLUGIN": "Zəhmət olmasa bir TGUserBot modulu adı yazın.",
-            "NEED_MODULE": "Zəhmət olmasa hansı TGUserBot modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .bot <modul adı>"
+            "NEED_PLUGIN": "Zəhmət olmasa bir UserLand modulu adı yazın.",
+            "NEED_MODULE": "Zəhmət olmasa hansı UserLand modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .bot <modul adı>"
         },
 
         "__helpme": {
@@ -53,7 +53,7 @@
             "INVALID_MEDIA": "```Media etibarlı deyil.```",
             "PRIVATE": "`Bu əmr xüsusi mesajda istifadə edilə bilməz!`",
             "EKLE": "`Uğurla əlavə edildi`",
-            "BRAIN": "`Xəta! Bunu TGUserBot Səlahiyyətli birinə edə bilmərəm.`",
+            "BRAIN": "`Xəta! Bunu UserLand Səlahiyyətli birinə edə bilmərəm.`",
             "BANNING": "`İstifadəçi qara siyahıya əlavə edilir...`",
             "ALREADY_GBANNED": "`Xəta! İstifadəçi artıq dünya miqyasında qadağan edilmişdir.`",
             "GBANNED_REASON": "`İstifadəçi dünya miqyasında qadağan edildi!`\n**Səbəbi:**",
@@ -114,7 +114,7 @@
             "ALREADY": "`Hazırda %s onsuzda avtomatik olaraq dəyişir.`",
             "SETTING": "`%s nizamlanır...`",
             "BIO": "📅 Tarix: {tarih} | ⌚️ Saat: {saat} | ",
-            "NICK": "@UserBotTG",
+            "NICK": "@UserLandResmi",
             "SETTED": "`%s nizamlandı :)`",
             "NAME": "⏰%s"
         },
@@ -153,8 +153,8 @@
             "EFECTING": "`Effekt hazırlanır...`",
             "NOT_FOUND_EFECT": "**Qeyd etdiyiniz effekt tapılmadı! **`İstifadə edə biləcəyiniz effektlər: `donma/robot/earrape/parazit`",
             "NEED_VIDEO": "`Zəhmət olmasa bir videoya cavab verin!`",
-            "WITH_DDQ":"@UserBotTG  `ilə effekt hazırlandı :)`",
-            "WITH_DDQ_GIF": "@UserBotTG  `ilə Gif'ə çevrildi :)`",
+            "WITH_DDQ":"@UserLandResmi  `ilə effekt hazırlandı :)`",
+            "WITH_DDQ_GIF": "@UserLandResmi  `ilə Gif'ə çevrildi :)`",
             "CONVERTING_TO_GIF": "Gif'ə çevrilir...",
             "UPLOADING_GIF": "`Gif yüklənir...`",
             "ERROR": "Gif'ə çevirə bilmədim :("
@@ -339,7 +339,7 @@
             "NOT_FOUND": "Mahnı **{} - {}** tapılmadı!",
             "TOO_LONG": "`Mahnı sözləri çox uzundur, görmək üçün fayla baxın.`",
             "LYRICS": "**Axtarış sorğusu**:",
-            "SINGER_ERROR": "`Xəta: zəhmət olmasa <müğənni> və <mahnı> üçün bölücü olaraq '-' istifadə edin`\nNümunə: `Duman - Haberin Yok Ölüyorum`",
+            "SINGER_ERROR": "`Xəta: zəhmət olmasa <müğənni> və <mahnı> üçün bölücü olaraq '-' istifadə edin`",
             "SINGER_LYRICS": "🎙 Qulaqlarınızın paslarını siləcəm! {}'dan {} gəlir!",
             "SINGER_ENDED": "🎙Çox yaxşı dedim, düzdü?"
         },
@@ -363,10 +363,10 @@
             "GOODMORNIN_YALL": "`Sabahınız xeyir!`",
             "GOODBYE_MFRS": "`Görüşənədək...`",
             "RESTARTING": "`Bot yenidən qoşulur..`",
-            "SUPPORT_GROUP": "[Buradan](http://t.me/tguserbotsup) Dəstək qrupumuza çata bilərsiniz.",
+            "SUPPORT_GROUP": "[Buradan](http://t.me/userlandsup) Dəstək qrupumuza çata bilərsiniz.",
             "CREATOR": "Bu bot \n[Babaş](https://t.me/c0alaa) tərəfindən hazırlanmışdır. \n",
-            "README": "[TGUserBot README.md](https://github.com/thec0ala/tguserbot/blob/main/README.md)",
-            "REPO": "[TGUserBot Repo](https://github.com/thec0ala/tguserbot)",
+            "README": "[TGUserBot README.md](https://github.com/thec0ala/userland/blob/main/README.md)",
+            "REPO": "[UserLand Repo](https://github.com/thec0ala/userland)",
             "CHECK_LOGS": "`Tapılmış Mesaj üçün istifadəçi qeydlərini yoxlayın!`"
         },
 
@@ -388,7 +388,7 @@
         },
 
         "pmpermit": {
-            "BLOCKED": "`Sən mənim Sahibimin PM-sını spamlayırsan, bu mənim heç xoşuma gəlmir.`\n`Hazırda BLOKLANDIN və SPAM olaraq bildirildin, gələcəkdə dəyişiklik olmadığı ərəfəyədək...\n\n@UserBotTG`",
+            "BLOCKED": "`Sən mənim Sahibimin PM-sını spamlayırsan, bu mənim heç xoşuma gəlmir.`\n`Hazırda BLOKLANDIN və SPAM olaraq bildirildin, gələcəkdə dəyişiklik olmadığı ərəfəyədək...\n\n@UserLandResmi`",
             "ERROR": "PM sayğacı başını itirmiş kimidir, botu zəhmət olmasa yenidən başladın.",
             "BOTLOG_BLOCKED": " adamı sadəcə bir xəyal qırıqlığı idi. PM-nı məşğul etdiyi üçün bloklandı.",
             "NOTIFOFF": "`PM icazəsi olmayan istifadəçilərin bildirişləri səssizə alındı!`",
@@ -463,7 +463,7 @@
             "BLOCKED_ERROR": "Zəhmət olmasa {chat}-ı blokdan çıxarın və yenidən cəhd edin",
             "NOT_RESPONSE": "Botdan cavab ala bilmedim!",
             "USER_PRIVACY": "Məxfilik ayarlarına görə cavab ala bilmədim",
-            "REPLY_TO_MEME": "İstifadəsi: Zəhmət olmasa bir mesaja cavab olaraq yazın. Nümunə: .meme üst; alt",
+            "REPLY_TO_MEME": "İstifadəsi: Zəhmət olmasa bir mesaja cavab olaraq yazın. Nümunə: .meme üst;alt",
             "REPLY_TO_PHOTO": "Bir fotoya / stikerə / GİFə cavab verin.",
             "REPLY_TO_BOT": "Həqiqi bir istifadəçinin mesajına cavab verin.",
             "MEMING": "Memeleniyor! (」ﾟﾛﾟ)｣",
@@ -587,7 +587,7 @@
             "NOT_FOUND": "qovluğu tapa bilmədi",
             "GIT_ERROR": "Git xətası!",
             "NOT_GIT": "qovluğlu bir git reposu kimi görünmür. \nAncaq botu .update now əmri ilə zorla yeniləməklə bu problemi həll edə bilərsiniz.",
-            "INVALID_BRANCH": "**[UPDATER]:**` Düşünürəm ki, TGUser Botunuzu dəyişdirdiniz və öz filialınızdan istifadə edirsiniz.\nBu vəziyyət yenilənməni edənin başını qarışdırır,\nGüncəllənmə haradan çəkiləcək?\nXahiş edirəm rəsmi repodan TGUserBotundan istifadə edin.`",
+            "INVALID_BRANCH": "**[UPDATER]:**` Düşünürəm ki, UserLand\'ı yeniləyirsiniz və öz filialınızdan istifadə edirsiniz.\nBu vəziyyət yenilənməni edənin başını qarışdırır,\nGüncəllənmə haradan çəkiləcək?\nXahiş edirəm rəsmi repodan UserLand\'dam istifadə edin.`",
             "UPDATE": "\n`Botun` **Ən güncəl versiyadadır!** `Branch:` **{}**\n",
             "WAS_UPDATE": "**{} üçün yeni güncəlləmə mövcuddur!\n\nDəyişikliklər:**\n`{}`",
             "BIG": "`Dəyişikliklərin siyahısı çox böyükdür, ona bir fayl kimi baxmalısınız.`",
@@ -596,7 +596,7 @@
             "UPDATING": "`Bot yenilənir...`",
             "INVALID_APPNAME": "`[HEROKU UPDATER] Güncəlləmədən istifadə etmək üçün HEROKU_APPNAME dəyişənini təyin etməlisiniz.`",
             "INVALID_HEROKU": "{}\n`Heroku dəyişənləri səhv və ya müəyyənləşdirilmişdir.`",
-            "HEROKU_UPDATING": "`[HEROKU UPDATER]\nTGUserBot-unuzun daha yaxşı olacağına əmin ola bilərsiniz. Bu müddət maksimum 10 dəqiqə çəkir.\n\n@UserBotTG`",
+            "HEROKU_UPDATING": "`[HEROKU UPDATER]\nTGUserBot-unuzun daha yaxşı olacağına əmin ola bilərsiniz. Bu müddət maksimum 10 dəqiqə çəkir.`\n\n@UserLandResmi",
             "ERRORS": "Qarşılaşdığımız səhflər bunlardır",
             "SUCCESSFULLY": "`Yeniləmə uğurla başa çatdı! \n Yenidən yüklənir ...`"
         },
