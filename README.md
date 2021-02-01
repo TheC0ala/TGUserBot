@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://i.imgyukle.com/2021/01/09/aF9ADo.md.jpg" width="200" height="200">
-  <h1>TGUserBot</h1>
+  <h1>UserLand</h1>
 </div>
 <p align="center">
     UserLand Telegramı daha rahat işlətmək üçün bir botdur.
