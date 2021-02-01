@@ -19,7 +19,8 @@ Botu qurmaq üçün ilk öncə String almaq lazımdır.
 
 Bunun üçün 2 yol vardır.
 
-Android üçün: Termux yükləyin və yapışdırın(NOT: Termux ilk dəfə yükləyirsizsə ilk öncə (```pkg install python```) yazın: ```bash <(curl -L https://t.ly/4Q9T)``` 
+Android üçün: Termux yükləyin və yapışdırın: ```bash <(curl -L https://t.ly/4Q9T)```
+NOT! Termuxu ilk dəfə yükləyirsinizsə ilk öncə (```pkg install python```) yazın
 
 iOS üçün sayta girin və yaşıl butona basın: <a href="https://repl.it/@xBabas/tguserbot#main.py"><img src="https://img.shields.io/badge/run-string__session.py-blue?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>
 
