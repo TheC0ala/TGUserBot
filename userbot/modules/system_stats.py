@@ -4,14 +4,14 @@
 # you may not use this file except in compliance with the License.
 #
 
-# TGUSERBOT - by BABAŞ
+# UserLand - by BABAŞ
 
 from asyncio import create_subprocess_shell as asyncrunapp
 from asyncio.subprocess import PIPE as asyncPIPE
 from platform import uname
 from shutil import which
 from os import remove
-from userbot import CMD_HELP, TGUSERBOT_VERSION
+from userbot import CMD_HELP, USERLAND_VERSION
 from userbot.events import register
 from userbot.main import PLUGIN_MESAJLAR
 from telethon import version
@@ -144,7 +144,7 @@ async def amialive(e):
             PLUGIN_MESAJLAR['alive'].text = PLUGIN_MESAJLAR['alive'].text.format(
                 telethon=version.__version__,
                 python=python_version(),
-                tguserbot=TGUSERBOT_VERSION,
+                userland=USERLAND_VERSION,
                 plugin=len(CMD_HELP),
                 id=me.id,
                 username='@' + me.username if me.username else f'[{me.first_name}](tg://user?id={me.id})',
@@ -165,5 +165,5 @@ CmdHelp('system_stats').add_command(
 ).add_command(
     'pip', '<modul(lar)>', 'Pip modullarında axtarış edər.'
 ).add_command(
-    'alive', None, 'TGUserBotun işləyib işləmədiyini yoxlamaq üçündür.'
+    'alive', None, 'UserLand\'ın işləyib işləmədiyini yoxlamaq üçündür.'
 ).add()
