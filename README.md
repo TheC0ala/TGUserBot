@@ -6,7 +6,7 @@
     UserLand Telegramı daha rahat işlətmək üçün bir botdur.
     Bununla yanaşı bu bot vaistəsi ilə əylənədə bilərsiz.
     <br>
-        <a href="https://github.com/TheC0ala/TGUserBot/wiki">Qurulum</a> |
+        <a href="https://t.me/UserLandSup">Qurulum</a> |
         <a href="https://t.me/UserLandResmi">Güncəlləmə</a> |
         <a href="https://t.me/UserLandSup">Support</a>
     <br>
