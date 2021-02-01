@@ -1,18 +1,18 @@
 {
-  "name": "TGUserBot",
-  "description": "TGUSERBOT",
+  "name": "UserLand",
+  "description": "UserLans",
   "logo": "https://i.imgyukle.com/2021/01/09/aF9ADo.md.jpg",
   "keywords": [
     "telegram",
     "userbot",
-	"TGUSERBOT",
+	"UserLand",
     "plugin",
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/TheC0ala/TGUserBot",
+  "repository": "https://github.com/TheC0ala/UserLand",
   "website":   "",
-  "success_url": "https://t.me/TGUserBotSup",
+  "success_url": "https://t.me/userlandsup",
   "stack": "container",
   "env": {
     "API_KEY": {
@@ -24,7 +24,7 @@
       "required": true
     },
     "PLUGIN_CHANNEL_ID": {
-      "description": "İstəyə Bağlıdır, Daha Ətraflı @TGUserBotQalici",
+      "description": "İstəyə Bağlıdır.",
       "required": false
     },
     "SPOTIFY_DC": {
@@ -36,7 +36,7 @@
       "required": false
     },
     "STRING_SESSION": {
-      "description": "python3 TGUserBotStringAlıcı.py faylını işə salaraq bu Key'i ala bilərsiz.",
+      "description": "Termux vəya Repl.it saytından bu dəyəri ala bilərsiz.",
       "required": true
     },
     "HEROKU_MEMEZ": {
@@ -54,7 +54,7 @@
     },
     "UPSTREAM_REPO_URL": {
       "description": "Fork təqdim etməyiniz vəziyyətində repo URL-nizi buraya əlavə edin. Varsayılan olaraq öz repo adresimiz yazılmışdır.",
-      "value": "https://github.com/TheC0ala/TGUserBot",
+      "value": "https://github.com/TheC0ala/UserLand",
       "required": true
     },
     "COUNTRY": {
@@ -73,7 +73,7 @@
       "required": true  
     },
     "CHROME_DRIVER": {
-      "description": "Selenium tabanlı modüller için ChromeDriver konumu.",
+      "description": "Selenium əsaslı modul.",
       "value": "/usr/bin/chromedriver",
       "required": false
     },
@@ -103,7 +103,7 @@
       "required": false
     },
     "AVTO_PP": {
-      "description": "Autopp modulunun işləməsi üçün vacib dəyişgəndir. İşləməsi üçün şəklin adresini yazmalısız.",
+      "description": "AvtoPP modulunun işləməsi üçün vacib dəyişgəndir. İşləməsi üçün şəklin adresini yazmalısız.",
       "required": false      
     },
     "BOTLOG_CHATID": {
@@ -176,8 +176,8 @@
       "required": false
     },
     "DEFAULT_BIO": {
-      "description": "Varsayılan profil biyografisi.",
-      "value": "@UserBotTG",
+      "description": "Varsayılan profil biosu.",
+      "value": "@UserLandResmi",
       "required": false
     },
     "G_DRIVE_CLIENT_SECRET": {
@@ -217,7 +217,7 @@
     },
     "PAKET_ISMI": {
       "description": "Dızla komandası paket adını yazın. Varsayılan olaraq @UserBotTG'dır",
-      "value": "@UserBotTG",
+      "value": "@UserLandResmi",
       "required": false
     },
     "AVTO_QATILMA": {
