@@ -5,9 +5,6 @@
 #
 
 # TGUSERBOT - by BABAŞ
-#
-
-""" TGUSERBOT """
 
 from userbot.cmdhelp import CmdHelp
 from userbot import cmdhelp
