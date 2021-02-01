@@ -76,7 +76,7 @@ async def gdrive_upload_function(dryb):
             try:
                 current_message = f"{status}...\
                 \nURL: {url}\
-                \nDosya adı: {file_name}\
+                \nFayl adı: {file_name}\
                 \n{progress_str}\
                 \n{humanbytes(downloaded)} of {humanbytes(total_length)}\
                 \nBitiş: {estimated_total_time}"
@@ -264,7 +264,7 @@ async def upload_file(http, file_path, file_name, mime_type, event, parent_id):
     media_body = MediaFileUpload(file_path, mimetype=mime_type, resumable=True)
     body = {
         "title": file_name,
-        "description": "TGUserBot işlədilərək yükləndi.",
+        "description": "UserLand işlədilərək yükləndi.",
         "mimeType": mime_type,
     }
     if parent_id:
