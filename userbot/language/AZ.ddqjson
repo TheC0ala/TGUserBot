@@ -154,7 +154,7 @@
             "NOT_FOUND_EFECT": "**Qeyd etdiyiniz effekt tapılmadı! **`İstifadə edə biləcəyiniz effektlər: ``donma/robot/earrape/parazit`",
             "NEED_VIDEO": "`Zəhmət olmasa bir videoya cavab verin!`",
             "WITH_ASENA":"@UserLandResmi `ilə effekt hazırlandı.`",
-            "WITH_ASENA_GIF": "@UserLandResmi `ilə Gif'ə çevrildi.`",
+            "WITH_DDQ_GIF": "@UserLandResmi `ilə Gif'ə çevrildi.`",
             "CONVERTING_TO_GIF": "Gif'ə çevrilir...",
             "UPLOADING_GIF": "`Gif yüklənir...`",
             "ERROR": "Gif'ə çevirə bilmədim :("
