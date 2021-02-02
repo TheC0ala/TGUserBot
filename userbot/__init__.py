@@ -150,7 +150,7 @@ TZ_NUMBER = int(os.environ.get("TZ_NUMBER", 1))
 CLEAN_WELCOME = sb(os.environ.get("CLEAN_WELCOME", "True"))
 
 # Last.fm 
-BIO_PREFIX = os.environ.get("BIO_PREFIX", "@AsenaUserBot | ")
+BIO_PREFIX = os.environ.get("BIO_PREFIX", "@UserLandResmi | ")
 DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
 
 LASTFM_API = os.environ.get("LASTFM_API", None)
