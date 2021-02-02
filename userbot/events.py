@@ -80,7 +80,7 @@ def register(**args):
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
                     text = "**USERBOT XETA HESABATI**\n"
-                    link = "[TGUSERBOT](https://t.me/tguserbotsup)"
+                    link = "[UserLand](https://t.me/userlandsup)"
                     text += "İstəsəniz bunu şikayət edə bilərsiniz"
                     text += f" - sadəcə bu mesajı buraya göndərin {link}.\n"
                     text += "Xəta və Tarixdən başqa heçnə qeyd edilmir\n"
