@@ -116,7 +116,7 @@ async def karbon(e):
     with open("@UserLand-Karbon.jpg", 'wb') as f:
         f.write(r.content)    
 
-    await e.client.send_file(e.chat_id, file="@UserLand-Karbon.jpg", force_document=True, caption="[UserBotTG](https://t.me/userbottg) ilə yaradıldı.")
+    await e.client.send_file(e.chat_id, file="@UserLand-Karbon.jpg", force_document=True, caption="[UserLand](https://t.me/UserLandResmi) ilə yaradıldı.")
     await e.delete()
 
 @register(outgoing=True, pattern="^.crblang (.*)")
