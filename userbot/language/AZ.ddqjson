@@ -269,7 +269,7 @@
             "NEED_BOTLOG": "`BOTLOG_CHATID dəyəri filtrə cavab olaraq bir medianın qeyd olunmasından əvvəl təyin olunmalıdır.`"
         },
 
-        "galeri": {
+        "qaleriya": {
             "ADDED_LIST": "`Şəkil növbəyə əlavə edildi.`",
             "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.bot qaleriya` `yazın.`",
             "EXAMPLE": "`Zəhmət olmasa bir şəkil adressi yazın. Nümunə olaraq: ` `.qaleriya elaveet <şəkil urlsı>`",
@@ -282,7 +282,7 @@
             "NEED_PHOTO": "Qalereya işi üçün fotoşəkillər əlavə etməlisiniz. Əlavə etməyi bilmirsinizsə, .asena galeri ilə istifadəsini öyrənə bilərsiniz.",
             "STOPPED": "`Qalereya dayandı!`",
             "ALREADY_STOP": "`Qalareya onsuzda işləmir.`",
-            "INVALID": "**Bilinməyən komanda** İstifadəsi:\n\nQalareyaya şəkil əlavə etmək: `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`\nQalareya siyahısını görmək: `.galeri liste`\nSıradan bir şəkil silmək: `.galeri sil <sıra sayı>`"
+            "INVALID": "**Bilinməyən komanda** İstifadəsi:\n\nQalareyaya şəkil əlavə etmək: `.qaleriya elaveet <şəkil urlsi>`\nQalareya siyahısını görmək: `.qaleriya siyahı`\nSıradan bir şəkil silmək: `.qaleriya sil <sıra sayı>`"
         },
 
         "github": {
@@ -305,7 +305,7 @@
            "ERROR_MSG": "```last.fm modulu gözlənilməz bir səhvə görə dayandırıldı.```"
         },
 
-        "liste": {
+        "siyahi": {
             "WRONG_INPUT": "**Bilinməyən komanda!** `İstifadəsi: .liste gmute/gban`",
             "NEED_SQL_MODE": "`Bu xüsusiyyət qeyri-sql rejimində işləmir!`",
             "GBANNED_USERS": "`Qlobal olaraq qadağan olunmuş istifadəçilər gətirilir...`",
@@ -332,14 +332,14 @@
         },
 
         "lyrics": {
-            "WRONG_TYPE": "`Xəta: zəhmət olmasa <müğənni> və <mahnı> üçün bölücü olaraq '-' istifadə edin`\nNümunə: `Duman - Haberin Yok Ölüyorum`",
+            "WRONG_TYPE": "`Xəta: zəhmət olmasa <müğənni> və <mahnı> üçün bölücü olaraq '-' istifadə edin`",
             "GENIUS_NOT_FOUND": "`Zəhmət olmasa Genius tokenini təyin edin`",
             "GIVE_INFO": "`Zəhmət olmasa ifaçı və mahnı adını verin`",
             "SEARCHING": "`{} - {} üçün mahnı sözləri axtarılır...`",
             "NOT_FOUND": "Mahnı **{} - {}** tapılmadı!",
             "TOO_LONG": "`Mahnı sözləri çox uzundur, görmək üçün fayla baxın.`",
             "LYRICS": "**Axtarış sorğusu**:",
-            "SINGER_ERROR": "`Xəta: zəhmət olmasa <müğənni> və <mahnı> üçün bölücü olaraq '-' istifadə edin`\nNümunə: `Duman - Haberin Yok Ölüyorum`",
+            "SINGER_ERROR": "`Xəta: zəhmət olmasa <müğənni> və <mahnı> üçün bölücü olaraq '-' istifadə edin`.",
             "SINGER_LYRICS": "🎙 Qulaqlarınızın paslarını siləcəm! {}'dan {} gəlir!",
             "SINGER_ENDED": "🎙Çox yaxşı dedim, düzdü?"
         },
@@ -363,10 +363,10 @@
             "GOODMORNIN_YALL": "`Sabahınız xeyir!`",
             "GOODBYE_MFRS": "`Görüşənədək... *Windows XP söndürlmə səsi*`",
             "RESTARTING": "`Bot yenidən qoşulur..`",
-            "SUPPORT_GROUP": "[Buradan](http://t.me/AsenaSupport) Dəstək qrupumuza çata bilərsiniz.",
-            "CREATOR": "Bu bot \n[Yusuf Usta](https://t.me/Fusuf) tərəfindən hazırlanmışdır. \n",
-            "README": "[Asena README.md](https://github.com/quiec/AsenaUserBot/blob/master/README.md)",
-            "REPO": "[Asena Repo](https://github.com/quiec/asenauserbot)",
+            "SUPPORT_GROUP": "[Buradan](http://t.me/userlandsup) Dəstək qrupumuza çata bilərsiniz.",
+            "CREATOR": "Bu bot \n[Babaş](https://t.me/c0alaa) tərəfindən hazırlanmışdır. \n",
+            "README": "[UserLand README.md](https://github.com/thec0ala/UserLand/blob/main/README.md)",
+            "REPO": "[UserLand Repo](https://github.com/thec0ala/userland)",
             "CHECK_LOGS": "`Tapılmış Mesaj üçün istifadəçi qeydlərini yoxlayın!`"
         },
 
@@ -388,7 +388,7 @@
         },
 
         "pmpermit": {
-            "BLOCKED": "`Sən mənim Sahibimin PM-sını spamlayırsan, bu mənim heç xoşuma gəlmir.`\n`Hazırda BLOKLANDIN və SPAM olaraq bildirildin, gələcəkdə dəyişiklik olmadığı ərəfəyədək..`",
+            "BLOCKED": "`Sən mənim Sahibimin PM-sını spamlayırsan, bu mənim heç xoşuma gəlmir.`\n`Hazırda BLOKLANDIN və SPAM olaraq bildirildin, gələcəkdə dəyişiklik olmadığı ərəfəyədək..`\n@UserLandResmi",
             "ERROR": "PM sayğacı başını itirmiş kimidir, botu zəhmət olmasa yenidən başladın.",
             "BOTLOG_BLOCKED": " adamı sadəcə bir xəyal qırıqlığı idi. PM-nı məşğul etdiyi üçün bloklandı.",
             "NOTIFOFF": "`PM icazəsi olmayan istifadəçilərin bildirişləri səssizə alındı!`",
@@ -525,9 +525,9 @@
         "song": {
             "GIVE_ME_SONG": "** Mənə bir mahnı ver!** `İstifadəsi: .deez mahnı adı/youtube/spotify/soundcloud`",
             "SEARCHING": "`Musiqi axtarılır...`",
-            "BLOCKED_DEEZER": "`Mmmh deyəsən` @DeezerMusicBot `bloklamısan zəhmət olmasa bloku aç",
+            "BLOCKED_DEEZER": "`Deyəsən` @DeezerMusicBot `bloklamısan zəhmət olmasa bloku aç",
             "NOT_FOUND": "`Axtardığınız mahnı tapılmadı! Bağışlayın.`",
-            "UPLOADED_WITH": "@AsenaUserBot ilə yükləndi",
+            "UPLOADED_WITH": "@UserLandResmi ilə yükləndi",
             "USAGE": "`İstifadəsi:` `.song mahnı ad/youtube url/spotify url`",
             "SEARCHING_SPOT": "`Mahnıların axtarışı və yüklənməsini gözləyin!",
             "DOWNLOADED": "`Yükləmə uğurlu oldu, xahiş edirəm gözləyin.`",
@@ -565,7 +565,7 @@
             "QUERY": "Sorğu",
             "RESULT": "Nəticə",
             "NOT_FOUND": "Heçnə tapılmadı",
-            "EXAMPLE": "`Bir nümunə görmək üçün .asena pip əmrindən istifadə edin.`"
+            "EXAMPLE": "`Bir nümunə görmək üçün .bot pip əmrindən istifadə edin.`"
 
         },
 
@@ -587,7 +587,7 @@
             "NOT_FOUND": "qovluğu tapa bilmədi",
             "GIT_ERROR": "Git xətası!",
             "NOT_GIT": "qovluğlu bir git reposu kimi görünmür. \nAncaq botu .update now əmri ilə zorla yeniləməklə bu problemi həll edə bilərsiniz.",
-            "INVALID_BRANCH": "**[UPDATER]:**` Düşünürəm ki, Asena botunuzu dəyişdirdiniz və öz filialınızdan istifadə edirsiniz.\nBu vəziyyət yenilənməni edənin başını qarışdırır,\nGüncəllənmə haradan çəkiləcək?\nXahiş edirəm rəsmi repodan Asena Botunu istifadə edin.`",
+            "INVALID_BRANCH": "**[UPDATER]:**` Düşünürəm ki, UserLand botunuzu dəyişdirdiniz və öz filialınızdan istifadə edirsiniz.\nBu vəziyyət yenilənməni edənin başını qarışdırır,\nGüncəllənmə haradan çəkiləcək?\nXahiş edirəm rəsmi repodan UserLand Botunu istifadə edin.`",
             "UPDATE": "\n`Botun` **Ən güncəl versiyadadır!** `Branch:` **{}**\n",
             "WAS_UPDATE": "**{} üçün yeni güncəlləmə mövcuddur!\n\nDəyişikliklər:**\n`{}`",
             "BIG": "`Dəyişikliklərin siyahısı çox böyükdür, ona bir fayl kimi baxmalısınız.`",
@@ -596,7 +596,7 @@
             "UPDATING": "`Bot yenilənir...`",
             "INVALID_APPNAME": "`[HEROKU UPDATER] Güncəlləmədən istifadə etmək üçün HEROKU_APPNAME dəyişənini təyin etməlisiniz.`",
             "INVALID_HEROKU": "{}\n`Heroku dəyişənləri səhv və ya müəyyənləşdirilmişdir.`",
-            "HEROKU_UPDATING": "`[HEROKU UPDATER]\nUserBot-unuzun daha yaxşı olacağına əmin ola bilərsiniz :) Bu müddət maksimum 10 dəqiqə çəkir.`",
+            "HEROKU_UPDATING": "`[HEROKU UPDATER]\nUserBot-unuzun daha yaxşı olacağına əmin ola bilərsiniz. Bu müddət maksimum 10 dəqiqə çəkir.`\n@UserLandResmi",
             "ERRORS": "Qarşılaşdığımız səhflər bunlardır",
             "SUCCESSFULLY": "`Yeniləmə uğurla başa çatdı! \n Yenidən yüklənir ...`"
         },
@@ -639,7 +639,7 @@
         },
 
         "whois": {
-            "GETTING_DATA": "`Məlumatı oğurlayıram  ... Xahiş edirəm gözləyin...`",
+            "GETTING_DATA": "`Məlumatı oğurlayıram🤭 ... Xahiş edirəm gözləyin...`",
             "FAILED_GETTING_DATA": "`Bu istifadəçinin məlumatlarını ala bilmədim.`",
             "NO_PROFILE_PHOTO": "Şəxsin profil şəklini yükləyəməy üçün köməyə ehtiyac var.",
             "NO_DC_ID": "DC ID gətirə bilmədim",
