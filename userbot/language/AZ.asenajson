@@ -1,8 +1,8 @@
 {
-    "__ASENAJSON__": true,
+    "__DDQJSON__": true,
     "LANGUAGE": "Azərbaycanca",
     "LANGCODE": "az",
-    "AUTHOR": "@senanoguz",
+    "AUTHOR": "Babaş",
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Zəhmət olmasa Plugin-Port üçün bir fayla cavab yazın`",
@@ -30,12 +30,12 @@
             "ALREADY_DELETED": "`Plugin faylı artıq silinib.`",
             "NOT_FOUND_PLUGIN": "`Belə bir plugin bəlkə var idi, bəlkədə yox. Ancaq hazırda olmadığı dəqiqdir.`",
             "PLUG_DELETED": "`Plugin uğurla yükləndi!` **Tətbiq ediləcək əməliyyatlar üçün yenidən başlatmağınız lazımdır.**",
-            "ASENA_PLUGIN_CAPTION": "Bu [Asena](https://t.me/AsenaUserBot) pluginidir."
+            "ASENA_PLUGIN_CAPTION": "Bu [UserLand](https://t.me/UserLanResmi) pluginidir."
         },
         
-        "__asena": {
-            "NEED_PLUGIN": "Zəhmət olmasa bir Asena modulu adı yazın.",
-            "NEED_MODULE": "Zəhmət olmasa hansı Asena modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .asena <modul adı>"
+        "__ddq": {
+            "NEED_PLUGIN": "Zəhmət olmasa bir UserLand modulu adı yazın.",
+            "NEED_MODULE": "Zəhmət olmasa hansı UserLand modulu üçün kömək istədiyinizi qeyd edin !!\nİstifadəsi: .bot <modul adı>"
         },
 
         "__helpme": {
@@ -58,7 +58,7 @@
             "ALREADY_GBANNED": "`Xəta! İstifadəçi artıq dünya miqyasında qadağan edilmişdir.`",
             "GBANNED_REASON": "`İstifadəçi dünya miqyasında qadağan edildi!`\n**Səbəbi:**",
             "GBANNED": "`İstifadəçi dünya miqyasında qadağan edildi!`",
-            "GBAN_TEXT": "```Sən pis birisən! Artıq sənin burada olmağıvı istəmirəm. Qadağan edildin!```",
+            "GBAN_TEXT": "```Sən pis birisən! Artıq sənin burada olmağıvı istəmirəm. Banlandın!```",
             "UNGBANNING": "```Dünya miqyasında qadağa ləğv edilir...```",
             "NO_BANNED": "`Xəta! Yəqin ki, istifadəçinin qadağası yoxdur.`",
             "UNGBANNED": "```İstifadəçinin dünya miqyasında qadağası ləğv edildi```",
@@ -105,16 +105,16 @@
         "afk": {
             "REASON": "Səbəb",
             "AFK": "Sahibim hazırda Xətdə deyil.",
-            "IM_AFK": "Hazırda AFK-yam.",
+            "IM_AFK": "Artıq AFK-yam.",
             "IM_NOT_AFK": "Artıq AFK deyiləm."
         },
 
         "auto": {
-            "INVALID_TYPE": "Naməlum növ. Mövcud növlər: `isim`, `bio`",
+            "INVALID_TYPE": "Naməlum növ. Mövcud növlər: `ad`, `bio`",
             "ALREADY": "`Hazırda %s onsuzda avtomatik olaraq dəyişir.`",
             "SETTING": "`%s nizamlanır...`",
             "BIO": "📅 Tarix: {tarih} | ⌚️ Saat: {saat} | ",
-            "NICK": "@AsenaUserBot",
+            "NICK": "@UserLandResmi",
             "SETTED": "`%s nizamlandı :)`",
             "NAME": "⏰%s"
         },
@@ -133,7 +133,7 @@
         "blacklist": {
             "FORBIDDEN_KUFUR": "**Bu Qrupda mesaj silmək icazəm yoxdur. Söyüş filtri qoşulmayıb.**",
             "HAVENT_PERMISSION": "Mesaj silmək icazəm yoxdur!",
-            "USAGE_KUFUR": "`İstifadəsi: .küfür aç/bağla`",
+            "USAGE_KUFUR": "`İstifadəsi: .söyüş aç/bağla`",
             "OPENED_KUFUR": "`Söyüş filtri bu qrup üçün təsdiq edildi!`",
             "CLOSED_KUFUR": "`Söyüş filtri bu qrup üçün ləğv edildi!`",
             "ALREADY_CLOSED_KUFUR": "`Bu qrup üçün söyüş filtri onsuzda ləğv edilib!`",
@@ -148,16 +148,16 @@
             "INVALID_COMMAND": "**Bilinməyən komanda!** `İstifadəsi: .çevir foto/ses/gif`",
             "NEED_REPLY": "Zəhmət olmasa bir Sticker-ə cavab verin.",
             "CONVERTING_TO_PHOTO": "Fotoğraf'a çeviriliyor...",
-            "NEED_EFECT": "`Zəhmət olmasa bir effekt qeyd edin. İstifadə edilə biləcək effektlər: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
+            "NEED_EFECT": "`Zəhmət olmasa bir effekt qeyd edin. İstifadə edilə biləcək effektlər: ``donma/robot/earrape/parazit`",
             "NEED_SOUND": "`Zəhmət olmasa bir Səs-ə cavab verin.`",
             "EFECTING": "`Effekt hazırlanır...`",
-            "NOT_FOUND_EFECT": "**Qeyd etdiyiniz effekt tapılmadı! **`İstifadə edə biləcəyiniz effektlər: ``çocuk/robot/earrape/hızlı/parazit/yankı`",
+            "NOT_FOUND_EFECT": "**Qeyd etdiyiniz effekt tapılmadı! **`İstifadə edə biləcəyiniz effektlər: ``donma/robot/earrape/parazit`",
             "NEED_VIDEO": "`Zəhmət olmasa bir videoya cavab verin!`",
-            "WITH_ASENA":"@AsenaUserBot `ilə effekt hazırlandı.`",
-            "WITH_ASENA_GIF": "@AsenaUserBot `ilə Gif'ə çevrildi.`",
+            "WITH_ASENA":"@UserLandResmi `ilə effekt hazırlandı.`",
+            "WITH_ASENA_GIF": "@UserLandResmi `ilə Gif'ə çevrildi.`",
             "CONVERTING_TO_GIF": "Gif'ə çevrilir...",
             "UPLOADING_GIF": "`Gif yüklənir...`",
-            "ERROR": "Gif'ə çevirə bilmədim :/"
+            "ERROR": "Gif'ə çevirə bilmədim :("
         },
 
         "chat": {
@@ -175,7 +175,7 @@
             "SUCCESS_DELETED": "`Plugin mesajı uğurla silindi.`",
             "ERROR_DELETED": "Plugin mesajı silinə bilmədi.** Xəta",
             "NOT_FOUND": "**Bilinməyən plugin.** Mesajını silə biləcəyiniz pluginlər",
-            "USAGE": "**Dəyişdir, botdaki plugin-mesajlarını dəyişdirə bilməyiniz üçündür.**\nNümunə İstifadəsi: `.değiştir afk \"Hazırda burda deyiləm... Bəlkədə heç gəlmədim\"`\nPlugin-mesajını silmək: `.değiştir afk`\nDəyişdirə biləcəyiniz plugin-mesajları (indiki): `afk/alive/pm/kickme/dızcı/ban/mute/approve/disapprove/block`",
+            "USAGE": "**Dəyişdir, botdaki plugin-mesajlarını dəyişdirə bilməyiniz üçündür.**\nNümunə İstifadəsi: `.deyisdir afk \"Hazırda burda deyiləm... Bəlkədə heç gəlmədim\"`\nPlugin-mesajını silmək: `.değiştir afk`\nDəyişdirə biləcəyiniz plugin-mesajları (indiki): `afk/alive/pm/kickme/dızcı/ban/mute/approve/disapprove/block`",
             "CANNOT_EMPTY": "Plugin mesajı boş ola bilməz.",
             "SETTED": "Plugin(`{plu}`) üçün mesajınız(`{msj}`) təsdiqləndi."
         },
@@ -187,13 +187,13 @@
             "CASE": "🌎 Xəstə:",
             "DEATH": "🌎 Ölüm:",
             "HEAL": "🌎 Sağalan:",
-            "TR": "Türkiyə",
-            "TR_ALL_CASES": "Xəstə (ümumi):",
-            "TR_CASES": "Xəstə (bugün):",
-            "TR_CASE": "Xəstə (aktiv):",
-            "TR_ALL_DEATHS": "Ölüm (ümumi):",
-            "TR_DEATHS": "Ölüm (bugün):",
-            "TR_HEAL": "Sağalan:"
+            "AZ": "Azərbaycan",
+            "AZ_ALL_CASES": "Xəstə (ümumi):",
+            "AZ_CASES": "Xəstə (bugün):",
+            "AZ_CASE": "Xəstə (aktiv):",
+            "AZ_ALL_DEATHS": "Ölüm (ümumi):",
+            "AZ_DEATHS": "Ölüm (bugün):",
+            "AZ_HEAL": "Sağalan:"
         },
 
         "deepfry":{
@@ -255,7 +255,7 @@
         },
 
         "filter": {
-            "GENEL_USAGE": "`İstifadəsi: ``.genelfilter \"salam aleykum\" as` ya da `.genelfilter sa as`",
+            "GENEL_USAGE": "`İstifadəsi: ``.ümumifilter \"salam aleykum\" as` ya da `.ümumifilter sa as`",
             "GENEL_FILTER": "filtri",
             "ADDED": "əlavə edildi",
             "UPDATED": "yeniləndi",
@@ -271,8 +271,8 @@
 
         "galeri": {
             "ADDED_LIST": "`Şəkil növbəyə əlavə edildi.`",
-            "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.asena galeri` `yazın.`",
-            "EXAMPLE": "`Zəhmət olmasa bir şəkil adressi yazın. Nümunə olaraq: ` `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`",
+            "INVALID_URL": "`Səhf bir şəkil URL'i yazdınız. İstifadəsi haqqında bir fikriniz yoxdursa, ` `.bot qaleriya` `yazın.`",
+            "EXAMPLE": "`Zəhmət olmasa bir şəkil adressi yazın. Nümunə olaraq: ` `.qaleriya elaveet <şəkil urlsı>`",
             "LIST": "Növbəyə əlavə etdiyiniz şəkillər",
             "REMOVED": "**Növbədəki şəkil uğurla silindi**",
             "REMOVE_ERROR": "**Növbədəki şəkil silinmədi** Xəta",
