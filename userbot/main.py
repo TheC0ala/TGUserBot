@@ -48,7 +48,7 @@ AFKSTR = [
     "Salam mən sahibimin meneceriyəm\nBuyurun istəklərinizi mənə deyə bilərsiz. Sizin üçün sahibimə çatdıraram.",
     "Hələdə anlamadınsa burda deyiləm.",
     "Salam, uzaq mesajıma xoş gəldiniz, sizə necə kömək edə bilərəm?",
-    "Mən sahibimin xüsusi botuyam!, sizdə bot istəyirsizsə: @UserBotTG",
+    "Mən sahibimin xüsusi botuyam!, sizdə bot istəyirsizsə: @UserLandResmi",
     "Hal hazırda burdan çoox uzaqdayam.\nQışqırsan bəlkə eşitdim.",
     "Bu tərəfə gedirəm\n---->",
     "Bu tərəfə gedirəm\n<----",
