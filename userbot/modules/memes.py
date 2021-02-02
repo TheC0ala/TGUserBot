@@ -386,7 +386,7 @@ async def hayvan(e):
     await e.delete()
     await e.client.send_message(
         e.chat_id,
-        f"`Təsadüfi {arg} şəkli\n@UserBotTG`",
+        f"`Təsadüfi {arg} şəkli`\n@UserLandResmi",
         file=foto
     )
 
@@ -432,7 +432,7 @@ async def univsaye(cowmsg):
 
 @register(outgoing=True, pattern="^:/$", ignore_unsafe=True)
 async def kek(keks):
-    """ Kendinizi kontrol edin ;)"""
+    """ . """
     uio = ["/", "\\"]
     for i in range(1, 15):
         time.sleep(0.3)
