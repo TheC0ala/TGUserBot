@@ -569,7 +569,7 @@
 
         },
 
-        "time": {
+        "vaxt": {
             "CLOCK": "Burada saat",
             "INVALID_COUNTRY": "`Səhf ölkə.`",
             "TOO_TIMEZONE": "ölkənin birdən çox saat qurşağı var",
