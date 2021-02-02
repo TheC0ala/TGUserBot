@@ -40,7 +40,7 @@ for dil in bot.iter_messages(pchannel, filter=InputMessagesFilterDocument):
 if LANGUAGE_JSON == None:
     if path.isfile(f"./userbot/language/{LANGUAGE}.ddqjson"):
         try:
-            LANGUAGE_JSON = loads(open(f"./userbot/language/{LANGUAGE}.ddajson", "r").read())
+            LANGUAGE_JSON = loads(open(f"./userbot/language/{LANGUAGE}.ddqjson", "r").read())
         except JSONDecodeError:
             raise Exception("Sehf json faylı")
     else:
