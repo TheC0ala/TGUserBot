@@ -216,7 +216,7 @@
       "required": false
     },
     "PAKET_ISMI": {
-      "description": "Dızla komandası paket adını yazın. Varsayılan olaraq @UserBotTG'dır",
+      "description": "Dızla komandası paket adını yazın. Varsayılan olaraq @UserLandResmi'dir",
       "value": "@UserLandResmi",
       "required": false
     },
