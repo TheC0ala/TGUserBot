@@ -101,8 +101,8 @@ async def reddit(event):
 @register(outgoing=True, pattern="^.karbon ?(.*)")
 async def karbon(e):
     cmd = e.pattern_match.group(1)
-    if os.path.exists("@UserBotTG-Karbon.jpg"):
-        os.remove("@UserBotTG-Karbon.jpg")
+    if os.path.exists("@UserLand-Karbon.jpg"):
+        os.remove("@UserLand-Karbon.jpg")
 
     if len(cmd) < 1:
         await e.edit("İşlədilişi: .karbon mesaj")    
@@ -113,10 +113,10 @@ async def karbon(e):
 
     r = get(f"https://carbonnowsh.herokuapp.com/?code={cmd}")
 
-    with open("@UserBotTG-Karbon.jpg", 'wb') as f:
+    with open("@UserLand-Karbon.jpg", 'wb') as f:
         f.write(r.content)    
 
-    await e.client.send_file(e.chat_id, file="@UserBotTG-Karbon.jpg", force_document=True, caption="[UserBotTG](https://t.me/userbottg) ilə yaradıldı.")
+    await e.client.send_file(e.chat_id, file="@UserLand-Karbon.jpg", force_document=True, caption="[UserBotTG](https://t.me/userbottg) ilə yaradıldı.")
     await e.delete()
 
 @register(outgoing=True, pattern="^.crblang (.*)")
@@ -167,7 +167,7 @@ async def carbon_api(e):
     driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
     # driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
     # driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
-    await e.edit("`İşlənir...\nTamamlanma Oranı: 75%`")
+    await e.edit("`İşlənir...\nTamamlanma Faizi: 75%`")
     # TGUSERBOT
     while not os.path.isfile("./carbon.png"):
         await sleep(0.5)
@@ -177,7 +177,7 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="Bu şəkil [TGUserBot](http://t.me/UserBotTG) və [Carbon](https://carbon.now.sh/about/) işlədilərək yaradıldı,\
+        caption="Bu şəkil [UserLand](http://t.me/UserLandResmi) və [Carbon](https://carbon.now.sh/about/) işlədilərək yaradıldı,\
         \nbir [Dawn Labs](https://dawnlabs.io/) layihəsidir.",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
