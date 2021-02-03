@@ -30,7 +30,7 @@
             "ALREADY_DELETED": "`Plugin faylı artıq silinib.`",
             "NOT_FOUND_PLUGIN": "`Belə bir plugin bəlkə var idi, bəlkədə yox. Ancaq hazırda olmadığı dəqiqdir.`",
             "PLUG_DELETED": "`Plugin uğurla yükləndi!` **Tətbiq ediləcək əməliyyatlar üçün yenidən başlatmağınız lazımdır.**",
-            "ASENA_PLUGIN_CAPTION": "Bu [UserLand](https://t.me/UserLanResmi) pluginidir."
+            "DDQ_PLUGIN_CAPTION": "Bu [UserLand](https://t.me/UserLanResmi) pluginidir."
         },
         
         "__ddq": {
@@ -53,7 +53,7 @@
             "INVALID_MEDIA": "```Media etibarlı deyil.```",
             "PRIVATE": "`Bu əmr xüsusi mesajda istifadə edilə bilməz!`",
             "EKLE": "`Uğurla əlavə edildi`",
-            "BRAIN": "`Xəta! Bunu Asena Səlahiyyətli birinə edə bilmərəm.`",
+            "BRAIN": "`Xəta! Bunu UserLand Səlahiyyətli birinə edə bilmərəm.`",
             "BANNING": "`İstifadəçi qara siyahıya əlavə edilir...`",
             "ALREADY_GBANNED": "`Xəta! İstifadəçi artıq dünya miqyasında qadağan edilmişdir.`",
             "GBANNED_REASON": "`İstifadəçi dünya miqyasında qadağan edildi!`\n**Səbəbi:**",
@@ -154,7 +154,7 @@
             "NOT_FOUND_EFECT": "**Qeyd etdiyiniz effekt tapılmadı! **`İstifadə edə biləcəyiniz effektlər: ``donma/robot/earrape/parazit`",
             "NEED_VIDEO": "`Zəhmət olmasa bir videoya cavab verin!`",
             "WITH_ASENA":"@UserLandResmi `ilə effekt hazırlandı.`",
-            "WITH_ASENA_GIF": "@UserLandResmi `ilə Gif'ə çevrildi.`",
+            "WITH_DDQ_GIF": "@UserLandResmi `ilə Gif'ə çevrildi.`",
             "CONVERTING_TO_GIF": "Gif'ə çevrilir...",
             "UPLOADING_GIF": "`Gif yüklənir...`",
             "ERROR": "Gif'ə çevirə bilmədim :("
@@ -569,7 +569,7 @@
 
         },
 
-        "time": {
+        "vaxt": {
             "CLOCK": "Burada saat",
             "INVALID_COUNTRY": "`Səhf ölkə.`",
             "TOO_TIMEZONE": "ölkənin birdən çox saat qurşağı var",
