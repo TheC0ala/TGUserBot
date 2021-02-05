@@ -44,9 +44,9 @@ async def cevir(event):
         await event.delete()
         os.remove("sticker.png")
     elif islem == "ses" or islem == "voice": # -filter_complex "areverse" #
-        EFEKTLER = ["donma", "robot", "earrape", "parazit"]
+        EFEKTLER = ["ters", "donma", "robot", "earrape", "parazit"]
         # https://www.vacing.com/ffmpeg_audio_filters/index.html #
-        KOMUT = {"donma": ' -filter_complex "deesser=i=1:s=e[a];[a]aeval=val(ch)*10:c=same"', "robot": '-filter_complex "afftfilt=real=\'hypot(re,im)*sin(0)\':imag=\'hypot(re,im)*cos(0)\':win_size=512:overlap=0.75"', "earrape": '-filter_complex "acrusher=level_in=8:level_out=18:bits=8:mode=log:aa=1"', "suretli": "-filter_complex \"rubberband=tempo=1.5\"", "parazit": '-filter_complex "afftfilt=real=\'hypot(re,im)*cos((random(0)*2-1)*2*3.14)\':imag=\'hypot(re,im)*sin((random(1)*2-1)*2*3.14)\':win_size=128:overlap=0.8"', "yangi": "-filter_complex \"aecho=0.8:0.9:500|1000:0.2|0.1\""}
+        KOMUT = {"ters": ' -filter_complex "areverse"', "donma": ' -filter_complex "deesser=i=1:s=e[a];[a]aeval=val(ch)*10:c=same"', "robot": '-filter_complex "afftfilt=real=\'hypot(re,im)*sin(0)\':imag=\'hypot(re,im)*cos(0)\':win_size=512:overlap=0.75"', "earrape": '-filter_complex "acrusher=level_in=8:level_out=18:bits=8:mode=log:aa=1"', "suretli": "-filter_complex \"rubberband=tempo=1.5\"", "parazit": '-filter_complex "afftfilt=real=\'hypot(re,im)*cos((random(0)*2-1)*2*3.14)\':imag=\'hypot(re,im)*sin((random(1)*2-1)*2*3.14)\':win_size=128:overlap=0.8"', "yangi": "-filter_complex \"aecho=0.8:0.9:500|1000:0.2|0.1\""}
         efekt = event.pattern_match.group(2)
 
         if len(efekt) < 1:
