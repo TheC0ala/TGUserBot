@@ -43,14 +43,12 @@ if version_info[0] < 3 or version_info[1] < 6:
               "Birden çox xüsusiyyet buna bağlıdır. Bot söndürülür.")
     quit(1)
 
-# Yapılandırmanın önceden kullanılan değişkeni kullanarak düzenlenip düzenlenmediğini kontrol edin.
-# Temel olarak, yapılandırma dosyası için kontrol.
 CONFIG_CHECK = os.environ.get(
     "___________XAIS_______BU_____SETIRI_____SILIN__________", None)
 
 if CONFIG_CHECK:
     LOGS.info(
-        "Zehmet olmada ilk setirdeki yazını config.env faylından silin"
+        "Zehmet olmasa ilk setirdeki yazını config.env faylından silin"
     )
     quit(1)
 
@@ -62,7 +60,7 @@ if not LANGUAGE in ["EN", "TR", "AZ", "UZ", "DEFAULT"]:
     LANGUAGE = "DEFAULT"
     
 # UserLand Version
-USERLAND_VERSION = "v1.0"
+USERLAND_VERSION = "v1.2"
 
 # Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)
